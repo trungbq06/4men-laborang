@@ -1,0 +1,70 @@
+I. Module quản lý nhận đơn hàng
+    + Kiểm tra xem là người dùng mới hay người dùng cũ
+    + Nếu là người dùng mới, thêm các thông tin về người dùng => Trả ra mã số người dùng. Người dùng có thể lựa chọn thêm mới các mẫu đặt hàng
+    Ở đây thông tin về người dùng gồm:
+        - Tên
+        - Giới tính
+        - Địa chỉ
+    Việc sinh ra mã là do hệ thống thực hiện. Việc sinh mã là tăng dần hoặc tăng dần theo vị trí địa lý (như HN01, HN02, ...)
+    + Nếu là người dùng cũ, chỉ cần nhập vào mã số người dùng => Đưa là các mẫu răng mà người dùng đó đã đặt
+    
+    + Trạng thái lựa chọn sản phẩm: 
+        - Kiểu sản phẩm: Cố định và tháo lắp
+        - Trạng thái thao tác: Lần đầu, bảo hành, sửa dịch vụ
+    + Một lần lựa chọn mẫu răng: Mỗi mẫu răng thì bao gồm màu răng, loại răng(số thứ tự của răng), nhiều sản phẩm, ngày trả ,giờ trả
+      Mỗi sản phẩm thì có Tên sản phẩm và Loại vật liệu sử dụng
+      Tùy loại sản phẩm có thể có vật liệu chính và vật liệu phụ. 
+      
+    => Câu hỏi: 
+        - Trang thái thao tác là là cho từng mẫu răng, hay là từng sản phẩm
+        - Trạng thái thao tác có phải là số lần khách hàng đặt hàng hay không (dựa vào đó để có các chi phí giảm giá)
+    + Nếu mà mẫu có nhiều sản phẩm, người SD có thể chọn thêm sản phẩm để thêm sản phẩm mới
+    + Sau khi lựa chọn xong một mẫu, người sử dụng chọn lưu để lưu và hệ thống
+    + Và chọn thêm mẫu mới, hoặc là thêm khách hàng mới
+    
+    + Quá trình quản lý vật liệu:
+    + Sản phẩm (tên sản phẩm, mã số sản phẩm, phẩm chất, )
+    + Vật liệu(mã vật liệu, tên vật liệu, giá cả)
+     
+    => Câu hỏi:
+        - Loại sản phẩm nào thì có vật liệu chính, vật liệu phụ
+       
+    + Chức năng báo cáo: 
+        - Các đơn hàng nhận theo ngày, theo giờ
+        - Các đơn hàng phải trả theo ngày, giờ, theo sản phẩm
+        
+II. Module quản lý nhập kho, xuất kho cho sản phẩm:
+    + Khi nhập hàng sản phẩm, kiểm tra so với đơn đặt hàng:
+        - Hệ thống đưa ra chi tiết đơn đặt hàng hay là chi tiết thành phẩm?
+        - Nếu là chi tiết thành phẩm, nếu khác nhau thì giải quyết thế nào, và show ra như nào?
+        - Nếu là chi tiết đơn đặt hàng, thì kiểm tra xem thành phẩm với đơn đặt hàng có khác biệt gì không?
+          Nếu khác biệt thì cập nhật luôn đơn đặt hàng?
+    + Quá trình xuất kho:
+        - Giảm trừ: hệ thống tự động hay bằng tay. 
+        - Khi xuất kho, thì đưa hóa đơn cho khách
+        - Khách cầm hóa đơn đến bộ phận thanh toán, tại bộ phận thanh toán lập phiếu thanh toán và phiếu giảm trừ
+        
+        => Phiếu giảm trừ thì thế nào: Các thông tin giảm trừ: 
+            + Mã số hoạt động giảm trừ
+            + Đơn vị
+            + Giá cả
+            lấy ở đâu?
+            
+III. Module quản lý lương cho nhân viên:
+    + Khi quản lý đơn vị sản phẩm, quá trình làm sản phẩm được chia làm nhiều giai đoạn, mỗi giai đoạn do 1 người làm và có số lương quy chuẩn 
+    => Câu hỏi số lượng quy chuẩn thì lầy ở đâu?
+    
+    + Vấn đề công thức tính lương nhân viên:
+        + Dựa vào ngày công: bảng chấm công, lương một ngày công
+        + Dựa vào sản phẩm: với mỗi sản phẩm thì có các giai đoạn, chi phí cho từng giai đoạn với các số lượng quy chuẩn
+    + Module tính lương:
+        + Phụ cấp trách nhiệm: lấy ở đâu?
+        + Các khoản hỗ trợ thì nếu muốn thêm thì thêm ở đâu?
+        + Các khoản phạt thì lấy ở đâu?
+        
+    + Tạm ứng lương thì làm như nào?
+    
+IV. Module quản lý vật tư sản xuất và thiết bị
+    + Khi nhập vật tư và thiết bị thì vật tư và thiết bị đưa vào kho hàng nào? (có nhiều kho hàng)
+    + Mục xác nhận ở phần kho hàng và vật tư hàng hóa có ý nghĩa gì?
+    
