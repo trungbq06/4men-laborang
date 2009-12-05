@@ -47,7 +47,6 @@
             this.btnLuuHeThong = new System.Windows.Forms.Button();
             this.boPhanNhapKho = new System.Windows.Forms.GroupBox();
             this.dtgChiTietCongNoKH = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.clnXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnMaSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +57,7 @@
             this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnXemBaoCao = new System.Windows.Forms.Button();
             this.grpPhieuNhapKho.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
@@ -135,7 +135,8 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(43, 9);
+            this.label12.ForeColor = System.Drawing.Color.Blue;
+            this.label12.Location = new System.Drawing.Point(43, 13);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(767, 33);
             this.label12.TabIndex = 30;
@@ -257,17 +258,6 @@
             this.dtgChiTietCongNoKH.Size = new System.Drawing.Size(769, 164);
             this.dtgChiTietCongNoKH.TabIndex = 31;
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 206);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(767, 33);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "NỘI DUNG GIẢM TRỪ CHI PHÍ ĐẶT HÀNG";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label12_Click);
-            // 
             // clnXacNhan
             // 
             this.clnXacNhan.Frozen = true;
@@ -321,6 +311,18 @@
             // 
             this.clnTrangThai.HeaderText = "Trạng thái";
             this.clnTrangThai.Name = "clnTrangThai";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(43, 206);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(767, 33);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "NỘI DUNG GIẢM TRỪ CHI PHÍ ĐẶT HÀNG";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label12_Click);
             // 
             // btnXemBaoCao
             // 

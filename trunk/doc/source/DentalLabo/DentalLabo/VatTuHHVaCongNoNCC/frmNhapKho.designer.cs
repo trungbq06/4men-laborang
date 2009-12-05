@@ -173,18 +173,18 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Blue;
-            this.label17.Location = new System.Drawing.Point(249, 356);
+            this.label17.Location = new System.Drawing.Point(300, 354);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(292, 25);
+            this.label17.Size = new System.Drawing.Size(179, 25);
             this.label17.TabIndex = 13;
-            this.label17.Text = "CHI TIẾT THIẾT BỊ DỤNG CỤ";
+            this.label17.Text = "CHI TIẾT VẬT TƯ";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Blue;
-            this.label18.Location = new System.Drawing.Point(295, 144);
+            this.label18.Location = new System.Drawing.Point(289, 141);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(201, 25);
             this.label18.TabIndex = 12;
@@ -335,7 +335,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dtgPhieuVatTu.Location = new System.Drawing.Point(9, 171);
+            this.dtgPhieuVatTu.Location = new System.Drawing.Point(7, 168);
             this.dtgPhieuVatTu.Name = "dtgPhieuVatTu";
             this.dtgPhieuVatTu.Size = new System.Drawing.Size(736, 175);
             this.dtgPhieuVatTu.TabIndex = 2;
@@ -444,7 +444,7 @@
             this.groupBox1.Controls.Add(this.txtMaNCC);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(7, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(513, 129);
             this.groupBox1.TabIndex = 0;
@@ -612,21 +612,23 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(275, 350);
+            this.label16.ForeColor = System.Drawing.Color.Blue;
+            this.label16.Location = new System.Drawing.Point(238, 350);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(245, 25);
+            this.label16.Size = new System.Drawing.Size(305, 25);
             this.label16.TabIndex = 9;
-            this.label16.Text = "Chi tiết thiết bị - dụng cụ";
+            this.label16.Text = "CHI TIẾT THIẾT BỊ - DỤNG CỤ";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(310, 141);
+            this.label15.ForeColor = System.Drawing.Color.Blue;
+            this.label15.Location = new System.Drawing.Point(289, 141);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(163, 25);
+            this.label15.Size = new System.Drawing.Size(201, 25);
             this.label15.TabIndex = 8;
-            this.label15.Text = "Chi tiết hóa đơn";
+            this.label15.Text = "CHI TIẾT HÓA ĐƠN";
             // 
             // dtgNhapTBDC
             // 
@@ -793,7 +795,7 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtSoPhieu1);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(526, 6);
+            this.groupBox3.Location = new System.Drawing.Point(525, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(217, 129);
             this.groupBox3.TabIndex = 5;
@@ -802,6 +804,7 @@
             // 
             // dtpNgay1
             // 
+            this.dtpNgay1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgay1.Location = new System.Drawing.Point(68, 27);
             this.dtpNgay1.Name = "dtpNgay1";
             this.dtpNgay1.Size = new System.Drawing.Size(142, 20);
