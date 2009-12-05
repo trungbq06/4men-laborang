@@ -1,4 +1,4 @@
-﻿namespace DentalLabo.Quan_ly_mau_dat_hang
+﻿namespace DentalLabo
 {
     partial class frmDanhMucVLPhu
     {
@@ -33,11 +33,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,10 +71,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(79, 19);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(111, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 31);
+            this.label1.Size = new System.Drawing.Size(274, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "DANH MỤC VẬT LIỆU PHỤ";
             // 
@@ -90,15 +91,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(444, 307);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(63, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Thêm mới";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Column1
             // 
@@ -123,6 +115,15 @@
             this.Column3.HeaderText = "Xác nhận";
             this.Column3.Name = "Column3";
             this.Column3.Width = 80;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(63, 388);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Thêm mới";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmDanhMucVLPhu
             // 
