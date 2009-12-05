@@ -15,10 +15,10 @@ namespace DentalLabo
         {
             InitializeComponent();
         }
-
         private void frm2_Load(object sender, EventArgs e)
         {
-            cho trang
+            dis me trung
+
         }
     }
 }
