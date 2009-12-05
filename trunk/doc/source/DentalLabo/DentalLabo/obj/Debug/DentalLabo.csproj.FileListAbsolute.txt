@@ -1,0 +1,11 @@
+D:\C#\Labo\DentalLabo\DentalLabo\bin\Debug\DentalLabo.exe
+D:\C#\Labo\DentalLabo\DentalLabo\bin\Debug\DentalLabo.pdb
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\ResolveAssemblyReference.cache
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.Form1.resources
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.Properties.Resources.resources
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.csproj.GenerateResource.Cache
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.exe
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.pdb
+D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.frm2.resources
+D:\labo_docs\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.exe
+D:\labo_docs\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.pdb
