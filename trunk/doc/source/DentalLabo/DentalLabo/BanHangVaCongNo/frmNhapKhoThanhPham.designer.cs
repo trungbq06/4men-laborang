@@ -406,7 +406,8 @@
             // 
             // lblNoiDungNhapKho
             // 
-            this.lblNoiDungNhapKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoiDungNhapKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoiDungNhapKho.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblNoiDungNhapKho.Location = new System.Drawing.Point(37, 287);
             this.lblNoiDungNhapKho.Name = "lblNoiDungNhapKho";
             this.lblNoiDungNhapKho.Size = new System.Drawing.Size(725, 33);
@@ -471,7 +472,8 @@
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Location = new System.Drawing.Point(37, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(725, 33);
