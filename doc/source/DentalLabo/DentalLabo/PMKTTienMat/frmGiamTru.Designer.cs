@@ -348,7 +348,7 @@
             this.Controls.Add(this.btnLuuHeThong);
             this.Controls.Add(this.boPhanNhapKho);
             this.Name = "frmGiamTru";
-            this.Text = "frmGiamTru";
+            this.Text = "Giam Tru Thanh Toan Trong Ky";
             this.grpPhieuNhapKho.ResumeLayout(false);
             this.grpPhieuNhapKho.PerformLayout();
             this.boPhanNhapKho.ResumeLayout(false);
