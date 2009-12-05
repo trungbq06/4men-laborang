@@ -253,6 +253,11 @@ namespace DentalLabo
             f.Show();
         }
 
+        private void quảnLýThuChiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }
