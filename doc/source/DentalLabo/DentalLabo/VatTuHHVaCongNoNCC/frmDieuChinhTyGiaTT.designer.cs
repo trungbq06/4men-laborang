@@ -313,7 +313,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtgTyGiaTT);
             this.Name = "frmDieuChinhTyGiaTT";
-            this.Text = "Điều chỉnh tỷ giá thanh toán";
+            this.Text = "Dieu Chinh Ty Gia Thanh Toan";
             ((System.ComponentModel.ISupportInitialize)(this.dtgTyGiaTT)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

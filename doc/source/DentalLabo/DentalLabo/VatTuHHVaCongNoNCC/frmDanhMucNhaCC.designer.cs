@@ -161,7 +161,7 @@
             this.Controls.Add(this.btnLuu);
             this.ForeColor = System.Drawing.Color.Blue;
             this.Name = "frmDanhMucNhaCC";
-            this.Text = "Danh muc nha cung cap";
+            this.Text = "Danh Muc Nha Cung Cap";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucNhaCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -162,7 +162,7 @@
             this.Controls.Add(this.dtgDanhMucKhoVatTuHangHoa);
             this.Controls.Add(this.label12);
             this.Name = "frmDanhMucKhoVatTuHH";
-            this.Text = "Danh muc kho vat tu hang hoa";
+            this.Text = "Danh Muc Kho Vat Tu Hang Hoa";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucKhoVatTuHangHoa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
