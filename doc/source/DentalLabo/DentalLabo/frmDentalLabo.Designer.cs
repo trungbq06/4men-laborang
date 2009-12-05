@@ -1,6 +1,6 @@
 ﻿namespace DentalLabo
 {
-    partial class Form1
+    partial class frmDentalLabo
     {
         /// <summary>
         /// Required designer variable.
