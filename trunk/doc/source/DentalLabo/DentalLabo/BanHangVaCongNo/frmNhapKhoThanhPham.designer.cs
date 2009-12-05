@@ -249,6 +249,7 @@
             // 
             // dateNgayNhap
             // 
+            this.dateNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNgayNhap.Location = new System.Drawing.Point(88, 33);
             this.dateNgayNhap.Name = "dateNgayNhap";
             this.dateNgayNhap.Size = new System.Drawing.Size(132, 20);
@@ -499,7 +500,7 @@
             this.Controls.Add(this.grpPhieuNhapKho);
             this.Controls.Add(this.boPhanNhapKho);
             this.Name = "frmNhapKhoThanhPham";
-            this.Text = "frmNhapKhoThanhPham";
+            this.Text = "Nhap Kho San Pham";
             this.Load += new System.EventHandler(this.frmNhapKhoThanhPham_Load);
             this.boPhanNhapKho.ResumeLayout(false);
             this.boPhanNhapKho.PerformLayout();
