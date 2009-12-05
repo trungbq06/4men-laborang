@@ -23,9 +23,51 @@ namespace DentalLabo
 
         private void nhậnMẫuĐặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new frm2();            
-            f.MdiParent = this;
-            f.Show();
+            Form maudathang = new frmMauDatHang();
+            maudathang.MdiParent = this;
+            maudathang.Show();
+        }
+
+        private void xuấtKhoBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhmucsp = new frmDanhMucSP();
+            danhmucsp.MdiParent = this;
+            danhmucsp.Show();
+        }
+
+        private void danhMụcVLChínhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhmucvlchinh = new frmDanhMucVLChinh();
+            danhmucvlchinh.MdiParent = this;
+            danhmucvlchinh.Show();
+        }
+
+        private void bảngGiáSPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form banggiasp = new frmDanhMucSP();
+            banggiasp.MdiParent = this;
+            banggiasp.Show();
+        }
+
+        private void danhMụcVLPhụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhmucvlphu = new frmDanhMucVLPhu();
+            danhmucvlphu.MdiParent = this;
+            danhmucvlphu.Show();
+        }
+
+        private void danhMụcNhómKHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhmucnhomkh = new frmDanhMucNhomKH();
+            danhmucnhomkh.MdiParent = this;
+            danhmucnhomkh.Show();
+        }
+
+        private void danhMụcKHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhmuckh = new frmDanhMucKH();
+            danhmuckh.MdiParent = this;
+            danhmuckh.Show();
         }
     }
 }
