@@ -7,17 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DentalLabo
+namespace DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC
 {
-    public partial class frm2 : Form
+    public partial class frmDanhMucNhaCC : Form
     {
-        public frm2()
+        public frmDanhMucNhaCC()
         {
             InitializeComponent();
-        }
-        private void frm2_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
