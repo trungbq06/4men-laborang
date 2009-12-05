@@ -9,3 +9,5 @@ D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Propert
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.csproj.GenerateResource.Cache
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.exe
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.pdb
+E:\WORK\LaboRang\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.exe
+E:\WORK\LaboRang\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.pdb

@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DentalLabo.Nhap_kho_va_ban_hang;
+using DentalLabo.Quan_ly_mau_dat_hang;
+using DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC;
 
 namespace DentalLabo
 {
@@ -70,9 +73,66 @@ namespace DentalLabo
             danhmuckh.Show();
         }
 
-        private void hơpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttNhapKhoThanhPham_Click(object sender, EventArgs e)
         {
-
+            Form f = new frmNhapKhoThanhPham();
+            f.MdiParent = this;
+            f.Show();
         }
+
+        private void ttXuatKhoBanHang_Click(object sender, EventArgs e)
+        {
+            Form f = new frmXuatKhoBanHang();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttHoaDonBanHang_Click(object sender, EventArgs e)
+        {
+            Form f = new frmHoaDonBanHang();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttPhieuTT_Click(object sender, EventArgs e)
+        {
+            Form f = new frmPhieuTT();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttGiamTru_Click(object sender, EventArgs e)
+        {
+            Form f = new frmGiamTru();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucKhoHang_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucKhoVatTuHH();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucVatTuHH_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucVatTuHH();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucNCC_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucNhaCC();
+            f.MdiParent = this;
+            f.Show();
+        }
+        
+
+
+
+
+
     }
 }
