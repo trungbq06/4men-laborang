@@ -123,7 +123,7 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.ForeColor = System.Drawing.Color.Blue;
             this.label12.Location = new System.Drawing.Point(12, 19);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(736, 33);
@@ -152,6 +152,7 @@
             this.Controls.Add(this.dtgDanhMucVatTuHH);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnLuu);
+            this.ForeColor = System.Drawing.Color.Blue;
             this.Name = "frmDanhMucVatTuHH";
             this.Text = "Danh muc vat tu hang hoa";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucVatTuHH)).EndInit();
