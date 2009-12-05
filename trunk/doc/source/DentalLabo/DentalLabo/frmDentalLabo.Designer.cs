@@ -47,10 +47,8 @@
             this.ttDanhMucKH = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ttNhapKhoVatTu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttNhapKhoThietBi = new System.Windows.Forms.ToolStripMenuItem();
             this.ttDieuChinhTyGiaTT = new System.Windows.Forms.ToolStripMenuItem();
             this.ttXuatKhoNVL = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttXuatKhoThietBi = new System.Windows.Forms.ToolStripMenuItem();
             this.ttSoKho = new System.Windows.Forms.ToolStripMenuItem();
             this.ttNoNCC = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,10 +57,6 @@
             this.ttDanhMucNCC = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýThuChiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ttQLDonViSP = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttTongHopKQCongViec = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttChamCongVaLamThem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttTinhLuong = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttTamUngLuong = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ttDanhMucBoPhan = new System.Windows.Forms.ToolStripMenuItem();
             this.ttDanhMucNV = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,10 +207,8 @@
             // 
             this.quảnLýNhânViênToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ttNhapKhoVatTu,
-            this.ttNhapKhoThietBi,
-            this.ttDieuChinhTyGiaTT,
             this.ttXuatKhoNVL,
-            this.ttXuatKhoThietBi,
+            this.ttDieuChinhTyGiaTT,
             this.ttSoKho,
             this.ttNoNCC,
             this.toolStripSeparator3,
@@ -231,15 +223,8 @@
             // 
             this.ttNhapKhoVatTu.Name = "ttNhapKhoVatTu";
             this.ttNhapKhoVatTu.Size = new System.Drawing.Size(182, 22);
-            this.ttNhapKhoVatTu.Text = "Nhập kho vật tư";
+            this.ttNhapKhoVatTu.Text = "Nhập kho";
             this.ttNhapKhoVatTu.Click += new System.EventHandler(this.ttNhapKhoVatTu_Click);
-            // 
-            // ttNhapKhoThietBi
-            // 
-            this.ttNhapKhoThietBi.Name = "ttNhapKhoThietBi";
-            this.ttNhapKhoThietBi.Size = new System.Drawing.Size(182, 22);
-            this.ttNhapKhoThietBi.Text = "Nhập kho thiết bị";
-            this.ttNhapKhoThietBi.Click += new System.EventHandler(this.ttNhapKhoThietBi_Click);
             // 
             // ttDieuChinhTyGiaTT
             // 
@@ -252,15 +237,8 @@
             // 
             this.ttXuatKhoNVL.Name = "ttXuatKhoNVL";
             this.ttXuatKhoNVL.Size = new System.Drawing.Size(182, 22);
-            this.ttXuatKhoNVL.Text = "Xuất kho NVL";
+            this.ttXuatKhoNVL.Text = "Xuất kho";
             this.ttXuatKhoNVL.Click += new System.EventHandler(this.ttXuatKhoNVL_Click);
-            // 
-            // ttXuatKhoThietBi
-            // 
-            this.ttXuatKhoThietBi.Name = "ttXuatKhoThietBi";
-            this.ttXuatKhoThietBi.Size = new System.Drawing.Size(182, 22);
-            this.ttXuatKhoThietBi.Text = "Xuất kho thiết bị";
-            this.ttXuatKhoThietBi.Click += new System.EventHandler(this.ttXuatKhoThietBi_Click);
             // 
             // ttSoKho
             // 
@@ -306,10 +284,6 @@
             // 
             this.quảnLýThuChiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ttQLDonViSP,
-            this.ttTongHopKQCongViec,
-            this.ttChamCongVaLamThem,
-            this.ttTinhLuong,
-            this.ttTamUngLuong,
             this.toolStripSeparator4,
             this.ttDanhMucBoPhan,
             this.ttDanhMucNV,
@@ -317,41 +291,14 @@
             this.quảnLýThuChiToolStripMenuItem.Name = "quảnLýThuChiToolStripMenuItem";
             this.quảnLýThuChiToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.quảnLýThuChiToolStripMenuItem.Text = "Quản lý SP và Lương";
+            this.quảnLýThuChiToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThuChiToolStripMenuItem_Click);
             // 
             // ttQLDonViSP
             // 
             this.ttQLDonViSP.Name = "ttQLDonViSP";
             this.ttQLDonViSP.Size = new System.Drawing.Size(200, 22);
-            this.ttQLDonViSP.Text = "QL đơn vị SP";
+            this.ttQLDonViSP.Text = "QL sản phẩm và lương";
             this.ttQLDonViSP.Click += new System.EventHandler(this.ttQLDonViSP_Click);
-            // 
-            // ttTongHopKQCongViec
-            // 
-            this.ttTongHopKQCongViec.Name = "ttTongHopKQCongViec";
-            this.ttTongHopKQCongViec.Size = new System.Drawing.Size(200, 22);
-            this.ttTongHopKQCongViec.Text = "Tổng hợp KQ công việc";
-            this.ttTongHopKQCongViec.Click += new System.EventHandler(this.ttTongHopKQCongViec_Click);
-            // 
-            // ttChamCongVaLamThem
-            // 
-            this.ttChamCongVaLamThem.Name = "ttChamCongVaLamThem";
-            this.ttChamCongVaLamThem.Size = new System.Drawing.Size(200, 22);
-            this.ttChamCongVaLamThem.Text = "Chấm công và làm thêm";
-            this.ttChamCongVaLamThem.Click += new System.EventHandler(this.ttChamCongVaLamThem_Click);
-            // 
-            // ttTinhLuong
-            // 
-            this.ttTinhLuong.Name = "ttTinhLuong";
-            this.ttTinhLuong.Size = new System.Drawing.Size(200, 22);
-            this.ttTinhLuong.Text = "Tính lương";
-            this.ttTinhLuong.Click += new System.EventHandler(this.ttTinhLuong_Click);
-            // 
-            // ttTamUngLuong
-            // 
-            this.ttTamUngLuong.Name = "ttTamUngLuong";
-            this.ttTamUngLuong.Size = new System.Drawing.Size(200, 22);
-            this.ttTamUngLuong.Text = "Tạm ứng lương";
-            this.ttTamUngLuong.Click += new System.EventHandler(this.ttTamUngLuong_Click);
             // 
             // toolStripSeparator4
             // 
@@ -393,28 +340,28 @@
             // ttPhieuThu
             // 
             this.ttPhieuThu.Name = "ttPhieuThu";
-            this.ttPhieuThu.Size = new System.Drawing.Size(152, 22);
+            this.ttPhieuThu.Size = new System.Drawing.Size(130, 22);
             this.ttPhieuThu.Text = "Phiếu thu";
             this.ttPhieuThu.Click += new System.EventHandler(this.ttPhieuThu_Click);
             // 
             // ttGiamTru
             // 
             this.ttGiamTru.Name = "ttGiamTru";
-            this.ttGiamTru.Size = new System.Drawing.Size(152, 22);
+            this.ttGiamTru.Size = new System.Drawing.Size(130, 22);
             this.ttGiamTru.Text = "Giảm trừ";
             this.ttGiamTru.Click += new System.EventHandler(this.ttGiamTru_Click);
             // 
             // ttPhieuChi
             // 
             this.ttPhieuChi.Name = "ttPhieuChi";
-            this.ttPhieuChi.Size = new System.Drawing.Size(152, 22);
+            this.ttPhieuChi.Size = new System.Drawing.Size(130, 22);
             this.ttPhieuChi.Text = "Phiếu chi";
             this.ttPhieuChi.Click += new System.EventHandler(this.ttPhieuChi_Click);
             // 
             // ttSoQuy
             // 
             this.ttSoQuy.Name = "ttSoQuy";
-            this.ttSoQuy.Size = new System.Drawing.Size(152, 22);
+            this.ttSoQuy.Size = new System.Drawing.Size(130, 22);
             this.ttSoQuy.Text = "Sổ quỹ";
             this.ttSoQuy.Click += new System.EventHandler(this.ttSoQuy_Click);
             // 
@@ -458,10 +405,8 @@
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucNhomKH;
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucKH;
         private System.Windows.Forms.ToolStripMenuItem ttNhapKhoVatTu;
-        private System.Windows.Forms.ToolStripMenuItem ttNhapKhoThietBi;
         private System.Windows.Forms.ToolStripMenuItem ttDieuChinhTyGiaTT;
         private System.Windows.Forms.ToolStripMenuItem ttXuatKhoNVL;
-        private System.Windows.Forms.ToolStripMenuItem ttXuatKhoThietBi;
         private System.Windows.Forms.ToolStripMenuItem ttSoKho;
         private System.Windows.Forms.ToolStripMenuItem ttNoNCC;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -469,10 +414,6 @@
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucVatTuHH;
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucNCC;
         private System.Windows.Forms.ToolStripMenuItem ttQLDonViSP;
-        private System.Windows.Forms.ToolStripMenuItem ttTongHopKQCongViec;
-        private System.Windows.Forms.ToolStripMenuItem ttChamCongVaLamThem;
-        private System.Windows.Forms.ToolStripMenuItem ttTinhLuong;
-        private System.Windows.Forms.ToolStripMenuItem ttTamUngLuong;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucBoPhan;
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucNV;

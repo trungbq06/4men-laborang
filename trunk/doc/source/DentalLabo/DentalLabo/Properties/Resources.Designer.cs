@@ -59,19 +59,5 @@ namespace DentalLabo.Properties {
                 resourceCulture = value;
             }
         }
-        
-        internal static System.Drawing.Bitmap teeth1 {
-            get {
-                object obj = ResourceManager.GetObject("teeth1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap teeth2 {
-            get {
-                object obj = ResourceManager.GetObject("teeth2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

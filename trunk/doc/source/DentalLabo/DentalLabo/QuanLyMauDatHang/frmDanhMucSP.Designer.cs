@@ -157,17 +157,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 478);
+            this.ClientSize = new System.Drawing.Size(674, 476);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(682, 510);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(682, 510);
             this.Name = "frmDanhMucSP";
             this.Text = "Danh mục sản phẩm";
             this.Load += new System.EventHandler(this.frmDanhMucSP_Load);
