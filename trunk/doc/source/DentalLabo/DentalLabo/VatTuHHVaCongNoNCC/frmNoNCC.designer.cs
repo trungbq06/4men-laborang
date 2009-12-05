@@ -666,7 +666,7 @@
             this.ClientSize = new System.Drawing.Size(588, 585);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmNoNCC";
-            this.Text = "Nợ Nhà cung cấp";
+            this.Text = "No Nha Cung Cap";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

@@ -416,7 +416,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPhieuThu";
-            this.Text = "Phiếu thu tiền mặt";
+            this.Text = "Phieu Thu Tien Mat";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

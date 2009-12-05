@@ -499,7 +499,7 @@
             this.ClientSize = new System.Drawing.Size(509, 502);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmSoChiTietHH";
-            this.Text = "Sổ chi tiết hàng hóa";
+            this.Text = "So Chi Tiet Hang Hoa";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

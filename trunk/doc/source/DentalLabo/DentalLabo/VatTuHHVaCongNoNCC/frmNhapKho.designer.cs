@@ -950,7 +950,7 @@
             this.ClientSize = new System.Drawing.Size(783, 692);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmNhapKho";
-            this.Text = "Nhập Kho Vật Tư";
+            this.Text = "Nhap Kho Vat Tu";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
