@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DentalLabo.Nhap_kho_va_ban_hang;
-using DentalLabo.Quan_ly_mau_dat_hang;
 using DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC;
 
 namespace DentalLabo
@@ -47,7 +46,7 @@ namespace DentalLabo
 
         private void bảngGiáSPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form banggiasp = new frmDanhMucSP();
+            Form banggiasp = new frmBangGiaSP();
             banggiasp.MdiParent = this;
             banggiasp.Show();
         }

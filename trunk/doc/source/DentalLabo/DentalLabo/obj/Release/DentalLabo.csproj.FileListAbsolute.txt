@@ -1,7 +1,6 @@
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\bin\Release\DentalLabo.exe
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\bin\Release\DentalLabo.pdb
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\ResolveAssemblyReference.cache
-D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.frm2.resources
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.frmDanhMucSP.resources
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.frmDentalLabo.resources
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.frmMauDatHang.resources
@@ -11,3 +10,11 @@ D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.exe
 D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.pdb
 E:\WORK\LaboRang\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.exe
 E:\WORK\LaboRang\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.pdb
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC.frmDanhMucKhoVatTuHH.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC.frmDanhMucNhaCC.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC.frmDanhMucVatTuHH.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Nhap_kho_va_ban_hang.frmGiamTru.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Nhap_kho_va_ban_hang.frmHoaDonBanHang.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Nhap_kho_va_ban_hang.frmNhapKhoThanhPham.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Nhap_kho_va_ban_hang.frmPhieuTT.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Release\DentalLabo.Nhap_kho_va_ban_hang.frmXuatKhoBanHang.resources

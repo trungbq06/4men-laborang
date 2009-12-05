@@ -1,4 +1,4 @@
-﻿namespace DentalLabo.Quan_ly_mau_dat_hang
+﻿namespace DentalLabo
 {
     partial class frmMauDatHang
     {

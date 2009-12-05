@@ -146,17 +146,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBangGiaSP.resx">
+      <DependentUpon>frmBangGiaSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMucKH.resx">
+      <DependentUpon>frmDanhMucKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMucKhoVatTuHH.resx">
       <DependentUpon>frmDanhMucKhoVatTuHH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMucNhaCC.resx">
       <DependentUpon>frmDanhMucNhaCC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMucNhomKH.resx">
+      <DependentUpon>frmDanhMucNhomKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMucSP.resx">
       <DependentUpon>frmDanhMucSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhMucVatTuHH.resx">
       <DependentUpon>frmDanhMucVatTuHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMucVLChinh.resx">
+      <DependentUpon>frmDanhMucVLChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhMucVLPhu.resx">
+      <DependentUpon>frmDanhMucVLPhu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDentalLabo.resx">
       <DependentUpon>frmDentalLabo.cs</DependentUpon>
