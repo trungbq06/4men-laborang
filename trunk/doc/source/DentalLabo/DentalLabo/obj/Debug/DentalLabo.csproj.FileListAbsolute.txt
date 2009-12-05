@@ -9,3 +9,14 @@ D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.pdb
 D:\C#\Labo\DentalLabo\DentalLabo\obj\Debug\DentalLabo.frm2.resources
 D:\labo_docs\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.exe
 D:\labo_docs\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.pdb
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.exe
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.pdb
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\bin\Debug\DentalLabo.exe
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\bin\Debug\DentalLabo.pdb
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\ResolveAssemblyReference.cache
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.frm2.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.frmMauDatHang.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.Properties.Resources.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.csproj.GenerateResource.Cache
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.frmDanhMucSP.resources
+D:\Code See\Labo\doc\source\DentalLabo\DentalLabo\obj\Debug\DentalLabo.frmDentalLabo.resources
