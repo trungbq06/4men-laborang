@@ -17,6 +17,11 @@ I. Module quản lý nhận đơn hàng
       
     => Câu hỏi: 
         - Trang thái thao tác là là cho từng mẫu răng, hay là từng sản phẩm
+        Trả lời:
+            + Sửa chữa: không tính tiền khách, không tính tiền 
+            + Bảo hành: 
+            + Làm mới: 
+            + Tạm dừng: 
         - Trạng thái thao tác có phải là số lần khách hàng đặt hàng hay không (dựa vào đó để có các chi phí giảm giá)
     + Nếu mà mẫu có nhiều sản phẩm, người SD có thể chọn thêm sản phẩm để thêm sản phẩm mới
     + Sau khi lựa chọn xong một mẫu, người sử dụng chọn lưu để lưu và hệ thống
