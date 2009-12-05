@@ -33,14 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDanhMucCongDoanSX = new System.Windows.Forms.Label();
             this.dtgDanhMucCongDoanSX = new System.Windows.Forms.DataGridView();
-            this.dmcdsxTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dmcsxMaCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dmcdsxTenCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dmcdsxXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnDanhMucCongDoanSXLuu = new System.Windows.Forms.Button();
             this.btnDanhMucCongDoanSXXoa = new System.Windows.Forms.Button();
             this.btnDanhMucCongDoanSXSua = new System.Windows.Forms.Button();
             this.btnDanhMucCongDoanSXThemMoi = new System.Windows.Forms.Button();
+            this.dmcdsxTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dmcsxMaCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dmcdsxTenCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dmcdsxXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucCongDoanSX)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.lblDanhMucCongDoanSX.Name = "lblDanhMucCongDoanSX";
             this.lblDanhMucCongDoanSX.Size = new System.Drawing.Size(370, 25);
             this.lblDanhMucCongDoanSX.TabIndex = 7;
-            this.lblDanhMucCongDoanSX.Text = "DANH MỤC CÔNG ĐOÀN SẢN XUẤT";
+            this.lblDanhMucCongDoanSX.Text = "DANH MỤC CÔNG ĐOẠN SẢN XUẤT";
             // 
             // dtgDanhMucCongDoanSX
             // 
@@ -77,33 +77,6 @@
             this.dtgDanhMucCongDoanSX.Name = "dtgDanhMucCongDoanSX";
             this.dtgDanhMucCongDoanSX.Size = new System.Drawing.Size(642, 294);
             this.dtgDanhMucCongDoanSX.TabIndex = 8;
-            // 
-            // dmcdsxTT
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dmcdsxTT.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dmcdsxTT.HeaderText = "TT";
-            this.dmcdsxTT.Name = "dmcdsxTT";
-            this.dmcdsxTT.Width = 50;
-            // 
-            // dmcsxMaCongDoan
-            // 
-            this.dmcsxMaCongDoan.HeaderText = "Mã công đoàn";
-            this.dmcsxMaCongDoan.Name = "dmcsxMaCongDoan";
-            this.dmcsxMaCongDoan.Width = 150;
-            // 
-            // dmcdsxTenCongDoan
-            // 
-            this.dmcdsxTenCongDoan.HeaderText = "Tên công đoàn";
-            this.dmcdsxTenCongDoan.Name = "dmcdsxTenCongDoan";
-            this.dmcdsxTenCongDoan.Width = 300;
-            // 
-            // dmcdsxXacNhan
-            // 
-            this.dmcdsxXacNhan.HeaderText = "Xác nhận";
-            this.dmcdsxXacNhan.Name = "dmcdsxXacNhan";
-            this.dmcdsxXacNhan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dmcdsxXacNhan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // btnDanhMucCongDoanSXLuu
             // 
@@ -140,6 +113,33 @@
             this.btnDanhMucCongDoanSXThemMoi.TabIndex = 12;
             this.btnDanhMucCongDoanSXThemMoi.Text = "Thêm mới";
             this.btnDanhMucCongDoanSXThemMoi.UseVisualStyleBackColor = true;
+            // 
+            // dmcdsxTT
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dmcdsxTT.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dmcdsxTT.HeaderText = "TT";
+            this.dmcdsxTT.Name = "dmcdsxTT";
+            this.dmcdsxTT.Width = 50;
+            // 
+            // dmcsxMaCongDoan
+            // 
+            this.dmcsxMaCongDoan.HeaderText = "Mã công đoạn";
+            this.dmcsxMaCongDoan.Name = "dmcsxMaCongDoan";
+            this.dmcsxMaCongDoan.Width = 150;
+            // 
+            // dmcdsxTenCongDoan
+            // 
+            this.dmcdsxTenCongDoan.HeaderText = "Tên công đoạn";
+            this.dmcdsxTenCongDoan.Name = "dmcdsxTenCongDoan";
+            this.dmcdsxTenCongDoan.Width = 300;
+            // 
+            // dmcdsxXacNhan
+            // 
+            this.dmcdsxXacNhan.HeaderText = "Xác nhận";
+            this.dmcdsxXacNhan.Name = "dmcdsxXacNhan";
+            this.dmcdsxXacNhan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dmcdsxXacNhan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmDMCongDoanSX
             // 

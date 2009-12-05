@@ -33,7 +33,6 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dtgDanhMucNhaCC = new System.Windows.Forms.DataGridView();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.clnMaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnTenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnMSThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +40,14 @@
             this.clnDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucNhaCC)).BeginInit();
             this.SuspendLayout();
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Location = new System.Drawing.Point(22, 17);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(736, 33);
@@ -100,16 +101,6 @@
             this.dtgDanhMucNhaCC.Size = new System.Drawing.Size(736, 164);
             this.dtgDanhMucNhaCC.TabIndex = 34;
             // 
-            // btnLuu
-            // 
-            this.btnLuu.AutoSize = true;
-            this.btnLuu.Location = new System.Drawing.Point(479, 301);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(63, 23);
-            this.btnLuu.TabIndex = 36;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
             // clnMaNCC
             // 
             this.clnMaNCC.HeaderText = "Mã NCC";
@@ -146,6 +137,16 @@
             // 
             this.clnXacNhan.HeaderText = "Xác nhận";
             this.clnXacNhan.Name = "clnXacNhan";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AutoSize = true;
+            this.btnLuu.Location = new System.Drawing.Point(479, 301);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(63, 23);
+            this.btnLuu.TabIndex = 36;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // frmDanhMucNhaCC
             // 

@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using DentalLabo.Nhap_kho_va_ban_hang;
 using DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC;
+using DentalLabo.VatTuHangHoa;
+using DentalLabo.PMKTTienMat;
+using DentalLabo.Quan_ly_san_pham_va_tinh_luong;
 
 namespace DentalLabo
 {
@@ -18,58 +21,39 @@ namespace DentalLabo
             InitializeComponent();
         }
 
-        private void danhMụcKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttNhanMauDatHang_Click(object sender, EventArgs e)
         {
-
+            Form f = new frmMauDatHang();
+            f.MdiParent = this;
+            f.Show();
         }
 
-        private void nhậnMẫuĐặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttDanhMucSP_Click(object sender, EventArgs e)
         {
-            Form maudathang = new frmMauDatHang();
-            maudathang.MdiParent = this;
-            maudathang.Show();
+            Form f = new frmDanhMucSP();
+            f.MdiParent = this;
+            f.Show();
         }
 
-        private void xuấtKhoBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttDanhMucVLChinh_Click(object sender, EventArgs e)
         {
-            Form danhmucsp = new frmDanhMucSP();
-            danhmucsp.MdiParent = this;
-            danhmucsp.Show();
+            Form f = new frmDanhMucVLChinh();
+            f.MdiParent = this;
+            f.Show();
         }
 
-        private void danhMụcVLChínhToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttDanhMucVLPhu_Click(object sender, EventArgs e)
         {
-            Form danhmucvlchinh = new frmDanhMucVLChinh();
-            danhmucvlchinh.MdiParent = this;
-            danhmucvlchinh.Show();
+            Form f = new frmDanhMucVLPhu();
+            f.MdiParent = this;
+            f.Show();
         }
 
-        private void bảngGiáSPToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttBangGiaSP_Click(object sender, EventArgs e)
         {
-            Form banggiasp = new frmBangGiaSP();
-            banggiasp.MdiParent = this;
-            banggiasp.Show();
-        }
-
-        private void danhMụcVLPhụToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form danhmucvlphu = new frmDanhMucVLPhu();
-            danhmucvlphu.MdiParent = this;
-            danhmucvlphu.Show();
-        }
-
-        private void danhMụcNhómKHToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form danhmucnhomkh = new frmDanhMucNhomKH();
-            danhmucnhomkh.MdiParent = this;
-            danhmucnhomkh.Show();
-        }
-
-        private void danhMụcKHToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form danhmuckh = new frmDanhMucKH();
-            danhmuckh.MdiParent = this;
-            danhmuckh.Show();
+            Form f = new frmBangGiaSP();
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void ttNhapKhoThanhPham_Click(object sender, EventArgs e)
@@ -100,9 +84,65 @@ namespace DentalLabo
             f.Show();
         }
 
-        private void ttGiamTru_Click(object sender, EventArgs e)
+        private void ttDanhMucNhomKH_Click(object sender, EventArgs e)
         {
-            Form f = new frmGiamTru();
+            Form f = new frmDanhMucNhomKH();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucKH_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucKH();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttNhapKhoVatTu_Click(object sender, EventArgs e)
+        {
+            Form f = new frmNhapKho();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttNhapKhoThietBi_Click(object sender, EventArgs e)
+        {
+            Form f = new frmNhapKho();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDieuChinhTyGiaTT_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDieuChinhTyGiaTT();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttXuatKhoNVL_Click(object sender, EventArgs e)
+        {
+            Form f = new frmXuatKho();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttXuatKhoThietBi_Click(object sender, EventArgs e)
+        {
+            Form f = new frmXuatKho();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttSoKho_Click(object sender, EventArgs e)
+        {
+            Form f = new frmSoChiTietHH();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttNoNCC_Click(object sender, EventArgs e)
+        {
+            Form f = new frmNoNCC();
             f.MdiParent = this;
             f.Show();
         }
@@ -127,9 +167,91 @@ namespace DentalLabo
             f.MdiParent = this;
             f.Show();
         }
+
+        private void ttQLDonViSP_Click(object sender, EventArgs e)
+        {
+            Form f = new frmQLSP();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttTongHopKQCongViec_Click(object sender, EventArgs e)
+        {
+            Form f = new frmQLSP();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttChamCongVaLamThem_Click(object sender, EventArgs e)
+        {
+            Form f = new frmQLSP();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttPhieuThu_Click(object sender, EventArgs e)
+        {
+            Form f = new frmPhieuThu();
+            f.MdiParent = this;
+            f.Show();
+        }
         
 
+        private void ttTinhLuong_Click(object sender, EventArgs e)
+        {
+            Form f = new frmQLSP();
+            f.MdiParent = this;
+            f.Show();
+        }
 
+        private void ttTamUngLuong_Click(object sender, EventArgs e)
+        {
+            Form f = new frmQLSP();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucBoPhan_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucBoPhan();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucNV_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucNhanVien();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttDanhMucCongDoanSX_Click(object sender, EventArgs e)
+        {
+            Form f = new frmDMCongDoanSX();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttGiamTru_Click(object sender, EventArgs e)
+        {
+            Form f = new frmGiamTru();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttPhieuChi_Click(object sender, EventArgs e)
+        {
+            Form f = new frmPhieuChi();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void ttSoQuy_Click(object sender, EventArgs e)
+        {
+            Form f = new frmSoQuyTienMat();
+            f.MdiParent = this;
+            f.Show();
+        }
 
 
 

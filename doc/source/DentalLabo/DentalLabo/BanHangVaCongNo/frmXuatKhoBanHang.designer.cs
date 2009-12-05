@@ -30,6 +30,19 @@
         {
             this.label12 = new System.Windows.Forms.Label();
             this.dtgNoiDungXuatKho = new System.Windows.Forms.DataGridView();
+            this.clnXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnMaSoMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNoiDungPhucHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnDVTVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnSoLuongVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnThanhTienVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.grpPhieuNhapKho = new System.Windows.Forms.GroupBox();
             this.dateNgayXuat = new System.Windows.Forms.DateTimePicker();
@@ -53,19 +66,6 @@
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
-            this.clnXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnMaSoMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNoiDungPhucHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnDVTVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnSoLuongVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnThanhTienVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungXuatKho)).BeginInit();
             this.grpPhieuNhapKho.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
@@ -73,7 +73,8 @@
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Location = new System.Drawing.Point(31, 21);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(725, 33);
@@ -102,6 +103,73 @@
             this.dtgNoiDungXuatKho.Name = "dtgNoiDungXuatKho";
             this.dtgNoiDungXuatKho.Size = new System.Drawing.Size(727, 150);
             this.dtgNoiDungXuatKho.TabIndex = 8;
+            // 
+            // clnXacNhan
+            // 
+            this.clnXacNhan.HeaderText = "Xác nhận";
+            this.clnXacNhan.Name = "clnXacNhan";
+            this.clnXacNhan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnXacNhan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // clnThuTu
+            // 
+            this.clnThuTu.HeaderText = "TT";
+            this.clnThuTu.Name = "clnThuTu";
+            // 
+            // clnMaSoMau
+            // 
+            this.clnMaSoMau.HeaderText = "Mã số mẫu";
+            this.clnMaSoMau.Name = "clnMaSoMau";
+            // 
+            // clnNoiDungPhucHinh
+            // 
+            this.clnNoiDungPhucHinh.HeaderText = "Nội dung phục hình";
+            this.clnNoiDungPhucHinh.Name = "clnNoiDungPhucHinh";
+            // 
+            // clnTenSanPham
+            // 
+            this.clnTenSanPham.HeaderText = "Tên sản phẩm";
+            this.clnTenSanPham.Name = "clnTenSanPham";
+            // 
+            // clnLoaiVatLieu
+            // 
+            this.clnLoaiVatLieu.HeaderText = "Loại vật liệu";
+            this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
+            // 
+            // clnDVT
+            // 
+            this.clnDVT.HeaderText = "ĐVT";
+            this.clnDVT.Name = "clnDVT";
+            // 
+            // clnSoLuong
+            // 
+            this.clnSoLuong.HeaderText = "Số Lượng";
+            this.clnSoLuong.Name = "clnSoLuong";
+            // 
+            // clnThanhTien
+            // 
+            this.clnThanhTien.HeaderText = "Thành tiền";
+            this.clnThanhTien.Name = "clnThanhTien";
+            // 
+            // clnVLP
+            // 
+            this.clnVLP.HeaderText = "Vật liệu phụ";
+            this.clnVLP.Name = "clnVLP";
+            // 
+            // clnDVTVLP
+            // 
+            this.clnDVTVLP.HeaderText = "ĐVT";
+            this.clnDVTVLP.Name = "clnDVTVLP";
+            // 
+            // clnSoLuongVLP
+            // 
+            this.clnSoLuongVLP.HeaderText = "Số Lượng";
+            this.clnSoLuongVLP.Name = "clnSoLuongVLP";
+            // 
+            // clnThanhTienVLP
+            // 
+            this.clnThanhTienVLP.HeaderText = "Thành tiền";
+            this.clnThanhTienVLP.Name = "clnThanhTienVLP";
             // 
             // btnTimKiem
             // 
@@ -285,7 +353,8 @@
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label13.Location = new System.Drawing.Point(31, 258);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(725, 33);
@@ -323,73 +392,6 @@
             this.btnXem.TabIndex = 7;
             this.btnXem.Text = "Xem phiếu xuất - hóa đơn";
             this.btnXem.UseVisualStyleBackColor = true;
-            // 
-            // clnXacNhan
-            // 
-            this.clnXacNhan.HeaderText = "Xác nhận";
-            this.clnXacNhan.Name = "clnXacNhan";
-            this.clnXacNhan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnXacNhan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // clnThuTu
-            // 
-            this.clnThuTu.HeaderText = "TT";
-            this.clnThuTu.Name = "clnThuTu";
-            // 
-            // clnMaSoMau
-            // 
-            this.clnMaSoMau.HeaderText = "Mã số mẫu";
-            this.clnMaSoMau.Name = "clnMaSoMau";
-            // 
-            // clnNoiDungPhucHinh
-            // 
-            this.clnNoiDungPhucHinh.HeaderText = "Nội dung phục hình";
-            this.clnNoiDungPhucHinh.Name = "clnNoiDungPhucHinh";
-            // 
-            // clnTenSanPham
-            // 
-            this.clnTenSanPham.HeaderText = "Tên sản phẩm";
-            this.clnTenSanPham.Name = "clnTenSanPham";
-            // 
-            // clnLoaiVatLieu
-            // 
-            this.clnLoaiVatLieu.HeaderText = "Loại vật liệu";
-            this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
-            // 
-            // clnDVT
-            // 
-            this.clnDVT.HeaderText = "ĐVT";
-            this.clnDVT.Name = "clnDVT";
-            // 
-            // clnSoLuong
-            // 
-            this.clnSoLuong.HeaderText = "Số Lượng";
-            this.clnSoLuong.Name = "clnSoLuong";
-            // 
-            // clnThanhTien
-            // 
-            this.clnThanhTien.HeaderText = "Thành tiền";
-            this.clnThanhTien.Name = "clnThanhTien";
-            // 
-            // clnVLP
-            // 
-            this.clnVLP.HeaderText = "Vật liệu phụ";
-            this.clnVLP.Name = "clnVLP";
-            // 
-            // clnDVTVLP
-            // 
-            this.clnDVTVLP.HeaderText = "ĐVT";
-            this.clnDVTVLP.Name = "clnDVTVLP";
-            // 
-            // clnSoLuongVLP
-            // 
-            this.clnSoLuongVLP.HeaderText = "Số Lượng";
-            this.clnSoLuongVLP.Name = "clnSoLuongVLP";
-            // 
-            // clnThanhTienVLP
-            // 
-            this.clnThanhTienVLP.HeaderText = "Thành tiền";
-            this.clnThanhTienVLP.Name = "clnThanhTienVLP";
             // 
             // frmXuatKhoBanHang
             // 
