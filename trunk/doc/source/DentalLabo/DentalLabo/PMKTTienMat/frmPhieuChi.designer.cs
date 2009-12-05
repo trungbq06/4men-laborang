@@ -363,7 +363,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPhieuChi";
-            this.Text = "Phiếu Chi";
+            this.Text = "Phieu Chi";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
