@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace DentalLabo
 {
-    public partial class Form1 : Form
+    public partial class frmDentalLabo : Form
     {
-        public Form1()
+        public frmDentalLabo()
         {
             InitializeComponent();
         }

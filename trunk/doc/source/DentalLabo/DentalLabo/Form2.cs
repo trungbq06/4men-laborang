@@ -17,8 +17,7 @@ namespace DentalLabo
         }
         private void frm2_Load(object sender, EventArgs e)
         {
-            dis me trung
-
+            
         }
     }
 }
