@@ -69,5 +69,10 @@ namespace DentalLabo
             danhmuckh.MdiParent = this;
             danhmuckh.Show();
         }
+
+        private void hơpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
