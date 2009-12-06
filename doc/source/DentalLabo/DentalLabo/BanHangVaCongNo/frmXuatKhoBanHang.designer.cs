@@ -66,9 +66,11 @@
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungXuatKho)).BeginInit();
             this.grpPhieuNhapKho.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label12
@@ -365,7 +367,7 @@
             // btnThemMoi
             // 
             this.btnThemMoi.AutoSize = true;
-            this.btnThemMoi.Location = new System.Drawing.Point(137, 493);
+            this.btnThemMoi.Location = new System.Drawing.Point(141, 28);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(136, 23);
             this.btnThemMoi.TabIndex = 7;
@@ -376,7 +378,7 @@
             // btnXuat
             // 
             this.btnXuat.AutoSize = true;
-            this.btnXuat.Location = new System.Drawing.Point(326, 493);
+            this.btnXuat.Location = new System.Drawing.Point(330, 28);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(92, 23);
             this.btnXuat.TabIndex = 7;
@@ -386,37 +388,47 @@
             // btnXem
             // 
             this.btnXem.AutoSize = true;
-            this.btnXem.Location = new System.Drawing.Point(469, 493);
+            this.btnXem.Location = new System.Drawing.Point(473, 28);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(139, 23);
             this.btnXem.TabIndex = 7;
             this.btnXem.Text = "Xem phiếu xuất - hóa đơn";
             this.btnXem.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnThemMoi);
+            this.groupBox1.Controls.Add(this.btnXuat);
+            this.groupBox1.Controls.Add(this.btnXem);
+            this.groupBox1.Location = new System.Drawing.Point(29, 462);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 70);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            // 
             // frmXuatKhoBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 547);
+            this.ClientSize = new System.Drawing.Size(794, 539);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dtgNoiDungXuatKho);
-            this.Controls.Add(this.btnXem);
-            this.Controls.Add(this.btnXuat);
-            this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.grpPhieuNhapKho);
             this.Controls.Add(this.boPhanNhapKho);
             this.Name = "frmXuatKhoBanHang";
-            this.Text = "Hoa don ban hang kiem Phiêu xuat kho";
+            this.Text = "Hoa don ban hang kiem Phieu xuat kho";
             this.Load += new System.EventHandler(this.frmXuatKhoBanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungXuatKho)).EndInit();
             this.grpPhieuNhapKho.ResumeLayout(false);
             this.grpPhieuNhapKho.PerformLayout();
             this.boPhanNhapKho.ResumeLayout(false);
             this.boPhanNhapKho.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -460,5 +472,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnDVTVLP;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnSoLuongVLP;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnThanhTienVLP;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

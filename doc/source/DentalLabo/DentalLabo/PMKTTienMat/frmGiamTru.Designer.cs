@@ -59,9 +59,11 @@
             this.clnTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.btnXemBaoCao = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpPhieuNhapKho.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgChiTietCongNoKH)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtKySanXuat
@@ -136,7 +138,7 @@
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Blue;
-            this.label12.Location = new System.Drawing.Point(43, 13);
+            this.label12.Location = new System.Drawing.Point(17, 13);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(767, 33);
             this.label12.TabIndex = 30;
@@ -167,7 +169,7 @@
             this.grpPhieuNhapKho.Controls.Add(this.label11);
             this.grpPhieuNhapKho.Controls.Add(this.label8);
             this.grpPhieuNhapKho.Controls.Add(this.txtSoPhieuTT);
-            this.grpPhieuNhapKho.Location = new System.Drawing.Point(542, 65);
+            this.grpPhieuNhapKho.Location = new System.Drawing.Point(516, 65);
             this.grpPhieuNhapKho.Name = "grpPhieuNhapKho";
             this.grpPhieuNhapKho.Size = new System.Drawing.Size(268, 124);
             this.grpPhieuNhapKho.TabIndex = 27;
@@ -205,7 +207,7 @@
             // btnVaoPhieu
             // 
             this.btnVaoPhieu.AutoSize = true;
-            this.btnVaoPhieu.Location = new System.Drawing.Point(194, 449);
+            this.btnVaoPhieu.Location = new System.Drawing.Point(150, 22);
             this.btnVaoPhieu.Name = "btnVaoPhieu";
             this.btnVaoPhieu.Size = new System.Drawing.Size(136, 23);
             this.btnVaoPhieu.TabIndex = 28;
@@ -215,7 +217,7 @@
             // btnLuuHeThong
             // 
             this.btnLuuHeThong.AutoSize = true;
-            this.btnLuuHeThong.Location = new System.Drawing.Point(379, 449);
+            this.btnLuuHeThong.Location = new System.Drawing.Point(335, 22);
             this.btnLuuHeThong.Name = "btnLuuHeThong";
             this.btnLuuHeThong.Size = new System.Drawing.Size(127, 23);
             this.btnLuuHeThong.TabIndex = 29;
@@ -232,7 +234,7 @@
             this.boPhanNhapKho.Controls.Add(this.label2);
             this.boPhanNhapKho.Controls.Add(this.label5);
             this.boPhanNhapKho.Controls.Add(this.label1);
-            this.boPhanNhapKho.Location = new System.Drawing.Point(41, 65);
+            this.boPhanNhapKho.Location = new System.Drawing.Point(15, 65);
             this.boPhanNhapKho.Name = "boPhanNhapKho";
             this.boPhanNhapKho.Size = new System.Drawing.Size(484, 124);
             this.boPhanNhapKho.TabIndex = 26;
@@ -253,7 +255,7 @@
             this.clnThanhTien,
             this.clnGhiChu,
             this.clnTrangThai});
-            this.dtgChiTietCongNoKH.Location = new System.Drawing.Point(41, 255);
+            this.dtgChiTietCongNoKH.Location = new System.Drawing.Point(15, 255);
             this.dtgChiTietCongNoKH.Name = "dtgChiTietCongNoKH";
             this.dtgChiTietCongNoKH.Size = new System.Drawing.Size(769, 164);
             this.dtgChiTietCongNoKH.TabIndex = 31;
@@ -316,7 +318,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Blue;
-            this.label4.Location = new System.Drawing.Point(43, 206);
+            this.label4.Location = new System.Drawing.Point(17, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(767, 33);
             this.label4.TabIndex = 30;
@@ -327,25 +329,34 @@
             // btnXemBaoCao
             // 
             this.btnXemBaoCao.AutoSize = true;
-            this.btnXemBaoCao.Location = new System.Drawing.Point(551, 449);
+            this.btnXemBaoCao.Location = new System.Drawing.Point(507, 22);
             this.btnXemBaoCao.Name = "btnXemBaoCao";
             this.btnXemBaoCao.Size = new System.Drawing.Size(136, 23);
             this.btnXemBaoCao.TabIndex = 28;
             this.btnXemBaoCao.Text = "Xem báo cáo tổng hợp";
             this.btnXemBaoCao.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnVaoPhieu);
+            this.groupBox1.Controls.Add(this.btnLuuHeThong);
+            this.groupBox1.Controls.Add(this.btnXemBaoCao);
+            this.groupBox1.Location = new System.Drawing.Point(15, 424);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(769, 63);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            // 
             // frmGiamTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 572);
+            this.ClientSize = new System.Drawing.Size(802, 501);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgChiTietCongNoKH);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.grpPhieuNhapKho);
-            this.Controls.Add(this.btnXemBaoCao);
-            this.Controls.Add(this.btnVaoPhieu);
-            this.Controls.Add(this.btnLuuHeThong);
             this.Controls.Add(this.boPhanNhapKho);
             this.Name = "frmGiamTru";
             this.Text = "Giam Tru Thanh Toan Trong Ky";
@@ -354,8 +365,9 @@
             this.boPhanNhapKho.ResumeLayout(false);
             this.boPhanNhapKho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgChiTietCongNoKH)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -392,5 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnGhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTrangThai;
         private System.Windows.Forms.Button btnXemBaoCao;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

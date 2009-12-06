@@ -206,7 +206,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(348, 20);
+            this.textBox3.Location = new System.Drawing.Point(348, 32);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(64, 20);
             this.textBox3.TabIndex = 5;
@@ -215,7 +215,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(303, 23);
+            this.label3.Location = new System.Drawing.Point(303, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 4;
@@ -224,7 +224,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 50);
+            this.textBox2.Location = new System.Drawing.Point(98, 62);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(314, 20);
             this.textBox2.TabIndex = 3;
@@ -232,7 +232,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Location = new System.Drawing.Point(6, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 2;
@@ -240,7 +240,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 20);
+            this.textBox1.Location = new System.Drawing.Point(98, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(189, 20);
             this.textBox1.TabIndex = 1;
@@ -248,11 +248,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Location = new System.Drawing.Point(6, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên khách hang";
+            this.label1.Text = "Tên khách hàng";
             // 
             // groupBox2
             // 
@@ -798,8 +798,8 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "nam",
-            "nữ"});
+            "Nam",
+            "Nữ"});
             this.comboBox1.Location = new System.Drawing.Point(572, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(53, 21);
@@ -1481,7 +1481,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmMauDatHang";
-            this.Text = "Quản lý mẫu đặt hàng";
+            this.Text = "Quan Ly Mau Dat Hang";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

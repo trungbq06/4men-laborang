@@ -61,10 +61,12 @@
             this.btnInPhieu = new System.Windows.Forms.Button();
             this.lblDuCuoiKy = new System.Windows.Forms.Label();
             this.txtDuCuoiKy = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgChiTietCongNoKH)).BeginInit();
             this.grpPhieuNhapKho.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label12
@@ -321,15 +323,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtgChiTietCongNoKH);
-            this.groupBox1.Controls.Add(this.btnXemBaoCao);
-            this.groupBox1.Controls.Add(this.btnInPhieu);
             this.groupBox1.Controls.Add(this.lblDuCuoiKy);
             this.groupBox1.Controls.Add(this.txtDuCuoiKy);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDuDauKy);
             this.groupBox1.Location = new System.Drawing.Point(29, 215);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(769, 330);
+            this.groupBox1.Size = new System.Drawing.Size(769, 261);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sổ chi tiết công nợ";
@@ -337,7 +337,7 @@
             // btnXemBaoCao
             // 
             this.btnXemBaoCao.AutoSize = true;
-            this.btnXemBaoCao.Location = new System.Drawing.Point(439, 279);
+            this.btnXemBaoCao.Location = new System.Drawing.Point(431, 21);
             this.btnXemBaoCao.Name = "btnXemBaoCao";
             this.btnXemBaoCao.Size = new System.Drawing.Size(125, 23);
             this.btnXemBaoCao.TabIndex = 3;
@@ -347,7 +347,7 @@
             // btnInPhieu
             // 
             this.btnInPhieu.AutoSize = true;
-            this.btnInPhieu.Location = new System.Drawing.Point(185, 279);
+            this.btnInPhieu.Location = new System.Drawing.Point(186, 21);
             this.btnInPhieu.Name = "btnInPhieu";
             this.btnInPhieu.Size = new System.Drawing.Size(154, 23);
             this.btnInPhieu.TabIndex = 3;
@@ -373,11 +373,22 @@
             this.txtDuCuoiKy.TabIndex = 1;
             this.txtDuCuoiKy.TextChanged += new System.EventHandler(this.txtMaSoBP_TextChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnXemBaoCao);
+            this.groupBox2.Controls.Add(this.btnInPhieu);
+            this.groupBox2.Location = new System.Drawing.Point(29, 481);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(769, 60);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            // 
             // frmPhieuTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 589);
+            this.ClientSize = new System.Drawing.Size(832, 552);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.grpPhieuNhapKho);
@@ -391,6 +402,8 @@
             this.boPhanNhapKho.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -430,5 +443,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnMaSoMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNoiDungCongViec;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnThanhTien;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

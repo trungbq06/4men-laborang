@@ -117,7 +117,7 @@
             // btnInPhieuXuat
             // 
             this.btnInPhieuXuat.AutoSize = true;
-            this.btnInPhieuXuat.Location = new System.Drawing.Point(406, 417);
+            this.btnInPhieuXuat.Location = new System.Drawing.Point(431, 417);
             this.btnInPhieuXuat.Name = "btnInPhieuXuat";
             this.btnInPhieuXuat.Size = new System.Drawing.Size(127, 23);
             this.btnInPhieuXuat.TabIndex = 14;
@@ -128,7 +128,7 @@
             // btnThanhToan
             // 
             this.btnThanhToan.AutoSize = true;
-            this.btnThanhToan.Location = new System.Drawing.Point(217, 417);
+            this.btnThanhToan.Location = new System.Drawing.Point(242, 417);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(136, 23);
             this.btnThanhToan.TabIndex = 12;
@@ -319,7 +319,7 @@
             this.Controls.Add(this.grpPhieuNhapKho);
             this.Controls.Add(this.boPhanNhapKho);
             this.Name = "frmHoaDonBanHang";
-            this.Text = "frmHoaDonBanHang";
+            this.Text = "Hoa Don Ban Hang";
             ((System.ComponentModel.ISupportInitialize)(this.dtgHoaDonBanHang)).EndInit();
             this.grpPhieuNhapKho.ResumeLayout(false);
             this.grpPhieuNhapKho.PerformLayout();

@@ -75,9 +75,11 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.boPhanNhapKho.SuspendLayout();
             this.grpPhieuNhapKho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungNhapKho)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // boPhanNhapKho
@@ -418,7 +420,7 @@
             // 
             // btnPhieuNhapMoi
             // 
-            this.btnPhieuNhapMoi.Location = new System.Drawing.Point(44, 498);
+            this.btnPhieuNhapMoi.Location = new System.Drawing.Point(21, 24);
             this.btnPhieuNhapMoi.Name = "btnPhieuNhapMoi";
             this.btnPhieuNhapMoi.Size = new System.Drawing.Size(111, 23);
             this.btnPhieuNhapMoi.TabIndex = 5;
@@ -427,7 +429,7 @@
             // 
             // btnMauMoi
             // 
-            this.btnMauMoi.Location = new System.Drawing.Point(183, 498);
+            this.btnMauMoi.Location = new System.Drawing.Point(156, 24);
             this.btnMauMoi.Name = "btnMauMoi";
             this.btnMauMoi.Size = new System.Drawing.Size(75, 23);
             this.btnMauMoi.TabIndex = 5;
@@ -436,7 +438,7 @@
             // 
             // btnThemSanPham
             // 
-            this.btnThemSanPham.Location = new System.Drawing.Point(277, 498);
+            this.btnThemSanPham.Location = new System.Drawing.Point(259, 24);
             this.btnThemSanPham.Name = "btnThemSanPham";
             this.btnThemSanPham.Size = new System.Drawing.Size(107, 23);
             this.btnThemSanPham.TabIndex = 5;
@@ -445,7 +447,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(405, 498);
+            this.btnSua.Location = new System.Drawing.Point(391, 24);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 5;
@@ -454,7 +456,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(515, 498);
+            this.btnXoa.Location = new System.Drawing.Point(494, 24);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 5;
@@ -464,7 +466,7 @@
             // btnLuu
             // 
             this.btnLuu.AutoSize = true;
-            this.btnLuu.Location = new System.Drawing.Point(624, 498);
+            this.btnLuu.Location = new System.Drawing.Point(592, 24);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(113, 23);
             this.btnLuu.TabIndex = 5;
@@ -482,17 +484,26 @@
             this.label12.Text = "NHẬP KHO SẢN PHẨM";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnPhieuNhapMoi);
+            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Controls.Add(this.btnMauMoi);
+            this.groupBox1.Controls.Add(this.btnXoa);
+            this.groupBox1.Controls.Add(this.btnThemSanPham);
+            this.groupBox1.Controls.Add(this.btnSua);
+            this.groupBox1.Location = new System.Drawing.Point(35, 479);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 65);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            // 
             // frmNhapKhoThanhPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 540);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThemSanPham);
-            this.Controls.Add(this.btnMauMoi);
-            this.Controls.Add(this.btnPhieuNhapMoi);
+            this.ClientSize = new System.Drawing.Size(826, 556);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblNoiDungNhapKho);
             this.Controls.Add(this.dtgNoiDungNhapKho);
@@ -507,8 +518,9 @@
             this.grpPhieuNhapKho.ResumeLayout(false);
             this.grpPhieuNhapKho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungNhapKho)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -561,5 +573,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.DateTimePicker dateNgayNhap;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
