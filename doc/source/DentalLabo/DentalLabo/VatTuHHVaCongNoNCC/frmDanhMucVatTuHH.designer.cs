@@ -40,13 +40,16 @@
             this.clnXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucVatTuHH)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnXoa
             // 
             this.btnXoa.AutoSize = true;
-            this.btnXoa.Location = new System.Drawing.Point(377, 303);
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
+            this.btnXoa.Location = new System.Drawing.Point(406, 20);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(63, 23);
             this.btnXoa.TabIndex = 31;
@@ -56,7 +59,8 @@
             // btnSua
             // 
             this.btnSua.AutoSize = true;
-            this.btnSua.Location = new System.Drawing.Point(285, 303);
+            this.btnSua.ForeColor = System.Drawing.Color.Black;
+            this.btnSua.Location = new System.Drawing.Point(291, 283);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(63, 23);
             this.btnSua.TabIndex = 32;
@@ -66,7 +70,8 @@
             // btnThem
             // 
             this.btnThem.AutoSize = true;
-            this.btnThem.Location = new System.Drawing.Point(199, 303);
+            this.btnThem.ForeColor = System.Drawing.Color.Black;
+            this.btnThem.Location = new System.Drawing.Point(150, 20);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(63, 23);
             this.btnThem.TabIndex = 33;
@@ -134,28 +139,40 @@
             // btnLuu
             // 
             this.btnLuu.AutoSize = true;
-            this.btnLuu.Location = new System.Drawing.Point(469, 303);
+            this.btnLuu.ForeColor = System.Drawing.Color.Black;
+            this.btnLuu.Location = new System.Drawing.Point(537, 20);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(63, 23);
             this.btnLuu.TabIndex = 30;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnXoa);
+            this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Location = new System.Drawing.Point(12, 263);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(736, 64);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            // 
             // frmDanhMucVatTuHH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 349);
-            this.Controls.Add(this.btnXoa);
+            this.ClientSize = new System.Drawing.Size(759, 337);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dtgDanhMucVatTuHH);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Blue;
             this.Name = "frmDanhMucVatTuHH";
             this.Text = "Danh Muc Vat Tu Hang Hoa";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucVatTuHH)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +192,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnDienThoai;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clnXacNhan;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
