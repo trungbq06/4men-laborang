@@ -169,14 +169,14 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -515,7 +515,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(335, 278);
+            this.button5.Location = new System.Drawing.Point(336, 278);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 30);
             this.button5.TabIndex = 36;
@@ -524,7 +524,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(430, 278);
+            this.button6.Location = new System.Drawing.Point(432, 278);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 30);
             this.button6.TabIndex = 35;
@@ -815,6 +815,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(241, 20);
             this.textBox5.TabIndex = 3;
+            this.textBox5.Tag = "Họ tên bệnh nhân";
             // 
             // textBox6
             // 
@@ -965,12 +966,12 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button14);
-            this.groupBox6.Controls.Add(this.button15);
-            this.groupBox6.Controls.Add(this.button16);
-            this.groupBox6.Controls.Add(this.button17);
-            this.groupBox6.Controls.Add(this.button18);
-            this.groupBox6.Controls.Add(this.button19);
+            this.groupBox6.Controls.Add(this.button8);
+            this.groupBox6.Controls.Add(this.button9);
+            this.groupBox6.Controls.Add(this.button10);
+            this.groupBox6.Controls.Add(this.button11);
+            this.groupBox6.Controls.Add(this.button12);
+            this.groupBox6.Controls.Add(this.button13);
             this.groupBox6.Controls.Add(this.textBox18);
             this.groupBox6.Controls.Add(this.comboBox15);
             this.groupBox6.Controls.Add(this.label34);
@@ -1031,9 +1032,9 @@
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(244, 147);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(38, 13);
+            this.label34.Size = new System.Drawing.Size(45, 13);
             this.label34.TabIndex = 40;
-            this.label34.Text = "Mã VL";
+            this.label34.Text = "Mã VLP";
             // 
             // comboBox16
             // 
@@ -1140,9 +1141,9 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(244, 117);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(38, 13);
+            this.label22.Size = new System.Drawing.Size(45, 13);
             this.label22.TabIndex = 23;
-            this.label22.Text = "Mã VL";
+            this.label22.Text = "Mã VLC";
             // 
             // label23
             // 
@@ -1307,6 +1308,7 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(241, 20);
             this.textBox15.TabIndex = 3;
+            this.textBox15.Tag = "Họ tên nguời bệnh";
             // 
             // textBox16
             // 
@@ -1420,60 +1422,6 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "Yêu cầu chi tiết";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(519, 276);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 30);
-            this.button14.TabIndex = 48;
-            this.button14.Text = "Lưu";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(338, 276);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 30);
-            this.button15.TabIndex = 47;
-            this.button15.Text = "Sửa";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(424, 276);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 30);
-            this.button16.TabIndex = 46;
-            this.button16.Text = "Xóa";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(247, 276);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 30);
-            this.button17.TabIndex = 45;
-            this.button17.Text = "Thêm SP";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(152, 276);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 30);
-            this.button18.TabIndex = 44;
-            this.button18.Text = "Mẫu mới";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(56, 276);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 30);
-            this.button19.TabIndex = 43;
-            this.button19.Text = "Thêm KH";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
@@ -1489,6 +1437,60 @@
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(314, 20);
             this.textBox19.TabIndex = 7;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(521, 277);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 30);
+            this.button8.TabIndex = 48;
+            this.button8.Text = "Lưu";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(329, 277);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 30);
+            this.button9.TabIndex = 47;
+            this.button9.Text = "Sửa";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(425, 277);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 30);
+            this.button10.TabIndex = 46;
+            this.button10.Text = "Xóa";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(237, 277);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 30);
+            this.button11.TabIndex = 45;
+            this.button11.Text = "Thêm SP";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(143, 277);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 30);
+            this.button12.TabIndex = 44;
+            this.button12.Text = "Mẫu mới";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(48, 277);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 30);
+            this.button13.TabIndex = 43;
+            this.button13.Text = "Thêm KH";
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // frmMauDatHang
             // 
@@ -1663,13 +1665,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
