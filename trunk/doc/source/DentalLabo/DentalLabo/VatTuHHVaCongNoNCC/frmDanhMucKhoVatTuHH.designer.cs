@@ -41,7 +41,9 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucKhoVatTuHangHoa)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgDanhMucKhoVatTuHangHoa
@@ -109,7 +111,7 @@
             // btnThem
             // 
             this.btnThem.AutoSize = true;
-            this.btnThem.Location = new System.Drawing.Point(200, 303);
+            this.btnThem.Location = new System.Drawing.Point(161, 22);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(63, 23);
             this.btnThem.TabIndex = 27;
@@ -120,7 +122,7 @@
             // btnSua
             // 
             this.btnSua.AutoSize = true;
-            this.btnSua.Location = new System.Drawing.Point(286, 303);
+            this.btnSua.Location = new System.Drawing.Point(282, 22);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(63, 23);
             this.btnSua.TabIndex = 27;
@@ -131,7 +133,7 @@
             // btnXoa
             // 
             this.btnXoa.AutoSize = true;
-            this.btnXoa.Location = new System.Drawing.Point(378, 303);
+            this.btnXoa.Location = new System.Drawing.Point(409, 22);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(63, 23);
             this.btnXoa.TabIndex = 27;
@@ -142,7 +144,7 @@
             // btnLuu
             // 
             this.btnLuu.AutoSize = true;
-            this.btnLuu.Location = new System.Drawing.Point(470, 303);
+            this.btnLuu.Location = new System.Drawing.Point(544, 22);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(63, 23);
             this.btnLuu.TabIndex = 27;
@@ -150,22 +152,32 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSua);
+            this.groupBox1.Controls.Add(this.btnXoa);
+            this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Location = new System.Drawing.Point(12, 263);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(736, 62);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            // 
             // frmDanhMucKhoVatTuHH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 349);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
+            this.ClientSize = new System.Drawing.Size(768, 335);
             this.Controls.Add(this.dtgDanhMucKhoVatTuHangHoa);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmDanhMucKhoVatTuHH";
             this.Text = "Danh Muc Kho Vat Tu Hang Hoa";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucKhoVatTuHangHoa)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -184,5 +196,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
