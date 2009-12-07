@@ -215,10 +215,10 @@
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Location = new System.Drawing.Point(313, 3);
-            this.btnTimKiem.MaximumSize = new System.Drawing.Size(94, 35);
-            this.btnTimKiem.MinimumSize = new System.Drawing.Size(94, 35);
+            this.btnTimKiem.MaximumSize = new System.Drawing.Size(94, 30);
+            this.btnTimKiem.MinimumSize = new System.Drawing.Size(94, 30);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(94, 35);
+            this.btnTimKiem.Size = new System.Drawing.Size(94, 30);
             this.btnTimKiem.TabIndex = 22;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -502,11 +502,11 @@
             this.btnPhieuNhapMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPhieuNhapMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhieuNhapMoi.Location = new System.Drawing.Point(49, 3);
-            this.btnPhieuNhapMoi.MaximumSize = new System.Drawing.Size(109, 25);
-            this.btnPhieuNhapMoi.MinimumSize = new System.Drawing.Size(109, 25);
+            this.btnPhieuNhapMoi.Location = new System.Drawing.Point(39, 3);
+            this.btnPhieuNhapMoi.MaximumSize = new System.Drawing.Size(130, 30);
+            this.btnPhieuNhapMoi.MinimumSize = new System.Drawing.Size(130, 30);
             this.btnPhieuNhapMoi.Name = "btnPhieuNhapMoi";
-            this.btnPhieuNhapMoi.Size = new System.Drawing.Size(109, 25);
+            this.btnPhieuNhapMoi.Size = new System.Drawing.Size(130, 30);
             this.btnPhieuNhapMoi.TabIndex = 32;
             this.btnPhieuNhapMoi.Text = "Phiếu Nhập Mới";
             this.btnPhieuNhapMoi.UseVisualStyleBackColor = true;
@@ -516,11 +516,11 @@
             this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(544, 3);
-            this.btnLuu.MaximumSize = new System.Drawing.Size(125, 27);
-            this.btnLuu.MinimumSize = new System.Drawing.Size(120, 27);
+            this.btnLuu.Location = new System.Drawing.Point(555, 3);
+            this.btnLuu.MaximumSize = new System.Drawing.Size(125, 30);
+            this.btnLuu.MinimumSize = new System.Drawing.Size(120, 30);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(124, 27);
+            this.btnLuu.Size = new System.Drawing.Size(124, 30);
             this.btnLuu.TabIndex = 33;
             this.btnLuu.Text = "Lưu và nhập kho";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -531,11 +531,11 @@
             this.btnMauMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMauMoi.Location = new System.Drawing.Point(164, 3);
-            this.btnMauMoi.MaximumSize = new System.Drawing.Size(75, 27);
-            this.btnMauMoi.MinimumSize = new System.Drawing.Size(75, 27);
+            this.btnMauMoi.Location = new System.Drawing.Point(175, 3);
+            this.btnMauMoi.MaximumSize = new System.Drawing.Size(75, 30);
+            this.btnMauMoi.MinimumSize = new System.Drawing.Size(75, 30);
             this.btnMauMoi.Name = "btnMauMoi";
-            this.btnMauMoi.Size = new System.Drawing.Size(75, 27);
+            this.btnMauMoi.Size = new System.Drawing.Size(75, 30);
             this.btnMauMoi.TabIndex = 34;
             this.btnMauMoi.Text = "Mẫu mới";
             this.btnMauMoi.UseVisualStyleBackColor = true;
@@ -545,11 +545,11 @@
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(245, 3);
-            this.btnXoa.MaximumSize = new System.Drawing.Size(79, 27);
-            this.btnXoa.MinimumSize = new System.Drawing.Size(79, 27);
+            this.btnXoa.Location = new System.Drawing.Point(256, 3);
+            this.btnXoa.MaximumSize = new System.Drawing.Size(79, 30);
+            this.btnXoa.MinimumSize = new System.Drawing.Size(79, 30);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(79, 27);
+            this.btnXoa.Size = new System.Drawing.Size(79, 30);
             this.btnXoa.TabIndex = 29;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -560,11 +560,11 @@
             this.btnThemSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSanPham.Location = new System.Drawing.Point(416, 3);
-            this.btnThemSanPham.MaximumSize = new System.Drawing.Size(122, 27);
-            this.btnThemSanPham.MinimumSize = new System.Drawing.Size(122, 27);
+            this.btnThemSanPham.Location = new System.Drawing.Point(427, 3);
+            this.btnThemSanPham.MaximumSize = new System.Drawing.Size(122, 30);
+            this.btnThemSanPham.MinimumSize = new System.Drawing.Size(122, 30);
             this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(122, 27);
+            this.btnThemSanPham.Size = new System.Drawing.Size(122, 30);
             this.btnThemSanPham.TabIndex = 30;
             this.btnThemSanPham.Text = "Thêm sản phẩm";
             this.btnThemSanPham.UseVisualStyleBackColor = true;
@@ -574,11 +574,11 @@
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(330, 3);
-            this.btnSua.MaximumSize = new System.Drawing.Size(80, 27);
-            this.btnSua.MinimumSize = new System.Drawing.Size(80, 27);
+            this.btnSua.Location = new System.Drawing.Point(341, 3);
+            this.btnSua.MaximumSize = new System.Drawing.Size(80, 30);
+            this.btnSua.MinimumSize = new System.Drawing.Size(80, 30);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(80, 27);
+            this.btnSua.Size = new System.Drawing.Size(80, 30);
             this.btnSua.TabIndex = 31;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -597,16 +597,16 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnLuu, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnPhieuNhapMoi, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnThemSanPham, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnMauMoi, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSua, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnXoa, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnPhieuNhapMoi, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 472);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(718, 38);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(718, 35);
             this.tableLayoutPanel2.TabIndex = 35;
             // 
             // tableLayoutPanel3
@@ -622,7 +622,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 40);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 35);
             this.tableLayoutPanel3.TabIndex = 36;
             // 
             // frmNhapKhoThanhPham

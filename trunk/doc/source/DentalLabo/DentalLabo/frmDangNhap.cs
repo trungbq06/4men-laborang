@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC
+namespace DentalLabo
 {
-    public partial class frmDanhMucVatTuHH : Form
+    public partial class frmDangNhap : Form
     {
-        public frmDanhMucVatTuHH()
+        public frmDangNhap()
         {
             InitializeComponent();
         }
 
-        private void dtgDanhMucVatTuHH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

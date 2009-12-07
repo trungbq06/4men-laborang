@@ -48,11 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChamSocKhachHang\frmGuiEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChamSocKhachHang\frmGuiEmail.Designer.cs">
+      <DependentUpon>frmGuiEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChonRang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChonRang.Designer.cs">
       <DependentUpon>frmChonRang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChamSocKhachHang\frmGuiTinNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChamSocKhachHang\frmGuiTinNhan.Designer.cs">
+      <DependentUpon>frmGuiTinNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyMauDatHang\frmBangGiaSP.cs">
       <SubType>Form</SubType>
@@ -224,8 +242,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChamSocKhachHang\frmGuiEmail.resx">
+      <DependentUpon>frmGuiEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChonRang.resx">
       <DependentUpon>frmChonRang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChamSocKhachHang\frmGuiTinNhan.resx">
+      <DependentUpon>frmGuiTinNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyMauDatHang\frmBangGiaSP.resx">
       <DependentUpon>frmBangGiaSP.cs</DependentUpon>
