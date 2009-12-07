@@ -18,7 +18,7 @@ namespace DentalLabo
     {
         public frmDentalLabo()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void ttNhanMauDatHang_Click(object sender, EventArgs e)
@@ -60,7 +60,8 @@ namespace DentalLabo
         {
             Form f = new frmNhapKhoThanhPham();
             f.MdiParent = this;
-            f.Show();
+            f.Size = new Size(this.Size.Width, this.Size.Height);            
+            f.Show();            
         }
 
         private void ttXuatKhoBanHang_Click(object sender, EventArgs e)
@@ -254,6 +255,11 @@ namespace DentalLabo
         }
 
         private void quảnLýThuChiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDentalLabo_Load(object sender, EventArgs e)
         {
 
         }

@@ -512,6 +512,7 @@
             this.button7.TabIndex = 37;
             this.button7.Text = "Lưu";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
@@ -607,6 +608,7 @@
             this.groupBox4.TabIndex = 28;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vị trí răng";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // comboBox6
             // 

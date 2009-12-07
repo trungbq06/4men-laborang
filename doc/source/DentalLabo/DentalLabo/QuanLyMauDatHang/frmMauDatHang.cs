@@ -45,5 +45,17 @@ namespace DentalLabo
         {
 
         }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+            Form f = new frmChonRang();
+            f.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form f = new frmChonRang();
+            f.Show();
+        }
     }
 }
