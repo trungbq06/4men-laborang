@@ -20,6 +20,31 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
         {
 
         }
+
+        private void dateNgayNhap_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoPhieu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaSoMau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
             
     }
 }
