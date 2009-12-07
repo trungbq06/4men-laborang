@@ -1517,13 +1517,13 @@
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label21.Location = new System.Drawing.Point(288, 176);
+            this.label21.Location = new System.Drawing.Point(286, 178);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(39, 16);
+            this.label21.Size = new System.Drawing.Size(69, 13);
             this.label21.TabIndex = 24;
-            this.label21.Text = "Lưu ý";
+            this.label21.Text = "Vị trí tay móc";
             // 
             // label22
             // 
