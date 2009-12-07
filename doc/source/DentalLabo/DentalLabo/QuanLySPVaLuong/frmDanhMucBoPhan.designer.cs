@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDanhMucBoPhan = new System.Windows.Forms.Label();
             this.btnDanhMucBoPhanLuu = new System.Windows.Forms.Button();
             this.btnDanhMucBoPhanXoa = new System.Windows.Forms.Button();
@@ -49,10 +49,11 @@
             // 
             // lblDanhMucBoPhan
             // 
+            this.lblDanhMucBoPhan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDanhMucBoPhan.AutoSize = true;
             this.lblDanhMucBoPhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDanhMucBoPhan.ForeColor = System.Drawing.Color.Blue;
-            this.lblDanhMucBoPhan.Location = new System.Drawing.Point(239, 42);
+            this.lblDanhMucBoPhan.Location = new System.Drawing.Point(257, 43);
             this.lblDanhMucBoPhan.Name = "lblDanhMucBoPhan";
             this.lblDanhMucBoPhan.Size = new System.Drawing.Size(225, 25);
             this.lblDanhMucBoPhan.TabIndex = 8;
@@ -60,52 +61,68 @@
             // 
             // btnDanhMucBoPhanLuu
             // 
+            this.btnDanhMucBoPhanLuu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDanhMucBoPhanLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucBoPhanLuu.Location = new System.Drawing.Point(499, 25);
+            this.btnDanhMucBoPhanLuu.MaximumSize = new System.Drawing.Size(75, 30);
             this.btnDanhMucBoPhanLuu.Name = "btnDanhMucBoPhanLuu";
-            this.btnDanhMucBoPhanLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnDanhMucBoPhanLuu.Size = new System.Drawing.Size(75, 30);
             this.btnDanhMucBoPhanLuu.TabIndex = 20;
             this.btnDanhMucBoPhanLuu.Text = "Lưu";
             this.btnDanhMucBoPhanLuu.UseVisualStyleBackColor = true;
             // 
             // btnDanhMucBoPhanXoa
             // 
+            this.btnDanhMucBoPhanXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDanhMucBoPhanXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucBoPhanXoa.Location = new System.Drawing.Point(354, 25);
+            this.btnDanhMucBoPhanXoa.MaximumSize = new System.Drawing.Size(75, 30);
             this.btnDanhMucBoPhanXoa.Name = "btnDanhMucBoPhanXoa";
-            this.btnDanhMucBoPhanXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnDanhMucBoPhanXoa.Size = new System.Drawing.Size(75, 30);
             this.btnDanhMucBoPhanXoa.TabIndex = 19;
             this.btnDanhMucBoPhanXoa.Text = "Xóa";
             this.btnDanhMucBoPhanXoa.UseVisualStyleBackColor = true;
             // 
             // btnDanhMucBoPhanSua
             // 
+            this.btnDanhMucBoPhanSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDanhMucBoPhanSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDanhMucBoPhanSua.Location = new System.Drawing.Point(212, 25);
+            this.btnDanhMucBoPhanSua.MaximumSize = new System.Drawing.Size(75, 30);
             this.btnDanhMucBoPhanSua.Name = "btnDanhMucBoPhanSua";
-            this.btnDanhMucBoPhanSua.Size = new System.Drawing.Size(75, 23);
+            this.btnDanhMucBoPhanSua.Size = new System.Drawing.Size(75, 30);
             this.btnDanhMucBoPhanSua.TabIndex = 18;
             this.btnDanhMucBoPhanSua.Text = "Sửa";
             this.btnDanhMucBoPhanSua.UseVisualStyleBackColor = true;
             // 
             // btnDanhMucBoPhanThemMoi
             // 
-            this.btnDanhMucBoPhanThemMoi.Location = new System.Drawing.Point(64, 25);
+            this.btnDanhMucBoPhanThemMoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDanhMucBoPhanThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhMucBoPhanThemMoi.Location = new System.Drawing.Point(49, 25);
+            this.btnDanhMucBoPhanThemMoi.MaximumSize = new System.Drawing.Size(96, 30);
             this.btnDanhMucBoPhanThemMoi.Name = "btnDanhMucBoPhanThemMoi";
-            this.btnDanhMucBoPhanThemMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnDanhMucBoPhanThemMoi.Size = new System.Drawing.Size(96, 30);
             this.btnDanhMucBoPhanThemMoi.TabIndex = 17;
             this.btnDanhMucBoPhanThemMoi.Text = "Thêm mới";
             this.btnDanhMucBoPhanThemMoi.UseVisualStyleBackColor = true;
             // 
             // dtgDanhMucCongDoanSX
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtgDanhMucCongDoanSX.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgDanhMucCongDoanSX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgDanhMucCongDoanSX.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgDanhMucCongDoanSX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgDanhMucCongDoanSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgDanhMucCongDoanSX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgDanhMucCongDoanSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDanhMucCongDoanSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dmbpTT,
@@ -114,34 +131,31 @@
             this.dmbpXacNhan});
             this.dtgDanhMucCongDoanSX.Location = new System.Drawing.Point(52, 100);
             this.dtgDanhMucCongDoanSX.Name = "dtgDanhMucCongDoanSX";
-            this.dtgDanhMucCongDoanSX.Size = new System.Drawing.Size(642, 298);
+            this.dtgDanhMucCongDoanSX.Size = new System.Drawing.Size(644, 298);
             this.dtgDanhMucCongDoanSX.TabIndex = 16;
             // 
             // dmbpTT
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dmbpTT.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dmbpTT.DefaultCellStyle = dataGridViewCellStyle3;
             this.dmbpTT.HeaderText = "TT";
             this.dmbpTT.Name = "dmbpTT";
-            this.dmbpTT.Width = 50;
             // 
             // dmbpMaBoPhan
             // 
             this.dmbpMaBoPhan.HeaderText = "Mã bộ phận";
             this.dmbpMaBoPhan.Name = "dmbpMaBoPhan";
-            this.dmbpMaBoPhan.Width = 150;
             // 
             // dmbpTenBoPhan
             // 
             this.dmbpTenBoPhan.HeaderText = "Tên bộ phận";
             this.dmbpTenBoPhan.Name = "dmbpTenBoPhan";
-            this.dmbpTenBoPhan.Width = 300;
             // 
             // dmbpXacNhan
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle12.NullValue = false;
-            this.dmbpXacNhan.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.NullValue = false;
+            this.dmbpXacNhan.DefaultCellStyle = dataGridViewCellStyle4;
             this.dmbpXacNhan.HeaderText = "Xác nhận";
             this.dmbpXacNhan.Name = "dmbpXacNhan";
             this.dmbpXacNhan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -149,11 +163,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox1.Controls.Add(this.btnDanhMucBoPhanThemMoi);
             this.groupBox1.Controls.Add(this.btnDanhMucBoPhanLuu);
             this.groupBox1.Controls.Add(this.btnDanhMucBoPhanSua);
             this.groupBox1.Controls.Add(this.btnDanhMucBoPhanXoa);
-            this.groupBox1.Location = new System.Drawing.Point(52, 404);
+            this.groupBox1.Location = new System.Drawing.Point(53, 404);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(642, 67);
             this.groupBox1.TabIndex = 21;
@@ -163,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 483);
+            this.ClientSize = new System.Drawing.Size(744, 512);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgDanhMucCongDoanSX);
             this.Controls.Add(this.lblDanhMucBoPhan);
