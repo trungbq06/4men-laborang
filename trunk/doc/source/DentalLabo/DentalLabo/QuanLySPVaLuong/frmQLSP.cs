@@ -65,5 +65,75 @@ namespace DentalLabo
         {
 
         }
+
+        private void subTabChamCongVaLamThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongTenNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongMaBoPhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongMaNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChamCongTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongNgayCongChinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongNgayCongNghi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongLamThemGio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongTrucCN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongMaNVCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongTenBoPhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChamCongNgayChamCong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxBoPhanNhanVien_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXemPhieuThanhToanLuong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
