@@ -57,5 +57,10 @@ namespace DentalLabo
             Form f = new frmChonRang();
             f.Show();
         }
+
+        private void comboBox15_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
