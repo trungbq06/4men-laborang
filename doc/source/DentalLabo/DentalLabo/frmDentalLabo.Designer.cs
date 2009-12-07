@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ttHeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.ttQuanLyMauDatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.ttNhanMauDatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -66,29 +65,26 @@
             this.ttGiamTru = new System.Windows.Forms.ToolStripMenuItem();
             this.ttPhieuChi = new System.Windows.Forms.ToolStripMenuItem();
             this.ttSoQuy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ttChamSocKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.ttGuiTinNhan = new System.Windows.Forms.ToolStripMenuItem();
+            this.ttGuiEmail = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ttHeThong,
             this.ttQuanLyMauDatHang,
             this.ttBanHangVaCongNo,
             this.quảnLýNhânViênToolStripMenuItem,
             this.quảnLýThuChiToolStripMenuItem,
-            this.ttPMKTTienMat});
+            this.ttPMKTTienMat,
+            this.ttChamSocKhachHang});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(782, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ttHeThong
-            // 
-            this.ttHeThong.Name = "ttHeThong";
-            this.ttHeThong.Size = new System.Drawing.Size(63, 20);
-            this.ttHeThong.Text = "Hệ thống";
             // 
             // ttQuanLyMauDatHang
             // 
@@ -291,7 +287,6 @@
             this.quảnLýThuChiToolStripMenuItem.Name = "quảnLýThuChiToolStripMenuItem";
             this.quảnLýThuChiToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.quảnLýThuChiToolStripMenuItem.Text = "Quản lý SP và Lương";
-            this.quảnLýThuChiToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThuChiToolStripMenuItem_Click);
             // 
             // ttQLDonViSP
             // 
@@ -365,6 +360,29 @@
             this.ttSoQuy.Text = "Sổ quỹ";
             this.ttSoQuy.Click += new System.EventHandler(this.ttSoQuy_Click);
             // 
+            // ttChamSocKhachHang
+            // 
+            this.ttChamSocKhachHang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ttGuiTinNhan,
+            this.ttGuiEmail});
+            this.ttChamSocKhachHang.Name = "ttChamSocKhachHang";
+            this.ttChamSocKhachHang.Size = new System.Drawing.Size(123, 20);
+            this.ttChamSocKhachHang.Text = "Chăm sóc khách hàng";
+            // 
+            // ttGuiTinNhan
+            // 
+            this.ttGuiTinNhan.Name = "ttGuiTinNhan";
+            this.ttGuiTinNhan.Size = new System.Drawing.Size(195, 22);
+            this.ttGuiTinNhan.Text = "Gửi tin nhắn thông báo";
+            this.ttGuiTinNhan.Click += new System.EventHandler(this.ttGuiTinNhan_Click);
+            // 
+            // ttGuiEmail
+            // 
+            this.ttGuiEmail.Name = "ttGuiEmail";
+            this.ttGuiEmail.Size = new System.Drawing.Size(195, 22);
+            this.ttGuiEmail.Text = "Gửi email";
+            this.ttGuiEmail.Click += new System.EventHandler(this.ttGuiEmail_Click);
+            // 
             // frmDentalLabo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +395,6 @@
             this.Name = "frmDentalLabo";
             this.Text = "DentalLabo Management";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmDentalLabo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -388,7 +405,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ttHeThong;
         private System.Windows.Forms.ToolStripMenuItem ttQuanLyMauDatHang;
         private System.Windows.Forms.ToolStripMenuItem ttBanHangVaCongNo;
         private System.Windows.Forms.ToolStripMenuItem quảnLýNhânViênToolStripMenuItem;
@@ -425,6 +441,9 @@
         private System.Windows.Forms.ToolStripMenuItem ttGiamTru;
         private System.Windows.Forms.ToolStripMenuItem ttPhieuChi;
         private System.Windows.Forms.ToolStripMenuItem ttSoQuy;
+        private System.Windows.Forms.ToolStripMenuItem ttChamSocKhachHang;
+        private System.Windows.Forms.ToolStripMenuItem ttGuiTinNhan;
+        private System.Windows.Forms.ToolStripMenuItem ttGuiEmail;
     }
 }
 

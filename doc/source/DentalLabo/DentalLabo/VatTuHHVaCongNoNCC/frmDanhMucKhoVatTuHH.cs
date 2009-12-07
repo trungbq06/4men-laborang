@@ -20,5 +20,10 @@ namespace DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC
         {
 
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -11,6 +11,7 @@ using DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC;
 using DentalLabo.VatTuHangHoa;
 using DentalLabo.PMKTTienMat;
 using DentalLabo.Quan_ly_san_pham_va_tinh_luong;
+using DentalLabo.ChamSocKhachHang;
 
 namespace DentalLabo
 {
@@ -252,16 +253,20 @@ namespace DentalLabo
             Form f = new frmSoQuyTienMat();
             f.MdiParent = this;
             f.Show();
+        }        
+
+        private void ttGuiTinNhan_Click(object sender, EventArgs e)
+        {
+            Form f = new frmGuiTinNhan();
+            f.MdiParent = this;
+            f.Show();
         }
 
-        private void quảnLýThuChiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ttGuiEmail_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmDentalLabo_Load(object sender, EventArgs e)
-        {
-
+            Form f = new frmGuiEmail();
+            f.MdiParent = this;
+            f.Show();
         }
 
 
