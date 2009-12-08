@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDanhMucCongDoanSX = new System.Windows.Forms.Label();
             this.dtgDanhMucCongDoanSX = new System.Windows.Forms.DataGridView();
@@ -60,7 +61,7 @@
             // 
             // dtgDanhMucCongDoanSX
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dtgDanhMucCongDoanSX.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgDanhMucCongDoanSX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
@@ -80,10 +81,20 @@
             this.dmcsxMaCongDoan,
             this.dmcdsxTenCongDoan,
             this.dmcdsxXacNhan});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgDanhMucCongDoanSX.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgDanhMucCongDoanSX.Location = new System.Drawing.Point(71, 94);
             this.dtgDanhMucCongDoanSX.Name = "dtgDanhMucCongDoanSX";
+            this.dtgDanhMucCongDoanSX.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgDanhMucCongDoanSX.Size = new System.Drawing.Size(642, 307);
             this.dtgDanhMucCongDoanSX.TabIndex = 8;
+            this.dtgDanhMucCongDoanSX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhMucCongDoanSX_CellContentClick);
             // 
             // dmcdsxTT
             // 

@@ -20,5 +20,10 @@ namespace DentalLabo.Quan_ly_san_pham_va_tinh_luong
         {
 
         }
+
+        private void dtgDanhMucCongDoanSX_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
