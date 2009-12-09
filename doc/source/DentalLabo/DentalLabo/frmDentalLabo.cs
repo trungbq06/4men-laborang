@@ -269,6 +269,13 @@ namespace DentalLabo
             f.Show();
         }
 
+        private void ttDanhMucNhomKH_Click_1(object sender, EventArgs e)
+        {
+            Form f = new frmDanhMucNhomKH();
+            f.MdiParent = this;
+            f.Show();
+        }
+
 
 
     }
