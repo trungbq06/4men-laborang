@@ -38,12 +38,15 @@
             this.clnNoiDungCongViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpPhieuNhapKho = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dateNgayTT = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoPhieuTT = new System.Windows.Forms.TextBox();
             this.boPhanNhapKho = new System.Windows.Forms.GroupBox();
+            this.dateTimeNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.txtMaSoBP = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
@@ -60,16 +63,13 @@
             this.btnXemBaoCao = new System.Windows.Forms.Button();
             this.btnInPhieu = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimeNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dtgChiTietCongNoKH)).BeginInit();
             this.grpPhieuNhapKho.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,6 +162,22 @@
             this.grpPhieuNhapKho.TabStop = false;
             this.grpPhieuNhapKho.Text = "Số phiếu thanh toán";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 88);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 36);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -240,6 +256,25 @@
             this.boPhanNhapKho.TabIndex = 19;
             this.boPhanNhapKho.TabStop = false;
             this.boPhanNhapKho.Text = "Khách hàng";
+            // 
+            // dateTimeNgayKetThuc
+            // 
+            this.dateTimeNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeNgayKetThuc.Location = new System.Drawing.Point(345, 98);
+            this.dateTimeNgayKetThuc.Name = "dateTimeNgayKetThuc";
+            this.dateTimeNgayKetThuc.Size = new System.Drawing.Size(142, 23);
+            this.dateTimeNgayKetThuc.TabIndex = 4;
+            // 
+            // dateTimeNgayBatDau
+            // 
+            this.dateTimeNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeNgayBatDau.Location = new System.Drawing.Point(71, 101);
+            this.dateTimeNgayBatDau.Name = "dateTimeNgayBatDau";
+            this.dateTimeNgayBatDau.Size = new System.Drawing.Size(124, 23);
+            this.dateTimeNgayBatDau.TabIndex = 3;
             // 
             // txtMaSoBP
             // 
@@ -435,22 +470,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(725, 151);
             this.tableLayoutPanel1.TabIndex = 27;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 88);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 36);
-            this.tableLayoutPanel2.TabIndex = 3;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
@@ -469,25 +488,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(720, 33);
             this.tableLayoutPanel3.TabIndex = 28;
             // 
-            // dateTimeNgayBatDau
-            // 
-            this.dateTimeNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeNgayBatDau.Location = new System.Drawing.Point(71, 101);
-            this.dateTimeNgayBatDau.Name = "dateTimeNgayBatDau";
-            this.dateTimeNgayBatDau.Size = new System.Drawing.Size(124, 23);
-            this.dateTimeNgayBatDau.TabIndex = 3;
-            // 
-            // dateTimeNgayKetThuc
-            // 
-            this.dateTimeNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeNgayKetThuc.Location = new System.Drawing.Point(345, 98);
-            this.dateTimeNgayKetThuc.Name = "dateTimeNgayKetThuc";
-            this.dateTimeNgayKetThuc.Size = new System.Drawing.Size(142, 23);
-            this.dateTimeNgayKetThuc.TabIndex = 4;
-            // 
             // frmPhieuTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,12 +502,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgChiTietCongNoKH)).EndInit();
             this.grpPhieuNhapKho.ResumeLayout(false);
             this.grpPhieuNhapKho.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.boPhanNhapKho.ResumeLayout(false);
             this.boPhanNhapKho.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);

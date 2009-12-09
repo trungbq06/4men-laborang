@@ -15,5 +15,10 @@ namespace DentalLabo.PMKTTienMat
         {
             InitializeComponent();
         }
+
+        private void frmPhieuChi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
