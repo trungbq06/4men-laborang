@@ -14,11 +14,22 @@ namespace DentalLabo
         public frmDangNhap()
         {
             InitializeComponent();
+            this.lblThongBao.Text = "";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            this.lblThongBao.Text = "Mã nhân viên/mật khẩu chưa chính xác";
         }
     }
 }
