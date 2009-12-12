@@ -152,9 +152,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(196, 19);
+            this.button2.Location = new System.Drawing.Point(184, 19);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 30);
+            this.button2.Size = new System.Drawing.Size(87, 30);
             this.button2.TabIndex = 0;
             this.button2.Text = "In báo cáo";
             this.button2.UseVisualStyleBackColor = true;
