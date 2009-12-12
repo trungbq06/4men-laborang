@@ -284,9 +284,9 @@
             // btnDanhMucBoPhanLuu
             // 
             this.btnDanhMucBoPhanLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucBoPhanLuu.Location = new System.Drawing.Point(346, 3);
+            this.btnDanhMucBoPhanLuu.Location = new System.Drawing.Point(351, 3);
             this.btnDanhMucBoPhanLuu.Name = "btnDanhMucBoPhanLuu";
-            this.btnDanhMucBoPhanLuu.Size = new System.Drawing.Size(75, 30);
+            this.btnDanhMucBoPhanLuu.Size = new System.Drawing.Size(58, 30);
             this.btnDanhMucBoPhanLuu.TabIndex = 24;
             this.btnDanhMucBoPhanLuu.Text = "Lưu";
             this.btnDanhMucBoPhanLuu.UseVisualStyleBackColor = true;
@@ -294,9 +294,9 @@
             // btnDanhMucBoPhanXoa
             // 
             this.btnDanhMucBoPhanXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucBoPhanXoa.Location = new System.Drawing.Point(265, 3);
+            this.btnDanhMucBoPhanXoa.Location = new System.Drawing.Point(282, 3);
             this.btnDanhMucBoPhanXoa.Name = "btnDanhMucBoPhanXoa";
-            this.btnDanhMucBoPhanXoa.Size = new System.Drawing.Size(75, 30);
+            this.btnDanhMucBoPhanXoa.Size = new System.Drawing.Size(63, 30);
             this.btnDanhMucBoPhanXoa.TabIndex = 23;
             this.btnDanhMucBoPhanXoa.Text = "Xóa";
             this.btnDanhMucBoPhanXoa.UseVisualStyleBackColor = true;
@@ -304,9 +304,9 @@
             // btnDanhMucBoPhanSua
             // 
             this.btnDanhMucBoPhanSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucBoPhanSua.Location = new System.Drawing.Point(184, 3);
+            this.btnDanhMucBoPhanSua.Location = new System.Drawing.Point(207, 3);
             this.btnDanhMucBoPhanSua.Name = "btnDanhMucBoPhanSua";
-            this.btnDanhMucBoPhanSua.Size = new System.Drawing.Size(75, 30);
+            this.btnDanhMucBoPhanSua.Size = new System.Drawing.Size(69, 30);
             this.btnDanhMucBoPhanSua.TabIndex = 22;
             this.btnDanhMucBoPhanSua.Text = "Sửa";
             this.btnDanhMucBoPhanSua.UseVisualStyleBackColor = true;
@@ -314,9 +314,9 @@
             // btnDanhMucBoPhanThemMoi
             // 
             this.btnDanhMucBoPhanThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucBoPhanThemMoi.Location = new System.Drawing.Point(103, 3);
+            this.btnDanhMucBoPhanThemMoi.Location = new System.Drawing.Point(114, 3);
             this.btnDanhMucBoPhanThemMoi.Name = "btnDanhMucBoPhanThemMoi";
-            this.btnDanhMucBoPhanThemMoi.Size = new System.Drawing.Size(75, 30);
+            this.btnDanhMucBoPhanThemMoi.Size = new System.Drawing.Size(87, 30);
             this.btnDanhMucBoPhanThemMoi.TabIndex = 21;
             this.btnDanhMucBoPhanThemMoi.Text = "Thêm mới";
             this.btnDanhMucBoPhanThemMoi.UseVisualStyleBackColor = true;
@@ -341,15 +341,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.btnDanhMucBoPhanLuu, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDanhMucBoPhanThemMoi, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnDanhMucBoPhanXoa, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDanhMucBoPhanSua, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 8);
+            this.tableLayoutPanel1.Controls.Add(this.btnDanhMucBoPhanLuu, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnDanhMucBoPhanXoa, 3, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 14);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(524, 47);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(524, 36);
             this.tableLayoutPanel1.TabIndex = 26;
             // 
             // frmDieuChinhTyGiaTT

@@ -40,11 +40,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtSo = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtgThuTien = new System.Windows.Forms.DataGridView();
@@ -194,6 +194,15 @@
             this.txtSo.Size = new System.Drawing.Size(119, 22);
             this.txtSo.TabIndex = 9;
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(65, 134);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(86, 30);
+            this.btnTimKiem.TabIndex = 2;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            // 
             // dtpNgay
             // 
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -228,15 +237,6 @@
             this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ngày";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(65, 134);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(86, 30);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -381,7 +381,7 @@
             // 
             this.btnLuu.Location = new System.Drawing.Point(466, 19);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 30);
+            this.btnLuu.Size = new System.Drawing.Size(110, 30);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu và in phiếu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -406,9 +406,9 @@
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.Location = new System.Drawing.Point(103, 19);
+            this.btnThemMoi.Location = new System.Drawing.Point(99, 19);
             this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(75, 30);
+            this.btnThemMoi.Size = new System.Drawing.Size(79, 30);
             this.btnThemMoi.TabIndex = 0;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = true;

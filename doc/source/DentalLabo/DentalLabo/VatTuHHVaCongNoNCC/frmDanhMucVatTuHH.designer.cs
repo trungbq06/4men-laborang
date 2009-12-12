@@ -135,10 +135,10 @@
             this.button1.AutoSize = true;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(221, 3);
+            this.button1.Location = new System.Drawing.Point(218, 3);
             this.button1.MinimumSize = new System.Drawing.Size(0, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
+            this.button1.Size = new System.Drawing.Size(85, 30);
             this.button1.TabIndex = 27;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             this.button2.AutoSize = true;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(445, 3);
+            this.button2.Location = new System.Drawing.Point(447, 3);
             this.button2.MinimumSize = new System.Drawing.Size(0, 30);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 30);
@@ -161,7 +161,7 @@
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(307, 3);
+            this.button3.Location = new System.Drawing.Point(309, 3);
             this.button3.MinimumSize = new System.Drawing.Size(0, 30);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(63, 30);
@@ -174,7 +174,7 @@
             this.button4.AutoSize = true;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(376, 3);
+            this.button4.Location = new System.Drawing.Point(378, 3);
             this.button4.MinimumSize = new System.Drawing.Size(0, 30);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(63, 30);

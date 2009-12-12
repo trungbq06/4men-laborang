@@ -349,9 +349,9 @@
             // 
             // btnThemMoi
             // 
-            this.btnThemMoi.Location = new System.Drawing.Point(110, 16);
+            this.btnThemMoi.Location = new System.Drawing.Point(109, 16);
             this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(75, 30);
+            this.btnThemMoi.Size = new System.Drawing.Size(79, 30);
             this.btnThemMoi.TabIndex = 0;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = true;
