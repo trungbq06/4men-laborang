@@ -61,6 +61,8 @@ create table MauHang(
 	NgayNhan datetime,
 	NgayTra datetime,
 	GioTra int,	
+	UserId varchar(20),
+	TrangThai int
 )
 go
 create table SanPhamDatHang(
