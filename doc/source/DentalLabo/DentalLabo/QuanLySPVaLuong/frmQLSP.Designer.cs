@@ -371,6 +371,9 @@
             this.txtQuanLyDonViSanPhamMaSoMau.Name = "txtQuanLyDonViSanPhamMaSoMau";
             this.txtQuanLyDonViSanPhamMaSoMau.Size = new System.Drawing.Size(187, 23);
             this.txtQuanLyDonViSanPhamMaSoMau.TabIndex = 1;
+            this.txtQuanLyDonViSanPhamMaSoMau.TextChanged += new System.EventHandler(this.txtQuanLyDonViSanPhamMaSoMau_TextChanged);
+            this.txtQuanLyDonViSanPhamMaSoMau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuanLyDonViSanPhamMaSoMau_KeyDown);
+            this.txtQuanLyDonViSanPhamMaSoMau.Enter += new System.EventHandler(this.txtQuanLyDonViSanPhamMaSoMau_Enter);
             // 
             // lblMasomau
             // 
@@ -391,11 +394,13 @@
             this.lblNgayNhanMau.Size = new System.Drawing.Size(108, 17);
             this.lblNgayNhanMau.TabIndex = 2;
             this.lblNgayNhanMau.Text = "Ngày nhận mẫu";
+            this.lblNgayNhanMau.Click += new System.EventHandler(this.lblNgayNhanMau_Click);
             // 
             // dateTimePickerNgayNhanMau
             // 
             this.dateTimePickerNgayNhanMau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerNgayNhanMau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerNgayNhanMau.CustomFormat = "d/M/yyyy";
+            this.dateTimePickerNgayNhanMau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNgayNhanMau.Location = new System.Drawing.Point(407, 22);
             this.dateTimePickerNgayNhanMau.Name = "dateTimePickerNgayNhanMau";
             this.dateTimePickerNgayNhanMau.Size = new System.Drawing.Size(152, 23);
@@ -412,6 +417,7 @@
             this.btnQLSPTimKiem.TabIndex = 5;
             this.btnQLSPTimKiem.Text = "Tìm kiếm";
             this.btnQLSPTimKiem.UseVisualStyleBackColor = true;
+            this.btnQLSPTimKiem.Click += new System.EventHandler(this.btnQLSPTimKiem_Click);
             // 
             // dtgQLDonViSanPhamCongDoanPhucHinh
             // 
@@ -1437,6 +1443,7 @@
             this.dtgTamUngLuong.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgTamUngLuong.Size = new System.Drawing.Size(714, 217);
             this.dtgTamUngLuong.TabIndex = 2;
+            this.dtgTamUngLuong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTamUngLuong_CellContentClick);
             // 
             // tulTT
             // 
@@ -1866,6 +1873,7 @@
             this.dgtTinhLuongCacKhoanPhaiTru.Name = "dgtTinhLuongCacKhoanPhaiTru";
             this.dgtTinhLuongCacKhoanPhaiTru.Size = new System.Drawing.Size(700, 210);
             this.dgtTinhLuongCacKhoanPhaiTru.TabIndex = 5;
+            this.dgtTinhLuongCacKhoanPhaiTru.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtTinhLuongCacKhoanPhaiTru_CellContentClick);
             // 
             // dataGridViewTextBoxColumn9
             // 
