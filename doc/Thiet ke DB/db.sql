@@ -63,7 +63,7 @@ create table MauHang(
 	NgayTra datetime,
 	GioTra int,	
 	UserId varchar(20),
-	TrangThai int
+	TrangThai int,	
 )
 go
 create table SanPhamDatHang(
@@ -71,6 +71,7 @@ create table SanPhamDatHang(
 	MaSP varchar(20) references SanPham,
 	MaVLC varchar(20) references VatLieuChinh,
 	MaVLP varchar(20) references VatLieuPhu, 
+	SoLuong int,
 	MauSP varchar(50),
 	LuuY varchar(1000),
 	YeuCauChiTiet varchar(1000)
@@ -188,6 +189,8 @@ go
 create table PhieuNhapKhoSP_MauHang (
 	MaPhieu varchar(20) references PhieuNhapKhoSP,
 	MaMau varchar(20) references MauHang,
+	NgayNhap datetime,
+	GioNhap varchar(50),
 	primary key (MaPhieu, MaMau)
 )
 go
