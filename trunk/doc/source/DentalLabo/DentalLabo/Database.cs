@@ -41,7 +41,7 @@ class Database {
         }
     }
 
-    public DataTable query(String SQLQuery) {
+    public static DataTable query(String SQLQuery) {
         SqlDataAdapter SQLDataAdapter = new SqlDataAdapter(SQLQuery, SQLConnection);
 
         // Create a new DataTable
@@ -51,8 +51,8 @@ class Database {
         SQLDataAdapter.Fill(dtResult);
 
         // We don't need the data adapter any more
-        SQLDataAdapter.Dispose();        
-        return dtResult;
+        SQLDataAdapter.Dispose();
+        return dtResult;        
     }
 
 }

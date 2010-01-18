@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHangVaCongNo\BHCNModel.cs" />
+    <Compile Include="BanHangVaCongNo\NhapKhoThanhPham_Model.cs" />
     <Compile Include="Bussiness\BusinessDanhMucSP.cs" />
     <Compile Include="ChamSocKhachHang\frmGuiEmail.cs">
       <SubType>Form</SubType>
@@ -72,6 +74,7 @@
     </Compile>
     <Compile Include="DataAccess\DADanhMucSP.cs" />
     <Compile Include="DataAccess\DataConnection.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="Data\DanhMucSP.cs" />
     <Compile Include="frmChonRang.cs">
       <SubType>Form</SubType>
