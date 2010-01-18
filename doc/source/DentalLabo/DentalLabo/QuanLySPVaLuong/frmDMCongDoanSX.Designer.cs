@@ -1,4 +1,4 @@
-﻿namespace DentalLabo.Quan_ly_san_pham_va_tinh_luong
+﻿namespace DentalLabo
 {
     partial class frmDMCongDoanSX
     {
@@ -30,19 +30,14 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDanhMucCongDoanSX = new System.Windows.Forms.Label();
             this.dtgDanhMucCongDoanSX = new System.Windows.Forms.DataGridView();
-            this.dmcdsxTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dmcsxMaCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dmcdsxTenCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dmcdsxXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnDanhMucCongDoanSXLuu = new System.Windows.Forms.Button();
-            this.btnDanhMucCongDoanSXXoa = new System.Windows.Forms.Button();
-            this.btnDanhMucCongDoanSXSua = new System.Windows.Forms.Button();
-            this.btnDanhMucCongDoanSXThemMoi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucCongDoanSX)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +56,7 @@
             // 
             // dtgDanhMucCongDoanSX
             // 
+            this.dtgDanhMucCongDoanSX.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dtgDanhMucCongDoanSX.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgDanhMucCongDoanSX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -76,110 +72,87 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgDanhMucCongDoanSX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgDanhMucCongDoanSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDanhMucCongDoanSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dmcdsxTT,
-            this.dmcsxMaCongDoan,
-            this.dmcdsxTenCongDoan,
-            this.dmcdsxXacNhan});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgDanhMucCongDoanSX.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgDanhMucCongDoanSX.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgDanhMucCongDoanSX.Location = new System.Drawing.Point(71, 94);
             this.dtgDanhMucCongDoanSX.Name = "dtgDanhMucCongDoanSX";
             this.dtgDanhMucCongDoanSX.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgDanhMucCongDoanSX.Size = new System.Drawing.Size(642, 307);
             this.dtgDanhMucCongDoanSX.TabIndex = 8;
-            this.dtgDanhMucCongDoanSX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhMucCongDoanSX_CellContentClick);
+            this.dtgDanhMucCongDoanSX.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhMucCongDoanSX_CellValueChanged);
+            this.dtgDanhMucCongDoanSX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDanhMucCongDoanSX_CellMouseClick);
+            this.dtgDanhMucCongDoanSX.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhMucCongDoanSX_CellMouseEnter);
+            this.dtgDanhMucCongDoanSX.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgDanhMucCongDoanSX_DataError);
+            this.dtgDanhMucCongDoanSX.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgDanhMucCongDoanSX_DataBindingComplete);
             // 
-            // dmcdsxTT
+            // btnXoa
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dmcdsxTT.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dmcdsxTT.HeaderText = "TT";
-            this.dmcdsxTT.Name = "dmcdsxTT";
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(354, 19);
+            this.btnXoa.MaximumSize = new System.Drawing.Size(75, 30);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 30);
+            this.btnXoa.TabIndex = 14;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // dmcsxMaCongDoan
+            // btnLuu
             // 
-            this.dmcsxMaCongDoan.HeaderText = "Mã công đoạn";
-            this.dmcsxMaCongDoan.Name = "dmcsxMaCongDoan";
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(214, 19);
+            this.btnLuu.MaximumSize = new System.Drawing.Size(75, 30);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 30);
+            this.btnLuu.TabIndex = 13;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // dmcdsxTenCongDoan
+            // btnThem
             // 
-            this.dmcdsxTenCongDoan.HeaderText = "Tên công đoạn";
-            this.dmcdsxTenCongDoan.Name = "dmcdsxTenCongDoan";
-            // 
-            // dmcdsxXacNhan
-            // 
-            this.dmcdsxXacNhan.HeaderText = "Xác nhận";
-            this.dmcdsxXacNhan.Name = "dmcdsxXacNhan";
-            this.dmcdsxXacNhan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dmcdsxXacNhan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // btnDanhMucCongDoanSXLuu
-            // 
-            this.btnDanhMucCongDoanSXLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDanhMucCongDoanSXLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucCongDoanSXLuu.Location = new System.Drawing.Point(500, 19);
-            this.btnDanhMucCongDoanSXLuu.MaximumSize = new System.Drawing.Size(75, 30);
-            this.btnDanhMucCongDoanSXLuu.Name = "btnDanhMucCongDoanSXLuu";
-            this.btnDanhMucCongDoanSXLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnDanhMucCongDoanSXLuu.TabIndex = 15;
-            this.btnDanhMucCongDoanSXLuu.Text = "Lưu";
-            this.btnDanhMucCongDoanSXLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnDanhMucCongDoanSXXoa
-            // 
-            this.btnDanhMucCongDoanSXXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDanhMucCongDoanSXXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucCongDoanSXXoa.Location = new System.Drawing.Point(354, 19);
-            this.btnDanhMucCongDoanSXXoa.MaximumSize = new System.Drawing.Size(75, 30);
-            this.btnDanhMucCongDoanSXXoa.Name = "btnDanhMucCongDoanSXXoa";
-            this.btnDanhMucCongDoanSXXoa.Size = new System.Drawing.Size(75, 30);
-            this.btnDanhMucCongDoanSXXoa.TabIndex = 14;
-            this.btnDanhMucCongDoanSXXoa.Text = "Xóa";
-            this.btnDanhMucCongDoanSXXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnDanhMucCongDoanSXSua
-            // 
-            this.btnDanhMucCongDoanSXSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDanhMucCongDoanSXSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucCongDoanSXSua.Location = new System.Drawing.Point(214, 19);
-            this.btnDanhMucCongDoanSXSua.MaximumSize = new System.Drawing.Size(75, 30);
-            this.btnDanhMucCongDoanSXSua.Name = "btnDanhMucCongDoanSXSua";
-            this.btnDanhMucCongDoanSXSua.Size = new System.Drawing.Size(75, 30);
-            this.btnDanhMucCongDoanSXSua.TabIndex = 13;
-            this.btnDanhMucCongDoanSXSua.Text = "Sửa";
-            this.btnDanhMucCongDoanSXSua.UseVisualStyleBackColor = true;
-            // 
-            // btnDanhMucCongDoanSXThemMoi
-            // 
-            this.btnDanhMucCongDoanSXThemMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDanhMucCongDoanSXThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhMucCongDoanSXThemMoi.Location = new System.Drawing.Point(58, 19);
-            this.btnDanhMucCongDoanSXThemMoi.MaximumSize = new System.Drawing.Size(95, 30);
-            this.btnDanhMucCongDoanSXThemMoi.Name = "btnDanhMucCongDoanSXThemMoi";
-            this.btnDanhMucCongDoanSXThemMoi.Size = new System.Drawing.Size(95, 30);
-            this.btnDanhMucCongDoanSXThemMoi.TabIndex = 12;
-            this.btnDanhMucCongDoanSXThemMoi.Text = "Thêm mới";
-            this.btnDanhMucCongDoanSXThemMoi.UseVisualStyleBackColor = true;
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(58, 19);
+            this.btnThem.MaximumSize = new System.Drawing.Size(95, 30);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(95, 30);
+            this.btnThem.TabIndex = 12;
+            this.btnThem.Text = "Thêm/Sửa";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupBox1.Controls.Add(this.btnDanhMucCongDoanSXThemMoi);
-            this.groupBox1.Controls.Add(this.btnDanhMucCongDoanSXLuu);
-            this.groupBox1.Controls.Add(this.btnDanhMucCongDoanSXSua);
-            this.groupBox1.Controls.Add(this.btnDanhMucCongDoanSXXoa);
+            this.groupBox1.Controls.Add(this.btnPrint);
+            this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Location = new System.Drawing.Point(71, 407);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(642, 64);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(476, 20);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(117, 29);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.Text = "In danh mục";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmDMCongDoanSX
             // 
@@ -191,6 +164,7 @@
             this.Controls.Add(this.lblDanhMucCongDoanSX);
             this.Name = "frmDMCongDoanSX";
             this.Text = "Danh Muc Cong Doan San Xuat";
+            this.Shown += new System.EventHandler(this.frmDMCongDoanSX_Shown);
             this.Load += new System.EventHandler(this.frmDMCongDoanSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucCongDoanSX)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -203,14 +177,10 @@
 
         private System.Windows.Forms.Label lblDanhMucCongDoanSX;
         private System.Windows.Forms.DataGridView dtgDanhMucCongDoanSX;
-        private System.Windows.Forms.Button btnDanhMucCongDoanSXLuu;
-        private System.Windows.Forms.Button btnDanhMucCongDoanSXXoa;
-        private System.Windows.Forms.Button btnDanhMucCongDoanSXSua;
-        private System.Windows.Forms.Button btnDanhMucCongDoanSXThemMoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dmcdsxTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dmcsxMaCongDoan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dmcdsxTenCongDoan;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dmcdsxXacNhan;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

@@ -28,52 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtgDanhMucVLPhu = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucVLPhu)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // btnXoa
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(213, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 30);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(213, 3);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 30);
+            this.btnXoa.TabIndex = 16;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button4
+            // btnPrint
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(316, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 30);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(316, 3);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(90, 30);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.Text = "In danh mục";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // button2
+            // btnLuu
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(107, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 30);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(107, 3);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 30);
+            this.btnLuu.TabIndex = 14;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label1
             // 
@@ -87,52 +86,34 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "DANH MỤC VẬT LIỆU PHỤ";
             // 
-            // dataGridView1
+            // dtgDanhMucVLPhu
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.dtgDanhMucVLPhu.AllowUserToAddRows = false;
+            this.dtgDanhMucVLPhu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 295);
-            this.dataGridView1.TabIndex = 12;
+            this.dtgDanhMucVLPhu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgDanhMucVLPhu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDanhMucVLPhu.Location = new System.Drawing.Point(28, 63);
+            this.dtgDanhMucVLPhu.Name = "dtgDanhMucVLPhu";
+            this.dtgDanhMucVLPhu.Size = new System.Drawing.Size(444, 295);
+            this.dtgDanhMucVLPhu.TabIndex = 12;
+            this.dtgDanhMucVLPhu.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhMucVLPhu_CellValueChanged);
+            this.dtgDanhMucVLPhu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDanhMucVLPhu_CellMouseClick);
+            this.dtgDanhMucVLPhu.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDanhMucVLPhu_CellMouseEnter);
+            this.dtgDanhMucVLPhu.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgDanhMucVLPhu_DataError);
+            this.dtgDanhMucVLPhu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgDanhMucVLPhu_DataBindingComplete);
             // 
-            // Column1
+            // btnThem
             // 
-            this.Column1.HeaderText = "Mã VL";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên vật liệu phụ";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Đơn giá";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Xác nhận";
-            this.Column3.Name = "Column3";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(3, 3);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(83, 30);
+            this.btnThem.TabIndex = 13;
+            this.btnThem.Text = "Thêm/Sửa";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox1
             // 
@@ -144,7 +125,6 @@
             this.groupBox1.Size = new System.Drawing.Size(444, 61);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tableLayoutPanel1
             // 
@@ -154,11 +134,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.42735F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel1.Controls.Add(this.button4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 15);
+            this.tableLayoutPanel1.Controls.Add(this.btnPrint, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnXoa, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnLuu, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -172,10 +152,12 @@
             this.ClientSize = new System.Drawing.Size(500, 426);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgDanhMucVLPhu);
             this.Name = "frmDanhMucVLPhu";
             this.Text = "Danh Muc Vat Lieu Phu";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmDanhMucVLPhu_Load);
+            this.Shown += new System.EventHandler(this.frmDanhMucVLPhu_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucVLPhu)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -185,16 +167,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
+        private System.Windows.Forms.DataGridView dtgDanhMucVLPhu;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 

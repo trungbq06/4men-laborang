@@ -5,8 +5,10 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Collections;
+using DentalLabo.Data;
 
-namespace DentalLabo.Data
+namespace DentalLabo.DataAccess
 {
     class DADanhMucSP
     {
@@ -31,7 +33,73 @@ namespace DentalLabo.Data
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString(), "Lỗi");
+            }
+        }
+
+        public DataTable GetDanhMuc(string table)
+        {
+            SqlConnection con;            
+            string str = "Select * from " + table + "";
+            con = DataConnection.Connect();
+            DataTable dt = new DataTable();
+            SqlCommand com = new SqlCommand(str, con);
+            com.CommandText = str;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dt);
+            DataColumn dtColumn = new DataColumn();
+            dtColumn.ColumnName = "Xác nhận";
+            dtColumn.DataType = typeof(bool);
+            dt.Columns.Add(dtColumn);
+            return dt;
+        }
+
+        public void DeleteFromDanhMuc(ArrayList array, string table, string id)
+        {
+            SqlConnection con;
+            con = DataConnection.Connect();
+            SqlCommand com = new SqlCommand();
+            com.Connection = con;
+            string str = "Delete from " + table + " where " + id + "=";
+            try
+            {
+                foreach (string i in array)
+                {
+                    string tmp = str;
+                    tmp = tmp + "'" + i + "'";
+                    //MessageBox.Show(tmp);
+                    com.CommandText = tmp;
+                    com.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Không thể xóa! Dữ liệu này có ở ở các bảng khác!\nXóa dữ liệu trong các bảng khác sau đó thực hiện lại tác vụ này!");
+            }
+        }
+
+        public void DeleteFromDanhMucs(ArrayList array, ArrayList array1, string table, string id, string id1)
+        {
+            SqlConnection con;
+            con = DataConnection.Connect();
+            SqlCommand com = new SqlCommand();
+            com.Connection = con;
+            string str = "Delete from " + table + " where ";
+            int j = 0;
+            try
+            {
+                foreach (string i in array)
+                {
+                    string tmp = str;
+                    tmp += id + "='" + i + "' and " + id1 + "='" + array1[j] + "'";
+                    com.CommandText = tmp;
+                    com.ExecuteNonQuery();
+                    j++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể xóa! Dữ liệu này có ở ở các bảng khác!\nXóa dữ liệu trong các bảng khác sau đó thực hiện lại tác vụ này!" + ex.ToString());
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DentalLabo.Data
 {
@@ -16,5 +17,15 @@ namespace DentalLabo.Data
             return con;
         }
 
+        public static DataTable Query(string str)
+        {
+            SqlConnection con = Connect();
+            DataTable dt = new DataTable();
+            SqlCommand com = new SqlCommand(str, con);
+            com.CommandText = str;
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dt);
+            return dt;
+        }
     }
 }
