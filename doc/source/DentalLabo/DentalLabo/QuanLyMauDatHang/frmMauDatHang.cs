@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DentalLabo
+namespace DentalLabo.Mau_dat_hang
 {
     public partial class frmMauDatHang : Form
     {
@@ -89,6 +89,11 @@ namespace DentalLabo
         }
 
         private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMauDatHang_Load(object sender, EventArgs e)
         {
 
         }
