@@ -56,8 +56,9 @@ create table KhachHang(
 )
 go
 create table MauHang(
-	MaMau varchar(20) primary key,
+	MaMau varchar(20) primary key,	
 	MaKH varchar(20) references KhachHang,
+	LoaiPhucHinh varchar(50),
 	NgayNhan datetime,
 	NgayTra datetime,
 	GioTra int,	
@@ -175,13 +176,19 @@ create table KhoHang (
 )
 go
 create table PhieuNhapKhoSP(
-	MaPhieu varchar(20) primary key,
-	MaMau varchar(20) references MauHang,
+	MaPhieu varchar(20) primary key,	
 	NgayNhap datetime,	
-	GioNhap int,
+	GioNhap varchar(50),
 	MaKho varchar(20) references KhoHang,
 	MaNV varchar(20) references NhanVien,
 	DienGiai varchar(200)
+)
+
+go
+create table PhieuNhapKhoSP_MauHang (
+	MaPhieu varchar(20) references PhieuNhapKhoSP,
+	MaMau varchar(20) references MauHang,
+	primary key (MaPhieu, MaMau)
 )
 go
 create table HoaDonBanHang(
@@ -294,3 +301,45 @@ create table PhieuXuatVTTB_TB(
 	MaThietBi varchar(20) references ThietBi,
 	SoLuong int
 )
+
+------------------------------------------------------------------------
+-- Tao du lieu de Test
+------------------------------------------------------------------------
+go
+insert BoPhan values('BP1', 'Bo Phan 1')
+insert BoPhan values('BP2', 'Bo Phan 2')
+insert BoPhan values('BP3', 'Bo Phan 3')
+insert BoPhan values('BP4', 'Bo Phan 4')
+
+--insert BoPhan values('42456', 'Bo Phan 4')
+--insert BoPhan values('12456', 'Bo Phan 4')
+--insert BoPhan values('1', 'Bo Phan 4')
+--insert BoPhan values('2', 'Bo Phan 4')
+--insert BoPhan values('8', 'Bo Phan 4')
+--insert BoPhan values('9972', 'Bo Phan 4')
+
+go
+insert NhanVien values('NV1', 'BP1', 'Nhan vien 1', 'Nam', 1984, 1234425)
+insert NhanVien values('NV2', 'BP1', 'Nhan vien 2', 'Nu', 1984, 1234425)
+insert NhanVien values('NV3', 'BP1', 'Nhan vien 3', 'Nam', 1984, 1234425)
+insert NhanVien values('NV4', 'BP1', 'Nhan vien 4', 'Nam', 1984, 1234425)
+insert NhanVien values('NV5', 'BP2', 'Nhan vien 5', 'Nu', 1984, 1234425)
+insert NhanVien values('NV6', 'BP2', 'Nhan vien 6', 'Nam', 1984, 1234425)
+go
+insert KhoHang values('KH1', 'Kho hang 1', 'NV1')
+insert KhoHang values('KH2', 'Kho hang 2', 'NV2')
+insert KhoHang values('KH3', 'Kho hang 3', 'NV3')
+
+
+delete from PhieuNhapKhoSP
+select * from PhieuNhapKhoSP
+SELECT TOP 1 MaPhieu FROM PhieuNhapKhoSP ORDER BY len(MaPhieu) desc, MaPhieu desc
+delete from BoPhan where MaBP not like 'B%'
+
+--insert PhieuNhapKhoSP values('121414', null, null, null, null, null, null)
+--insert PhieuNhapKhoSP values('12', null, null, null, null, null, null)
+--insert PhieuNhapKhoSP values('99', null, null, null, null, null, null)
+--insert PhieuNhapKhoSP values('121423', null, null, null, null, null, null)
+--insert PhieuNhapKhoSP values('23525', null, null, null, null, null, null)
+--truncate table PhieuNhapKhoSP
+
