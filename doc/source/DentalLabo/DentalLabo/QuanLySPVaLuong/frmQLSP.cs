@@ -280,5 +280,11 @@ namespace DentalLabo
                 MessageBox.Show(i.ToString());
             }
         }
+
+        private void btnThemMoiCongDoan_Click(object sender, EventArgs e)
+        {
+            Form f = new frmThemCongDoanSanXuat(txtQuanLyDonViSanPhamMaSoMau.Text);
+            f.Show();
+        }
     }
 }
