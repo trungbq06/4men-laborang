@@ -212,6 +212,8 @@
             // cbTenSP
             // 
             this.cbTenSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbTenSP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbTenSP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbTenSP.FormattingEnabled = true;
             this.cbTenSP.Location = new System.Drawing.Point(90, 23);
             this.cbTenSP.Name = "cbTenSP";
