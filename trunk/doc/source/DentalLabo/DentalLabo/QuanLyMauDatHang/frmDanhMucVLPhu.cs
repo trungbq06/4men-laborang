@@ -66,7 +66,7 @@ namespace DentalLabo
 
             dtgDanhMucVLPhu.AllowUserToAddRows = true;
             dtgDanhMucVLPhu.ReadOnly = false;
-            dtgDanhMucVLPhu.Columns[3].ReadOnly = true;
+            dtgDanhMucVLPhu.Columns[4].ReadOnly = true;
         }
 
         private void LoadDataToGrid(DataTable dt)
@@ -74,6 +74,7 @@ namespace DentalLabo
             dt.Columns[0].ColumnName = "Mã VL";
             dt.Columns[1].ColumnName = "Tên Vật Liệu";
             dt.Columns[2].ColumnName = "Đơn giá";
+            dt.Columns[3].ColumnName = "ĐVT";
             //dt.Columns[0].Unique = true;
             //dt.Columns[1].Unique = true;
             dtgDanhMucVLPhu.DataSource = dt;
@@ -88,10 +89,12 @@ namespace DentalLabo
                 dt.Columns[0].ColumnName = "MaVL";
                 dt.Columns[1].ColumnName = "TenVL";
                 dt.Columns[2].ColumnName = "DonGia";
+                dt.Columns[3].ColumnName = "DVT";
                 adapter.Update(dt);
                 dt.Columns[0].ColumnName = "Mã VL";
                 dt.Columns[1].ColumnName = "Tên Vật Liệu";
                 dt.Columns[2].ColumnName = "Đơn giá";
+                dt.Columns[3].ColumnName = "ĐVT";
                 //dt.Columns[0].Unique = true;
                 //dt.Columns[1].Unique = true;
 
@@ -118,7 +121,7 @@ namespace DentalLabo
             {
                 for (int i = 0; i < dtgDanhMucVLPhu.Rows.Count; ++i)
                 {
-                    if (dtgDanhMucVLPhu.Rows[i].Cells[3].Value.ToString() != "True")
+                    if (dtgDanhMucVLPhu.Rows[i].Cells[4].Value.ToString() != "True")
                     {
                         if (i % 2 == 0) dtgDanhMucVLPhu.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                         else dtgDanhMucVLPhu.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -139,7 +142,7 @@ namespace DentalLabo
                     int row = e.RowIndex;
                     for (int i = 0; i < dtgDanhMucVLPhu.Rows.Count; ++i)
                     {
-                        if (dtgDanhMucVLPhu.Rows[i].Cells[3].Value.ToString() != "True")
+                        if (dtgDanhMucVLPhu.Rows[i].Cells[4].Value.ToString() != "True")
                         {
                             if (i % 2 == 0) dtgDanhMucVLPhu.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                             else dtgDanhMucVLPhu.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -149,7 +152,7 @@ namespace DentalLabo
                             dtgDanhMucVLPhu.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgDanhMucVLPhu.Rows[row].Cells[3].Value.ToString() != "True")
+                    if (dtgDanhMucVLPhu.Rows[row].Cells[4].Value.ToString() != "True")
                         dtgDanhMucVLPhu.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
@@ -162,7 +165,7 @@ namespace DentalLabo
             {
                 if (!add)
                 {
-                    string ok = dtgDanhMucVLPhu.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    string ok = dtgDanhMucVLPhu.Rows[e.RowIndex].Cells[4].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
@@ -177,7 +180,7 @@ namespace DentalLabo
                         count++;
                         dtgDanhMucVLPhu.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgDanhMucVLPhu.Rows[e.RowIndex].Cells[3].Value = !check;
+                    dtgDanhMucVLPhu.Rows[e.RowIndex].Cells[4].Value = !check;
                     if (count > 0) btnXoa.Enabled = true;
                     else btnXoa.Enabled = false;
                 }
@@ -196,7 +199,7 @@ namespace DentalLabo
                     {
                         for (int i = 0; i < dtgDanhMucVLPhu.Rows.Count; ++i)
                         {
-                            if (dtgDanhMucVLPhu.Rows[i].Cells[3].Value.ToString() == "True")
+                            if (dtgDanhMucVLPhu.Rows[i].Cells[4].Value.ToString() == "True")
                             {
                                 array.Add(dtgDanhMucVLPhu.Rows[i].Cells[0].Value.ToString());
                             }
