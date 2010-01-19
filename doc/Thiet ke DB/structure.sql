@@ -97,10 +97,12 @@ go
 create table NhanVien(
 	MaNV varchar(20) primary key,
 	MaBP varchar(20) references BoPhan,
-	TenNV varchar(200),	
+	TenNV nvarchar(200),
 	GioiTinh varchar(10),
 	NamSinh int,	
-	SoCMT varchar(20)
+	SoCMT varchar(20),
+	DiaChi nvarchar(100),
+	DienThoai varchar(50)
 ) 
 go
 create table CongDoanSX(
@@ -172,10 +174,13 @@ go
 ------------------------------------------------------------------------
 -- Tao du lieu cho Module Quan Ly Ban Hang va Cong No Khach Hang
 ------------------------------------------------------------------------
-create table KhoHang (
-	MaKho varchar(20) primary key,
-	TenKho varchar(200),
-	MaThuKho varchar(20) references NhanVien,	
+create table KhoHang (	
+	MaKho varchar(20) NOT NULL,
+	TenKho nvarchar(200) NULL,
+	MaThuKho varchar(20) NOT NULL,
+	DiaChi nvarchar(100) NULL,
+	DienThoai varchar(14) NULL,
+	ThuKho nvarchar(30) NULL,
 )
 go
 create table PhieuNhapKhoSP(
