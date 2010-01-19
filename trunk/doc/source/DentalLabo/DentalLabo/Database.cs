@@ -55,4 +55,8 @@ class Database {
         return dtResult;        
     }
 
+    public static void Debug(String message) {
+        MessageBox.Show(null, message, "DEBUG", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+    }
+
 }

@@ -66,7 +66,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThemPhieu = new System.Windows.Forms.Button();
-            this.clnXacNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clnTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnMaSoMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnLoaiPhucHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,8 +74,9 @@
             this.clnSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnVatLieuPhu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnGioNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSPDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungNhapKho)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
@@ -113,13 +113,13 @@
             // 
             // dtgNoiDungNhapKho
             // 
+            this.dtgNoiDungNhapKho.AllowUserToAddRows = false;
             this.dtgNoiDungNhapKho.AllowUserToDeleteRows = false;
             this.dtgNoiDungNhapKho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgNoiDungNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgNoiDungNhapKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clnXacNhan,
             this.clnTT,
             this.clnMaSoMau,
             this.clnLoaiPhucHinh,
@@ -128,13 +128,16 @@
             this.clnSoLuong,
             this.clnLoaiVatLieu,
             this.clnVatLieuPhu,
+            this.clnGioNhap,
             this.clnNgayNhap,
-            this.clnGioNhap});
-            this.dtgNoiDungNhapKho.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.MaSPDH});
+            this.dtgNoiDungNhapKho.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dtgNoiDungNhapKho.Location = new System.Drawing.Point(15, 296);
             this.dtgNoiDungNhapKho.Name = "dtgNoiDungNhapKho";
             this.dtgNoiDungNhapKho.Size = new System.Drawing.Size(715, 170);
             this.dtgNoiDungNhapKho.TabIndex = 23;
+            this.dtgNoiDungNhapKho.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNoiDungNhapKho_CellValueChanged);
+            this.dtgNoiDungNhapKho.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNoiDungNhapKho_CellContentClick);
             // 
             // btnTimKiem
             // 
@@ -147,6 +150,7 @@
             this.btnTimKiem.TabIndex = 22;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -452,6 +456,7 @@
             this.btnPhieuNhapMoi.TabIndex = 32;
             this.btnPhieuNhapMoi.Text = "Phiếu Nhập Mới";
             this.btnPhieuNhapMoi.UseVisualStyleBackColor = true;
+            this.btnPhieuNhapMoi.Click += new System.EventHandler(this.btnPhieuNhapMoi_Click);
             // 
             // btnLuu
             // 
@@ -467,6 +472,7 @@
             this.btnLuu.Text = "Lưu và nhập kho";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnMauMoi
             // 
@@ -496,6 +502,7 @@
             this.btnXoa.TabIndex = 29;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThemSanPham
             // 
@@ -510,6 +517,7 @@
             this.btnThemSanPham.TabIndex = 30;
             this.btnThemSanPham.Text = "Thêm sản phẩm";
             this.btnThemSanPham.UseVisualStyleBackColor = true;
+            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
             // 
             // btnSua
             // 
@@ -524,6 +532,7 @@
             this.btnSua.TabIndex = 31;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -582,12 +591,6 @@
             this.btnThemPhieu.UseVisualStyleBackColor = true;
             this.btnThemPhieu.Click += new System.EventHandler(this.btnThemPhieu_Click);
             // 
-            // clnXacNhan
-            // 
-            this.clnXacNhan.HeaderText = "Xác nhận";
-            this.clnXacNhan.Name = "clnXacNhan";
-            this.clnXacNhan.Width = 30;
-            // 
             // clnTT
             // 
             this.clnTT.HeaderText = "TT";
@@ -609,6 +612,7 @@
             // 
             this.clnTenSanPham.HeaderText = "Tên Sản Phẩm";
             this.clnTenSanPham.Name = "clnTenSanPham";
+            this.clnTenSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // clnDVT
             // 
@@ -624,21 +628,28 @@
             // 
             this.clnLoaiVatLieu.HeaderText = "Loại vật liệu";
             this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
+            this.clnLoaiVatLieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // clnVatLieuPhu
             // 
             this.clnVatLieuPhu.HeaderText = "Vật liệu phụ";
             this.clnVatLieuPhu.Name = "clnVatLieuPhu";
+            this.clnVatLieuPhu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // clnGioNhap
+            // 
+            this.clnGioNhap.HeaderText = "Giờ nhập";
+            this.clnGioNhap.Name = "clnGioNhap";
             // 
             // clnNgayNhap
             // 
             this.clnNgayNhap.HeaderText = "Ngày nhập";
             this.clnNgayNhap.Name = "clnNgayNhap";
             // 
-            // clnGioNhap
+            // MaSPDH
             // 
-            this.clnGioNhap.HeaderText = "Giờ nhập";
-            this.clnGioNhap.Name = "clnGioNhap";
+            this.MaSPDH.HeaderText = "Mã sản phẩm đặt hàng";
+            this.MaSPDH.Name = "MaSPDH";
             // 
             // frmNhapKhoThanhPham
             // 
@@ -707,7 +718,6 @@
         public System.Windows.Forms.ComboBox cmbMasoBP;
         public System.Windows.Forms.ComboBox cmbMaKho;
         public System.Windows.Forms.ComboBox cmbMasoNV;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn clnXacNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnMaSoMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnLoaiPhucHinh;
@@ -716,8 +726,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnLoaiVatLieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnVatLieuPhu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnNgayNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnGioNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnNgayNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSPDH;
 
 
 
