@@ -14,6 +14,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
     {
         NhapKhoThanhPham_Model model;
         int selectedRow = -1;
+        bool isUpdate = false;
 
         public frmNhapKhoThanhPham()
         {            
@@ -45,6 +46,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnThemPhieu_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             model.FindMaSPDatHang();
             selectedRow = -1;
             model.ThemPhieuNhapKho();
@@ -52,12 +54,14 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnMauMoi_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             FinishUpdateRow();
             model.ThemMauVaoPhieu();            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             dtgNoiDungNhapKho.Rows.Clear();
             model.LoadThongTinPhieuNK(true);
             selectedRow = -1;
@@ -65,6 +69,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnPhieuNhapMoi_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             model.SinhMaSoPhieu();
             dtgNoiDungNhapKho.Rows.Clear();
             txtMaSoMau.Text = "";
@@ -75,6 +80,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             if (txtSoPhieu.Text == "") 
             {
                 MessageBox.Show(null, "Chưa nhập mã số phiếu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -84,9 +90,9 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                 MessageBox.Show(null, "Hãy chọn dòng để xóa", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }            
             else
-            {
-                FinishUpdateRow();
-                selectedRow = -1;
+            {                
+                
+                /**
                 String filter = "(";
                 for (int i = 0; i < dtgNoiDungNhapKho.SelectedRows.Count; i++)
                 {
@@ -98,14 +104,35 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
                 String query = "DELETE FROM PhieuNhapKhoSP_MauHang where MaPhieu = '" + txtSoPhieu.Text + "' and MaMau in " + filter;
                 Database.query(query);
+                /**/
+                
+                // Xoa SPDH trong MauHang
+                string maSPDH = dtgNoiDungNhapKho.Rows[selectedRow].Cells[10].Value.ToString();
+                String query = "DELETE FROM MauHang_SanPhamDatHang where MaMau = '" + txtMaSoMau.Text + "' and MaSPDatHang = '" +  maSPDH + "'";
+                Database.query(query);
+                query = "DELETE SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + " '";
+                Database.query(query);
+
+                query = "SELECT MaSPDatHang FROM MauHang_SanPhamDatHang WHERE MaMau = '" + txtMaSoMau.Text + "'";
+                DataTable table = Database.query(query);
+                if (table.Rows.Count == 0) {
+                    query = "DELETE PhieuNhapKhoSP_MauHang WHERE MaPhieu = '" + txtSoPhieu.Text + "' and MaMau = '" + txtMaSoMau.Text + "'";
+                    Database.query(query);
+                    query = "DELETE MauHang WHERE MaMau = '" + txtMaSoMau.Text + "'";
+                    Database.query(query);
+                }
+
+
                 dtgNoiDungNhapKho.Rows.Clear();
+                //FinishUpdateRow();
                 model.LoadThongTinPhieuNK(false);
+                selectedRow = -1;
             }
             
         }
 
         private void btnSua_Click(object sender, EventArgs e)
-        {
+        {            
             if (selectedRow != -1)
             {
                 MessageBox.Show(null, "Bạn đang sửa một sản phẩm rồi, hãy lưu sản phẩm đó trước khi sửa sản phẩm tiếp theo", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -119,7 +146,8 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                 MessageBox.Show(null, "Hãy chọn dòng để sửa", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-            {                
+            {
+                isUpdate = true;
                 selectedRow = dtgNoiDungNhapKho.SelectedRows[0].Index;
                 DataGridViewRow row = dtgNoiDungNhapKho.SelectedRows[0];                
                 model.LoadTenSanPham(row, true);
@@ -175,6 +203,8 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
         {
             if (dtgNoiDungNhapKho.Rows.Count > 0)
             {
+                isUpdate = false;
+
                 // Ket thuc sua hang
                 FinishUpdateRow();
 
@@ -222,8 +252,9 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                 MessageBox.Show(null, "Không có hàng nào để lưu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else {
-                model.SaveSeletedRow(dtgNoiDungNhapKho.Rows[selectedRow], false);
+                model.SaveSeletedRow(dtgNoiDungNhapKho.Rows[selectedRow], isUpdate);
                 FinishUpdateRow();
+                isUpdate = false;
             }
         }
                 
