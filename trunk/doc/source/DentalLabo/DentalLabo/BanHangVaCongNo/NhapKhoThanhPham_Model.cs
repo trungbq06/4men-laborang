@@ -524,6 +524,35 @@ namespace DentalLabo.BanHangVaCongNo
                     }
                 }
 
+                // Neu la update dong 
+                else 
+                {
+                    bool isOK = false;
+                    while (!isOK)
+                    {
+                        try
+                        {
+                            // Them SanPhamDatHang
+                            //row.Cells[10].Value = FindMaSPDatHang();
+                            query = "UPDATE SanPhamDatHang SET " +
+                                            " MaSP = '" + maSP + "'," +
+                                            " MaVLC = '" + maVLC + "'," +
+                                            " MaVLP = '" + maVLP + "'," +
+                                            " SoLuong = " + row.Cells[soluongIndex].Value.ToString() +
+                                            " WHERE MaSPDatHang = '" + row.Cells[10].Value + "'";                                            
+                            //Database.Debug(query);
+                            Database.query(query);
+
+                            isOK = true;
+                            MessageBox.Show(null, "Sửa sản phẩm thành công", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        catch (Exception exception)
+                        {
+                            isOK = false;
+                        }
+                    }
+                }
+
             }
         }
         #endregion
