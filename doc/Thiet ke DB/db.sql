@@ -22,7 +22,8 @@ create table SanPham(
 go
 create table VatLieuPhu(
 	MaVL varchar(20) primary key, 
-	TenVL varchar(200), 
+	TenVL varchar(200),
+	DVT varchar(50), 
 	DonGia numeric(20)
 )
 go
@@ -71,7 +72,8 @@ create table SanPhamDatHang(
 	MaSP varchar(20) references SanPham,
 	MaVLC varchar(20) references VatLieuChinh,
 	MaVLP varchar(20) references VatLieuPhu, 
-	SoLuong int,
+	SoLuongVLC int,
+	SoLuongVLP int, 
 	MauSP varchar(50),
 	LuuY varchar(1000),
 	YeuCauChiTiet varchar(1000)
@@ -346,3 +348,91 @@ delete from BoPhan where MaBP not like 'B%'
 --insert PhieuNhapKhoSP values('23525', null, null, null, null, null, null)
 --truncate table PhieuNhapKhoSP
 
+go
+insert VatLieuChinh values('VLC1', 'Vat lieu chinh 1')
+insert VatLieuChinh values('VLC2', 'Vat lieu chinh 2')
+insert VatLieuChinh values('VLC3', 'Vat lieu chinh 3')
+insert VatLieuChinh values('VLC4', 'Vat lieu chinh 4')
+
+go
+insert VatLieuPhu values('VLP1', 'Vat lieu phu 1', 1243)
+insert VatLieuPhu values('VLP2', 'Vat lieu phu 2', 1243)
+insert VatLieuPhu values('VLP3', 'Vat lieu phu 3', 1243)
+
+go
+insert SanPham values('SP1', 'San pham 1', 'Tot', 'cai', 'nhom 1', 'ghi chu 1')
+insert SanPham values('SP2', 'San pham 2', 'Tot', 'chiec', 'nhom 1', 'ghi chu 1')
+insert SanPham values('SP3', 'San pham 3', 'Tot', 'rang', 'nhom 1', 'ghi chu 1')
+insert SanPham values('SP4', 'San pham 4', 'Tot', 'ham', 'nhom 1', 'ghi chu 1')
+
+update SanPham set DVT = 'chiec' where MaSP = 'SP3'
+update SanPham set DVT = 'rang' where MaSP = 'SP2'
+update SanPham set DVT = 'ham' where MaSP = 'SP4'
+go
+insert SanPhamDatHang values('SPDH1', 'SP1', 'VLC1', 'VLP1', 20, 'Xanh', 'luu y 1', 'chi tiet 1')
+insert SanPhamDatHang values('SPDH2', 'SP1', 'VLC4', 'VLP1', 20, 'Xanh', 'luu y 1', 'chi tiet 1')
+insert SanPhamDatHang values('SPDH3', 'SP2', 'VLC1', 'VLP2', 20, 'Xanh', 'luu y 1', 'chi tiet 1')
+insert SanPhamDatHang values('SPDH4', 'SP3', 'VLC2', 'VLP2', 20, 'Xanh', 'luu y 1', 'chi tiet 1')
+insert SanPhamDatHang values('SPDH5', 'SP4', 'VLC3', 'VLP2', 20, 'Xanh', 'luu y 1', 'chi tiet 1')
+
+go
+insert NhomKH values('NKH1', 'Nhom Khach Hang 1')
+insert NhomKH values('NKH2', 'Nhom Khach Hang 2')
+insert NhomKH values('NKH3', 'Nhom Khach Hang 3')
+
+go
+insert KhachHang values('KH1', 'Khach hang 1', 0, '123124', 'ma so thue 1', 'nguoi dai dien 1', 'NKH1')
+insert KhachHang values('KH2', 'Khach hang 2', 0, '123124', 'ma so thue 2', 'nguoi dai dien 1', 'NKH1')
+insert KhachHang values('KH3', 'Khach hang 3', 0, '123124', 'ma so thue 3', 'nguoi dai dien 1', 'NKH2')
+insert KhachHang values('KH4', 'Khach hang 4', 0, '123124', 'ma so thue 4', 'nguoi dai dien 1', 'NKH2')
+insert KhachHang values('KH5', 'Khach hang 5', 0, '123124', 'ma so thue 5', 'nguoi dai dien 1', 'NKH1')
+
+go
+insert MauHang values('MH1', 'KH1', 'Co dinh', '2010-1-1', '2010-1-23', '14', '', 0)
+insert MauHang values('MH2', 'KH1', 'Co dinh', '2010-1-1', '2010-1-23', '14', '', 0)
+insert MauHang values('MH3', 'KH1', 'Co dinh', '2010-1-1', '2010-1-23', '14', '', 0)
+
+go
+insert MauHang_SanPhamDatHang values('MH1', 'SPDH1')
+insert MauHang_SanPhamDatHang values('MH1', 'SPDH2')
+insert MauHang_SanPhamDatHang values('MH1', 'SPDH3')
+insert MauHang_SanPhamDatHang values('MH2', 'SPDH4')
+insert MauHang_SanPhamDatHang values('MH3', 'SPDH5')
+
+go
+select * from PhieuNhapKhoSP
+select * from PhieuNhapKhoSP_MauHang
+delete from PhieuNhapKhoSP_MauHang
+
+select * from MauHang
+
+delete from MauHang where MaMau in ('MH5', 'MH6')
+
+select * from VatLieuPhu
+select * from MauHang
+select * from MauHang_SanPhamDatHang where MaMau = 'MH1'
+select * from SanPhamDatHang where MaSPDatHang = 'SPDH1'
+
+
+delete SanPhamDatHang where MaSPDatHang in ('SPDH6', 'SPDH7', 'SPDH8')
+select * from SanPham
+
+select top 1 MaSP from SanPham where TenSP = 'San pham 1'
+
+INSERT SanPhamDatHang Values('SPDH9', 'SP1', 'VLC1', '', 22, '', '', '')
+
+select * from SanPhamDatHang where MaSPDatHang in (select MaSPDatHang from MauHang_SanPhamDatHang where MaMau = 'MH2')
+
+update sanphamdathang set masp = 'sp3', mavlc = 'vlc2', mavlp = 'vlp2', soluong = 132 where maspdathang = 'spdh12'
+
+select * from SanPhamDatHang
+select * from MauHang_SanPhamDatHang 
+select * from MauHang
+select * from PhieuNhapKhoSP
+select * from PhieuNhapKhoSP_MauHang
+
+delete MauHang_SanPHamDatHang
+delete PhieuNhapKhoSP_MauHang
+delete PhieuNHapKHoSP
+delete MauHang
+delete SanPhamDatHang
