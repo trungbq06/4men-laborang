@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DentalLabo.Nhap_kho_va_ban_hang;
-using DentalLabo.Vat_tu_hang_hoa_va_Cong_no_NCC;
 using DentalLabo.VatTuHangHoa;
 using DentalLabo.PMKTTienMat;
-using DentalLabo.Quan_ly_san_pham_va_tinh_luong;
 using DentalLabo.ChamSocKhachHang;
+using DentalLabo.Mau_dat_hang;
+using DentalLabo.Data;
 
 namespace DentalLabo
 {
@@ -222,9 +222,9 @@ namespace DentalLabo
 
         private void ttDanhMucNV_Click(object sender, EventArgs e)
         {
-            Form f = new frmDanhMucNhanVien();
-            f.MdiParent = this;
-            f.Show();
+            //Form f = new frmDanhMucNhanVien();
+            //f.MdiParent = this;
+            //f.Show();
         }
 
         private void ttDanhMucCongDoanSX_Click(object sender, EventArgs e)

@@ -1,11 +1,12 @@
-﻿namespace DentalLabo.Mau_dat_hang
+﻿
+namespace DentalLabo.Mau_dat_hang
 {
     partial class frmMauDatHang
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,16 +27,20 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbSoDTKH = new System.Windows.Forms.TextBox();
+            this.cmbDienThoaiKH = new System.Windows.Forms.ComboBox();
+            this.cmbDiaChiKH = new System.Windows.Forms.ComboBox();
+            this.cmbMaKH = new System.Windows.Forms.ComboBox();
+            this.cmbMaNhomKH = new System.Windows.Forms.ComboBox();
+            this.cmbNhomKH = new System.Windows.Forms.ComboBox();
+            this.cmbTenKH = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.cmbMaKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbDiaChiKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbTenKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSoMau = new System.Windows.Forms.TextBox();
@@ -46,7 +51,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgNoiDungMau = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +68,9 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbMaSP = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,38 +78,39 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtMauSP = new System.Windows.Forms.TextBox();
+            this.dateGioTra = new System.Windows.Forms.ComboBox();
+            this.txtLuuY = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtViTriRang = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cmbMaVatLieu = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtYeuCauChiTiet = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dateNgayTra = new System.Windows.Forms.DateTimePicker();
+            this.cmbLoaiVatLieu = new System.Windows.Forms.ComboBox();
+            this.cmbTenSP = new System.Windows.Forms.ComboBox();
+            this.txtLyDo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbThaoTac = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cmbGioiTinhBN = new System.Windows.Forms.ComboBox();
+            this.txtTenBN = new System.Windows.Forms.TextBox();
+            this.txtTuoiBN = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dtgNoiDungMau2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,7 +129,9 @@
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cmbMaSP2 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -132,35 +142,36 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.cmbGioiTinhBN2 = new System.Windows.Forms.ComboBox();
+            this.txtTenBN2 = new System.Windows.Forms.TextBox();
+            this.txtTuoiBN2 = new System.Windows.Forms.TextBox();
+            this.txtMauSP2 = new System.Windows.Forms.TextBox();
+            this.cmbMaVLPhu = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.cmbVLPhu = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.dateGioTra2 = new System.Windows.Forms.ComboBox();
+            this.txtTayMoc = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtViTriRang2 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbMaVLChinh = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtYeuCauChiTiet2 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.dateNgayTra2 = new System.Windows.Forms.DateTimePicker();
+            this.cmbVLChinh = new System.Windows.Forms.ComboBox();
+            this.cmbTenSP2 = new System.Windows.Forms.ComboBox();
+            this.txtLyDo2 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.cmbThaoTac2 = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -181,23 +192,23 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbTenNhomKH = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.cmdMaNhom = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungMau)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungMau2)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -206,17 +217,17 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cmdMaNhom);
-            this.groupBox1.Controls.Add(this.label38);
-            this.groupBox1.Controls.Add(this.cmbTenNhomKH);
-            this.groupBox1.Controls.Add(this.label37);
-            this.groupBox1.Controls.Add(this.cmbSoDTKH);
-            this.groupBox1.Controls.Add(this.label36);
-            this.groupBox1.Controls.Add(this.cmbMaKH);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cmbDienThoaiKH);
             this.groupBox1.Controls.Add(this.cmbDiaChiKH);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cmbMaKH);
+            this.groupBox1.Controls.Add(this.cmbMaNhomKH);
+            this.groupBox1.Controls.Add(this.cmbNhomKH);
             this.groupBox1.Controls.Add(this.cmbTenKH);
+            this.groupBox1.Controls.Add(this.label38);
+            this.groupBox1.Controls.Add(this.label37);
+            this.groupBox1.Controls.Add(this.label36);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -225,15 +236,88 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
             // 
-            // cmbSoDTKH
+            // cmbDienThoaiKH
             // 
-            this.cmbSoDTKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbDienThoaiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDienThoaiKH.FormattingEnabled = true;
+            this.cmbDienThoaiKH.Location = new System.Drawing.Point(116, 104);
+            this.cmbDienThoaiKH.Name = "cmbDienThoaiKH";
+            this.cmbDienThoaiKH.Size = new System.Drawing.Size(346, 24);
+            this.cmbDienThoaiKH.TabIndex = 17;
+            // 
+            // cmbDiaChiKH
+            // 
+            this.cmbDiaChiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDiaChiKH.FormattingEnabled = true;
+            this.cmbDiaChiKH.Location = new System.Drawing.Point(116, 75);
+            this.cmbDiaChiKH.Name = "cmbDiaChiKH";
+            this.cmbDiaChiKH.Size = new System.Drawing.Size(346, 24);
+            this.cmbDiaChiKH.TabIndex = 16;
+            this.cmbDiaChiKH.SelectedIndexChanged += new System.EventHandler(this.cmbDiaChiKH_SelectedIndexChanged);
+            // 
+            // cmbMaKH
+            // 
+            this.cmbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaKH.FormattingEnabled = true;
+            this.cmbMaKH.Location = new System.Drawing.Point(392, 47);
+            this.cmbMaKH.Name = "cmbMaKH";
+            this.cmbMaKH.Size = new System.Drawing.Size(70, 24);
+            this.cmbMaKH.TabIndex = 15;
+            // 
+            // cmbMaNhomKH
+            // 
+            this.cmbMaNhomKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaNhomKH.FormattingEnabled = true;
+            this.cmbMaNhomKH.Location = new System.Drawing.Point(392, 16);
+            this.cmbMaNhomKH.Name = "cmbMaNhomKH";
+            this.cmbMaNhomKH.Size = new System.Drawing.Size(70, 24);
+            this.cmbMaNhomKH.TabIndex = 14;
+            this.cmbMaNhomKH.SelectedIndexChanged += new System.EventHandler(this.cmbMaNhomKH_SelectedIndexChanged);
+            // 
+            // cmbNhomKH
+            // 
+            this.cmbNhomKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNhomKH.FormattingEnabled = true;
+            this.cmbNhomKH.Location = new System.Drawing.Point(116, 15);
+            this.cmbNhomKH.Name = "cmbNhomKH";
+            this.cmbNhomKH.Size = new System.Drawing.Size(198, 24);
+            this.cmbNhomKH.TabIndex = 13;
+            this.cmbNhomKH.SelectedIndexChanged += new System.EventHandler(this.cmbNhomKH_SelectedIndexChanged);
+            // 
+            // cmbTenKH
+            // 
+            this.cmbTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTenKH.FormattingEnabled = true;
+            this.cmbTenKH.Location = new System.Drawing.Point(116, 45);
+            this.cmbTenKH.Name = "cmbTenKH";
+            this.cmbTenKH.Size = new System.Drawing.Size(198, 24);
+            this.cmbTenKH.TabIndex = 12;
+            this.cmbTenKH.SelectedIndexChanged += new System.EventHandler(this.cmbTenKH_SelectedIndexChanged);
+            // 
+            // label38
+            // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label38.Location = new System.Drawing.Point(320, 19);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(66, 16);
+            this.label38.TabIndex = 10;
+            this.label38.Text = "Mã Nhóm";
+            // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbSoDTKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSoDTKH.Location = new System.Drawing.Point(116, 104);
-            this.cmbSoDTKH.Name = "cmbSoDTKH";
-            this.cmbSoDTKH.Size = new System.Drawing.Size(346, 22);
-            this.cmbSoDTKH.TabIndex = 7;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label37.Location = new System.Drawing.Point(4, 19);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(116, 16);
+            this.label37.TabIndex = 8;
+            this.label37.Text = "Nhóm khách hàng";
             // 
             // label36
             // 
@@ -248,38 +332,18 @@
             this.label36.TabIndex = 6;
             this.label36.Text = "Số điện thoại";
             // 
-            // cmbMaKH
-            // 
-            this.cmbMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMaKH.Location = new System.Drawing.Point(397, 49);
-            this.cmbMaKH.Name = "cmbMaKH";
-            this.cmbMaKH.Size = new System.Drawing.Size(65, 22);
-            this.cmbMaKH.TabIndex = 3;
-            this.cmbMaKH.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(334, 52);
+            this.label3.Location = new System.Drawing.Point(320, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã KH";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // cmbDiaChiKH
-            // 
-            this.cmbDiaChiKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDiaChiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDiaChiKH.Location = new System.Drawing.Point(116, 78);
-            this.cmbDiaChiKH.Name = "cmbDiaChiKH";
-            this.cmbDiaChiKH.Size = new System.Drawing.Size(346, 22);
-            this.cmbDiaChiKH.TabIndex = 5;
             // 
             // label2
             // 
@@ -288,21 +352,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(6, 81);
+            this.label2.Location = new System.Drawing.Point(6, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Địa chỉ";
-            // 
-            // cmbTenKH
-            // 
-            this.cmbTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTenKH.Location = new System.Drawing.Point(116, 51);
-            this.cmbTenKH.Name = "cmbTenKH";
-            this.cmbTenKH.Size = new System.Drawing.Size(212, 22);
-            this.cmbTenKH.TabIndex = 1;
             // 
             // label1
             // 
@@ -311,7 +365,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(6, 54);
+            this.label1.Location = new System.Drawing.Point(6, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 0;
@@ -356,6 +410,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateNgayNhan
             // 
@@ -423,7 +478,7 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.dtgNoiDungMau);
             this.groupBox5.Location = new System.Drawing.Point(6, 343);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(692, 164);
@@ -431,12 +486,12 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Nội dung phục hình của mẫu răng";
             // 
-            // dataGridView1
+            // dtgNoiDungMau
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dtgNoiDungMau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgNoiDungMau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNoiDungMau.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -452,11 +507,13 @@
             this.Column13,
             this.Column14,
             this.Column15,
-            this.Column16});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(680, 144);
-            this.dataGridView1.TabIndex = 48;
+            this.Column16,
+            this.Column21});
+            this.dtgNoiDungMau.Location = new System.Drawing.Point(6, 14);
+            this.dtgNoiDungMau.Name = "dtgNoiDungMau";
+            this.dtgNoiDungMau.Size = new System.Drawing.Size(680, 144);
+            this.dtgNoiDungMau.TabIndex = 48;
+            this.dtgNoiDungMau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNoiDungMau_CellContentClick);
             // 
             // Column1
             // 
@@ -538,46 +595,62 @@
             this.Column16.HeaderText = "Yêu cầu chi tiết";
             this.Column16.Name = "Column16";
             // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Mã SPDH";
+            this.Column21.Name = "Column21";
+            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.cmbMaSP);
             this.groupBox3.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox3.Controls.Add(this.textBox17);
-            this.groupBox3.Controls.Add(this.comboBox7);
-            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.txtMauSP);
+            this.groupBox3.Controls.Add(this.dateGioTra);
+            this.groupBox3.Controls.Add(this.txtLuuY);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.comboBox6);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.cmbMaVatLieu);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.txtYeuCauChiTiet);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Controls.Add(this.comboBox4);
-            this.groupBox3.Controls.Add(this.comboBox3);
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.dateNgayTra);
+            this.groupBox3.Controls.Add(this.cmbLoaiVatLieu);
+            this.groupBox3.Controls.Add(this.cmbTenSP);
+            this.groupBox3.Controls.Add(this.txtLyDo);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cmbThaoTac);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.cmbGioiTinhBN);
+            this.groupBox3.Controls.Add(this.txtTenBN);
+            this.groupBox3.Controls.Add(this.txtTuoiBN);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(692, 331);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin";
+            // 
+            // cmbMaSP
+            // 
+            this.cmbMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaSP.FormattingEnabled = true;
+            this.cmbMaSP.Location = new System.Drawing.Point(358, 90);
+            this.cmbMaSP.Name = "cmbMaSP";
+            this.cmbMaSP.Size = new System.Drawing.Size(120, 24);
+            this.cmbMaSP.TabIndex = 42;
+            this.cmbMaSP.SelectedIndexChanged += new System.EventHandler(this.cmbMaSP_SelectedIndexChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -614,6 +687,7 @@
             this.button2.TabIndex = 42;
             this.button2.Text = "Thêm KH";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -626,6 +700,7 @@
             this.button3.TabIndex = 43;
             this.button3.Text = "Mẫu mới";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button7
             // 
@@ -651,6 +726,7 @@
             this.button4.TabIndex = 44;
             this.button4.Text = "Thêm SP";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -675,23 +751,24 @@
             this.button5.TabIndex = 45;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox17
+            // txtMauSP
             // 
-            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtMauSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(110, 162);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(158, 22);
-            this.textBox17.TabIndex = 32;
+            this.txtMauSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMauSP.Location = new System.Drawing.Point(110, 162);
+            this.txtMauSP.Name = "txtMauSP";
+            this.txtMauSP.Size = new System.Drawing.Size(158, 22);
+            this.txtMauSP.TabIndex = 32;
             // 
-            // comboBox7
+            // dateGioTra
             // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.dateGioTra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateGioTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateGioTra.FormattingEnabled = true;
+            this.dateGioTra.Items.AddRange(new object[] {
             "00h",
             "01h",
             "02h",
@@ -716,24 +793,26 @@
             "21h",
             "22h",
             "23h"});
-            this.comboBox7.Location = new System.Drawing.Point(358, 199);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 24);
-            this.comboBox7.TabIndex = 39;
-            this.comboBox7.Text = "12h";
+            this.dateGioTra.Location = new System.Drawing.Point(358, 199);
+            this.dateGioTra.Name = "dateGioTra";
+            this.dateGioTra.Size = new System.Drawing.Size(121, 24);
+            this.dateGioTra.TabIndex = 39;
+            this.dateGioTra.Text = "12h";
             // 
-            // textBox10
+            // txtLuuY
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(358, 162);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(120, 22);
-            this.textBox10.TabIndex = 34;
+            this.txtLuuY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLuuY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuuY.Location = new System.Drawing.Point(358, 162);
+            this.txtLuuY.Name = "txtLuuY";
+            this.txtLuuY.Size = new System.Drawing.Size(120, 22);
+            this.txtLuuY.TabIndex = 34;
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.txtViTriRang);
+            this.groupBox4.Controls.Add(this.pictureBox2);
             this.groupBox4.Location = new System.Drawing.Point(494, 81);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(192, 139);
@@ -742,24 +821,35 @@
             this.groupBox4.Text = "Vị trí răng";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // comboBox6
+            // txtViTriRang
             // 
-            this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(358, 126);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(120, 24);
-            this.comboBox6.TabIndex = 30;
+            this.txtViTriRang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtViTriRang.Location = new System.Drawing.Point(6, 111);
+            this.txtViTriRang.Name = "txtViTriRang";
+            this.txtViTriRang.Size = new System.Drawing.Size(180, 22);
+            this.txtViTriRang.TabIndex = 1;
             // 
-            // textBox9
+            // pictureBox2
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(358, 90);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(120, 22);
-            this.textBox9.TabIndex = 26;
+            this.pictureBox2.Image = global::DentalLabo.Properties.Resources.images;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(180, 81);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // cmbMaVatLieu
+            // 
+            this.cmbMaVatLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMaVatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaVatLieu.FormattingEnabled = true;
+            this.cmbMaVatLieu.Location = new System.Drawing.Point(358, 126);
+            this.cmbMaVatLieu.Name = "cmbMaVatLieu";
+            this.cmbMaVatLieu.Size = new System.Drawing.Size(120, 24);
+            this.cmbMaVatLieu.TabIndex = 30;
+            this.cmbMaVatLieu.SelectedIndexChanged += new System.EventHandler(this.cmbMaVatLieu_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -809,15 +899,15 @@
             this.label16.TabIndex = 25;
             this.label16.Text = "Mã SP";
             // 
-            // textBox8
+            // txtYeuCauChiTiet
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtYeuCauChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(110, 241);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(576, 22);
-            this.textBox8.TabIndex = 41;
+            this.txtYeuCauChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYeuCauChiTiet.Location = new System.Drawing.Point(110, 241);
+            this.txtYeuCauChiTiet.Name = "txtYeuCauChiTiet";
+            this.txtYeuCauChiTiet.Size = new System.Drawing.Size(576, 22);
+            this.txtYeuCauChiTiet.TabIndex = 41;
             // 
             // label15
             // 
@@ -832,47 +922,49 @@
             this.label15.TabIndex = 40;
             this.label15.Text = "Yêu cầu chi tiết";
             // 
-            // dateTimePicker2
+            // dateNgayTra
             // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dateNgayTra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(110, 199);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(158, 22);
-            this.dateTimePicker2.TabIndex = 37;
+            this.dateNgayTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgayTra.Location = new System.Drawing.Point(110, 199);
+            this.dateNgayTra.Name = "dateNgayTra";
+            this.dateNgayTra.Size = new System.Drawing.Size(158, 22);
+            this.dateNgayTra.TabIndex = 37;
             // 
-            // comboBox4
+            // cmbLoaiVatLieu
             // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbLoaiVatLieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(110, 124);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(158, 24);
-            this.comboBox4.TabIndex = 28;
+            this.cmbLoaiVatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoaiVatLieu.FormattingEnabled = true;
+            this.cmbLoaiVatLieu.Location = new System.Drawing.Point(110, 124);
+            this.cmbLoaiVatLieu.Name = "cmbLoaiVatLieu";
+            this.cmbLoaiVatLieu.Size = new System.Drawing.Size(158, 24);
+            this.cmbLoaiVatLieu.TabIndex = 28;
+            this.cmbLoaiVatLieu.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiVatLieu_SelectedIndexChanged);
             // 
-            // comboBox3
+            // cmbTenSP
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(110, 90);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(158, 24);
-            this.comboBox3.TabIndex = 24;
+            this.cmbTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTenSP.FormattingEnabled = true;
+            this.cmbTenSP.Location = new System.Drawing.Point(110, 90);
+            this.cmbTenSP.Name = "cmbTenSP";
+            this.cmbTenSP.Size = new System.Drawing.Size(158, 24);
+            this.cmbTenSP.TabIndex = 24;
+            this.cmbTenSP.SelectedIndexChanged += new System.EventHandler(this.cmbTenSP_SelectedIndexChanged);
             // 
-            // textBox7
+            // txtLyDo
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(358, 53);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(328, 22);
-            this.textBox7.TabIndex = 22;
+            this.txtLyDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLyDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLyDo.Location = new System.Drawing.Point(358, 53);
+            this.txtLyDo.Name = "txtLyDo";
+            this.txtLyDo.Size = new System.Drawing.Size(328, 22);
+            this.txtLyDo.TabIndex = 22;
             // 
             // label12
             // 
@@ -939,16 +1031,22 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Tên sảm phẩm";
             // 
-            // comboBox2
+            // cmbThaoTac
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbThaoTac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(109, 55);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(159, 24);
-            this.comboBox2.TabIndex = 20;
+            this.cmbThaoTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbThaoTac.FormattingEnabled = true;
+            this.cmbThaoTac.Items.AddRange(new object[] {
+            "1 - San pham lam moi",
+            "2 - San pham lam lai",
+            "3 - San pham bi hong can lam lai"});
+            this.cmbThaoTac.Location = new System.Drawing.Point(109, 55);
+            this.cmbThaoTac.Name = "cmbThaoTac";
+            this.cmbThaoTac.Size = new System.Drawing.Size(159, 24);
+            this.cmbThaoTac.TabIndex = 20;
+            this.cmbThaoTac.Text = "1 - San pham lam moi";
+            this.cmbThaoTac.SelectedIndexChanged += new System.EventHandler(this.cmbThaoTac_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -1001,39 +1099,39 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "Tuổi bệnh nhân";
             // 
-            // comboBox1
+            // cmbGioiTinhBN
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbGioiTinhBN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbGioiTinhBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGioiTinhBN.FormattingEnabled = true;
+            this.cmbGioiTinhBN.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBox1.Location = new System.Drawing.Point(633, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(53, 24);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.Text = "Nam";
+            this.cmbGioiTinhBN.Location = new System.Drawing.Point(633, 19);
+            this.cmbGioiTinhBN.Name = "cmbGioiTinhBN";
+            this.cmbGioiTinhBN.Size = new System.Drawing.Size(53, 24);
+            this.cmbGioiTinhBN.TabIndex = 18;
+            this.cmbGioiTinhBN.Text = "Nam";
             // 
-            // textBox5
+            // txtTenBN
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtTenBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(109, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(253, 22);
-            this.textBox5.TabIndex = 14;
-            this.textBox5.Tag = "Họ tên bệnh nhân";
+            this.txtTenBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBN.Location = new System.Drawing.Point(109, 19);
+            this.txtTenBN.Name = "txtTenBN";
+            this.txtTenBN.Size = new System.Drawing.Size(253, 22);
+            this.txtTenBN.TabIndex = 14;
+            this.txtTenBN.Tag = "Họ tên bệnh nhân";
             // 
-            // textBox6
+            // txtTuoiBN
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(499, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(65, 22);
-            this.textBox6.TabIndex = 16;
+            this.txtTuoiBN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTuoiBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuoiBN.Location = new System.Drawing.Point(499, 19);
+            this.txtTuoiBN.Name = "txtTuoiBN";
+            this.txtTuoiBN.Size = new System.Drawing.Size(65, 22);
+            this.txtTuoiBN.TabIndex = 16;
             // 
             // tabPage2
             // 
@@ -1052,7 +1150,7 @@
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.dataGridView3);
+            this.groupBox8.Controls.Add(this.dtgNoiDungMau2);
             this.groupBox8.Location = new System.Drawing.Point(6, 340);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(692, 164);
@@ -1060,12 +1158,12 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Nội dung phục hình của mẫu răng";
             // 
-            // dataGridView3
+            // dtgNoiDungMau2
             // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dtgNoiDungMau2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgNoiDungMau2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNoiDungMau2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
@@ -1083,11 +1181,12 @@
             this.dataGridViewTextBoxColumn29,
             this.dataGridViewTextBoxColumn30,
             this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 14);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(680, 144);
-            this.dataGridView3.TabIndex = 0;
+            this.dataGridViewTextBoxColumn32,
+            this.Column20});
+            this.dtgNoiDungMau2.Location = new System.Drawing.Point(6, 14);
+            this.dtgNoiDungMau2.Name = "dtgNoiDungMau2";
+            this.dtgNoiDungMau2.Size = new System.Drawing.Size(680, 144);
+            this.dtgNoiDungMau2.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -1179,43 +1278,48 @@
             this.dataGridViewTextBoxColumn32.HeaderText = "Yêu cầu chi tiết";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Mã SPDH";
+            this.Column20.Name = "Column20";
+            // 
             // groupBox6
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.cmbMaSP2);
             this.groupBox6.Controls.Add(this.tableLayoutPanel4);
             this.groupBox6.Controls.Add(this.label31);
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.label33);
-            this.groupBox6.Controls.Add(this.comboBox5);
-            this.groupBox6.Controls.Add(this.textBox15);
-            this.groupBox6.Controls.Add(this.textBox16);
-            this.groupBox6.Controls.Add(this.textBox18);
-            this.groupBox6.Controls.Add(this.comboBox15);
+            this.groupBox6.Controls.Add(this.cmbGioiTinhBN2);
+            this.groupBox6.Controls.Add(this.txtTenBN2);
+            this.groupBox6.Controls.Add(this.txtTuoiBN2);
+            this.groupBox6.Controls.Add(this.txtMauSP2);
+            this.groupBox6.Controls.Add(this.cmbMaVLPhu);
             this.groupBox6.Controls.Add(this.label34);
-            this.groupBox6.Controls.Add(this.comboBox16);
+            this.groupBox6.Controls.Add(this.cmbVLPhu);
             this.groupBox6.Controls.Add(this.label35);
-            this.groupBox6.Controls.Add(this.comboBox8);
-            this.groupBox6.Controls.Add(this.textBox11);
+            this.groupBox6.Controls.Add(this.dateGioTra2);
+            this.groupBox6.Controls.Add(this.txtTayMoc);
             this.groupBox6.Controls.Add(this.groupBox7);
-            this.groupBox6.Controls.Add(this.comboBox9);
-            this.groupBox6.Controls.Add(this.textBox12);
+            this.groupBox6.Controls.Add(this.cmbMaVLChinh);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label23);
-            this.groupBox6.Controls.Add(this.textBox13);
+            this.groupBox6.Controls.Add(this.txtYeuCauChiTiet2);
             this.groupBox6.Controls.Add(this.label24);
-            this.groupBox6.Controls.Add(this.dateTimePicker3);
-            this.groupBox6.Controls.Add(this.comboBox11);
-            this.groupBox6.Controls.Add(this.comboBox12);
-            this.groupBox6.Controls.Add(this.textBox14);
+            this.groupBox6.Controls.Add(this.dateNgayTra2);
+            this.groupBox6.Controls.Add(this.cmbVLChinh);
+            this.groupBox6.Controls.Add(this.cmbTenSP2);
+            this.groupBox6.Controls.Add(this.txtLyDo2);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label27);
             this.groupBox6.Controls.Add(this.label28);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Controls.Add(this.comboBox13);
+            this.groupBox6.Controls.Add(this.cmbThaoTac2);
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
@@ -1223,6 +1327,17 @@
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // cmbMaSP2
+            // 
+            this.cmbMaSP2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMaSP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaSP2.FormattingEnabled = true;
+            this.cmbMaSP2.Location = new System.Drawing.Point(353, 84);
+            this.cmbMaSP2.Name = "cmbMaSP2";
+            this.cmbMaSP2.Size = new System.Drawing.Size(120, 24);
+            this.cmbMaSP2.TabIndex = 56;
             // 
             // tableLayoutPanel4
             // 
@@ -1363,60 +1478,60 @@
             this.label33.TabIndex = 51;
             this.label33.Text = "Tuổi bệnh nhân";
             // 
-            // comboBox5
+            // cmbGioiTinhBN2
             // 
-            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cmbGioiTinhBN2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbGioiTinhBN2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGioiTinhBN2.FormattingEnabled = true;
+            this.cmbGioiTinhBN2.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBox5.Location = new System.Drawing.Point(628, 20);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(53, 24);
-            this.comboBox5.TabIndex = 54;
-            this.comboBox5.Text = "Nam";
+            this.cmbGioiTinhBN2.Location = new System.Drawing.Point(628, 20);
+            this.cmbGioiTinhBN2.Name = "cmbGioiTinhBN2";
+            this.cmbGioiTinhBN2.Size = new System.Drawing.Size(53, 24);
+            this.cmbGioiTinhBN2.TabIndex = 54;
+            this.cmbGioiTinhBN2.Text = "Nam";
             // 
-            // textBox15
+            // txtTenBN2
             // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtTenBN2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(109, 21);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(258, 22);
-            this.textBox15.TabIndex = 50;
-            this.textBox15.Tag = "Họ tên bệnh nhân";
+            this.txtTenBN2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBN2.Location = new System.Drawing.Point(109, 21);
+            this.txtTenBN2.Name = "txtTenBN2";
+            this.txtTenBN2.Size = new System.Drawing.Size(258, 22);
+            this.txtTenBN2.TabIndex = 50;
+            this.txtTenBN2.Tag = "Họ tên bệnh nhân";
             // 
-            // textBox16
+            // txtTuoiBN2
             // 
-            this.textBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(493, 21);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(65, 22);
-            this.textBox16.TabIndex = 52;
+            this.txtTuoiBN2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTuoiBN2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuoiBN2.Location = new System.Drawing.Point(493, 21);
+            this.txtTuoiBN2.Name = "txtTuoiBN2";
+            this.txtTuoiBN2.Size = new System.Drawing.Size(65, 22);
+            this.txtTuoiBN2.TabIndex = 52;
             // 
-            // textBox18
+            // txtMauSP2
             // 
-            this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtMauSP2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(109, 173);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(151, 22);
-            this.textBox18.TabIndex = 42;
+            this.txtMauSP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMauSP2.Location = new System.Drawing.Point(109, 173);
+            this.txtMauSP2.Name = "txtMauSP2";
+            this.txtMauSP2.Size = new System.Drawing.Size(151, 22);
+            this.txtMauSP2.TabIndex = 42;
             // 
-            // comboBox15
+            // cmbMaVLPhu
             // 
-            this.comboBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(353, 144);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(120, 24);
-            this.comboBox15.TabIndex = 41;
-            this.comboBox15.SelectedIndexChanged += new System.EventHandler(this.comboBox15_SelectedIndexChanged);
+            this.cmbMaVLPhu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMaVLPhu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaVLPhu.FormattingEnabled = true;
+            this.cmbMaVLPhu.Location = new System.Drawing.Point(353, 144);
+            this.cmbMaVLPhu.Name = "cmbMaVLPhu";
+            this.cmbMaVLPhu.Size = new System.Drawing.Size(120, 24);
+            this.cmbMaVLPhu.TabIndex = 41;
+            this.cmbMaVLPhu.SelectedIndexChanged += new System.EventHandler(this.comboBox15_SelectedIndexChanged);
             // 
             // label34
             // 
@@ -1430,16 +1545,17 @@
             this.label34.TabIndex = 40;
             this.label34.Text = "Mã VLP";
             // 
-            // comboBox16
+            // cmbVLPhu
             // 
-            this.comboBox16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbVLPhu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(109, 144);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(151, 24);
-            this.comboBox16.TabIndex = 39;
+            this.cmbVLPhu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVLPhu.FormattingEnabled = true;
+            this.cmbVLPhu.Location = new System.Drawing.Point(109, 144);
+            this.cmbVLPhu.Name = "cmbVLPhu";
+            this.cmbVLPhu.Size = new System.Drawing.Size(151, 24);
+            this.cmbVLPhu.TabIndex = 39;
+            this.cmbVLPhu.SelectedIndexChanged += new System.EventHandler(this.cmbVLPhu_SelectedIndexChanged);
             // 
             // label35
             // 
@@ -1454,12 +1570,12 @@
             this.label35.TabIndex = 38;
             this.label35.Text = "Vật liệu phụ";
             // 
-            // comboBox8
+            // dateGioTra2
             // 
-            this.comboBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.dateGioTra2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateGioTra2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateGioTra2.FormattingEnabled = true;
+            this.dateGioTra2.Items.AddRange(new object[] {
             "00h",
             "01h",
             "02h",
@@ -1484,24 +1600,26 @@
             "21h",
             "22h",
             "23h"});
-            this.comboBox8.Location = new System.Drawing.Point(353, 201);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 24);
-            this.comboBox8.TabIndex = 30;
-            this.comboBox8.Text = "12h";
+            this.dateGioTra2.Location = new System.Drawing.Point(353, 201);
+            this.dateGioTra2.Name = "dateGioTra2";
+            this.dateGioTra2.Size = new System.Drawing.Size(121, 24);
+            this.dateGioTra2.TabIndex = 30;
+            this.dateGioTra2.Text = "12h";
             // 
-            // textBox11
+            // txtTayMoc
             // 
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(353, 173);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(120, 22);
-            this.textBox11.TabIndex = 29;
+            this.txtTayMoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTayMoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTayMoc.Location = new System.Drawing.Point(353, 173);
+            this.txtTayMoc.Name = "txtTayMoc";
+            this.txtTayMoc.Size = new System.Drawing.Size(120, 22);
+            this.txtTayMoc.TabIndex = 29;
             // 
             // groupBox7
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.txtViTriRang2);
+            this.groupBox7.Controls.Add(this.pictureBox1);
             this.groupBox7.Location = new System.Drawing.Point(489, 83);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(192, 139);
@@ -1509,24 +1627,34 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Vị trí răng";
             // 
-            // comboBox9
+            // txtViTriRang2
             // 
-            this.comboBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(353, 113);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(120, 24);
-            this.comboBox9.TabIndex = 27;
+            this.txtViTriRang2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtViTriRang2.Location = new System.Drawing.Point(6, 111);
+            this.txtViTriRang2.Name = "txtViTriRang2";
+            this.txtViTriRang2.Size = new System.Drawing.Size(180, 22);
+            this.txtViTriRang2.TabIndex = 4;
             // 
-            // textBox12
+            // pictureBox1
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(353, 85);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(120, 22);
-            this.textBox12.TabIndex = 26;
+            this.pictureBox1.Image = global::DentalLabo.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // cmbMaVLChinh
+            // 
+            this.cmbMaVLChinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMaVLChinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaVLChinh.FormattingEnabled = true;
+            this.cmbMaVLChinh.Location = new System.Drawing.Point(353, 113);
+            this.cmbMaVLChinh.Name = "cmbMaVLChinh";
+            this.cmbMaVLChinh.Size = new System.Drawing.Size(120, 24);
+            this.cmbMaVLChinh.TabIndex = 27;
             // 
             // label20
             // 
@@ -1576,15 +1704,15 @@
             this.label23.TabIndex = 22;
             this.label23.Text = "Mã SP";
             // 
-            // textBox13
+            // txtYeuCauChiTiet2
             // 
-            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtYeuCauChiTiet2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(109, 235);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(572, 22);
-            this.textBox13.TabIndex = 21;
+            this.txtYeuCauChiTiet2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYeuCauChiTiet2.Location = new System.Drawing.Point(109, 235);
+            this.txtYeuCauChiTiet2.Name = "txtYeuCauChiTiet2";
+            this.txtYeuCauChiTiet2.Size = new System.Drawing.Size(572, 22);
+            this.txtYeuCauChiTiet2.TabIndex = 21;
             // 
             // label24
             // 
@@ -1599,47 +1727,49 @@
             this.label24.TabIndex = 20;
             this.label24.Text = "Yêu cầu chi tiết";
             // 
-            // dateTimePicker3
+            // dateNgayTra2
             // 
-            this.dateTimePicker3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dateNgayTra2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(109, 200);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(151, 22);
-            this.dateTimePicker3.TabIndex = 19;
+            this.dateNgayTra2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNgayTra2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgayTra2.Location = new System.Drawing.Point(109, 200);
+            this.dateNgayTra2.Name = "dateNgayTra2";
+            this.dateNgayTra2.Size = new System.Drawing.Size(151, 22);
+            this.dateNgayTra2.TabIndex = 19;
             // 
-            // comboBox11
+            // cmbVLChinh
             // 
-            this.comboBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbVLChinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(109, 114);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(151, 24);
-            this.comboBox11.TabIndex = 17;
+            this.cmbVLChinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVLChinh.FormattingEnabled = true;
+            this.cmbVLChinh.Location = new System.Drawing.Point(109, 114);
+            this.cmbVLChinh.Name = "cmbVLChinh";
+            this.cmbVLChinh.Size = new System.Drawing.Size(151, 24);
+            this.cmbVLChinh.TabIndex = 17;
+            this.cmbVLChinh.SelectedIndexChanged += new System.EventHandler(this.cmbVLChinh_SelectedIndexChanged);
             // 
-            // comboBox12
+            // cmbTenSP2
             // 
-            this.comboBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbTenSP2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(109, 85);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(151, 24);
-            this.comboBox12.TabIndex = 16;
+            this.cmbTenSP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTenSP2.FormattingEnabled = true;
+            this.cmbTenSP2.Location = new System.Drawing.Point(109, 85);
+            this.cmbTenSP2.Name = "cmbTenSP2";
+            this.cmbTenSP2.Size = new System.Drawing.Size(151, 24);
+            this.cmbTenSP2.TabIndex = 16;
+            this.cmbTenSP2.SelectedIndexChanged += new System.EventHandler(this.cmbTenSP2_SelectedIndexChanged);
             // 
-            // textBox14
+            // txtLyDo2
             // 
-            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(353, 55);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(328, 22);
-            this.textBox14.TabIndex = 15;
+            this.txtLyDo2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLyDo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLyDo2.Location = new System.Drawing.Point(353, 55);
+            this.txtLyDo2.Name = "txtLyDo2";
+            this.txtLyDo2.Size = new System.Drawing.Size(328, 22);
+            this.txtLyDo2.TabIndex = 15;
             // 
             // label25
             // 
@@ -1705,16 +1835,26 @@
             this.label29.TabIndex = 10;
             this.label29.Text = "Tên sảm phẩm";
             // 
-            // comboBox13
+            // cmbThaoTac2
             // 
-            this.comboBox13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cmbThaoTac2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(109, 55);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(151, 24);
-            this.comboBox13.TabIndex = 9;
+            this.cmbThaoTac2.AutoCompleteCustomSource.AddRange(new string[] {
+            "1 - Sản phẩm làm mới",
+            "2 - Sản phẩm làm lại",
+            "3 - Sản phẩm bị hỏng cần làm lại"});
+            this.cmbThaoTac2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbThaoTac2.FormattingEnabled = true;
+            this.cmbThaoTac2.Items.AddRange(new object[] {
+            "1 - San pham lam moi",
+            "2 - San pham lam lai",
+            "3 - San pham bi hong can lam lai"});
+            this.cmbThaoTac2.Location = new System.Drawing.Point(109, 55);
+            this.cmbThaoTac2.Name = "cmbThaoTac2";
+            this.cmbThaoTac2.Size = new System.Drawing.Size(151, 24);
+            this.cmbThaoTac2.TabIndex = 9;
+            this.cmbThaoTac2.Text = "1 - San pham lam moi";
+            this.cmbThaoTac2.SelectedIndexChanged += new System.EventHandler(this.cmbThaoTac2_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -1863,50 +2003,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(719, 534);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // cmbTenNhomKH
-            // 
-            this.cmbTenNhomKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbTenNhomKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTenNhomKH.Location = new System.Drawing.Point(116, 23);
-            this.cmbTenNhomKH.Name = "cmbTenNhomKH";
-            this.cmbTenNhomKH.Size = new System.Drawing.Size(212, 22);
-            this.cmbTenNhomKH.TabIndex = 9;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label37.Location = new System.Drawing.Point(4, 26);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(116, 16);
-            this.label37.TabIndex = 8;
-            this.label37.Text = "Nhóm khách hàng";
-            // 
-            // cmdMaNhom
-            // 
-            this.cmdMaNhom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdMaNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdMaNhom.Location = new System.Drawing.Point(397, 22);
-            this.cmdMaNhom.Name = "cmdMaNhom";
-            this.cmdMaNhom.Size = new System.Drawing.Size(65, 22);
-            this.cmdMaNhom.TabIndex = 11;
-            // 
-            // label38
-            // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label38.Location = new System.Drawing.Point(334, 26);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(66, 16);
-            this.label38.TabIndex = 10;
-            this.label38.Text = "Mã Nhóm";
-            // 
             // frmMauDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1925,16 +2021,22 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungMau)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungMau2)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1943,162 +2045,168 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox cmbMaKH;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox cmbDiaChiKH;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox cmbTenKH;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateNgayNhan;
-        private System.Windows.Forms.TextBox txtSoMau;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.ComboBox comboBox15;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox16;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox cmbSoDTKH;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox cmdMaNhom;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox cmbTenNhomKH;
-        private System.Windows.Forms.Label label37;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.DateTimePicker dateNgayNhan;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage2;
+        public System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.ComboBox cmbThaoTac;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.ComboBox cmbLoaiVatLieu;
+        public System.Windows.Forms.ComboBox cmbTenSP;
+        public System.Windows.Forms.TextBox txtLyDo;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox txtYeuCauChiTiet;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.DateTimePicker dateNgayTra;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.ComboBox cmbMaVatLieu;
+        public System.Windows.Forms.ComboBox dateGioTra;
+        public System.Windows.Forms.TextBox txtLuuY;
+        public System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Button button6;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.GroupBox groupBox5;
+        public System.Windows.Forms.DataGridView dtgNoiDungMau;
+        public System.Windows.Forms.GroupBox groupBox6;
+        public System.Windows.Forms.ComboBox dateGioTra2;
+        public System.Windows.Forms.TextBox txtTayMoc;
+        public System.Windows.Forms.GroupBox groupBox7;
+        public System.Windows.Forms.ComboBox cmbMaVLChinh;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.TextBox txtYeuCauChiTiet2;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.DateTimePicker dateNgayTra2;
+        public System.Windows.Forms.ComboBox cmbVLChinh;
+        public System.Windows.Forms.ComboBox cmbTenSP2;
+        public System.Windows.Forms.TextBox txtLyDo2;
+        public System.Windows.Forms.Label label25;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.Label label28;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.ComboBox cmbThaoTac2;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.DataGridView dataGridView2;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        public System.Windows.Forms.GroupBox groupBox8;
+        public System.Windows.Forms.DataGridView dtgNoiDungMau2;
+        public System.Windows.Forms.ComboBox cmbMaVLPhu;
+        public System.Windows.Forms.Label label34;
+        public System.Windows.Forms.ComboBox cmbVLPhu;
+        public System.Windows.Forms.Label label35;
+        public System.Windows.Forms.TextBox txtMauSP;
+        public System.Windows.Forms.TextBox txtMauSP2;
+        public System.Windows.Forms.Label label36;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.ComboBox cmbGioiTinhBN;
+        public System.Windows.Forms.TextBox txtTenBN;
+        public System.Windows.Forms.TextBox txtTuoiBN;
+        public System.Windows.Forms.Label label31;
+        public System.Windows.Forms.Label label32;
+        public System.Windows.Forms.Label label33;
+        public System.Windows.Forms.ComboBox cmbGioiTinhBN2;
+        public System.Windows.Forms.TextBox txtTenBN2;
+        public System.Windows.Forms.TextBox txtTuoiBN2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        public System.Windows.Forms.Button button8;
+        public System.Windows.Forms.Button button10;
+        public System.Windows.Forms.Button button11;
+        public System.Windows.Forms.Button button12;
+        public System.Windows.Forms.Button button13;
+        public System.Windows.Forms.Button button9;
+        public System.Windows.Forms.Label label38;
+        public System.Windows.Forms.Label label37;
+        public System.Windows.Forms.ComboBox cmbMaKH;
+        public System.Windows.Forms.ComboBox cmbMaNhomKH;
+        public System.Windows.Forms.ComboBox cmbNhomKH;
+        public System.Windows.Forms.ComboBox cmbTenKH;
+        public System.Windows.Forms.ComboBox cmbDienThoaiKH;
+        public System.Windows.Forms.ComboBox cmbDiaChiKH;
+        public System.Windows.Forms.TextBox txtSoMau;
+        public System.Windows.Forms.ComboBox cmbMaSP;
+        public System.Windows.Forms.ComboBox cmbMaSP2;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        public System.Windows.Forms.TextBox txtViTriRang2;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txtViTriRang;
+        public System.Windows.Forms.PictureBox pictureBox2;
     }
 }

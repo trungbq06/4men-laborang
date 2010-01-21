@@ -11,7 +11,7 @@ class Database {
     public static bool hasConnect = false;
 
     public static void connectDatabase(string server, string user, string pass, string db) {
-        string ConnectionString = "Network Library=dbmssocn;Address=127.0.0.1\\SQLEXPRESS;";
+        string ConnectionString = "Network Library=dbmssocn;Address=LOCALHOST\\SQLEXPRESS;";
         ConnectionString += "User ID=sa;";
         ConnectionString += "Password=abc123;";
         ConnectionString += "Initial Catalog=" + db;  
