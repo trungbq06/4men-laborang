@@ -11,7 +11,7 @@ namespace DentalLabo.Data
     {
         public static SqlConnection Connect()
         {
-            string strCon = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=DentalLabo;User Id=sa;Password=trungbq";
+            string strCon = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=DentalLabo;User Id=sa;Password=abc123";
             SqlConnection con = new SqlConnection(strCon);
             con.Open();
             return con;

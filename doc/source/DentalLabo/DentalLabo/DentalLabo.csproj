@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{408AEFBC-A3CC-4B95-985B-861B86EF84F9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -66,16 +66,25 @@
     <Compile Include="BanHangVaCongNo\BHCNModel.cs" />
     <Compile Include="BanHangVaCongNo\NhapKhoThanhPham_Model.cs" />
     <Compile Include="Bussiness\BusinessDanhMucSP.cs" />
+    <Compile Include="Bussiness\BussinessBangGiaSP.cs" />
+    <Compile Include="Bussiness\BussinessDanhMucNV.cs" />
+    <Compile Include="Bussiness\BussinessKhachHang.cs" />
     <Compile Include="ChamSocKhachHang\frmGuiEmail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChamSocKhachHang\frmGuiEmail.Designer.cs">
       <DependentUpon>frmGuiEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\DABangGiaSP.cs" />
+    <Compile Include="Data\DADanhMucKH.cs" />
+    <Compile Include="DataAccess\DADanhMucNV.cs" />
     <Compile Include="DataAccess\DADanhMucSP.cs" />
     <Compile Include="DataAccess\DataConnection.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Data\BangGiaSP.cs" />
+    <Compile Include="Data\DanhMucNV.cs" />
     <Compile Include="Data\DanhMucSP.cs" />
+    <Compile Include="Data\KhachHang.cs" />
     <Compile Include="frmChonRang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,12 +103,20 @@
     <Compile Include="ChamSocKhachHang\frmGuiTinNhan.Designer.cs">
       <DependentUpon>frmGuiTinNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintDataGrid\PrintDGV.cs" />
+    <Compile Include="PrintDataGrid\PrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDataGrid\PrintOptions.designer.cs">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyMauDatHang\frmBangGiaSP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyMauDatHang\frmBangGiaSP.Designer.cs">
       <DependentUpon>frmBangGiaSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyMauDatHang\MauDatHang_Model.cs" />
     <Compile Include="QuanLySPVaLuong\frmDanhMucBoPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +128,24 @@
     </Compile>
     <Compile Include="BanHangVaCongNo\frmDanhMucKH.Designer.cs">
       <DependentUpon>frmDanhMucKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmThemCongDoanSanXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmThemCongDoanSanXuat.Designer.cs">
+      <DependentUpon>frmThemCongDoanSanXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmThemNoiDungYeuCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmThemNoiDungYeuCau.Designer.cs">
+      <DependentUpon>frmThemNoiDungYeuCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\MauMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\MauMoi.Designer.cs">
+      <DependentUpon>MauMoi.cs</DependentUpon>
     </Compile>
     <Compile Include="VatTuHHVaCongNoNCC\frmDanhMucKhoVatTuHH.cs">
       <SubType>Form</SubType>
@@ -276,6 +311,9 @@
     <EmbeddedResource Include="ChamSocKhachHang\frmGuiTinNhan.resx">
       <DependentUpon>frmGuiTinNhan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintDataGrid\PrintOptions.resx">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyMauDatHang\frmBangGiaSP.resx">
       <DependentUpon>frmBangGiaSP.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +322,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHangVaCongNo\frmDanhMucKH.resx">
       <DependentUpon>frmDanhMucKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\frmThemCongDoanSanXuat.resx">
+      <DependentUpon>frmThemCongDoanSanXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\frmThemNoiDungYeuCau.resx">
+      <DependentUpon>frmThemNoiDungYeuCau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\MauMoi.resx">
+      <DependentUpon>MauMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VatTuHHVaCongNoNCC\frmDanhMucKhoVatTuHH.resx">
       <DependentUpon>frmDanhMucKhoVatTuHH.cs</DependentUpon>
@@ -531,6 +578,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Presentation\" />

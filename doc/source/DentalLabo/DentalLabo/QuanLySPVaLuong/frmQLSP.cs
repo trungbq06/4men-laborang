@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using DentalLabo.Quan_ly_san_pham_va_tinh_luong;
 using DentalLabo.QuanLySPVaLuong;
 
 namespace DentalLabo
