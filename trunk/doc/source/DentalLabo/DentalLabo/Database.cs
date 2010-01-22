@@ -9,6 +9,7 @@ using System.Windows.Forms;
 class Database {
     private static SqlConnection SQLConnection = new SqlConnection();
     public static bool hasConnect = false;
+    public static bool debug = false;
 
     public static void connectDatabase(string server, string user, string pass, string db) {
         string ConnectionString = "Network Library=dbmssocn;Address=LOCALHOST\\SQLEXPRESS;";
@@ -41,7 +42,10 @@ class Database {
         }
     }
 
-    public static DataTable query(String SQLQuery) {
+    public static DataTable query(String SQLQuery) {        
+        if (debug) 
+            Debug(SQLQuery);
+       
         SqlDataAdapter SQLDataAdapter = new SqlDataAdapter(SQLQuery, SQLConnection);
 
         // Create a new DataTable
@@ -56,7 +60,11 @@ class Database {
     }
 
     public static void Debug(String message) {
-        MessageBox.Show(null, message, "DEBUG", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+        MessageBox.Show(null, message, "DEBUG", MessageBoxButtons.OK, MessageBoxIcon.Information);       
+    }
+
+    public static void Warning(String message) {
+        MessageBox.Show(null, message, "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
 }
