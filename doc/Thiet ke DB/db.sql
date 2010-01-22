@@ -53,7 +53,8 @@ create table KhachHang(
 	SDT varchar(20),
 	MaSoThue varchar(20),
 	NguoiDaiDien varchar(200),
-	MaNhomKH varchar(20) references NhomKH	
+	MaNhomKH varchar(20) references NhomKH,
+	DiaChiKH varchar(255)
 )
 go
 create table MauHang(
