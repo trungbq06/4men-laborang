@@ -12,7 +12,7 @@ class Database {
     public static bool debug = false;
 
     public static void connectDatabase(string server, string user, string pass, string db) {
-        string ConnectionString = "Network Library=dbmssocn;Address=LOCALHOST\\SQLEXPRESS;";
+        string ConnectionString = "Network Library=dbmssocn;Address=192.168.1.44\\SQLEXPRESS;";
         ConnectionString += "User ID=sa;";
         ConnectionString += "Password=abc123;";
         ConnectionString += "Initial Catalog=" + db;  

@@ -109,7 +109,7 @@ namespace DentalLabo
 
                     khachhang.MaKH = txtMaKH.Text;
                     //MessageBox.Show(cbNhomKH.SelectedValue.ToString());
-                    khachhang.MaNhomKH = Int32.Parse(cbNhomKH.SelectedValue.ToString());
+                    khachhang.MaNhomKH = cbNhomKH.SelectedValue.ToString();
                     khachhang.TenKH = txtTenKH.Text;
                     khachhang.MaSoThue = txtMaSoThue.Text;
                     khachhang.NguoiDaiDien = txtNguoiDaiDien.Text;
@@ -285,7 +285,7 @@ namespace DentalLabo
                 if (dtgDanhMucKH.Rows[e.RowIndex].Cells[2].Value.ToString() == "Nam")
                     rdbNam.Checked = true;
                 else rdbNu.Checked = true;
-                txtDienThoai.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtDienThoai.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtMaSoThue.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtNguoiDaiDien.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[5].Value.ToString();
                 cbNhomKH1.SelectedValue = dtgDanhMucKH.Rows[e.RowIndex].Cells[6].Value.ToString();

@@ -222,9 +222,9 @@ namespace DentalLabo
 
         private void ttDanhMucNV_Click(object sender, EventArgs e)
         {
-            //Form f = new frmDanhMucNhanVien();
-            //f.MdiParent = this;
-            //f.Show();
+            Form f = new frmDanhMucNV();
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void ttDanhMucCongDoanSX_Click(object sender, EventArgs e)

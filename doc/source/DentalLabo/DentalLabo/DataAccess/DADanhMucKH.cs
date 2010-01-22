@@ -21,10 +21,10 @@ namespace DentalLabo.Data
                 con = DataConnection.Connect();
                 com.Connection = con;
                 com.CommandType = CommandType.Text;
-                com.CommandText = "Insert into KhachHang values(@MaKH, @TenKH, @DienThoai, @GioiTinh, @MaSoThue, @NguoiDaiDien, @MaNhomKH, @DiaChi)";
+                com.CommandText = "Insert into KhachHang values(@MaKH, @TenKH, @SDT, @GioiTinh, @MaSoThue, @NguoiDaiDien, @MaNhomKH, @DiaChi)";
                 com.Parameters.Add("@MaKH", khachhang.MaKH);
                 com.Parameters.Add("@TenKH", khachhang.TenKH);
-                com.Parameters.Add("@DienThoai", khachhang.DienThoai);
+                com.Parameters.Add("@SDT", khachhang.DienThoai);
                 com.Parameters.Add("@GioiTinh", khachhang.GioiTinh);
                 com.Parameters.Add("@MaSoThue", khachhang.MaSoThue);
                 com.Parameters.Add("@NguoiDaiDien", khachhang.NguoiDaiDien);
@@ -67,9 +67,9 @@ namespace DentalLabo.Data
                 string str = "Update KhachHang Set ";
                 str += "MaKH='" + khachhang.MaKH + "',";
                 str += "TenKH=N'" + khachhang.TenKH + "',";
-                str += "DienThoai=N'" + khachhang.DienThoai + "',";
-                str += "GioiTinh='" + khachhang.GioiTinh + "',";
-                str += "MaSoThue='" + khachhang.MaSoThue + "',";
+                str += "SDT=N'" + khachhang.DienThoai + "',";
+                str += "GioiTinh=N'" + khachhang.GioiTinh + "',";
+                str += "MaSoThue=N'" + khachhang.MaSoThue + "',";
                 str += "NguoiDaiDien=N'" + khachhang.NguoiDaiDien + "',";
                 str += "DiaChi=N'" + khachhang.DiaChi + "',";
                 str += "MaNhomKH='" + khachhang.MaNhomKH + "' where ";
