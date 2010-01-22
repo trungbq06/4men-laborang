@@ -35,6 +35,7 @@ namespace PrintDataGrid
         private static bool PrintAllRows = true;   // True = print all rows,  False = print selected rows    
         private static bool FitToPageWidth = true; // True = Fits selected columns to page width ,  False = Print columns as showed    
         private static int HeaderHeight = 0;
+        private static ArrayList myHeader;
 
         public static void Print_DataGridView(DataGridView dgv1)
         {
@@ -85,6 +86,62 @@ namespace PrintDataGrid
 	        {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);        		
 	        }
+            finally
+            {
+
+            }
+        }
+
+        public static void Print_DataGridView(DataGridView dgv1, ArrayList header)
+        {
+            PrintPreviewDialog ppvw;
+            try
+            {
+                // Getting DataGridView object to print
+                dgv = dgv1;
+                myHeader = header;
+
+                // Getting all Coulmns Names in the DataGridView
+                AvailableColumns.Clear();
+                foreach (DataGridViewColumn c in dgv.Columns)
+                {
+                    if (!c.Visible) continue;
+                    AvailableColumns.Add(c.HeaderText);
+                }
+
+                // Showing the PrintOption Form
+                PrintOptions dlg = new PrintOptions(AvailableColumns);
+                if (dlg.ShowDialog() != DialogResult.OK) return;
+
+                PrintTitle = dlg.PrintTitle;
+                PrintAllRows = dlg.PrintAllRows;
+                FitToPageWidth = dlg.FitToPageWidth;
+                SelectedColumns = dlg.GetSelectedColumns();
+
+                RowsPerPage = 0;
+
+                ppvw = new PrintPreviewDialog();
+                ppvw.Document = printDoc;
+
+                // Showing the Print Preview Page
+                printDoc.BeginPrint += new System.Drawing.Printing.PrintEventHandler(PrintDoc_BeginPrint);
+                printDoc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(PrintDoc_PrintPage);
+                if (ppvw.ShowDialog() != DialogResult.OK)
+                {
+                    printDoc.BeginPrint -= new System.Drawing.Printing.PrintEventHandler(PrintDoc_BeginPrint);
+                    printDoc.PrintPage -= new System.Drawing.Printing.PrintPageEventHandler(PrintDoc_PrintPage);
+                    return;
+                }
+
+                // Printing the Documnet
+                printDoc.Print();
+                printDoc.BeginPrint -= new System.Drawing.Printing.PrintEventHandler(PrintDoc_BeginPrint);
+                printDoc.PrintPage -= new System.Drawing.Printing.PrintPageEventHandler(PrintDoc_PrintPage);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             finally
             {
 
@@ -198,12 +255,48 @@ namespace PrintDataGrid
                     {
                         if (NewPage)
                         {
-                            // Draw Header
-                            e.Graphics.DrawString(PrintTitle, new Font(dgv.Font, FontStyle.Bold), 
-                                    Brushes.Black, e.MarginBounds.Left, e.MarginBounds.Top -
-                            e.Graphics.MeasureString(PrintTitle, new Font(dgv.Font, 
-                                    FontStyle.Bold), e.MarginBounds.Width).Height - 13);
+                            PrintTitle = "Danh Mục Nhân Viên";
+                            Font fFont = new Font("Times New Roman", 18, FontStyle.Bold,
+GraphicsUnit.Point);
+                            PointF headerLocation = new PointF(e.MarginBounds.Left + e.MarginBounds.Width / 2 - PrintTitle.Length - e.MarginBounds.Left, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) - 13);
+                            
+                            e.Graphics.DrawString(PrintTitle, fFont, Brushes.Black, headerLocation);
+                            int lineHeight = 0;
+                            int count = 0;
+                            int count1 = 1;
+                            fFont = dgv.Font;
+                            int maxRight = 0;
 
+                            foreach (string entry in myHeader)
+                            {
+                                ++count;
+                                if (count % 2 ==0) if (entry.Length > maxRight) maxRight = entry.Length;
+                            }
+                            count = 0;
+                            maxRight += 100;
+                            
+                            foreach (string entry in myHeader)
+                            {
+                                if (count % 2 == 0)
+                                {
+                                    lineHeight += 30;
+                                    count1 = 1;
+                                }
+                                
+                                if (count1 == 1)
+                                {
+                                    headerLocation = new PointF(e.MarginBounds.Left + 50, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) + lineHeight);
+                                }
+                                else
+                                {
+                                    headerLocation = new PointF(e.MarginBounds.Width - maxRight, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) + lineHeight);     
+                                }
+
+                                e.Graphics.DrawString(entry, fFont, Brushes.Black, headerLocation); 
+                                count1++;
+                                count++;
+                            }
+                            
                             String s = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
 
                             e.Graphics.DrawString(
@@ -211,12 +304,12 @@ namespace PrintDataGrid
                                 new Font(dgv.Font, FontStyle.Bold), 
                                 Brushes.Black, 
                                 e.MarginBounds.Left + (e.MarginBounds.Width - 
-                                                       e.Graphics.MeasureString(s, new Font(dgv.Font, FontStyle.Bold), e.MarginBounds.Width).Width), e.MarginBounds.Top - 
+                                                       e.Graphics.MeasureString(s, new Font(dgv.Font, FontStyle.Bold), e.MarginBounds.Width).Width), lineHeight + e.MarginBounds.Top - 
                                     e.Graphics.MeasureString(PrintTitle, new Font(new Font(dgv.Font, 
                                     FontStyle.Bold), FontStyle.Bold), e.MarginBounds.Width).Height - 13);
 
                             // Draw Columns
-                            tmpTop = e.MarginBounds.Top;
+                            tmpTop = e.MarginBounds.Top + lineHeight;
                             i = 0;
                             foreach (DataGridViewColumn GridCol in dgv.Columns)
                             {
