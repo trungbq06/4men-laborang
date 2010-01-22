@@ -161,7 +161,7 @@ namespace DentalLabo.MauDatHang
 
         private void pictureBox16_Click(object sender, EventArgs e)
         {
-            if (arrayChoosed[15] == false) arrayChoosed[16] = true;
+            if (arrayChoosed[15] == false) arrayChoosed[17] = true;
             else arrayChoosed[15] = false;
             StringViTri(arrayChoosed);
         }
