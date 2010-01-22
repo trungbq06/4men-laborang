@@ -206,10 +206,12 @@ namespace PrintDataGrid
 
                             String s = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
 
-                            e.Graphics.DrawString(s, new Font(dgv.Font, FontStyle.Bold), 
-                                    Brushes.Black, e.MarginBounds.Left + (e.MarginBounds.Width - 
-                                    e.Graphics.MeasureString(s, new Font(dgv.Font, 
-                                    FontStyle.Bold), e.MarginBounds.Width).Width), e.MarginBounds.Top - 
+                            e.Graphics.DrawString(
+                                s, 
+                                new Font(dgv.Font, FontStyle.Bold), 
+                                Brushes.Black, 
+                                e.MarginBounds.Left + (e.MarginBounds.Width - 
+                                                       e.Graphics.MeasureString(s, new Font(dgv.Font, FontStyle.Bold), e.MarginBounds.Width).Width), e.MarginBounds.Top - 
                                     e.Graphics.MeasureString(PrintTitle, new Font(new Font(dgv.Font, 
                                     FontStyle.Bold), FontStyle.Bold), e.MarginBounds.Width).Height - 13);
 

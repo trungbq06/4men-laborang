@@ -41,6 +41,7 @@
             this.ttXuatKhoBanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.ttHoaDonBanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.ttPhieuTT = new System.Windows.Forms.ToolStripMenuItem();
+            this.giamTruToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ttDanhMucNhomKH = new System.Windows.Forms.ToolStripMenuItem();
             this.ttDanhMucKH = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +63,6 @@
             this.ttDanhMucCongDoanSX = new System.Windows.Forms.ToolStripMenuItem();
             this.ttPMKTTienMat = new System.Windows.Forms.ToolStripMenuItem();
             this.ttPhieuThu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ttGiamTru = new System.Windows.Forms.ToolStripMenuItem();
             this.ttPhieuChi = new System.Windows.Forms.ToolStripMenuItem();
             this.ttSoQuy = new System.Windows.Forms.ToolStripMenuItem();
             this.ttChamSocKhachHang = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,6 +146,7 @@
             this.ttXuatKhoBanHang,
             this.ttHoaDonBanHang,
             this.ttPhieuTT,
+            this.giamTruToolStripMenuItem,
             this.toolStripSeparator2,
             this.ttDanhMucNhomKH,
             this.ttDanhMucKH});
@@ -180,6 +181,13 @@
             this.ttPhieuTT.Size = new System.Drawing.Size(190, 22);
             this.ttPhieuTT.Text = "Phiếu TT";
             this.ttPhieuTT.Click += new System.EventHandler(this.ttPhieuTT_Click);
+            // 
+            // giamTruToolStripMenuItem
+            // 
+            this.giamTruToolStripMenuItem.Name = "giamTruToolStripMenuItem";
+            this.giamTruToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.giamTruToolStripMenuItem.Text = "Giảm trừ";
+            this.giamTruToolStripMenuItem.Click += new System.EventHandler(this.giamTruToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -326,7 +334,6 @@
             // 
             this.ttPMKTTienMat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ttPhieuThu,
-            this.ttGiamTru,
             this.ttPhieuChi,
             this.ttSoQuy});
             this.ttPMKTTienMat.Name = "ttPMKTTienMat";
@@ -336,28 +343,21 @@
             // ttPhieuThu
             // 
             this.ttPhieuThu.Name = "ttPhieuThu";
-            this.ttPhieuThu.Size = new System.Drawing.Size(152, 22);
+            this.ttPhieuThu.Size = new System.Drawing.Size(130, 22);
             this.ttPhieuThu.Text = "Phiếu thu";
             this.ttPhieuThu.Click += new System.EventHandler(this.ttPhieuThu_Click);
-            // 
-            // ttGiamTru
-            // 
-            this.ttGiamTru.Name = "ttGiamTru";
-            this.ttGiamTru.Size = new System.Drawing.Size(152, 22);
-            this.ttGiamTru.Text = "Giảm trừ";
-            this.ttGiamTru.Click += new System.EventHandler(this.ttGiamTru_Click);
             // 
             // ttPhieuChi
             // 
             this.ttPhieuChi.Name = "ttPhieuChi";
-            this.ttPhieuChi.Size = new System.Drawing.Size(152, 22);
+            this.ttPhieuChi.Size = new System.Drawing.Size(130, 22);
             this.ttPhieuChi.Text = "Phiếu chi";
             this.ttPhieuChi.Click += new System.EventHandler(this.ttPhieuChi_Click);
             // 
             // ttSoQuy
             // 
             this.ttSoQuy.Name = "ttSoQuy";
-            this.ttSoQuy.Size = new System.Drawing.Size(152, 22);
+            this.ttSoQuy.Size = new System.Drawing.Size(130, 22);
             this.ttSoQuy.Text = "Sổ quỹ";
             this.ttSoQuy.Click += new System.EventHandler(this.ttSoQuy_Click);
             // 
@@ -439,12 +439,12 @@
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucNV;
         private System.Windows.Forms.ToolStripMenuItem ttDanhMucCongDoanSX;
         private System.Windows.Forms.ToolStripMenuItem ttPhieuThu;
-        private System.Windows.Forms.ToolStripMenuItem ttGiamTru;
         private System.Windows.Forms.ToolStripMenuItem ttPhieuChi;
         private System.Windows.Forms.ToolStripMenuItem ttSoQuy;
         private System.Windows.Forms.ToolStripMenuItem ttChamSocKhachHang;
         private System.Windows.Forms.ToolStripMenuItem ttGuiTinNhan;
         private System.Windows.Forms.ToolStripMenuItem ttGuiEmail;
+        private System.Windows.Forms.ToolStripMenuItem giamTruToolStripMenuItem;
     }
 }
 
