@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -68,7 +68,22 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnInPhieuXuat_Click(object sender, EventArgs e)
         {
-            PrintDGV.Print_DataGridView(dtgHoaDonBanHang);
+            ArrayList array = new ArrayList();
+            array.Add("Ngày: " + dateNgayXuat.Text);
+            array.Add("Số phiếu: " + txtSoPhieu.Text);
+            
+            array.Add("Tên khách hàng:  " + cmbTenKH.Text);
+            array.Add("Mã khách hàng: " + cmbMaKH.Text);
+            
+            array.Add("Địa chỉ: " + txtDiaChi.Text);
+            array.Add("");
+
+            array.Add("Mã số thuế: " + txtMaSoThue.Text);
+            array.Add("Người đại diện: " + txtNguoiDaiDien.Text);
+            
+            
+
+            PrintDGV.Print_DataGridView(dtgHoaDonBanHang, array);
         }
        
     }

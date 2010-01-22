@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -51,13 +51,13 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                             long TongSo = Int64.Parse(TongHD) - Int64.Parse(TongTT) - Int64.Parse(TongGT);
                             model.ThemDong("Tống số", TongSo.ToString());
 
-                            Database.debug = true;
+                            //Database.debug = true;
                             txtDuDauKy.Text = BHCNModel.DuNoDenNgay(cmbMaKH.Text, dateNgayBatDau.Text);
 
                             long DuCuoiKy = Int64.Parse(txtDuDauKy.Text) + TongSo;
                             txtDuCuoiKy.Text = DuCuoiKy.ToString();
 
-                            Database.debug = false;
+                            //Database.debug = false;
                         }
                         else
                         {
@@ -74,6 +74,22 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
         private void cmbMaKH_SelectedIndexChanged(object sender, EventArgs e)
         {
             model.UpdateTheoMaKH(true);
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            ArrayList array = new ArrayList();            
+
+            array.Add("Tên khách hàng:  " + cmbTenKH.Text);
+            array.Add("Mã khách hàng: " + cmbMaKH.Text);
+
+            array.Add("Địa chỉ: " + txtDiaChi.Text);
+            array.Add("");
+
+            array.Add("Từ ngày: " + dateNgayBatDau.Text);
+            array.Add("Đến ngày: " + dateNgayKetThuc.Text);
+
+            PrintDataGrid.PrintDGV.Print_DataGridView(dtgChiTietCongNoKH, array);
         }
     }
 }
