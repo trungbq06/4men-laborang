@@ -93,8 +93,8 @@ namespace DentalLabo.MauDatHang
          */
         public void UpdateAddKH(String maKH)
         {
-            String query = "SELECT DiaChiKH FROM KhachHang WHERE MaKH = '" + maKH + "'";
-            BHCNModel.UpdateComboBoxByQuery(form.cmbDiaChiKH, query, "DiaChiKH");
+            String query = "SELECT DiaChi FROM KhachHang WHERE MaKH = '" + maKH + "'";
+            BHCNModel.UpdateComboBoxByQuery(form.cmbDiaChiKH, query, "DiaChi");
         }
         #endregion
 
@@ -392,9 +392,9 @@ namespace DentalLabo.MauDatHang
                                             "'" + ngayNhan + "'," +
                                             "'" + ngayTra + "'," +
                                             gioTraInt + "," +
-                                            " '', 0, '" + tenBN + "'," +
+                                            " '', 0, N'" + tenBN + "'," +
                                             tuoiBNInt + "," +
-                                            "'" + gioitinhBN + "'" +
+                                            "N'" + gioitinhBN + "'" +
                                             ")";
                 //Database.Debug(query);
                 Database.query(query);
@@ -451,9 +451,9 @@ namespace DentalLabo.MauDatHang
                             "'" + ngayNhan + "'," +
                             "'" + ngayTra + "'," +
                             gioTraInt + "," +
-                            " '', 0, '" + tenBN + "'," +
+                            " '', 0, N'" + tenBN + "'," +
                             tuoiBNInt + "," +
-                            "'" + gioitinhBN + "'" +
+                            "N'" + gioitinhBN + "'" +
                             ")";
 
                     if (MessageBox.Show(null, "Mẫu chưa tồn tại! Bạn có muốn thêm với mã số '" + maMau + "' vào hay không", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -535,9 +535,9 @@ namespace DentalLabo.MauDatHang
                         "0, 0," +
                         "'" + mauSP1 + "'," +
                         "'" + luuY + "'," +
-                        " null,'" + yeuCau1 + "'," +
-                        "'" + thaoTac1 + "'," +
-                        "'" + lyDo1 + "'" + 
+                        " null,N'" + yeuCau1 + "'," +
+                        "N'" + thaoTac1 + "'," +
+                        "N'" + lyDo1 + "'" + 
                         ")";
 
                 // query trong truong hop phuc hinh thao lap
@@ -550,10 +550,10 @@ namespace DentalLabo.MauDatHang
                         "0, 0," +
                         "'" + mauSP2 + "'," +
                         " null," +
-                        "'" + tayMoc + "'," +
-                        "'" + yeuCau2 + "'," +
-                        "'" + thaoTac2 + "'," +
-                        "'" + lyDo2 + "'" + 
+                        "N'" + tayMoc + "'," +
+                        "N'" + yeuCau2 + "'," +
+                        "N'" + thaoTac2 + "'," +
+                        "N'" + lyDo2 + "'" + 
                         ")";
 
                 if (loaiPhucHinh == "1")
@@ -609,9 +609,9 @@ namespace DentalLabo.MauDatHang
                         "MaVLC = '" + maVL + "'," +
                         "MauSP = '" + mauSP1 + "'," +
                         "LuuY = '" + luuY + "'," +
-                        "YeuCauChiTiet = '" + yeuCau1 + "'," +
-                        "ThaoTac = '" + thaoTac1 + "'," +
-                        "LyDo = '" + lyDo1 + "' where MaSPDatHang = '" + maSPDH + "'";
+                        "YeuCauChiTiet = N'" + yeuCau1 + "'," +
+                        "ThaoTac = N'" + thaoTac1 + "'," +
+                        "LyDo = N'" + lyDo1 + "' where MaSPDatHang = '" + maSPDH + "'";
 
                 // query trong truong hop phuc hinh thao lap
                 string query2 = "UPDATE SanPhamDatHang SET " +
@@ -620,10 +620,10 @@ namespace DentalLabo.MauDatHang
                         "MaVLC = '" + maVLC + "'," +
                         "MaVLP = '" + maVLP + "'," +
                         "MauSP = '" + mauSP2 + "'," +
-                        "ViTriTayMoc = '" + tayMoc + "'," +
-                        "YeuCauChiTiet = '" + yeuCau2 + "'," +
-                        "ThaoTac = '" + thaoTac2 + "'," +
-                        "LyDo = '" + lyDo2 + "' where MaSPDatHang = '" + maSPDH + "'";
+                        "ViTriTayMoc = N'" + tayMoc + "'," +
+                        "YeuCauChiTiet = N'" + yeuCau2 + "'," +
+                        "ThaoTac = N'" + thaoTac2 + "'," +
+                        "LyDo = N'" + lyDo2 + "' where MaSPDatHang = '" + maSPDH + "'";
                 string maMau = form.txtSoMau.Text;
                 if (loaiPhucHinh == "1")
                 {
