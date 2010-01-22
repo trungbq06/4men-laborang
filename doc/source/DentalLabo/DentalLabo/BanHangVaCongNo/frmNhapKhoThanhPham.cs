@@ -50,6 +50,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             model.FindMaSPDatHang();
             selectedRow = -1;
             model.ThemPhieuNhapKho();
+            dtgNoiDungNhapKho.Rows.Clear();
         }
 
         private void btnMauMoi_Click(object sender, EventArgs e)
@@ -91,8 +92,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             }            
             else
             {                
-                
-                /**
+                                
                 String filter = "(";
                 for (int i = 0; i < dtgNoiDungNhapKho.SelectedRows.Count; i++)
                 {
@@ -104,25 +104,6 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
                 String query = "DELETE FROM PhieuNhapKhoSP_MauHang where MaPhieu = '" + txtSoPhieu.Text + "' and MaMau in " + filter;
                 Database.query(query);
-                /**/
-                
-                // Xoa SPDH trong MauHang
-                string maSPDH = dtgNoiDungNhapKho.Rows[selectedRow].Cells[10].Value.ToString();
-                String query = "DELETE FROM MauHang_SanPhamDatHang where MaMau = '" + txtMaSoMau.Text + "' and MaSPDatHang = '" +  maSPDH + "'";
-                Database.query(query);
-                query = "DELETE SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + " '";
-                Database.query(query);
-
-                query = "SELECT MaSPDatHang FROM MauHang_SanPhamDatHang WHERE MaMau = '" + txtMaSoMau.Text + "'";
-                DataTable table = Database.query(query);
-                if (table.Rows.Count == 0) {
-                    query = "DELETE PhieuNhapKhoSP_MauHang WHERE MaPhieu = '" + txtSoPhieu.Text + "' and MaMau = '" + txtMaSoMau.Text + "'";
-                    Database.query(query);
-                    query = "DELETE MauHang WHERE MaMau = '" + txtMaSoMau.Text + "'";
-                    Database.query(query);
-                }
-
-
                 dtgNoiDungNhapKho.Rows.Clear();
                 //FinishUpdateRow();
                 model.LoadThongTinPhieuNK(false);
@@ -155,6 +136,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                 model.LoadTenVLP(row, true);
 
                 row.Cells[model.soluongIndex].ReadOnly = false;
+                row.Cells[model.soluongVLPIndex].ReadOnly = false;
             }
         }
 
@@ -196,6 +178,11 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                 {
                     model.UpdateLoaiPhucHinh(dtgNoiDungNhapKho.Rows[selectedRow]);
                 }
+                if (dtgNoiDungNhapKho.SelectedCells[0].RowIndex == selectedRow &&
+                    dtgNoiDungNhapKho.SelectedCells[0].ColumnIndex == model.tenVLPIndex)
+                {
+                    model.UpdateDVTVLP(dtgNoiDungNhapKho.Rows[selectedRow]);
+                }
             }  
         }
 
@@ -210,28 +197,41 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
                 // Tao hang moi
                 DataGridViewRow row = new DataGridViewRow();
-                dtgNoiDungNhapKho.Rows.Add(row);                
+                dtgNoiDungNhapKho.Rows.Add(row);
+                selectedRow = dtgNoiDungNhapKho.Rows.Count - 1;
                 row = dtgNoiDungNhapKho.Rows[dtgNoiDungNhapKho.Rows.Count - 1];
                 row.ReadOnly = true;
+
                 model.LayMasoMauTrongBang(row, false);
                 model.LoadTenSanPham(row, false);
                 model.LoadTenVLC(row, false);
                 model.LoadTenVLP(row, false);
 
                 // Them cac truong can thiet
-                row.Cells[model.soluongIndex].ReadOnly = false;
-                row.Cells[0].Value = (dtgNoiDungNhapKho.Rows.Count - 1).ToString();                
-                row.Cells[8].Value = dateGioNhap.Text;
-
-                row.Cells[5] = new DataGridViewTextBoxCell();
-                row.Cells[5].Value = "";
-
-                row.Cells[9].Value = dateNgayNhap.Text;
-                row.Cells[10].Value = model.FindMaSPDatHang();
-                selectedRow = dtgNoiDungNhapKho.Rows.Count - 1;
                 
+                row.Cells[model.thutuIndex].Value = (dtgNoiDungNhapKho.Rows.Count - 1).ToString(); 
+                row.Cells[model.gioNhapIndex].Value = dateGioNhap.Text;
+                               
+                row.Cells[model.soluongVLPIndex] = new DataGridViewTextBoxCell();
+                row.Cells[model.soluongVLPIndex].Value = "";
+                row.Cells[model.soluongVLPIndex].ReadOnly = false;
+                row.Cells[9].ReadOnly = false;
+
+                row.Cells[model.soluongIndex] = new DataGridViewTextBoxCell();
+                row.Cells[model.soluongIndex].Value = "";
+                row.Cells[model.soluongIndex].ReadOnly = false;
+                
+
+                row.Cells[model.gioNhapIndex].Value = dateGioNhap.Text;
+                row.Cells[model.ngayNhapIndex].Value = dateNgayNhap.Text;
+                row.Cells[model.maSPDatHangIndex].Value = model.FindMaSPDatHang();
+                                
                 model.UpdateDVT(row);
                 model.UpdateLoaiPhucHinh(row);
+                model.UpdateDVTVLP(row);
+
+                
+                
             }
             else 
             {
@@ -247,15 +247,17 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            Database.debug = true;
             if (selectedRow == -1)
             {
                 MessageBox.Show(null, "Không có hàng nào để lưu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else {
+            else {                
                 model.SaveSeletedRow(dtgNoiDungNhapKho.Rows[selectedRow], isUpdate);
                 FinishUpdateRow();
                 isUpdate = false;
             }
+            Database.debug = false;
         }
                 
     }
