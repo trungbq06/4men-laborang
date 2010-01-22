@@ -238,6 +238,8 @@ namespace DentalLabo.Mau_dat_hang
             // 
             // cmbDienThoaiKH
             // 
+            this.cmbDienThoaiKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDienThoaiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDienThoaiKH.FormattingEnabled = true;
             this.cmbDienThoaiKH.Location = new System.Drawing.Point(116, 104);
@@ -247,6 +249,8 @@ namespace DentalLabo.Mau_dat_hang
             // 
             // cmbDiaChiKH
             // 
+            this.cmbDiaChiKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbDiaChiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDiaChiKH.FormattingEnabled = true;
             this.cmbDiaChiKH.Location = new System.Drawing.Point(116, 75);
@@ -257,6 +261,7 @@ namespace DentalLabo.Mau_dat_hang
             // 
             // cmbMaKH
             // 
+            this.cmbMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaKH.FormattingEnabled = true;
             this.cmbMaKH.Location = new System.Drawing.Point(392, 47);
@@ -266,6 +271,7 @@ namespace DentalLabo.Mau_dat_hang
             // 
             // cmbMaNhomKH
             // 
+            this.cmbMaNhomKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbMaNhomKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaNhomKH.FormattingEnabled = true;
             this.cmbMaNhomKH.Location = new System.Drawing.Point(392, 16);
@@ -276,6 +282,8 @@ namespace DentalLabo.Mau_dat_hang
             // 
             // cmbNhomKH
             // 
+            this.cmbNhomKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbNhomKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNhomKH.FormattingEnabled = true;
             this.cmbNhomKH.Location = new System.Drawing.Point(116, 15);
@@ -286,6 +294,8 @@ namespace DentalLabo.Mau_dat_hang
             // 
             // cmbTenKH
             // 
+            this.cmbTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTenKH.FormattingEnabled = true;
             this.cmbTenKH.Location = new System.Drawing.Point(116, 45);
