@@ -134,6 +134,8 @@ namespace DentalLabo.BanHangVaCongNo
             form.dtgChiTietCongNoKH.Rows.Add(cells);
 
             DataGridViewRow addedRow = form.dtgChiTietCongNoKH.Rows[form.dtgChiTietCongNoKH.Rows.Count - 1];
+            
+            /**
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             style.BackColor = System.Drawing.Color.Yellow;
 
@@ -141,6 +143,7 @@ namespace DentalLabo.BanHangVaCongNo
             {
                 addedRow.Cells[i].Style = style;    
             }
+            /**/
 
             addedRow.Cells[msMauIndex].Value = message;
         }

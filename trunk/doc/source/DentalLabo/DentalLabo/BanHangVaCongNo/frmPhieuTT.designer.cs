@@ -373,6 +373,7 @@
             this.btnInPhieu.TabIndex = 3;
             this.btnInPhieu.Text = "In phiếu tổng hợp thanh toán";
             this.btnInPhieu.UseVisualStyleBackColor = true;
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // tableLayoutPanel1
             // 
