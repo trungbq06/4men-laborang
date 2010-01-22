@@ -189,7 +189,7 @@ namespace DentalLabo.MauDatHang
                 query = "select top 1 * from KhachHang where MaKH = '" + maKH + "'";
                 result = Database.query(query);
                 form.cmbTenKH.Text = result.Rows[0]["TenKH"].ToString();
-                form.cmbDiaChiKH.Text = result.Rows[0]["DiaChiKH"].ToString();
+                form.cmbDiaChiKH.Text = result.Rows[0]["DiaChi"].ToString();
                 form.cmbDienThoaiKH.Text = result.Rows[0]["SDT"].ToString();
                 String maNhom = result.Rows[0]["MaNhomKH"].ToString();
                 form.cmbMaNhomKH.Text = maNhom;
@@ -219,8 +219,8 @@ namespace DentalLabo.MauDatHang
                     form.txtTenBN2.Text = tenBN;
                     form.txtTuoiBN2.Text = tuoiBN;
                     form.cmbGioiTinhBN2.Text = gioiTinhBN;
-                    form.dateGioTra.Text = gioTra;
-                    form.dateNgayTra.Text = ngayTra;
+                    form.dateGioTra2.Text = gioTra;
+                    form.dateNgayTra2.Text = ngayTra;
                     LayThongTinMau(maMau, "2", ngayTra, gioTra, tuoiBN, gioiTinhBN);
                 }
             } // of else
@@ -289,7 +289,7 @@ namespace DentalLabo.MauDatHang
                     string lyDo = spDatHang.Rows[0]["LyDo"].ToString();
                     string yeuCauChiTiet = spDatHang.Rows[0]["YeuCauChiTiet"].ToString();
                     string tayMoc = spDatHang.Rows[0]["ViTriTayMoc"].ToString();
-
+                    string soLuong = spDatHang.Rows[0]["SoLuongVLC"].ToString();
                     // Gan cac truong tenSP, dvt, soluong, vlc, vlp
                     a[1] = tenSP;
                     a[2] = viTriRang;
@@ -323,7 +323,7 @@ namespace DentalLabo.MauDatHang
                         a[7] = maVLP;
                         a[8] = tayMoc;
                         a[9] = dvt;
-                        a[10] = "";//soluong
+                        a[10] = soLuong;//soluong
                         a[11] = ngayTra;
                         a[12] = gioTra;
                         a[13] = tuoiBN;
@@ -351,6 +351,7 @@ namespace DentalLabo.MauDatHang
         public void LuuAction(String action, String loaiPhucHinh, String maSPDH)
         {
             String query;
+            
             #region TaoMauMoi
             if (action == "Mau moi")
             {
@@ -388,16 +389,20 @@ namespace DentalLabo.MauDatHang
                 query = "INSERT MauHang VALUES(" +
                                             "'" + maMau + "'," +
                                             "'" + maKH + "'," +
-                                            loaiPhucHinh + "," +
+                                            "'" + loaiPhucHinh + "'," +
                                             "'" + ngayNhan + "'," +
                                             "'" + ngayTra + "'," +
-                                            gioTraInt + "," +
+                                            "'" + gioTraInt + "'," +
                                             " '', 0, N'" + tenBN + "'," +
-                                            tuoiBNInt + "," +
+                                            "'" + tuoiBNInt + "'," +
                                             "N'" + gioitinhBN + "'" +
                                             ")";
                 //Database.Debug(query);
-                Database.query(query);
+                if (MessageBox.Show(null, "Bạn có chắc muốn thêm mẫu với mã '" + maMau + "' không?", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Database.query(query);
+                    MessageBox.Show(null, "Đã thêm mẫu vào cơ sở dữ liêu", "Insert Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             #endregion
 
@@ -459,6 +464,7 @@ namespace DentalLabo.MauDatHang
                     if (MessageBox.Show(null, "Mẫu chưa tồn tại! Bạn có muốn thêm với mã số '" + maMau + "' vào hay không", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Database.query(query);
+                        MessageBox.Show(null, "Đã thêm mẫu vào cơ sở dữ liêu", "Insert Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -515,6 +521,11 @@ namespace DentalLabo.MauDatHang
                 string viTriRang1 = form.txtViTriRang.Text;
                 string viTriRang2 = form.txtViTriRang2.Text;
 
+                string[] array = new string[32];
+                array = viTriRang1.Split(',');
+                int sorang = array.Count();
+                string soLuongVLC = sorang.ToString();
+
                 // sinh ma san pham dat hang tu dong
                 query = "SELECT TOP 1 MaSPDatHang FROM SanPhamDatHang ORDER BY len(MaSPDatHang) desc, MaSPDatHang desc";
                 result = Database.query(query);
@@ -532,7 +543,8 @@ namespace DentalLabo.MauDatHang
                         "'" + viTriRang1 + "'," +
                         "'" + maVL + "'," +
                         " null," +
-                        "0, 0," +
+                        "'" + soLuongVLC + "'," +
+                        "0," +
                         "'" + mauSP1 + "'," +
                         "'" + luuY + "'," +
                         " null,N'" + yeuCau1 + "'," +
@@ -547,7 +559,8 @@ namespace DentalLabo.MauDatHang
                         "'" + viTriRang2 + "'," +
                         "'" + maVLC + "'," +
                         "'" + maVLP + "'," +
-                        "0, 0," +
+                        "'" + soLuongVLC + "'," +
+                        "1," +
                         "'" + mauSP2 + "'," +
                         " null," +
                         "N'" + tayMoc + "'," +
@@ -649,6 +662,54 @@ namespace DentalLabo.MauDatHang
                 }
             }
             #endregion
+
+            #region CapNhatMau
+            if (action == "Sua Mau")
+            {
+                string maKH = form.cmbMaKH.Text;
+                string ngayNhan = form.dateNgayNhan.Text;
+                string tenBN;
+                string tuoiBN;
+                string gioitinhBN;
+                string ngayTra;
+                string gioTra;
+                if (loaiPhucHinh == "1")
+                {
+                    ngayTra = form.dateNgayTra.Text;
+                    gioTra = form.dateGioTra.Text;
+                    tenBN = form.txtTenBN.Text;
+                    tuoiBN = form.txtTuoiBN.Text;
+                    gioitinhBN = form.cmbGioiTinhBN.Text;
+                }
+                else
+                {
+                    ngayTra = form.dateNgayTra2.Text;
+                    gioTra = form.dateGioTra2.Text;
+                    tenBN = form.txtTenBN2.Text;
+                    tuoiBN = form.txtTuoiBN2.Text;
+                    gioitinhBN = form.cmbGioiTinhBN2.Text;
+                }
+
+                int gioTraInt = Int16.Parse(gioTra.Substring(0, 2));
+                int tuoiBNInt = Int16.Parse(tuoiBN);
+
+                query = "UPDATE MauHang SET " +
+                    "MaKH = '" + maKH + "'," +
+                    "LoaiPhucHinh = '" + loaiPhucHinh + "'," +
+                    "NgayNhan = '" + ngayNhan + "'," +
+                    "NgayTra = '" + ngayTra + "'," +
+                    "GioTra = '" + gioTraInt + "'," +
+                    "TenBN = N'" + tenBN + "'," +
+                    "TuoiBN = '" + tuoiBNInt + "'," +
+                    "GioiTinhBN = N'" + gioitinhBN + "'" +
+                    " WHERE MaMau = '" + maSPDH +"'";
+                
+                //MessageBox.Show(query);
+
+                Database.query(query);
+                MessageBox.Show(null, "Đã sửa thông tin mẫu!", "Update Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            #endregion
         }
         #endregion
 
@@ -675,105 +736,208 @@ namespace DentalLabo.MauDatHang
             string thaoTac;
             string lyDo;
             
-            DataGridViewRow selectedRow;
-            if (loaiPhucHinh == "1") selectedRow = form.dtgNoiDungMau.SelectedRows[0];
-            else selectedRow = form.dtgNoiDungMau2.SelectedRows[0];
-
-            tenSP = selectedRow.Cells[1].Value.ToString();
-            UpdateMaSanPham(tenSP);
-            viTriRang = selectedRow.Cells[2].Value.ToString();
-            tenVLC = selectedRow.Cells[3].Value.ToString();
-            maVLC = selectedRow.Cells[4].Value.ToString();
-            mauSP = selectedRow.Cells[5].Value.ToString();
-
-            if (loaiPhucHinh == "1") 
+            DataGridViewRow selectedRow = new DataGridViewRow();
+            string action = "";
+            if (loaiPhucHinh == "1")
+                if (form.dtgNoiDungMau.SelectedRows.Count == 0)
+                {
+                    action = "Sua Mau";
+                }
+                else
+                {
+                    selectedRow = form.dtgNoiDungMau.SelectedRows[0];
+                    action = "Sua San Pham";
+                }
+            else
             {
-                maSPDH = selectedRow.Cells[16].Value.ToString();
-                luuY = selectedRow.Cells[8].Value.ToString();
-                thaoTac = selectedRow.Cells[13].Value.ToString();
-                lyDo = selectedRow.Cells[14].Value.ToString();
-                yeuCau = selectedRow.Cells[15].Value.ToString();
+                if (form.dtgNoiDungMau2.SelectedRows.Count == 0)
+                {
+                    action = "Sua Mau";
+                }
+                else
+                {
+                    selectedRow = form.dtgNoiDungMau2.SelectedRows[0];
+                    action = "Sua San Pham";
+                }
+            }
 
-                form.cmbThaoTac.Text = thaoTac;
-                form.txtLyDo.Text = lyDo;
-                form.cmbTenSP.Text = tenSP;
-                UpdateMaSanPham(tenSP);
-                form.cmbLoaiVatLieu.Text = tenVLC;
-                UpdateMaVatLieu(tenVLC);
-                form.txtMauSP.Text = mauSP;
-                form.txtLuuY.Text = luuY;
-                form.txtYeuCauChiTiet.Text = yeuCau;
-                form.txtViTriRang.Text = viTriRang;
+            if (action == "Sua Mau")
+            {
+                string maMau = form.txtSoMau.Text;
+                if (MessageBox.Show(null, "Bạn muốn cập nhật mẫu '" + maMau + "' phải không?", "Update Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string query = "SELECT * FROM MauHang WHERE MaMau = '" + maMau + "'";
+                    DataTable result = Database.query(query);
+                    if (result.Rows.Count == 0)
+                    {
+                        MessageBox.Show(null, "Không có mẫu '" + maMau + "' trong cơ sở dữ liệu! xem lại thông tin mã mẫu", "Update Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        form.cmbMaKH.Text = result.Rows[0]["MaKH"].ToString();
+                        
+                        query = "SELECT * FROM KhachHang WHERE MaKH = '" + result.Rows[0]["MaKH"] + "'";
+                        DataTable result1 = Database.query(query);
+                        form.cmbTenKH.Text = result1.Rows[0]["TenKH"].ToString();
+                        form.cmbDiaChiKH.Text = result1.Rows[0]["DiaChi"].ToString();
+                        form.cmbDienThoaiKH.Text = result1.Rows[0]["SDT"].ToString();
+                        
+                        form.dateNgayNhan.Text = result.Rows[0]["NgayNhan"].ToString();
+
+                        if (loaiPhucHinh == "1")
+                        {
+                            form.txtTenBN.Text = result.Rows[0]["TenBN"].ToString();
+                            form.txtTuoiBN.Text = result.Rows[0]["TuoiBN"].ToString();
+                            form.cmbGioiTinhBN.Text = result.Rows[0]["GioiTinhBN"].ToString();
+                            form.dateNgayTra.Text = result.Rows[0]["NgayTra"].ToString();
+                            form.dateGioTra.Text = result.Rows[0]["GioTra"].ToString() + "h";
+                        }
+                        else
+                        {
+                            form.txtTenBN2.Text = result.Rows[0]["TenBN"].ToString();
+                            form.txtTuoiBN2.Text = result.Rows[0]["TuoiBN"].ToString();
+                            form.cmbGioiTinhBN2.Text = result.Rows[0]["GioiTinhBN"].ToString();
+                            form.dateNgayTra2.Text = result.Rows[0]["NgayTra"].ToString();
+                            form.dateGioTra2.Text = result.Rows[0]["GioTra"].ToString() + "h";
+                        }
+                    }
+                }
+                return maMau;
             }
             else
             {
-                maSPDH = selectedRow.Cells[18].Value.ToString();
-                tenVLP = selectedRow.Cells[6].Value.ToString();
-                maVLP = selectedRow.Cells[7].Value.ToString();
-                tayMoc = selectedRow.Cells[8].Value.ToString();
-                thaoTac = selectedRow.Cells[15].Value.ToString();
-                lyDo = selectedRow.Cells[16].Value.ToString();
-                yeuCau = selectedRow.Cells[17].Value.ToString();
+                tenSP = selectedRow.Cells[1].Value.ToString();
+                UpdateMaSanPham(tenSP);
+                viTriRang = selectedRow.Cells[2].Value.ToString();
+                tenVLC = selectedRow.Cells[3].Value.ToString();
+                maVLC = selectedRow.Cells[4].Value.ToString();
+                mauSP = selectedRow.Cells[5].Value.ToString();
 
-                form.cmbThaoTac2.Text = thaoTac;
-                form.txtLyDo2.Text = lyDo;
-                form.cmbTenSP2.Text = tenSP;
-                UpdateMaSanPham2(tenSP);
-                form.cmbVLChinh.Text = tenVLC;
-                UpdateMaVLC(tenVLC);
-                form.cmbVLPhu.Text = tenVLP;
-                UpdateMaVLP(tenVLP);
-                form.txtMauSP2.Text = mauSP;
-                form.txtTayMoc.Text = tayMoc;
-                form.txtYeuCauChiTiet2.Text = yeuCau;
-                form.txtViTriRang2.Text = viTriRang;
+                if (loaiPhucHinh == "1")
+                {
+                    maSPDH = selectedRow.Cells[16].Value.ToString();
+                    luuY = selectedRow.Cells[8].Value.ToString();
+                    thaoTac = selectedRow.Cells[13].Value.ToString();
+                    lyDo = selectedRow.Cells[14].Value.ToString();
+                    yeuCau = selectedRow.Cells[15].Value.ToString();
+
+                    form.cmbThaoTac.Text = thaoTac;
+                    form.txtLyDo.Text = lyDo;
+                    form.cmbTenSP.Text = tenSP;
+                    UpdateMaSanPham(tenSP);
+                    form.cmbLoaiVatLieu.Text = tenVLC;
+                    UpdateMaVatLieu(tenVLC);
+                    form.txtMauSP.Text = mauSP;
+                    form.txtLuuY.Text = luuY;
+                    form.txtYeuCauChiTiet.Text = yeuCau;
+                    form.txtViTriRang.Text = viTriRang;
+                }
+                else
+                {
+                    maSPDH = selectedRow.Cells[18].Value.ToString();
+                    tenVLP = selectedRow.Cells[6].Value.ToString();
+                    maVLP = selectedRow.Cells[7].Value.ToString();
+                    tayMoc = selectedRow.Cells[8].Value.ToString();
+                    thaoTac = selectedRow.Cells[15].Value.ToString();
+                    lyDo = selectedRow.Cells[16].Value.ToString();
+                    yeuCau = selectedRow.Cells[17].Value.ToString();
+
+                    form.cmbThaoTac2.Text = thaoTac;
+                    form.txtLyDo2.Text = lyDo;
+                    form.cmbTenSP2.Text = tenSP;
+                    UpdateMaSanPham2(tenSP);
+                    form.cmbVLChinh.Text = tenVLC;
+                    UpdateMaVLC(tenVLC);
+                    form.cmbVLPhu.Text = tenVLP;
+                    UpdateMaVLP(tenVLP);
+                    form.txtMauSP2.Text = mauSP;
+                    form.txtTayMoc.Text = tayMoc;
+                    form.txtYeuCauChiTiet2.Text = yeuCau;
+                    form.txtViTriRang2.Text = viTriRang;
+                }
+                return maSPDH;
             }
-            return maSPDH;
+
         }
         #endregion
 
         #region XoaSPTrongBang
         public void XoaSanPhamTuMau(String loaiPhucHinh)
         {
-            string maSPDH;
+            string maSPDH = "";
+            string maMau;
             DataGridViewRow selectedRow;
             if (loaiPhucHinh == "1")
             {
-                selectedRow = form.dtgNoiDungMau.SelectedRows[0];
-                maSPDH = selectedRow.Cells[16].Value.ToString();
+                if (form.dtgNoiDungMau.SelectedRows.Count != 0)
+                {
+                    selectedRow = form.dtgNoiDungMau.SelectedRows[0];
+                    maSPDH = selectedRow.Cells[16].Value.ToString();
+                }
+                else
+                {
+                    maMau = form.txtSoMau.Text;
+                    if (MessageBox.Show(null, "Có phải bạn muốn xóa mẫu có mã = '" + maMau + "' không?", "Delete Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string queryDelRef = "DELETE FROM MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "'";
+                        string queryDelMau = "DELETE FROM MauHang WHERE MaMau = '" + maMau + "'";
+                        Database.query(queryDelRef); 
+                        Database.query(queryDelMau);
+                        MessageBox.Show(null, "Đã xóa mẫu '" + maMau + "' khỏi cơ sở dũ liệu!", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    maSPDH = "";
+                }
             }
             else
             {
-                selectedRow = form.dtgNoiDungMau2.SelectedRows[0];
-                maSPDH = selectedRow.Cells[18].Value.ToString();
+                if (form.dtgNoiDungMau2.SelectedRows.Count != 0)
+                {
+                    selectedRow = form.dtgNoiDungMau2.SelectedRows[0];
+                    maSPDH = selectedRow.Cells[18].Value.ToString();
+                }
+                else
+                {
+                    maMau = form.txtSoMau.Text;
+                    if (MessageBox.Show(null, "Có phải bạn muốn xóa mẫu có mã = '" + maMau + "' không?", "Delete Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string queryDelRef = "DELETE FROM MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "'";
+                        string queryDelMau = "DELETE FROM MauHang WHERE MaMau = '" + maMau + "'";
+                        Database.query(queryDelRef);
+                        Database.query(queryDelMau);
+                        MessageBox.Show(null, "Đã xóa mẫu '" + maMau + "' khỏi cơ sở dũ liệu!", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    maSPDH = "";
+                }
             }
 
-            string select = "SELECT TOP 1 MaMau FROM MauHang_SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + "'";
-            DataTable result = Database.query(select);
-            string maMau = result.Rows[0]["MaMau"].ToString();
-
-            select = "SELECT TOP 1 *  FROM MauHang WHERE MaMau = '" + maMau + "'";
-            result = Database.query(select);
-            string tuoiBN = result.Rows[0]["TuoiBN"].ToString();
-            string gioitinhBN = result.Rows[0]["GioiTinhBN"].ToString();
-            string ngayNhan = result.Rows[0]["NgayNhan"].ToString();
-            string ngayTra = result.Rows[0]["NgayTra"].ToString();
-            string gioTra = result.Rows[0]["GioTra"].ToString() + "h";
-
-            string query = "DELETE FROM SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + "'";
-            string query2 = "DELETE FROM MauHang_SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + "'";
-
-
-            if (MessageBox.Show(null, "Bạn có chắc muốn xóa sản phẩm này ra khỏi mẫu hiện tại không?'", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (maSPDH != "")
             {
-                Database.query(query2);
-                Database.query(query);
-                MessageBox.Show(null, "Đã xóa sản phẩm khỏi mẫu", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (loaiPhucHinh == "1") LayThongTinMau(maMau, "1", ngayTra, gioTra, tuoiBN, gioitinhBN);
-                else LayThongTinMau(maMau, "2", ngayTra, gioTra, tuoiBN, gioitinhBN);
+                string select = "SELECT TOP 1 MaMau FROM MauHang_SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + "'";
+                DataTable result = Database.query(select);
+                maMau = result.Rows[0]["MaMau"].ToString();
+
+                select = "SELECT TOP 1 *  FROM MauHang WHERE MaMau = '" + maMau + "'";
+                result = Database.query(select);
+                string tuoiBN = result.Rows[0]["TuoiBN"].ToString();
+                string gioitinhBN = result.Rows[0]["GioiTinhBN"].ToString();
+                string ngayNhan = result.Rows[0]["NgayNhan"].ToString();
+                string ngayTra = result.Rows[0]["NgayTra"].ToString();
+                string gioTra = result.Rows[0]["GioTra"].ToString() + "h";
+
+                string query = "DELETE FROM SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + "'";
+                string query2 = "DELETE FROM MauHang_SanPhamDatHang WHERE MaSPDatHang = '" + maSPDH + "'";
+
+
+                if (MessageBox.Show(null, "Bạn có chắc muốn xóa sản phẩm này ra khỏi mẫu hiện tại không?'", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Database.query(query2);
+                    Database.query(query);
+                    MessageBox.Show(null, "Đã xóa sản phẩm khỏi mẫu", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (loaiPhucHinh == "1") LayThongTinMau(maMau, "1", ngayTra, gioTra, tuoiBN, gioitinhBN);
+                    else LayThongTinMau(maMau, "2", ngayTra, gioTra, tuoiBN, gioitinhBN);
+                }
             }
         }
         #endregion
-
     }
 }

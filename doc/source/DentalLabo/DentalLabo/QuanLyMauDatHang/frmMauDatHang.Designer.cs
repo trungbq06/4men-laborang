@@ -739,6 +739,7 @@ namespace DentalLabo.Mau_dat_hang
             this.button6.TabIndex = 46;
             this.button6.Text = "Xóa";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 

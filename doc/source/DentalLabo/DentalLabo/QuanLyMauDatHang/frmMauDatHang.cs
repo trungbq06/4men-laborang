@@ -13,7 +13,7 @@ namespace DentalLabo.Mau_dat_hang
     public partial class frmMauDatHang : Form
     {
         MauDatHang_Model model;
-        String acctionString;
+        String acctionString = "San Pham Moi";
         String loaiPH;
         String maSPDH;
         public frmMauDatHang()
@@ -132,7 +132,21 @@ namespace DentalLabo.Mau_dat_hang
         private void button13_Click(object sender, EventArgs e)
         {
             maSPDH = model.CapNhatSanPham("2");
-            acctionString = "Cap nhat tu bang";
+            if (maSPDH.Length >= 4)
+            {
+                if (maSPDH.Substring(0, 4).ToString() != "SPDH")
+                {
+                    acctionString = "Sua Mau";
+                }
+                else
+                {
+                    acctionString = "Cap nhat tu bang";
+                }
+            }
+            else
+            {
+                acctionString = "Sua Mau";
+            }
             loaiPH = "2";
         }
 
@@ -282,7 +296,21 @@ namespace DentalLabo.Mau_dat_hang
         private void button5_Click(object sender, EventArgs e)
         {
             maSPDH = model.CapNhatSanPham("1");
-            acctionString = "Cap nhat tu bang";
+            if (maSPDH.Length >= 4)
+            {
+                if (maSPDH.Substring(0, 4).ToString() != "SPDH")
+                {
+                    acctionString = "Sua Mau";
+                }
+                else
+                {
+                    acctionString = "Cap nhat tu bang";
+                }
+            }
+            else
+            {
+                acctionString = "Sua Mau";   
+            }
             loaiPH = "1";
         }
 
@@ -305,6 +333,11 @@ namespace DentalLabo.Mau_dat_hang
             f.MdiParent = this.MdiParent;
             f.getString = new frmChonRang.GetString(GetValue1);
             f.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            model.XoaSanPhamTuMau("1");
         }
     }
 }
