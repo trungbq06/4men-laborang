@@ -66,18 +66,26 @@ create table MauHang(
 	GioTra nvarchar(100),	
 	UserId nvarchar(20),
 	TrangThai nvarchar(100),	
+	TenBN nvarchar(50),
+	TuoiBN nvarchar(50),
+	GioiTinhBN nvarchar(50)
 )
 go
 create table SanPhamDatHang(
 	MaSPDatHang nvarchar(20) primary key,
 	MaSP nvarchar(20) references SanPham,
+	ViTriRang nvarchar(100),
 	MaVLC nvarchar(20) references VatLieuChinh,
 	MaVLP nvarchar(20) references VatLieuPhu, 
 	SoLuongVLC nvarchar(100),
 	SoLuongVLP nvarchar(100), 
 	MauSP nvarchar(50),
-	LuuY nvarchar(1000),
-	YeuCauChiTiet nvarchar(1000)
+	LuuY nvarchar(255),
+	ViTriTayMoc nvarchar(50),
+	YeuCauChiTiet nvarchar(1000),
+	ThaoTac nvarchar(100),
+	LyDo nvarchar(1000)
+	
 )
 go 
 create table MauHang_SanPhamDatHang(
