@@ -233,13 +233,7 @@ namespace DentalLabo
             f.MdiParent = this;
             f.Show();
         }
-
-        private void ttGiamTru_Click(object sender, EventArgs e)
-        {
-            Form f = new frmGiamTru();
-            f.MdiParent = this;
-            f.Show();
-        }
+        
 
         private void ttPhieuChi_Click(object sender, EventArgs e)
         {
@@ -275,6 +269,14 @@ namespace DentalLabo
             f.MdiParent = this;
             f.Show();
         }
+
+        private void giamTruToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new frmGiamTru();
+            f.MdiParent = this;
+            f.Show();
+        }
+        
 
 
 

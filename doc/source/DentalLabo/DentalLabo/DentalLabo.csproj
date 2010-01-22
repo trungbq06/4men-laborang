@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{408AEFBC-A3CC-4B95-985B-861B86EF84F9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -64,7 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHangVaCongNo\BHCNModel.cs" />
+    <Compile Include="BanHangVaCongNo\GiamTru_Model.cs" />
+    <Compile Include="BanHangVaCongNo\HoaDonBanHang_Model.cs" />
     <Compile Include="BanHangVaCongNo\NhapKhoThanhPham_Model.cs" />
+    <Compile Include="BanHangVaCongNo\TongHopThanhToan_Model.cs" />
+    <Compile Include="BanHangVaCongNo\XuatKhoBanHang_Model.cs" />
+    <Compile Include="BanHangVaCongNo\Validation.cs" />
     <Compile Include="Bussiness\BusinessDanhMucSP.cs" />
     <Compile Include="Bussiness\BussinessBangGiaSP.cs" />
     <Compile Include="Bussiness\BussinessDanhMucNV.cs" />
@@ -76,7 +81,7 @@
       <DependentUpon>frmGuiEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DABangGiaSP.cs" />
-    <Compile Include="Data\DADanhMucKH.cs" />
+    <Compile Include="DataAccess\DADanhMucKH.cs" />
     <Compile Include="DataAccess\DADanhMucNV.cs" />
     <Compile Include="DataAccess\DADanhMucSP.cs" />
     <Compile Include="DataAccess\DataConnection.cs" />
@@ -117,6 +122,18 @@
       <DependentUpon>frmBangGiaSP.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyMauDatHang\MauDatHang_Model.cs" />
+    <Compile Include="QuanLySPVaLuong\frmBoPhanMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmBoPhanMoi.Designer.cs">
+      <DependentUpon>frmBoPhanMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmChiTietKetQuaCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmChiTietKetQuaCongViec.Designer.cs">
+      <DependentUpon>frmChiTietKetQuaCongViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySPVaLuong\frmDanhMucBoPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,17 +146,35 @@
     <Compile Include="BanHangVaCongNo\frmDanhMucKH.Designer.cs">
       <DependentUpon>frmDanhMucKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySPVaLuong\FrmNhanVienMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\FrmNhanVienMoi.Designer.cs">
+      <DependentUpon>FrmNhanVienMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySPVaLuong\frmThemCongDoanSanXuat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLySPVaLuong\frmThemCongDoanSanXuat.Designer.cs">
       <DependentUpon>frmThemCongDoanSanXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySPVaLuong\frmThemKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\frmThemKhoan.Designer.cs">
+      <DependentUpon>frmThemKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySPVaLuong\frmThemNoiDungYeuCau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLySPVaLuong\frmThemNoiDungYeuCau.Designer.cs">
       <DependentUpon>frmThemNoiDungYeuCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\FrmXemPhieuThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySPVaLuong\FrmXemPhieuThanhToan.Designer.cs">
+      <DependentUpon>FrmXemPhieuThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySPVaLuong\MauMoi.cs">
       <SubType>Form</SubType>
@@ -317,17 +352,32 @@
     <EmbeddedResource Include="QuanLyMauDatHang\frmBangGiaSP.resx">
       <DependentUpon>frmBangGiaSP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\frmBoPhanMoi.resx">
+      <DependentUpon>frmBoPhanMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\frmChiTietKetQuaCongViec.resx">
+      <DependentUpon>frmChiTietKetQuaCongViec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySPVaLuong\frmDanhMucBoPhan.resx">
       <DependentUpon>frmDanhMucBoPhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHangVaCongNo\frmDanhMucKH.resx">
       <DependentUpon>frmDanhMucKH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\FrmNhanVienMoi.resx">
+      <DependentUpon>FrmNhanVienMoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySPVaLuong\frmThemCongDoanSanXuat.resx">
       <DependentUpon>frmThemCongDoanSanXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\frmThemKhoan.resx">
+      <DependentUpon>frmThemKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySPVaLuong\frmThemNoiDungYeuCau.resx">
       <DependentUpon>frmThemNoiDungYeuCau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySPVaLuong\FrmXemPhieuThanhToan.resx">
+      <DependentUpon>FrmXemPhieuThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySPVaLuong\MauMoi.resx">
       <DependentUpon>MauMoi.cs</DependentUpon>
