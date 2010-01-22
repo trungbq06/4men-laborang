@@ -269,7 +269,6 @@ create table NhaCungCap(
 go
 create table VatTu(
 	MaVatTu nvarchar(20) primary key,
-	MaNCC nvarchar(20) references NhaCungCap,
 	TenVatTu nvarchar(200),
 	DVT nvarchar(20),
 	NhomHangHoa nvarchar(20),
