@@ -248,7 +248,12 @@ namespace DentalLabo
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
-        {
+        {            
+            //ArrayList header = new ArrayList();            
+            //header.Add("Tên: trung");
+            //header.Add("Họ tên: Bui Quang Trung");
+            //header.Add("Tuổi: 23");
+            //header.Add("Tên bộ phận ABCDEF: Bộ phận A");
             PrintDataGrid.PrintDGV.Print_DataGridView(dtgDanhMucNV);
         }
 

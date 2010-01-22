@@ -14,7 +14,7 @@ namespace DentalLabo.Data
         private string _dienThoai;
         private string _maSoThue;
         private string _nguoiDaiDien;
-        private int _maNhomKH;
+        private string _maNhomKH;
         private string _diaChi;
         #endregion Attribute
 
@@ -61,7 +61,7 @@ namespace DentalLabo.Data
             set { _diaChi = value; }
         }
 
-        public int MaNhomKH
+        public string MaNhomKH
         {
             get { return _maNhomKH; }
             set { _maNhomKH = value; }
@@ -74,10 +74,10 @@ namespace DentalLabo.Data
             _maKH = "";
             _tenKH = "";
             _gioiTinh = "";
-            _dienThoai = "Nam";
+            _dienThoai = "";
             _maSoThue = "";
             _nguoiDaiDien = "";
-            _maNhomKH = 0;
+            _maNhomKH = "";
         }
     }
 }

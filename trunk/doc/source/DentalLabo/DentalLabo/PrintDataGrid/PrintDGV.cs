@@ -255,7 +255,6 @@ namespace PrintDataGrid
                     {
                         if (NewPage)
                         {
-                            PrintTitle = "Danh Mục Nhân Viên";
                             Font fFont = new Font("Times New Roman", 18, FontStyle.Bold,
 GraphicsUnit.Point);
                             PointF headerLocation = new PointF(e.MarginBounds.Left + e.MarginBounds.Width / 2 - PrintTitle.Length - e.MarginBounds.Left, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) - 13);
