@@ -12,6 +12,12 @@ class Database {
     public static bool debug = false;
 
     public static void connectDatabase(string server, string user, string pass, string db) {
+        string ConnectionString = "Network Library=dbmssocn;";
+        ConnectionString += "Address=" + server + ";";
+        ConnectionString += "User ID=" + user + ";";
+        ConnectionString += "Password=" + pass + ";";
+        ConnectionString += "Initial Catalog=" + db;
+
         /**
         string ConnectionString = "Network Library=dbmssocn;Address=192.168.1.44\\SQLEXPRESS;";
         ConnectionString += "User ID=sa;";
@@ -19,7 +25,7 @@ class Database {
         ConnectionString += "Initial Catalog=" + db;
 
         /**/
-
+        /**
         string ConnectionString = "Network Library=dbmssocn;Address=" + server + ";";
         ConnectionString += "User ID=" + user + ";";
         ConnectionString += "Password=" + pass + ";";
