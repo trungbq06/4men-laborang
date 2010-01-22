@@ -14,7 +14,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
     {
         NhapKhoThanhPham_Model model;
         int selectedRow = -1;
-        bool isUpdate = false;
+        public bool isUpdate = false;
 
         public frmNhapKhoThanhPham()
         {            
@@ -22,7 +22,8 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             model = new NhapKhoThanhPham_Model(this);
             model.LoadTenBoPhan();
             model.SinhMaSoPhieu();
-            model.LoadTenKho();            
+            model.LoadTenKho();
+            DisableHangDuoi();
         }
 
         private void cmbTenBoPhan_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,18 +47,33 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnThemPhieu_Click(object sender, EventArgs e)
         {
-            isUpdate = false;
-            model.FindMaSPDatHang();
-            selectedRow = -1;
-            model.ThemPhieuNhapKho();
-            dtgNoiDungNhapKho.Rows.Clear();
+            if (!Validation.ChuaNhap(txtSoPhieu.Text, "Chưa nhập trường số phiếu"))
+                if (!Validation.ChuaNhap(dateNgayNhap.Text, "Chưa nhập trường ngày nhập"))
+                    if (!Validation.ChuaNhap(dateGioNhap.Text, "Chưa nhập trường giờ nhập"))
+                        if (!Validation.ChuaNhap(cmbMaKho.Text, "Chưa nhập mã kho"))
+                            if (!Validation.ChuaNhap(cmbMasoNV.Text, "Chưa nhập trường ngày nhập"))
+                            {
+                                isUpdate = false;
+                                model.FindMaSPDatHang();
+                                selectedRow = -1;
+                                model.ThemPhieuNhapKho();
+                                dtgNoiDungNhapKho.Rows.Clear();
+                                EnableHangDuoi();
+                            }
         }
 
         private void btnMauMoi_Click(object sender, EventArgs e)
         {
-            isUpdate = false;
-            FinishUpdateRow();
-            model.ThemMauVaoPhieu();            
+            if (!Validation.ChuaNhap(txtSoPhieu.Text, "Chưa nhập trường mã phiếu"))
+                if (!Validation.ChuaNhap(txtMaSoMau.Text, "Chưa nhập mã số mẫu"))
+                    if (!Validation.ChuaNhap(dateGioNhap.Text, "Chưa nhập giờ nhập"))
+                        if (!Validation.ChuaNhap(dateNgayNhap.Text, "Chưa nhập ngày nhập"))
+                        {                            
+                            isUpdate = false;
+                            FinishUpdateRow();
+                            model.ThemMauVaoPhieu();
+                            EnableHangDuoi();
+                        }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -66,6 +82,8 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             dtgNoiDungNhapKho.Rows.Clear();
             model.LoadThongTinPhieuNK(true);
             selectedRow = -1;
+            //DisableHangDuoi();
+            EnableHangDuoi();
         }
 
         private void btnPhieuNhapMoi_Click(object sender, EventArgs e)
@@ -76,63 +94,75 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             txtMaSoMau.Text = "";
             txtDienGiai.Text = "";
             selectedRow = -1;
+            DisableHangDuoi();
         }
         
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            isUpdate = false;
-            if (txtSoPhieu.Text == "") 
+            if (selectedRow != -1)
             {
-                MessageBox.Show(null, "Chưa nhập mã số phiếu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (dtgNoiDungNhapKho.SelectedRows.Count == 0)
-            {
-                MessageBox.Show(null, "Hãy chọn dòng để xóa", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }            
-            else
-            {                
-                                
-                String filter = "(";
-                for (int i = 0; i < dtgNoiDungNhapKho.SelectedRows.Count; i++)
-                {
-                    if (i > 0)
-                        filter += ", ";
-                    filter += "'" + dtgNoiDungNhapKho.SelectedRows[i].Cells[1].Value + "'";
-                }
-                filter += " )";
+                isUpdate = false;
 
-                String query = "DELETE FROM PhieuNhapKhoSP_MauHang where MaPhieu = '" + txtSoPhieu.Text + "' and MaMau in " + filter;
-                Database.query(query);
-                dtgNoiDungNhapKho.Rows.Clear();
-                //FinishUpdateRow();
-                model.LoadThongTinPhieuNK(false);
-                selectedRow = -1;
+                if (!Validation.ChuaNhap(txtSoPhieu.Text, "Chưa nhập mã số phiếu"))
+                    if (dtgNoiDungNhapKho.SelectedRows.Count == 0)
+                    {
+                        Database.Warning("Hãy chọn dòng để xóa");
+                    }
+                    else
+                    {
+                        String filter = "(";
+                        for (int i = 0; i < dtgNoiDungNhapKho.SelectedRows.Count; i++)
+                        {
+                            if (i > 0)
+                                filter += ", ";
+                            filter += "'" + dtgNoiDungNhapKho.SelectedRows[i].Cells[1].Value + "'";
+                        }
+                        filter += " )";
+
+                        // Xoa cac mau hang trong phieu nhap kho
+                        String query = "DELETE FROM PhieuNhapKhoSP_MauHang where MaPhieu = '" + txtSoPhieu.Text + "' and MaMau in " + filter;
+                        Database.query(query);
+
+                        // Cap nhat lai mau hang la chua nhap kho
+                        query = "UPDATE MauHang SET TrangThai = '0' WHERE MaMau in " + filter;
+                        Database.query(query);
+
+                        dtgNoiDungNhapKho.Rows.Clear();
+
+                        model.LoadThongTinPhieuNK(false);
+                        selectedRow = -1;
+                    }
             }
-            
+            else if (isUpdate)
+            {
+                Database.Warning("Bạn đang sửa một sản phẩm, hãy lưu sản phẩm đó, trước khi xóa");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {            
             if (selectedRow != -1)
             {
-                MessageBox.Show(null, "Bạn đang sửa một sản phẩm rồi, hãy lưu sản phẩm đó trước khi sửa sản phẩm tiếp theo", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Database.Warning("Bạn đang sửa một sản phẩm rồi, hãy lưu sản phẩm đó trước khi sửa sản phẩm tiếp theo");
             }
             else if (txtSoPhieu.Text == "")
             {
-                MessageBox.Show(null, "Chưa nhập mã số phiếu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Database.Warning("Chưa nhập mã số phiếu");
             }
             else if (dtgNoiDungNhapKho.SelectedRows.Count == 0)
             {
-                MessageBox.Show(null, "Hãy chọn dòng để sửa", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Database.Warning("Hãy chọn dòng để sửa");
             }
             else
             {
                 isUpdate = true;
                 selectedRow = dtgNoiDungNhapKho.SelectedRows[0].Index;
+
                 DataGridViewRow row = dtgNoiDungNhapKho.SelectedRows[0];                
                 model.LoadTenSanPham(row, true);
-                model.LoadTenVLC(row, true);
+                //model.LoadTenVLC(row, true);
+                model.UpdateVLC(row, true);
                 model.LoadTenVLP(row, true);
 
                 row.Cells[model.soluongIndex].ReadOnly = false;
@@ -140,7 +170,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             }
         }
 
-        private void FinishUpdateRow() {
+        public void FinishUpdateRow() {
             if (selectedRow != -1)
             {
                 DataGridViewRow row = dtgNoiDungNhapKho.Rows[selectedRow];
@@ -172,6 +202,7 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                     dtgNoiDungNhapKho.SelectedCells[0].ColumnIndex == model.tenSPIndex)
                 {
                     model.UpdateDVT(dtgNoiDungNhapKho.Rows[selectedRow]);
+                    //model.UpdateVLC(dtgNoiDungNhapKho.Rows[selectedRow], false);
                 }
                 if (dtgNoiDungNhapKho.SelectedCells[0].RowIndex == selectedRow &&
                     dtgNoiDungNhapKho.SelectedCells[0].ColumnIndex == model.msMauIndex)
@@ -188,77 +219,100 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnThemSanPham_Click(object sender, EventArgs e)
         {
-            if (dtgNoiDungNhapKho.Rows.Count > 0)
+            if (selectedRow != -1)
             {
-                isUpdate = false;
-
-                // Ket thuc sua hang
-                FinishUpdateRow();
-
-                // Tao hang moi
-                DataGridViewRow row = new DataGridViewRow();
-                dtgNoiDungNhapKho.Rows.Add(row);
-                selectedRow = dtgNoiDungNhapKho.Rows.Count - 1;
-                row = dtgNoiDungNhapKho.Rows[dtgNoiDungNhapKho.Rows.Count - 1];
-                row.ReadOnly = true;
-
-                model.LayMasoMauTrongBang(row, false);
-                model.LoadTenSanPham(row, false);
-                model.LoadTenVLC(row, false);
-                model.LoadTenVLP(row, false);
-
-                // Them cac truong can thiet
-                
-                row.Cells[model.thutuIndex].Value = (dtgNoiDungNhapKho.Rows.Count - 1).ToString(); 
-                row.Cells[model.gioNhapIndex].Value = dateGioNhap.Text;
-                               
-                row.Cells[model.soluongVLPIndex] = new DataGridViewTextBoxCell();
-                row.Cells[model.soluongVLPIndex].Value = "";
-                row.Cells[model.soluongVLPIndex].ReadOnly = false;
-                row.Cells[9].ReadOnly = false;
-
-                row.Cells[model.soluongIndex] = new DataGridViewTextBoxCell();
-                row.Cells[model.soluongIndex].Value = "";
-                row.Cells[model.soluongIndex].ReadOnly = false;
-                
-
-                row.Cells[model.gioNhapIndex].Value = dateGioNhap.Text;
-                row.Cells[model.ngayNhapIndex].Value = dateNgayNhap.Text;
-                row.Cells[model.maSPDatHangIndex].Value = model.FindMaSPDatHang();
-                                
-                model.UpdateDVT(row);
-                model.UpdateLoaiPhucHinh(row);
-                model.UpdateDVTVLP(row);
-
-                
-                
+                if (isUpdate)
+                    Database.Warning("Hãy lưu sản phẩm đang sửa hoặc đang thêm vào rồi hãy tạo thêm hàng mới");
+                else
+                {
+                    dtgNoiDungNhapKho.Rows.Remove(dtgNoiDungNhapKho.Rows[selectedRow]);
+                    selectedRow = -1;
+                }
             }
-            else 
+            else
             {
-                MessageBox.Show(null, "Chưa có mẫu nào trong phiếu để thêm sản phẩm", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dtgNoiDungNhapKho.Rows.Count > 0)
+                {
+                    isUpdate = false;
+
+                    // Tao hang moi
+                    DataGridViewRow row = new DataGridViewRow();
+                    dtgNoiDungNhapKho.Rows.Add(row);
+                    selectedRow = dtgNoiDungNhapKho.Rows.Count - 1;
+
+                    row = dtgNoiDungNhapKho.Rows[selectedRow];
+                    row.ReadOnly = true;
+
+                    
+                    model.LayMasoMauTrongBang(row, false);
+                    
+                    model.LoadTenVLC(row, false);
+                    //model.UpdateVLC(row, false);
+                    model.LoadTenVLP(row, false);
+
+                    model.LoadTenSanPham(row, false);
+
+                    // Them cac truong can thiet
+                    row.Cells[model.thutuIndex].Value = (dtgNoiDungNhapKho.Rows.Count - 1).ToString();
+                    row.Cells[model.gioNhapIndex].Value = dateGioNhap.Text;
+
+                    row.Cells[model.soluongVLPIndex] = new DataGridViewTextBoxCell();
+                    row.Cells[model.soluongVLPIndex].Value = "";
+                    row.Cells[model.soluongVLPIndex].ReadOnly = false;
+                    row.Cells[9].ReadOnly = false;
+
+                    row.Cells[model.soluongIndex] = new DataGridViewTextBoxCell();
+                    row.Cells[model.soluongIndex].Value = "";
+                    row.Cells[model.soluongIndex].ReadOnly = false;
+
+
+                    row.Cells[model.gioNhapIndex].Value = dateGioNhap.Text;
+                    row.Cells[model.ngayNhapIndex].Value = dateNgayNhap.Text;
+                    row.Cells[model.maSPDatHangIndex].Value = model.FindMaSPDatHang();
+
+                    model.UpdateDVT(row);
+                    model.UpdateLoaiPhucHinh(row);
+                    model.UpdateDVTVLP(row);
+                }
+                else
+                {
+                    Database.Warning("Chưa có mẫu nào trong phiếu để thêm sản phẩm");
+                }
             }
         }
-
-        private void dtgNoiDungNhapKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
 
         private void btnLuu_Click(object sender, EventArgs e)
-        {
-            Database.debug = true;
+        {            
             if (selectedRow == -1)
             {
-                MessageBox.Show(null, "Không có hàng nào để lưu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Database.Warning("Không có hàng nào để lưu");
             }
-            else {                
-                model.SaveSeletedRow(dtgNoiDungNhapKho.Rows[selectedRow], isUpdate);
-                FinishUpdateRow();
-                isUpdate = false;
-            }
-            Database.debug = false;
+            else {
+                Database.Warning(selectedRow.ToString());
+                model.SaveSeletedRow(dtgNoiDungNhapKho.Rows[selectedRow], isUpdate);                
+            }            
         }
+        
+        private void dtgNoiDungNhapKho_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {            
+        }
+
+        public void DisableHangDuoi()
+        {
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnThemSanPham.Enabled = false;
+            btnLuu.Enabled = false;
+        }
+
+        public void EnableHangDuoi()
+        {
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnThemSanPham.Enabled = true;
+            btnLuu.Enabled = true;
+        }
+
                 
     }
 }

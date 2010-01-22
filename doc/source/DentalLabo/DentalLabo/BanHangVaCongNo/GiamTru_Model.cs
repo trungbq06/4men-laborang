@@ -194,6 +194,7 @@ namespace DentalLabo.BanHangVaCongNo
                     cells[msIndex] = GiamTrus.Rows[i]["MaGiamTru"];
                     cells[noiDungGiamTruIndex] = GiamTrus.Rows[i]["NoiDung"];
                     cells[dvtIndex] = GiamTrus.Rows[i]["DVT"];
+                    cells[donGiaIndex] = "";
 
                     form.dtgChiTietCongNoKH.Rows.Add(cells);
 

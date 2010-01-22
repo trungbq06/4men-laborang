@@ -25,6 +25,56 @@ namespace DentalLabo.BanHangVaCongNo
             }
         }
 
+        public static string LayMaSP(string tenSP)
+        {
+            String query = "SELECT top 1 MaSP FROM SanPham WHERE TenSP = '" + tenSP + "'";
+            DataTable result = Database.query(query);
+            return result.Rows[0]["MaSP"].ToString();            
+        }
+        
+        public static string LayMaVLC(string tenVLC)
+        {
+            String query = "SELECT top 1 MaVL FROM VatLieuChinh WHERE TenVL = '" + tenVLC + "'";
+            DataTable result = Database.query(query);
+            return result.Rows[0]["MaVL"].ToString();            
+        }
+
+
+        public static string LayMaVLP(string tenVLP)
+        {
+            String query = "SELECT top 1 MaVL FROM VatLieuPhu WHERE TenVL = '" + tenVLP + "'";
+            DataTable result = Database.query(query);
+            return result.Rows[0]["MaVL"].ToString();
+        }
+
+        public static bool KiemTraPhieuNhapHang(string maPhieu)
+        { 
+            string query = "SELECT * FROM PhieuNhapKhoSP WHERE MaPhieu = '" + maPhieu + "'";
+            return KiemTraQuery(query);
+        }
+
+        public static bool KiemTraQuery(string query)
+        {
+            DataTable result = Database.query(query);
+            if (result.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public static bool KiemTraMaMauTrongCSDL(string maMau)
+        {
+            string query = "SELECT * FROM MauHang WHERE MaMau = '" + maMau + "'";
+            return KiemTraQuery(query);
+        }
+
+        public static bool KiemTraMaMauTrongPhieu(string maMau, string maPhieu)
+        {
+            //string query = "SELECT * FROM PhieuNhapKhoSP_MauHang WHERE MaPhieu = '" + maPhieu + "' AND MaMau = '" + maMau + "'";
+            string query = "SELECT * FROM MauHang WHERE MaMau = '" + maMau + "' AND TrangThai = '" + 1 + "'";
+            return KiemTraQuery(query);
+        }
+
         /*
          * Lay Ten VLC tu maVLC
          */
