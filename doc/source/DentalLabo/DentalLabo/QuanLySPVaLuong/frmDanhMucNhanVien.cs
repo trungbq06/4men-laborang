@@ -125,7 +125,7 @@ namespace DentalLabo
         {
             try
             {
-                /*BussinessDanhMucNV bsNhanvien = new BussinessDanhMucNV();
+                BussinessDanhMucNV bsNhanvien = new BussinessDanhMucNV();
                 if (txtTenNV.Text == "")
                     MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo");
                 else if (cbTenBP.Text == "")
@@ -156,7 +156,7 @@ namespace DentalLabo
                     add = true;
                     edit = false;
                     Reset();
-                }*/
+                }
             }
             catch (Exception ex)
             {
