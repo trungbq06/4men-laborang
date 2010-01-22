@@ -9,7 +9,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 //using DentalLabo.Quan_ly_san_pham_va_tinh_luong;
 using DentalLabo.QuanLySPVaLuong;
-
+using DentalLabo.Mau_dat_hang;
+using DentalLabo.BanHangVaCongNo;
 namespace DentalLabo
 {
     public partial class frmQLSP : Form
@@ -26,6 +27,27 @@ namespace DentalLabo
         public frmQLSP()
         {
             InitializeComponent();
+            BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecTenNhanVien,"select tennv from nhanvien","tennv");
+            BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecMaNhanVien, "select manv from nhanvien","manv");
+            BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecMaBoPhan, "select mabp from bophan","mabp");
+            BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecTenBoPhan, "select tenbp from bophan", "tenbp");
+
+
+            BHCNModel.UpdateComboBoxByQuery(txtTinhLuongTenNhanVien, "select tennv from nhanvien", "tennv");
+            BHCNModel.UpdateComboBoxByQuery(txtTinhLuongMaNhanVien, "select manv from nhanvien", "manv");
+            BHCNModel.UpdateComboBoxByQuery(txtTinhLuongMaBoPhan, "select mabp from bophan", "mabp");
+            BHCNModel.UpdateComboBoxByQuery(txtTinhLuongTenBoPhan, "select tenbp from bophan", "tenbp");
+
+            BHCNModel.UpdateComboBoxByQuery(txtTamUngLuongTenBoPhan, "select tenbp from bophan", "tenbp");
+            BHCNModel.UpdateComboBoxByQuery(txtTamUngLuongMaBoPhan, "select  mabp from bophan", "mabp");
+            
+            BHCNModel.UpdateComboBoxByQuery(txtChamCongTenNhanVien, "select tennv from nhanvien", "tennv");
+            BHCNModel.UpdateComboBoxByQuery(txtChamCongMaNhanVien, "select manv from nhanvien", "manv");
+            BHCNModel.UpdateComboBoxByQuery(txtChamCongMaBoPhan, "select mabp from bophan", "mabp");
+            BHCNModel.UpdateComboBoxByQuery(txtChamCongTenBoPhan, "select tenbp from bophan", "tenbp");
+
+
+
         }
 
         private void frmQLSP_Load(object sender, EventArgs e)
@@ -70,7 +92,7 @@ namespace DentalLabo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form f = new frmBoPhanMoi();
+            Form f = new frmDanhMucBoPhan();
             f.Show();
         }
 
@@ -177,10 +199,10 @@ namespace DentalLabo
             if (BPInfo.Rows.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy bộ phận có mã bộ phận là '" + txtChamCongMaBoPhan.Text + "'", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtChamCongTenBoPhan.Text = "";
+                groupboxBoPhanNhanVien.Text = "";
                 return;
             }
-            txtChamCongTenBoPhan.Text = BPInfo.Rows[0].ItemArray[1].ToString();
+            groupboxBoPhanNhanVien.Text = BPInfo.Rows[0].ItemArray[1].ToString();
 
             DataTable ChamCongInfo = Database.query("select congchinh, congnghi, lamthemgio, trucchunhat,manvcc from chamcong_history where ngay = '"+dtpNgayChamCong.Value.ToString("yyyy-MM-dd")+"' and manv='"+txtChamCongMaNhanVien.Text+"'");
             if (ChamCongInfo.Rows.Count == 0)
@@ -379,13 +401,14 @@ namespace DentalLabo
 
         private void btnMauMoi_Click(object sender, EventArgs e)
         {
-            Form f = new MauMoi();
+            Form f = new frmMauDatHang();
             f.Show();
         }
 
         private void btnQuanLyDonViSanPhamThemYeuCau_Click(object sender, EventArgs e)
         {
-            Form f = new frmThemNoiDungYeuCau(txtQuanLyDonViSanPhamMaSoMau.Text);
+            //txtQuanLyDonViSanPhamMaSoMau.Text
+            Form f = new frmMauDatHang();
             f.Show();
         }
 
@@ -440,7 +463,7 @@ namespace DentalLabo
         private void txtMaBoPhan_KeyDown(object sender, KeyEventArgs e)
         {
             //MessageBox.Show("aa");
-            if (e.KeyCode != Keys.Enter)
+            /*if (e.KeyCode != Keys.Enter)
                 return;
             if (txtMaBoPhan.Text == "")
             {
@@ -454,13 +477,13 @@ namespace DentalLabo
                 txtTenBoPhan.Text = "";
                 return;
             }
-            txtTenBoPhan.Text = dt.Rows[0].ItemArray[0].ToString();
+            txtTenBoPhan.Text = dt.Rows[0].ItemArray[0].ToString();*/
 
         }
 
         private void txtMaNhanVien_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((e.KeyCode != Keys.Enter))
+           /* if ((e.KeyCode != Keys.Enter))
                 return;
             if (txtMaNhanVien.Text == "")
             {
@@ -474,21 +497,21 @@ namespace DentalLabo
                 txtTenNhanVien.Text = "";
                 return;
             }
-            txtTenNhanVien.Text = dt.Rows[0].ItemArray[0].ToString();
+            txtTenNhanVien.Text = dt.Rows[0].ItemArray[0].ToString();*/
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if ((txtMaBoPhan.Text == "") && (txtMaNhanVien.Text == ""))
+            if ((cbTongHopKetQuaLamViecMaBoPhan.Text == "") && (cbTongHopKetQuaLamViecMaNhanVien.Text == ""))
                 return;
             String selectQuery;
-            if (txtMaBoPhan.Text != "")
+            if (cbTongHopKetQuaLamViecMaBoPhan.Text != "")
             {
-                selectQuery = "select manv, tennv from nhanvien where mabp='"+txtMaBoPhan.Text+"'";
+                selectQuery = "select manv, tennv from nhanvien where mabp='"+cbTongHopKetQuaLamViecMaBoPhan.Text+"'";
             }
             else
             {
-                selectQuery = "select manv, tennv from nhanvien where manv='"+txtMaNhanVien.Text+"'";
+                selectQuery = "select manv, tennv from nhanvien where manv='"+cbTongHopKetQuaLamViecMaNhanVien.Text+"'";
             }
 
             DataTable ListNV = Database.query(selectQuery);
@@ -542,7 +565,7 @@ namespace DentalLabo
                 tong += soluong;
             }
 
-            if (txtMaBoPhan.Text != "")
+            if (cbTongHopKetQuaLamViecMaBoPhan.Text != "")
             {
                 dtgTongHopKetQuaCongViec.Rows.Add();
                 int t = dtgTongHopKetQuaCongViec.Rows.Add();
@@ -550,6 +573,7 @@ namespace DentalLabo
                 dtgTongHopKetQuaCongViec.Rows[t].Cells[3].Value = "Răng";
                 dtgTongHopKetQuaCongViec.Rows[t].Cells[4].Value = tong.ToString();
             }
+            
         }
 
         private void btnTongHopKetQuaLamViecXemChiTiet_Click(object sender, EventArgs e)
@@ -574,10 +598,10 @@ namespace DentalLabo
             if (BPInfo.Rows.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy bộ phận có mã bộ phận là '" + txtChamCongMaBoPhan.Text + "'", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtChamCongTenBoPhan.Text = "";
+                groupboxBoPhanNhanVien.Text = "";
                 return;
             }
-            txtChamCongTenBoPhan.Text = BPInfo.Rows[0].ItemArray[1].ToString();
+            groupboxBoPhanNhanVien.Text = BPInfo.Rows[0].ItemArray[1].ToString();
 
         }
 
@@ -604,7 +628,7 @@ namespace DentalLabo
 
         private void btnChamCongNhanVienMoi_Click(object sender, EventArgs e)
         {
-            Form f = new FrmNhanVienMoi();
+            Form f = new frmDanhMucNV();
             f.Show();
         }
 
@@ -617,11 +641,11 @@ namespace DentalLabo
                 if (dt.Rows.Count > 0)
                 {
                     //System.Console.WriteLine("update chamcong_ghichu set ghichu ='" + dtgChamCongTongHopKetQua.Rows[i].Cells[7].Value.ToString() + "' where thang= " + tmpMonth.ToString() + " and nam = " + tmpYear.ToString() + " and manv='" + ListNVChamCong.Rows[i].ItemArray[0].ToString() + "' and ngay="+tmpDay+"");
-                    Database.query("update chamcong_ghichu set ghichu ='" + dtgChamCongTongHopKetQua.Rows[i].Cells[7].Value.ToString() + "' where thang= " + tmpMonth.ToString() + " and nam = " + tmpYear.ToString() + " and manv='" + ListNVChamCong.Rows[i].ItemArray[0].ToString() + "' and ngay="+tmpDay+"");
+                    Database.query("update chamcong_ghichu set ghichu =N'" + dtgChamCongTongHopKetQua.Rows[i].Cells[7].Value.ToString() + "' where thang= " + tmpMonth.ToString() + " and nam = " + tmpYear.ToString() + " and manv='" + ListNVChamCong.Rows[i].ItemArray[0].ToString() + "' and ngay=" + tmpDay + "");
                 }
                 else
                 {
-                    Database.query("insert into chamcong_ghichu(manv,thang,nam,ghichu,ngay) values('" + ListNVChamCong.Rows[i].ItemArray[0].ToString() + "'," + tmpMonth.ToString() + "," + tmpYear.ToString() + ",'" + dtgChamCongTongHopKetQua.Rows[i].Cells[7].Value.ToString() + "',"+tmpDay.ToString()+")");
+                    Database.query("insert into chamcong_ghichu(manv,thang,nam,ghichu,ngay) values(N'" + ListNVChamCong.Rows[i].ItemArray[0].ToString() + "'," + tmpMonth.ToString() + "," + tmpYear.ToString() + ",N'" + dtgChamCongTongHopKetQua.Rows[i].Cells[7].Value.ToString() + "'," + tmpDay.ToString() + ")");
                 }
             }
 
@@ -634,12 +658,12 @@ namespace DentalLabo
             DataTable tmp = Database.query("select * from chamcong_history where manv='" + txtChamCongMaNhanVien.Text + "' and ngay='" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd")+ "'");
             if (tmp.Rows.Count > 0)
             {
-                Database.query("update chamcong_history set manvcc='" + txtChamCongMaNVCC.Text + "', congchinh=" + txtChamCongNgayCongChinh.Text + ", congnghi=" + txtChamCongNgayCongNghi.Text + ", lamthemgio=" + txtChamCongLamThemGio.Text + ", trucchunhat=" + txtChamCongTrucCN.Text + " where manv='" + txtChamCongMaNhanVien.Text + "' and ngay='" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd") + "'");
+                Database.query("update chamcong_history set manvcc=N'" + txtChamCongMaNVCC.Text + "', congchinh=" + txtChamCongNgayCongChinh.Text + ", congnghi=" + txtChamCongNgayCongNghi.Text + ", lamthemgio=" + txtChamCongLamThemGio.Text + ", trucchunhat=" + txtChamCongTrucCN.Text + " where manv='" + txtChamCongMaNhanVien.Text + "' and ngay='" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd") + "'");
             }
             else
             {
-                System.Console.WriteLine("insert into chamcong_history(manv, manvcc, ngay, congchinh, congnghi, lamthemgio, trucchunhat) values('" + txtChamCongMaNhanVien.Text + "','" + txtChamCongMaNVCC.Text + "','" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd") + "', " + txtChamCongNgayCongChinh.Text + "," + txtChamCongNgayCongNghi.Text + ", " + txtChamCongLamThemGio.Text + ", " + txtChamCongTrucCN.Text + ")");
-                Database.query("insert into chamcong_history(manv, manvcc, ngay, congchinh, congnghi, lamthemgio, trucchunhat) values('" + txtChamCongMaNhanVien.Text + "','" + txtChamCongMaNVCC.Text + "','" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd")+ "', "+txtChamCongNgayCongChinh.Text+","+txtChamCongNgayCongNghi.Text+", "+txtChamCongLamThemGio.Text+", "+txtChamCongTrucCN.Text+")");
+                System.Console.WriteLine("insert into chamcong_history(manv, manvcc, ngay, congchinh, congnghi, lamthemgio, trucchunhat) values(N'" + txtChamCongMaNhanVien.Text + "',N'" + txtChamCongMaNVCC.Text + "','" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd") + "', " + txtChamCongNgayCongChinh.Text + "," + txtChamCongNgayCongNghi.Text + ", " + txtChamCongLamThemGio.Text + ", " + txtChamCongTrucCN.Text + ")");
+                Database.query("insert into chamcong_history(manv, manvcc, ngay, congchinh, congnghi, lamthemgio, trucchunhat) values(N'" + txtChamCongMaNhanVien.Text + "',N'" + txtChamCongMaNVCC.Text + "','" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd") + "', " + txtChamCongNgayCongChinh.Text + "," + txtChamCongNgayCongNghi.Text + ", " + txtChamCongLamThemGio.Text + ", " + txtChamCongTrucCN.Text + ")");
             }
             
                 MessageBox.Show("Đã lưu!", "Ok!");
@@ -660,7 +684,7 @@ namespace DentalLabo
                 }
                 else
                 {
-                    Database.query("update tamung set dvt = '" + dtgTamUngLuong.Rows[i].Cells[3].Value.ToString() + "', muctamung='" + dtgTamUngLuong.Rows[i].Cells[4].Value.ToString() + "', thanhtien='" + dtgTamUngLuong.Rows[i].Cells[5].Value.ToString() + "', ghichu='" + dtgTamUngLuong.Rows[i].Cells[6].Value.ToString() + "' where manv='"+ dtgTamUngLuong.Rows[i].Cells[2].Value.ToString() + "' and month(ngaytamung)=" + dtpKiTamUng.Value.ToString("MM") + " and year(ngaytamung) = " + dtpKiTamUng.Value.ToString("yyyy"));
+                    Database.query("update tamung set dvt = N'" + dtgTamUngLuong.Rows[i].Cells[3].Value.ToString() + "', muctamung='" + dtgTamUngLuong.Rows[i].Cells[4].Value.ToString() + "', thanhtien='" + dtgTamUngLuong.Rows[i].Cells[5].Value.ToString() + "', ghichu=N'" + dtgTamUngLuong.Rows[i].Cells[6].Value.ToString() + "' where manv='" + dtgTamUngLuong.Rows[i].Cells[2].Value.ToString() + "' and month(ngaytamung)=" + dtpKiTamUng.Value.ToString("MM") + " and year(ngaytamung) = " + dtpKiTamUng.Value.ToString("yyyy"));
                 }
             }
             MessageBox.Show("Đã lưu thành công!");
@@ -781,7 +805,7 @@ namespace DentalLabo
 
         private void txtTinhLuongMaNhanVien_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+           /* if (e.KeyCode == Keys.Enter)
             {
                 if (txtMaNhanVien.Text == "")
                     return;
@@ -794,11 +818,13 @@ namespace DentalLabo
                     return;
                 }
                 txtTinhLuongTenNhanVien.Text = NVInfo.Rows[0].ItemArray[1].ToString();
-            }
+            }*/
         }
 
-        private void btnTinhLuongTimKiem_Click(object sender, EventArgs e)
+        public void btnTinhLuongTimKiem_Click(object sender, EventArgs e)
         {
+            //frmThemKhoan frm = new frmThemKhoan();
+
             dtgTinhLuongCacKhoanPhaiTru.Rows.Clear();
             dtgTinhLuongLuongChinh.Rows.Clear();
             dtgTinhLuongCacKhoanTinhThem.Rows.Clear();
@@ -829,7 +855,7 @@ namespace DentalLabo
             DataTable LuongChinhInfo = Database.query("select makhoan, soluong, ghichu, ngay,manv from luongchinh where ngay<='" + dtpDenNgay.Value.ToString("yyyy-MM-dd") + "' and ngay>='" +dtpTuNgay.Value.ToString("yyyy-MM-dd") + "' and manv='"+txtTinhLuongMaNhanVien.Text+"'");
 
             ListLuongChinh = LuongChinhInfo;
-            DataTable ListKhoanLuong = Database.query("select makhoan, tenkhoan, donvitinh, dongia from khoanluong");
+            DataTable ListKhoanLuong = Database.query("select khoanluong.makhoan, tenkhoan, donvitinh, dongia from khoanluong, giatrikhoanluong where khoanluong.makhoan = giatrikhoanluong.makhoan and giatrikhoanluong.mabp='" + BPInfo.Rows[0].ItemArray[0].ToString() + "'");
             DataTable ListKhoanTru = Database.query("select makhoan, tenkhoan, donvitinh, dongia from khoantru");
 
             int tong = 0;
@@ -878,11 +904,17 @@ namespace DentalLabo
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[1].Value = ListKhoanLuong.Rows[2].ItemArray[1].ToString();
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[2].Value = ListKhoanLuong.Rows[2].ItemArray[0].ToString();
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[3].Value = ListKhoanLuong.Rows[2].ItemArray[2].ToString();
-            dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value = ChamCongInfo.Rows[0].ItemArray[2].ToString();
+            try
+            {
+                dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value = ChamCongInfo.Rows[0].ItemArray[2].ToString();
 
-            if (dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value == "")
+                if (dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value == "")
+                    dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value = "0";
+            }
+            catch (Exception ex)
+            {
                 dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value = "0";
-
+            }
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value = ListKhoanLuong.Rows[2].ItemArray[3].ToString();
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value = (Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value) * Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value)).ToString();
             tong += Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value);
@@ -962,7 +994,8 @@ namespace DentalLabo
 
         private void btThemKhoan_Click(object sender, EventArgs e)
         {
-            Form f = new frmThemKhoan(txtTinhLuongMaNhanVien.Text);
+            Form f = new frmThemKhoan(txtTinhLuongMaNhanVien.Text,this);
+            //f.MdiParent = this;
             f.Show();
         }
 
@@ -1013,6 +1046,114 @@ namespace DentalLabo
         {
             Form f = new FrmXemPhieuThanhToan(txtTinhLuongMaNhanVien.Text, txtTinhLuongMaBoPhan.Text, dtgTinhLuongLuongChinh , dtgTinhLuongCacKhoanTinhThem, dtgTinhLuongCacKhoanPhaiTru,dtpTuNgay,dtpDenNgay);
             f.Show();
+        }
+
+        private void subtabTongHopKetQuaLamViec_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTongHopKetQuaLamViecTenBoPhan_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                 //MessageBox.Show(cbTongHopKetQuaLamViecTenBoPhan.SelectedValue.ToString());
+                 BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecMaBoPhan, "select mabp from bophan where tenbp='" + cbTongHopKetQuaLamViecTenBoPhan.Text + "'", "mabp");
+                 BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecTenNhanVien, "select tennv from nhanvien where mabp='"+cbTongHopKetQuaLamViecMaBoPhan.Text+"'", "tennv");
+                 BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecMaNhanVien, "select manv from nhanvien where mabp='"+cbTongHopKetQuaLamViecMaBoPhan.Text+"'", "manv");
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void cbTongHopKetQuaLamViecMaBoPhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTongHopKetQuaLamViecTenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecMaNhanVien, "select manv from nhanvien where tennv='"+cbTongHopKetQuaLamViecTenNhanVien.Text+"'", "manv");
+        }
+
+        private void txtTinhLuongTenBoPhan_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //MessageBox.Show(cbTongHopKetQuaLLuoamViecTenBoPhan.SelectedValue.ToString());
+                BHCNModel.UpdateComboBoxByQuery(txtTinhLuongMaBoPhan, "select mabp from bophan where tenbp='" + txtTinhLuongTenBoPhan.Text + "'", "mabp");
+                BHCNModel.UpdateComboBoxByQuery(txtTinhLuongTenNhanVien, "select tennv from nhanvien where mabp='" + txtTinhLuongMaBoPhan.Text + "'", "tennv");
+                BHCNModel.UpdateComboBoxByQuery(txtTinhLuongMaNhanVien, "select manv from nhanvien where mabp='" + txtTinhLuongMaBoPhan.Text + "'", "manv");
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txtTinhLuongTenNhanVien_SelectedValueChanged(object sender, EventArgs e)
+        {
+            BHCNModel.UpdateComboBoxByQuery(cbTongHopKetQuaLamViecMaNhanVien, "select manv from nhanvien where tennv='" + txtTinhLuongTenNhanVien.Text + "'", "manv");
+        }
+
+        private void cbTongHopKetQuaLamViecTenBoPhan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cbTongHopKetQuaLamViecTenBoPhan_SelectedValueChanged(sender, e);
+            }
+        }
+
+        private void txtTinhLuongTenBoPhan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTinhLuongTenBoPhan_SelectedValueChanged(sender, e);
+            }
+        }
+
+        private void txtTinhLuongTenNhanVien_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTinhLuongTenNhanVien_SelectedValueChanged(sender, e);
+            }
+        }
+
+        private void txtTamUngLuongTenBoPhan_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            BHCNModel.UpdateComboBoxByQuery(txtTamUngLuongMaBoPhan,"select mabp from bophan where tenbp='"+txtTamUngLuongTenBoPhan.Text+"'","mabp");
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtChamCongTenBoPhan_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                //MessageBox.Show(cbTongHopKetQuaLLuoamViecTenBoPhan.SelectedValue.ToString());
+                BHCNModel.UpdateComboBoxByQuery(txtChamCongMaBoPhan, "select mabp from bophan where tenbp='" + txtChamCongTenBoPhan.Text + "'", "mabp");
+                BHCNModel.UpdateComboBoxByQuery(txtChamCongTenNhanVien, "select tennv from nhanvien where mabp='" + txtChamCongMaBoPhan.Text + "'", "tennv");
+                BHCNModel.UpdateComboBoxByQuery(txtChamCongMaNhanVien, "select manv from nhanvien where mabp='" + txtChamCongMaBoPhan.Text + "'", "manv");
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txtChamCongTenNhanVien_SelectedValueChanged(object sender, EventArgs e)
+        {
+            BHCNModel.UpdateComboBoxByQuery(txtChamCongMaNhanVien, "select manv from nhanvien where tennv='" + txtChamCongTenNhanVien.Text + "'", "manv");
+
         }
         
 
