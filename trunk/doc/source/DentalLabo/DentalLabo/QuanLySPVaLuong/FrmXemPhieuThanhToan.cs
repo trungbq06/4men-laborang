@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PrintDataGrid;
+using System.Collections;
 namespace DentalLabo.QuanLySPVaLuong
 {
    
@@ -154,7 +155,15 @@ namespace DentalLabo.QuanLySPVaLuong
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            PrintDGV.Print_DataGridView(dtgThanhToan);
+            
+            ArrayList head = new ArrayList();
+            DataTable NVInfo = Database.query("select tennv from nhanvien where manv='"+manv+"'");
+            DataTable BPInfo = Database.query("select tenbp from bophan where mabp='"+mabp+"'");
+            head.Add("Tên nhân viên: " + NVInfo.Rows[0].ItemArray[0].ToString());
+            head.Add("Mã nhân viên: " + manv);
+            head.Add("Tên bộ phận: " + BPInfo.Rows[0].ItemArray[0].ToString());
+            head.Add("Mã bộ phận: " + mabp);
+            PrintDGV.Print_DataGridView(dtgThanhToan, head);
         }
 
         private void dtgThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)
