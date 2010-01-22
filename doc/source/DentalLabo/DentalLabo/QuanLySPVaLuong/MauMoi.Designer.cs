@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtGioTra = new System.Windows.Forms.TextBox();
             this.btnXong = new System.Windows.Forms.Button();
+            this.lblLoaiPhucHinh = new System.Windows.Forms.Label();
+            this.txtLoaiPhucHinh = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelMaumoi
@@ -65,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(336, 85);
+            this.label2.Location = new System.Drawing.Point(336, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 2;
@@ -98,7 +100,7 @@
             // 
             // txtMaKhachHang
             // 
-            this.txtMaKhachHang.Location = new System.Drawing.Point(430, 85);
+            this.txtMaKhachHang.Location = new System.Drawing.Point(430, 88);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.Size = new System.Drawing.Size(116, 20);
             this.txtMaKhachHang.TabIndex = 6;
@@ -147,11 +149,29 @@
             this.btnXong.UseVisualStyleBackColor = true;
             this.btnXong.Click += new System.EventHandler(this.btnXong_Click);
             // 
+            // lblLoaiPhucHinh
+            // 
+            this.lblLoaiPhucHinh.AutoSize = true;
+            this.lblLoaiPhucHinh.Location = new System.Drawing.Point(336, 215);
+            this.lblLoaiPhucHinh.Name = "lblLoaiPhucHinh";
+            this.lblLoaiPhucHinh.Size = new System.Drawing.Size(77, 13);
+            this.lblLoaiPhucHinh.TabIndex = 16;
+            this.lblLoaiPhucHinh.Text = "Loại phục hình";
+            // 
+            // txtLoaiPhucHinh
+            // 
+            this.txtLoaiPhucHinh.Location = new System.Drawing.Point(427, 213);
+            this.txtLoaiPhucHinh.Name = "txtLoaiPhucHinh";
+            this.txtLoaiPhucHinh.Size = new System.Drawing.Size(116, 20);
+            this.txtLoaiPhucHinh.TabIndex = 17;
+            // 
             // MauMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 322);
+            this.Controls.Add(this.txtLoaiPhucHinh);
+            this.Controls.Add(this.lblLoaiPhucHinh);
             this.Controls.Add(this.btnXong);
             this.Controls.Add(this.txtGioTra);
             this.Controls.Add(this.label5);
@@ -186,5 +206,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGioTra;
         private System.Windows.Forms.Button btnXong;
+        private System.Windows.Forms.Label lblLoaiPhucHinh;
+        private System.Windows.Forms.TextBox txtLoaiPhucHinh;
     }
 }

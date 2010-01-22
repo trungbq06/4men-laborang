@@ -104,6 +104,7 @@
             this.txtMaCongDoan.Name = "txtMaCongDoan";
             this.txtMaCongDoan.Size = new System.Drawing.Size(143, 20);
             this.txtMaCongDoan.TabIndex = 6;
+            this.txtMaCongDoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaCongDoan_KeyDown);
             // 
             // txtMaNhanVien
             // 
@@ -111,6 +112,10 @@
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.Size = new System.Drawing.Size(143, 20);
             this.txtMaNhanVien.TabIndex = 7;
+            this.txtMaNhanVien.TabStopChanged += new System.EventHandler(this.txtMaNhanVien_TabIndexChanged);
+            this.txtMaNhanVien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaNhanVien_KeyDown);
+            this.txtMaNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaNhanVien_KeyPress);
+            this.txtMaNhanVien.TabIndexChanged += new System.EventHandler(this.txtMaNhanVien_TabIndexChanged);
             // 
             // txtTenCongDoan
             // 
@@ -119,6 +124,7 @@
             this.txtTenCongDoan.Name = "txtTenCongDoan";
             this.txtTenCongDoan.Size = new System.Drawing.Size(163, 20);
             this.txtTenCongDoan.TabIndex = 8;
+            this.txtTenCongDoan.TextChanged += new System.EventHandler(this.txtTenCongDoan_TextChanged);
             // 
             // txtTenNhanVien
             // 
@@ -143,6 +149,7 @@
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm vào CSDL";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // frmThemCongDoanSanXuat
             // 

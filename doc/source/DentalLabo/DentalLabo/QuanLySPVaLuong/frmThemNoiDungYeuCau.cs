@@ -36,6 +36,8 @@ namespace DentalLabo.QuanLySPVaLuong
             cbVLP.DataSource = ListVLP;
             cbVLP.DisplayMember = "tenvl";
             cbVLP.ValueMember = "mavl";
+
+            txtSoLuongVLC.Text = "0";
         }
 
         private void btnAddToDB_Click(object sender, EventArgs e)
@@ -51,11 +53,23 @@ namespace DentalLabo.QuanLySPVaLuong
                 vitri = Convert.ToInt32(txtViTri.Text);
             }
                 
-            DataTable countSPDH = Database.query("select count(*)from sanphamdathang");
-            String MaSPDatHang = "SPDH" + (Convert.ToInt32(countSPDH.Rows[0].ItemArray[0]) +1).ToString();
+            DataTable countSPDH = Database.query("select max(maspdathang) as tt from sanphamdathang");
+            //MessageBox.Show(Convert.ToInt32(countSPDH.Rows[0].ItemArray[0]).ToString());
+            String MaSPDatHang = "1";
+            int c;
+            try
+            {
+                 c = Convert.ToInt32(countSPDH.Rows[0].ItemArray[0].ToString()) + 1;
+            }
+            catch (Exception ex)
+            {
+                 c = 0;
+            }
+            
+            MaSPDatHang = (c +1).ToString();
             
             //MessageBox.Show(cbSanPham.SelectedValue.ToString());
-            String insertQuery = "insert into Sanphamdathang(maspdathang, masp, vitrirang, mavlc, mavlp, mausp, luuy, yeucauchitiet) values( ";
+            String insertQuery = "insert into Sanphamdathang(maspdathang, masp, vitrirang, mavlc, mavlp, mausp, luuy, yeucauchitiet,soluong, soluongvlc, soluongvlp) values( ";
             insertQuery += "'" + MaSPDatHang + "',";
             insertQuery += "'" + cbSanPham.SelectedValue.ToString() + "',";
             insertQuery += vitri.ToString() + ",";
@@ -63,7 +77,8 @@ namespace DentalLabo.QuanLySPVaLuong
             insertQuery += "'" + cbVLP.SelectedValue.ToString() + "',";
             insertQuery += "'" + txtMauSanPham.Text + "',";
             insertQuery += "'" + txtLuuy.Text + "',";
-            insertQuery += "'" + txtYeuCauChiTiet.Text + "' )";
+            insertQuery += "'" + txtYeuCauChiTiet.Text + "',";
+            insertQuery += "'" + txtSoLuong.Text + "',"+txtSoLuongVLC.Text+", "+txtSoLuongVLP.Text+")";
             //MessageBox.Show(insertQuery);
             //System.Console.WriteLine(insertQuery);
             Database.query(insertQuery);
@@ -71,6 +86,31 @@ namespace DentalLabo.QuanLySPVaLuong
             String insertQuery2 = "insert into mauhang_sanphamdathang(mamau, maspdathang) values ('"+masomau+"','"+MaSPDatHang+"')";
             Database.query(insertQuery2);
             this.Close();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtYeuCauChiTiet_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLuuy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
 
 
