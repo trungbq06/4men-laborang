@@ -288,10 +288,13 @@ namespace DentalLabo
         {
 
         }
-
+        
         private void txtQuanLyDonViSanPhamMaSoMau_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnQLSPTimKiem_Click(sender, e);
+            }
         }
 
 
@@ -303,19 +306,9 @@ namespace DentalLabo
             dtgQLDonViSanPhamCongDoanPhucHinh.Rows.Clear();
             dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows.Clear();
             
-            //dtgQLDonViSanPhamNoiDungYeuCauPhucVu.DataSource = null;
-            //System.Console.WriteLine(selectQ);
+            
             DataTable dt = Database.query(selectQ);
-            /*
-            DataTableReader dtr = dt.CreateDataReader();
-            int count = 0;
-            while (dtr.Read())
-            {
-                count++;
-                //dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows.Add();
-                dateTimePickerNgayNhanMau.Value = Convert.ToDateTime(dtr.GetValue(2).ToString());
-                break;
-            }*/
+           
 
             
             int count = dt.Rows.Count;
