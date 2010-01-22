@@ -35,10 +35,12 @@
             this.clnMaSoMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnLoaiPhucHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnVatLieuPhu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong_VLp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnGioNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSPDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,10 +126,12 @@
             this.clnMaSoMau,
             this.clnLoaiPhucHinh,
             this.clnTenSanPham,
+            this.clnLoaiVatLieu,
             this.clnDVT,
             this.clnSoLuong,
-            this.clnLoaiVatLieu,
             this.clnVatLieuPhu,
+            this.DVT,
+            this.SoLuong_VLp,
             this.clnGioNhap,
             this.clnNgayNhap,
             this.MaSPDH});
@@ -166,6 +170,13 @@
             this.clnTenSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.clnTenSanPham.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // clnLoaiVatLieu
+            // 
+            this.clnLoaiVatLieu.HeaderText = "Loại vật liệu";
+            this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
+            this.clnLoaiVatLieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnLoaiVatLieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // clnDVT
             // 
             this.clnDVT.HeaderText = "ĐVT";
@@ -178,19 +189,22 @@
             this.clnSoLuong.Name = "clnSoLuong";
             this.clnSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // clnLoaiVatLieu
-            // 
-            this.clnLoaiVatLieu.HeaderText = "Loại vật liệu";
-            this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
-            this.clnLoaiVatLieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnLoaiVatLieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // clnVatLieuPhu
             // 
             this.clnVatLieuPhu.HeaderText = "Vật liệu phụ";
             this.clnVatLieuPhu.Name = "clnVatLieuPhu";
             this.clnVatLieuPhu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.clnVatLieuPhu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DVT
+            // 
+            this.DVT.HeaderText = "ĐVT";
+            this.DVT.Name = "DVT";
+            // 
+            // SoLuong_VLp
+            // 
+            this.SoLuong_VLp.HeaderText = "Số Lượng";
+            this.SoLuong_VLp.Name = "SoLuong_VLp";
             // 
             // clnGioNhap
             // 
@@ -734,10 +748,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnMaSoMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnLoaiPhucHinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTenSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnLoaiVatLieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnDVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnSoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnLoaiVatLieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnVatLieuPhu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong_VLp;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnGioNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNgayNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSPDH;
