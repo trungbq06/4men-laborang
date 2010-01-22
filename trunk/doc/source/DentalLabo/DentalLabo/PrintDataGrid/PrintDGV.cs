@@ -267,34 +267,37 @@ GraphicsUnit.Point);
                             fFont = dgv.Font;
                             int maxRight = 0;
 
-                            foreach (string entry in myHeader)
+                            if (myHeader != null)
                             {
-                                ++count;
-                                if (count % 2 ==0) if (entry.Length > maxRight) maxRight = entry.Length;
-                            }
-                            count = 0;
-                            maxRight += 100;
-                            
-                            foreach (string entry in myHeader)
-                            {
-                                if (count % 2 == 0)
+                                foreach (string entry in myHeader)
                                 {
-                                    lineHeight += 30;
-                                    count1 = 1;
+                                    ++count;
+                                    if (count % 2 == 0) if (entry.Length > maxRight) maxRight = entry.Length;
                                 }
-                                
-                                if (count1 == 1)
-                                {
-                                    headerLocation = new PointF(e.MarginBounds.Left + 50, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) + lineHeight);
-                                }
-                                else
-                                {
-                                    headerLocation = new PointF(e.MarginBounds.Width - maxRight, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) + lineHeight);     
-                                }
+                                count = 0;
+                                maxRight += 100;
 
-                                e.Graphics.DrawString(entry, fFont, Brushes.Black, headerLocation); 
-                                count1++;
-                                count++;
+                                foreach (string entry in myHeader)
+                                {
+                                    if (count % 2 == 0)
+                                    {
+                                        lineHeight += 30;
+                                        count1 = 1;
+                                    }
+
+                                    if (count1 == 1)
+                                    {
+                                        headerLocation = new PointF(e.MarginBounds.Left + 50, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) + lineHeight);
+                                    }
+                                    else
+                                    {
+                                        headerLocation = new PointF(e.MarginBounds.Width - maxRight, ((e.MarginBounds.Top - e.PageBounds.Top) / 2) + lineHeight);
+                                    }
+
+                                    e.Graphics.DrawString(entry, fFont, Brushes.Black, headerLocation);
+                                    count1++;
+                                    count++;
+                                }
                             }
                             
                             String s = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
