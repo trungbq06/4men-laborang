@@ -12,11 +12,12 @@ namespace DentalLabo.QuanLySPVaLuong
     public partial class frmThemKhoan : Form
     {
         private String manv;
-        public frmThemKhoan(String _manv)
+        private frmQLSP parentForm ;
+        public frmThemKhoan(String _manv, frmQLSP parent)
         {
             InitializeComponent();
             manv = _manv;
-
+            parentForm = parent;
             DataTable NVInfo = Database.query("Select manv, tennv from nhanvien where manv='"+manv+"'");
             if (NVInfo.Rows.Count == 0)
             {
@@ -57,6 +58,10 @@ namespace DentalLabo.QuanLySPVaLuong
             txtGhiChu.Text = "";
         }
 
+        
+
+        
+
         private void frmThemKhoan_Load(object sender, EventArgs e)
         {
 
@@ -86,6 +91,7 @@ namespace DentalLabo.QuanLySPVaLuong
             {
                 //System.Console.WriteLine("insert into " + cbLoaiKhoanLuong.SelectedValue.ToString() + " (manv, makhoan, soluong, ghichu, ngay) values('" + txtMaNhanVien.Text + "', '" + cbKhoanLuong.SelectedValue.ToString() + "', " + txtSoLuong.Text + ", '" + txtGhiChu.Text + "', '" + dtpNgay.Value.ToString("yyyy-MM-dd") + "')");
                 Database.query("insert into " + cbLoaiKhoanLuong.SelectedValue.ToString() + " (manv, makhoan, soluong, ghichu, ngay) values('"+txtMaNhanVien.Text+"', '"+cbKhoanLuong.SelectedValue.ToString()+"', "+txtSoLuong.Text+", '"+txtGhiChu.Text+"', '"+dtpNgay.Value.ToString("yyyy-MM-dd")+"')");
+                parentForm.btnTinhLuongTimKiem_Click(sender, e);
                 this.Close();
             }
             catch (Exception ex)

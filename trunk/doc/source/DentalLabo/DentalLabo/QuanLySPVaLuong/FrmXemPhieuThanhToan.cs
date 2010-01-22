@@ -69,7 +69,7 @@ namespace DentalLabo.QuanLySPVaLuong
                         int t = ThemHangRong(dtgThanhToan);
                         for (int j = 0; j <= 6; j++)
                             dtgThanhToan.Rows[t].Cells[j].Value = luongchinh.Rows[i].Cells[j].Value.ToString();
-                        MessageBox.Show(dtgThanhToan.Rows[t].Cells[6].Value.ToString());
+                        //MessageBox.Show(dtgThanhToan.Rows[t].Cells[6].Value.ToString());
                         tong += Convert.ToInt32(dtgThanhToan.Rows[t].Cells[6].Value.ToString());
                     }
                 }

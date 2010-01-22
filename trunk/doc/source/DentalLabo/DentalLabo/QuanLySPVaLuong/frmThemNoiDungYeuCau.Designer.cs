@@ -111,7 +111,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 350);
+            this.label7.Location = new System.Drawing.Point(48, 321);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 6;
@@ -121,7 +121,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(357, 350);
+            this.label8.Location = new System.Drawing.Point(357, 321);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 7;
@@ -171,7 +171,7 @@
             this.txtLuuy.Location = new System.Drawing.Point(101, 292);
             this.txtLuuy.Multiline = true;
             this.txtLuuy.Name = "txtLuuy";
-            this.txtLuuy.Size = new System.Drawing.Size(207, 137);
+            this.txtLuuy.Size = new System.Drawing.Size(207, 71);
             this.txtLuuy.TabIndex = 15;
             this.txtLuuy.TextChanged += new System.EventHandler(this.txtLuuy_TextChanged);
             // 
@@ -180,7 +180,7 @@
             this.txtYeuCauChiTiet.Location = new System.Drawing.Point(444, 292);
             this.txtYeuCauChiTiet.Multiline = true;
             this.txtYeuCauChiTiet.Name = "txtYeuCauChiTiet";
-            this.txtYeuCauChiTiet.Size = new System.Drawing.Size(191, 137);
+            this.txtYeuCauChiTiet.Size = new System.Drawing.Size(191, 71);
             this.txtYeuCauChiTiet.TabIndex = 16;
             this.txtYeuCauChiTiet.TextChanged += new System.EventHandler(this.txtYeuCauChiTiet_TextChanged);
             // 
