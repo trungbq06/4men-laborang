@@ -361,7 +361,8 @@ namespace DentalLabo.BanHangVaCongNo
                            "'" + maHD + "', " + 
                            "'" + maKH + "', " + 
                            "'" + maNV + "', " + 
-                           "'" + ngayXuat + "'" + 
+                           "'" + ngayXuat + "'," +
+                           "'" + "0" + "'" + 
                            ")";
             Database.query(query);
 

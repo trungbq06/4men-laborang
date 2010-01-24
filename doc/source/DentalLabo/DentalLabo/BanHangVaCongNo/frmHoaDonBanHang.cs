@@ -38,11 +38,9 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (!Validation.ChuaNhap(cmbMaKH.Text, "Chưa nhập mã KH"))
-                if (!Validation.ChuaNhap(txtNoiDungGT.Text, "Chưa nhập số Tiền TT")) {
-                    model.ThanhToanTien(cmbMaKH.Text, model.TongTien.ToString());
-                }
-                    
+            //model.ThanhToanTien(cmbMaKH.Text, model.TongTien.ToString());
+            model.ThanhToanTien(txtSoPhieu.Text);
+            Database.Warning("Thanh toán tiền thành công");
         }
 
         private void button1_Click(object sender, EventArgs e)

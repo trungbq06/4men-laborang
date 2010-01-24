@@ -149,7 +149,8 @@ namespace DentalLabo.BanHangVaCongNo
          * Tinh tong tien mot mau hang
          */
         public static string TongTienHoaDon(string maHD)
-        {            
+        {   
+            // Tong tien cac mau
             string query = "SELECT MaMau FROM HoaDonBanHang_MauHang WHERE MaHD = '" + maHD + "'";
             DataTable MaMaus = Database.query(query);
 
@@ -161,7 +162,20 @@ namespace DentalLabo.BanHangVaCongNo
                     TongTien += Int64.Parse(tienMau);
             }
 
-            return TongTien.ToString();
+
+            // tong tien cac giam tru
+            long GiamTru = 0;
+            query = "SELECT ThanhTien FROM NoiDungGiamTru WHERE MaHD = '" + maHD + "'";
+            DataTable GiamTrus = Database.query(query);
+            for (int i = 0; i < GiamTrus.Rows.Count; i++)
+            {
+                string thanhTien = GiamTrus.Rows[i]["ThanhTien"].ToString();
+                if (thanhTien != "")
+                    GiamTru += Int64.Parse(thanhTien);
+            }
+
+            long Tien = TongTien - GiamTru;
+            return Tien.ToString();
         }
 
         /*
@@ -256,6 +270,18 @@ namespace DentalLabo.BanHangVaCongNo
                            "WHERE MaKH = '" + maKH + "' " +
                            "      AND datediff(day, getdate(), '" + beginDate + "') <= 0 " +
                            "      AND datediff(day, getdate(), '" + endDate + "') >= 0";
+            DataTable MaHDs = Database.query(query);
+            return MaHDs;
+        }
+
+
+        public static DataTable TimCacHDDaThanhToan(string maKH, string beginDate, string endDate)
+        {
+            string query = "SELECT MaHD, NgayXuat FROM HoaDonBanHang " +
+                           "WHERE MaKH = '" + maKH + "' " +
+                           "      AND datediff(day, getdate(), '" + beginDate + "') <= 0 " +
+                           "      AND datediff(day, getdate(), '" + endDate + "') >= 0" +
+                           "      AND TrangThai = '1'";
             DataTable MaHDs = Database.query(query);
             return MaHDs;
         }

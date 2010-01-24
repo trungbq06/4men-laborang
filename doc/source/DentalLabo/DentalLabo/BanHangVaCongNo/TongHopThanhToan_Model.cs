@@ -185,12 +185,12 @@ namespace DentalLabo.BanHangVaCongNo
             cells[loaiIndex] = loaiThanhToan;
 
             int countTT = 0;
-            DataTable MaTTs = BHCNModel.TimCacTTCuaKH(maKH, beginDate, endDate);
+            DataTable MaTTs = BHCNModel.TimCacHDDaThanhToan(maKH, beginDate, endDate);
             foreach (DataRow row in MaTTs.Rows)
             {
                 cells[ttIndex] = countTT.ToString();
-                cells[ngayXuatIndex] = row["NgayTT"].ToString();
-                cells[thanhTienIndex] = row["SoTien"].ToString();
+                cells[ngayXuatIndex] = row["NgayXuat"].ToString();
+                cells[thanhTienIndex] = BHCNModel.TongTienHoaDon(row["MaHD"].ToString());                
 
                 form.dtgChiTietCongNoKH.Rows.Add(cells);
 
