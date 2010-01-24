@@ -278,6 +278,12 @@ namespace DentalLabo.BanHangVaCongNo
                            ")";            
             Database.query(query);
             Database.Warning("Khách hàng " + maKH + " đã thanh toán " + soTien + " vao ngay " + form.dateNgayXuat.Text);                        
-        } 
+        }
+
+        public void ThanhToanTien(string maHD)
+        {
+            string query = "UPDATE HoaDonBanHang SET TrangThai = '1' WHERE MaHD = '" + maHD + "'";
+            Database.query(query);
+        }
     }
 }
