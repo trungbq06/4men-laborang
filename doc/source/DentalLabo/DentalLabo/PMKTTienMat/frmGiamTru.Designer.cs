@@ -28,6 +28,7 @@
         /// </summary>
         public void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,6 +50,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgChiTietCongNoKH = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnXemBaoCao = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnMaSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnNoiDungCongViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +64,6 @@
             this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnXemBaoCao = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grpPhieuNhapKho.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
@@ -328,73 +329,6 @@
             this.dtgChiTietCongNoKH.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgChiTietCongNoKH_CellValueChanged);
             this.dtgChiTietCongNoKH.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dtgChiTietCongNoKH_RowStateChanged);
             // 
-            // clnThuTu
-            // 
-            this.clnThuTu.Frozen = true;
-            this.clnThuTu.HeaderText = "TT";
-            this.clnThuTu.Name = "clnThuTu";
-            this.clnThuTu.ReadOnly = true;
-            this.clnThuTu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clnThuTu.Width = 50;
-            // 
-            // clnMaSo
-            // 
-            this.clnMaSo.HeaderText = "Mã số";
-            this.clnMaSo.Name = "clnMaSo";
-            this.clnMaSo.ReadOnly = true;
-            this.clnMaSo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clnMaSo.Visible = false;
-            // 
-            // clnNoiDungCongViec
-            // 
-            this.clnNoiDungCongViec.HeaderText = "Nội dung giảm trừ";
-            this.clnNoiDungCongViec.Name = "clnNoiDungCongViec";
-            this.clnNoiDungCongViec.ReadOnly = true;
-            this.clnNoiDungCongViec.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clnNoiDungCongViec.Width = 300;
-            // 
-            // clnDVT
-            // 
-            this.clnDVT.HeaderText = "ĐVT";
-            this.clnDVT.Name = "clnDVT";
-            this.clnDVT.ReadOnly = true;
-            this.clnDVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnSoLuong
-            // 
-            this.clnSoLuong.HeaderText = "Số Lượng";
-            this.clnSoLuong.Name = "clnSoLuong";
-            this.clnSoLuong.ReadOnly = true;
-            this.clnSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnDonGia
-            // 
-            this.clnDonGia.HeaderText = "Đơn giá";
-            this.clnDonGia.Name = "clnDonGia";
-            this.clnDonGia.ReadOnly = true;
-            this.clnDonGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnThanhTien
-            // 
-            this.clnThanhTien.HeaderText = "Thành tiền";
-            this.clnThanhTien.Name = "clnThanhTien";
-            this.clnThanhTien.ReadOnly = true;
-            this.clnThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnGhiChu
-            // 
-            this.clnGhiChu.HeaderText = "Ghi chú";
-            this.clnGhiChu.Name = "clnGhiChu";
-            this.clnGhiChu.ReadOnly = true;
-            this.clnGhiChu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnTrangThai
-            // 
-            this.clnTrangThai.HeaderText = "Trạng thái";
-            this.clnTrangThai.Name = "clnTrangThai";
-            this.clnTrangThai.ReadOnly = true;
-            this.clnTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -464,6 +398,75 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(748, 132);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // clnThuTu
+            // 
+            this.clnThuTu.Frozen = true;
+            this.clnThuTu.HeaderText = "TT";
+            this.clnThuTu.Name = "clnThuTu";
+            this.clnThuTu.ReadOnly = true;
+            this.clnThuTu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clnThuTu.Width = 50;
+            // 
+            // clnMaSo
+            // 
+            this.clnMaSo.HeaderText = "Mã số";
+            this.clnMaSo.Name = "clnMaSo";
+            this.clnMaSo.ReadOnly = true;
+            this.clnMaSo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clnMaSo.Visible = false;
+            // 
+            // clnNoiDungCongViec
+            // 
+            this.clnNoiDungCongViec.HeaderText = "Nội dung giảm trừ";
+            this.clnNoiDungCongViec.Name = "clnNoiDungCongViec";
+            this.clnNoiDungCongViec.ReadOnly = true;
+            this.clnNoiDungCongViec.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clnNoiDungCongViec.Width = 300;
+            // 
+            // clnDVT
+            // 
+            this.clnDVT.HeaderText = "ĐVT";
+            this.clnDVT.Name = "clnDVT";
+            this.clnDVT.ReadOnly = true;
+            this.clnDVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnSoLuong
+            // 
+            this.clnSoLuong.HeaderText = "Số Lượng";
+            this.clnSoLuong.Name = "clnSoLuong";
+            this.clnSoLuong.ReadOnly = true;
+            this.clnSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnDonGia
+            // 
+            this.clnDonGia.HeaderText = "Đơn giá";
+            this.clnDonGia.Name = "clnDonGia";
+            this.clnDonGia.ReadOnly = true;
+            this.clnDonGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnThanhTien
+            // 
+            dataGridViewCellStyle1.Format = "N0";
+            this.clnThanhTien.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clnThanhTien.HeaderText = "Thành tiền";
+            this.clnThanhTien.Name = "clnThanhTien";
+            this.clnThanhTien.ReadOnly = true;
+            this.clnThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnGhiChu
+            // 
+            this.clnGhiChu.HeaderText = "Ghi chú";
+            this.clnGhiChu.Name = "clnGhiChu";
+            this.clnGhiChu.ReadOnly = true;
+            this.clnGhiChu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnTrangThai
+            // 
+            this.clnTrangThai.HeaderText = "Trạng thái";
+            this.clnTrangThai.Name = "clnTrangThai";
+            this.clnTrangThai.ReadOnly = true;
+            this.clnTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // frmGiamTru
             // 
