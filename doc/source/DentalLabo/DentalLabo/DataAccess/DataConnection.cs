@@ -9,12 +9,17 @@ namespace DentalLabo.Data
 {
     class DataConnection
     {
+        public static string server;
+        public static string user;
+        public static string pass;
+        public static string db;
+
         public static SqlConnection Connect()
         {
-            string ConnectionString = "Network Library=dbmssocn;Address=192.168.1.44\\SQLEXPRESS;";
-            ConnectionString += "User ID=sa;";
-            ConnectionString += "Password=abc123;";
-            ConnectionString += "Initial Catalog=DentalLabo";
+            string ConnectionString = "Network Library=dbmssocn;Address=" + server + ";";
+            ConnectionString += "User ID=" + user + ";";
+            ConnectionString += "Password=" + pass + ";";
+            ConnectionString += "Initial Catalog=" + db;
             SqlConnection con = new SqlConnection(ConnectionString);
             con.Open();
             return con;

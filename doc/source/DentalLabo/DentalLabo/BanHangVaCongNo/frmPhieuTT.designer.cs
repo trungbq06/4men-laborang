@@ -28,14 +28,14 @@
         /// </summary>
         public void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.dtgChiTietCongNoKH = new System.Windows.Forms.DataGridView();
             this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,8 +118,8 @@
             // 
             // clnThuTu
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clnThuTu.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clnThuTu.DefaultCellStyle = dataGridViewCellStyle1;
             this.clnThuTu.Frozen = true;
             this.clnThuTu.HeaderText = "TT";
             this.clnThuTu.Name = "clnThuTu";
@@ -128,8 +128,8 @@
             // 
             // clnNgayNhanMau
             // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clnNgayNhanMau.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clnNgayNhanMau.DefaultCellStyle = dataGridViewCellStyle2;
             this.clnNgayNhanMau.Frozen = true;
             this.clnNgayNhanMau.HeaderText = "Ngày nhận mẫu";
             this.clnNgayNhanMau.Name = "clnNgayNhanMau";
@@ -138,32 +138,32 @@
             // 
             // clnNgay
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clnNgay.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clnNgay.DefaultCellStyle = dataGridViewCellStyle3;
             this.clnNgay.HeaderText = "Ngày trả";
             this.clnNgay.Name = "clnNgay";
             this.clnNgay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // clnSoHD
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clnSoHD.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clnSoHD.DefaultCellStyle = dataGridViewCellStyle4;
             this.clnSoHD.HeaderText = "Số HD";
             this.clnSoHD.Name = "clnSoHD";
             this.clnSoHD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // clnMaSoMau
             // 
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clnMaSoMau.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clnMaSoMau.DefaultCellStyle = dataGridViewCellStyle5;
             this.clnMaSoMau.HeaderText = "Mã số mẫu";
             this.clnMaSoMau.Name = "clnMaSoMau";
             this.clnMaSoMau.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // clnNoiDungCongViec
             // 
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clnNoiDungCongViec.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clnNoiDungCongViec.DefaultCellStyle = dataGridViewCellStyle6;
             this.clnNoiDungCongViec.HeaderText = "Nội dung công việc";
             this.clnNoiDungCongViec.Name = "clnNoiDungCongViec";
             this.clnNoiDungCongViec.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -171,18 +171,18 @@
             // 
             // clnThanhTien
             // 
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.Format = "N0";
-            dataGridViewCellStyle15.NullValue = null;
-            this.clnThanhTien.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.clnThanhTien.DefaultCellStyle = dataGridViewCellStyle7;
             this.clnThanhTien.HeaderText = "Thành tiền";
             this.clnThanhTien.Name = "clnThanhTien";
             this.clnThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Loai
             // 
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loai.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loai.DefaultCellStyle = dataGridViewCellStyle8;
             this.Loai.HeaderText = "Loại";
             this.Loai.Name = "Loai";
             this.Loai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
