@@ -54,6 +54,12 @@ namespace DentalLabo
                     else
                     {
                         Database.connectDatabase(server, user, pass, db);
+                        
+                        Data.DataConnection.server = server;
+                        Data.DataConnection.user = user;
+                        Data.DataConnection.pass = pass;
+                        Data.DataConnection.db = db;
+
                         return Database.hasConnect;
                     }
 
