@@ -301,7 +301,7 @@ namespace DentalLabo
         private void btnQLSPTimKiem_Click(object sender, EventArgs e)
         {
             String MaMau = txtQuanLyDonViSanPhamMaSoMau.Text;
-            String selectQ = "select mamau, makh, loaiphuchinh, ngaynhan from mauhang where mamau='"+MaMau+"'";
+            String selectQ = "select mamau, makh, loaiphuchinh, ngaynhan from mauhang where mamau='"+MaMau+"' and trangthai='1'";
 
             dtgQLDonViSanPhamCongDoanPhucHinh.Rows.Clear();
             dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows.Clear();
@@ -315,7 +315,7 @@ namespace DentalLabo
 
             if (count == 0)
             {
-                MessageBox.Show("Không tìm thấy mẫu hàng có mã là " + txtQuanLyDonViSanPhamMaSoMau.Text, "Không tìm thấy!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mẫu hàng này chưa nhập kho hoặc không tìm thấy mẫu hàng có mã là " + txtQuanLyDonViSanPhamMaSoMau.Text, "Không tìm thấy!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -336,6 +336,7 @@ namespace DentalLabo
             }
 
             ListNoiDungYeuCau = dtSPDH;
+            int tong = 0;
             for (int i = 0; i < dtSPDH.Rows.Count; i++)
             {
                 //MessageBox.Show(dtSPDH.Rows[i].ItemArray[0].ToString());
@@ -364,11 +365,20 @@ namespace DentalLabo
                     }
                 dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[6].Value = SPDHInfo.Rows[0].ItemArray[6].ToString();
                 dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[8].Value = SPDHInfo.Rows[0].ItemArray[7].ToString();
+
+                //MessageBox.Show(dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[8].Value.ToString());
+                //MessageBox.Show(dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[7].Value.ToString());
+                //System.Console.WriteLine();
+                dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[10].Value = Convert.ToString(Convert.ToString(Convert.ToInt32(dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[8].Value.ToString()) * Convert.ToInt32(dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[9].Value.ToString())));
+                tong += Convert.ToInt32(dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[n].Cells[10].Value.ToString());
             }
-
-
+            dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows.Add();
+            int t = dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows.Add();
+            dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[t].Cells[8].Value = "Tổng";
+            dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[t].Cells[10].Value = tong.ToString();
             DataTable ChamCongDoan = Database.query("Select macd, manv, solan from chamcongdoan where mamau='" + MaMau + "'");
             ListCongDoanSanXuat = ChamCongDoan;
+            tong = 0;
             for (int i = 0; i < ChamCongDoan.Rows.Count; i++)
             {
                 DataTable CDSXInfo = Database.query("select tencd, donvitinh, soluongquychieu from congdoansx where macd='" + ChamCongDoan.Rows[i].ItemArray[0].ToString() + "'");
@@ -382,9 +392,14 @@ namespace DentalLabo
                 dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[5].Value = CDSXInfo.Rows[0].ItemArray[1].ToString();
                 dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[6].Value = CDSXInfo.Rows[0].ItemArray[2].ToString();
                 dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[7].Value = ChamCongDoan.Rows[i].ItemArray[2].ToString();
+                dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[8].Value = Convert.ToString(Convert.ToInt32(dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[7].Value.ToString()) + Convert.ToInt32(dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[6].Value.ToString()));
+                tong += Convert.ToInt32(dtgQLDonViSanPhamCongDoanPhucHinh.Rows[n].Cells[8].Value.ToString());
 
             }
-            
+            t = dtgQLDonViSanPhamCongDoanPhucHinh.Rows.Add();
+            t = dtgQLDonViSanPhamCongDoanPhucHinh.Rows.Add();
+            dtgQLDonViSanPhamCongDoanPhucHinh.Rows[t].Cells[6].Value = "Tổng";
+            dtgQLDonViSanPhamCongDoanPhucHinh.Rows[t].Cells[8].Value = tong.ToString();
         }
 
         private void dgtTinhLuongCacKhoanPhaiTru_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -407,7 +422,7 @@ namespace DentalLabo
 
         private void btnQuanLyDonViSanPhamXoa_Click(object sender, EventArgs e)
         {
-            
+            /*
             for (int i = 0; i < dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows.Count; i++)
             if (dtgQLDonViSanPhamNoiDungYeuCauPhucVu.Rows[i].Selected == true)
             {
@@ -421,7 +436,7 @@ namespace DentalLabo
                 deleteQuery = "delete from sanphamdathang where maspdathang='" + ListNoiDungYeuCau.Rows[i].ItemArray[0] + "'";
                 Database.query(deleteQuery);
             }
-            btnQLSPTimKiem_Click(sender,e);
+            btnQLSPTimKiem_Click(sender,e);*/
         }
 
         private void btnThemMoiCongDoan_Click(object sender, EventArgs e)
@@ -574,8 +589,14 @@ namespace DentalLabo
             for (int i=0; i<dtgTongHopKetQuaCongViec.Rows.Count; i++)
                 if (dtgTongHopKetQuaCongViec.Rows[i].Selected == true)
                 {
-                    Form f = new frmChiTietKetQuaCongViec(dtgTongHopKetQuaCongViec.Rows[i].Cells[1].Value.ToString(), dtpTongHopKetQuaTuNgay.Value.ToString("yyyy-MM-dd"), dtpTongHopKetQuaDenNgay.Value.ToString("yyyy-MM-dd"));
-                    f.Show();
+                    try
+                    {
+                        Form f = new frmChiTietKetQuaCongViec(dtgTongHopKetQuaCongViec.Rows[i].Cells[1].Value.ToString(), dtpTongHopKetQuaTuNgay.Value.ToString("yyyy-MM-dd"), dtpTongHopKetQuaDenNgay.Value.ToString("yyyy-MM-dd"));
+                        f.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                    }
                 }
         }
 
@@ -627,6 +648,7 @@ namespace DentalLabo
 
         private void btnChamCongLuu_Click(object sender, EventArgs e)
         {
+            
             try{
             for (int i = 0; i < ListNVChamCong.Rows.Count; i++)
             {
@@ -646,6 +668,11 @@ namespace DentalLabo
             {
                 MessageBox.Show("Cần nhập mã nhân viên chấm công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+
+            if (Convert.ToDouble(txtChamCongNgayCongChinh.Text) <= 1)
+            {
+                txtChamCongNgayCongNghi.Text =Convert.ToString(1- Convert.ToDouble( txtChamCongNgayCongChinh.Text));
             }
 
             DataTable tmp = Database.query("select * from chamcong_history where manv='" + txtChamCongMaNhanVien.Text + "' and ngay='" + dtpNgayChamCong.Value.ToString("yyyy-MM-dd")+ "'");
@@ -851,7 +878,7 @@ namespace DentalLabo
             DataTable ListKhoanLuong = Database.query("select khoanluong.makhoan, tenkhoan, donvitinh, dongia from khoanluong, giatrikhoanluong where khoanluong.makhoan = giatrikhoanluong.makhoan and giatrikhoanluong.mabp='" + BPInfo.Rows[0].ItemArray[0].ToString() + "'");
             DataTable ListKhoanTru = Database.query("select makhoan, tenkhoan, donvitinh, dongia from khoantru");
 
-            int tong = 0;
+            double tong = 0;
             int n = dtgTinhLuongLuongChinh.Rows.Add();
             dtgTinhLuongLuongChinh.Rows[n].Cells[0].Value = "1";
             dtgTinhLuongLuongChinh.Rows[n].Cells[1].Value = ListKhoanLuong.Rows[0].ItemArray[1].ToString();
@@ -863,8 +890,9 @@ namespace DentalLabo
                 dtgTinhLuongLuongChinh.Rows[n].Cells[4].Value = "0";
 
             dtgTinhLuongLuongChinh.Rows[n].Cells[5].Value = ListKhoanLuong.Rows[0].ItemArray[3].ToString();
-            dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value = (Convert.ToInt32(dtgTinhLuongLuongChinh.Rows[n].Cells[5].Value) * Convert.ToInt32(dtgTinhLuongLuongChinh.Rows[n].Cells[4].Value)).ToString();
+            dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value = (Convert.ToDouble(dtgTinhLuongLuongChinh.Rows[n].Cells[5].Value) * Convert.ToDouble(dtgTinhLuongLuongChinh.Rows[n].Cells[4].Value)).ToString();
             tong += Convert.ToInt32(dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value);
+            
             for (int i = 0; i < LuongChinhInfo.Rows.Count; i++)
                 for (int j=0; j< ListKhoanLuong.Rows.Count; j++)
                     if (ListKhoanLuong.Rows[j].ItemArray[0].ToString() == LuongChinhInfo.Rows[i].ItemArray[0].ToString())
@@ -880,10 +908,10 @@ namespace DentalLabo
                     dtgTinhLuongLuongChinh.Rows[n].Cells[4].Value = "0";
 
                 dtgTinhLuongLuongChinh.Rows[n].Cells[5].Value = ListKhoanLuong.Rows[0].ItemArray[3].ToString();
-                dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value = (Convert.ToInt32(dtgTinhLuongLuongChinh.Rows[n].Cells[5].Value) * Convert.ToInt32(dtgTinhLuongLuongChinh.Rows[n].Cells[4].Value)).ToString();
+                dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value = (Convert.ToDouble(dtgTinhLuongLuongChinh.Rows[n].Cells[5].Value) * Convert.ToDouble(dtgTinhLuongLuongChinh.Rows[n].Cells[4].Value)).ToString();
 
                 dtgTinhLuongLuongChinh.Rows[n].Cells[7].Value = LuongChinhInfo.Rows[i].ItemArray[2].ToString();
-                tong += Convert.ToInt32(dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value);
+                tong += Convert.ToDouble(dtgTinhLuongLuongChinh.Rows[n].Cells[6].Value);
              }
 
             int t = dtgTinhLuongLuongChinh.Rows.Add();
@@ -909,7 +937,7 @@ namespace DentalLabo
                 dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value = "0";
             }
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value = ListKhoanLuong.Rows[2].ItemArray[3].ToString();
-            dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value = (Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value) * Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value)).ToString();
+            dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value = (Convert.ToDouble(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value) * Convert.ToDouble(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value)).ToString();
             tong += Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value);
             n = dtgTinhLuongCacKhoanTinhThem.Rows.Add();
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[0].Value = "2";
@@ -923,7 +951,7 @@ namespace DentalLabo
 
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value = ListKhoanLuong.Rows[3].ItemArray[3].ToString();
             dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value = (Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value) * Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value)).ToString();
-            tong += Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value);
+            tong += Convert.ToDouble(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value);
             DataTable LuongTinhThemInfo = Database.query("select makhoan, soluong, ghichu, ngay, manv from luongtinhthem where ngay<='" + dtpDenNgay.Value.ToString("yyyy-MM-dd") + "' and ngay>='" +dtpTuNgay.Value.ToString("yyyy-MM-dd") + "' and manv='"+txtTinhLuongMaNhanVien.Text+"'");
             ListLuongThem = LuongTinhThemInfo;
             //MessageBox.Show(LuongTinhThemInfo.Rows.Count.ToString());
@@ -943,10 +971,10 @@ namespace DentalLabo
                     dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value = "0";
 
                 dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value = ListKhoanLuong.Rows[0].ItemArray[3].ToString();
-                dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value = (Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value) * Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value)).ToString();
+                dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value = (Convert.ToDouble(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[5].Value) * Convert.ToDouble(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[4].Value)).ToString();
 
                 dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[7].Value = LuongTinhThemInfo.Rows[i].ItemArray[2].ToString();
-                tong += Convert.ToInt32(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value);
+                tong += Convert.ToDouble(dtgTinhLuongCacKhoanTinhThem.Rows[n].Cells[6].Value);
             }
 
             t = dtgTinhLuongCacKhoanTinhThem.Rows.Add();
@@ -957,6 +985,34 @@ namespace DentalLabo
             tong = 0;
             DataTable LuongTruInfo = Database.query("select makhoan, soluong, ghichu,ngay, manv from luongtru where ngay<='" + dtpDenNgay.Value.ToString("yyyy-MM-dd") + "' and ngay>='" + dtpTuNgay.Value.ToString("yyyy-MM-dd") + "' and manv='" + txtTinhLuongMaNhanVien.Text + "'");
             //MessageBox.Show(ListKhoanTru.Rows.Count.ToString());
+            DataTable TamUngInfo = Database.query("select thanhtien,ghichu,ngaytamung from tamung where ngaytamung<='" + dtpDenNgay.Value.ToString("yyyy-MM-dd") + "' and ngaytamung>='" + dtpTuNgay.Value.ToString("yyyy-MM-dd") + "' and manv='" + txtTinhLuongMaNhanVien.Text + "'");
+            //System.Console.WriteLine("select thanhtien,ghichu,ngaytamung from tamung where ngaytamung<='" + dtpDenNgay.Value.ToString("yyyy-MM-dd") + "' and ngaytamung>='" + dtpTuNgay.Value.ToString("yyyy-MM-dd") + "' and manv='" + txtTinhLuongMaNhanVien.Text + "'");
+            if (TamUngInfo.Rows.Count > 0)
+            {
+                int tmp = dtgTinhLuongCacKhoanPhaiTru.Rows.Add();
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[0].Value = "1";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[1].Value = "Tạm ứng lương";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[2].Value = "TUL";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[3].Value = "Đồng";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[4].Value = "1";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[5].Value = TamUngInfo.Rows[0].ItemArray[0].ToString();
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[6].Value = TamUngInfo.Rows[0].ItemArray[0].ToString();
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[7].Value = TamUngInfo.Rows[0].ItemArray[1].ToString();
+                tong += Convert.ToDouble(dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[6].Value);
+            }
+            else
+            {
+                int tmp = dtgTinhLuongCacKhoanPhaiTru.Rows.Add();
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[0].Value = "1";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[1].Value = "Tạm ứng lương";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[2].Value = "TUL";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[3].Value = "Đồng";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[4].Value = "0";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[5].Value = "0";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[6].Value = "0";
+                dtgTinhLuongCacKhoanPhaiTru.Rows[tmp].Cells[7].Value = "";
+            }
+
             ListLuongTru = LuongTruInfo;
             for (int i = 0; i < LuongTruInfo.Rows.Count; i++)
                 for (int j = 0; j < ListKhoanTru.Rows.Count; j++)
@@ -1020,7 +1076,7 @@ namespace DentalLabo
                 if (tabTinhLuong.SelectedTab.Text == "Các khoản phải trừ")
                 {
                     //MessageBox.Show(ListLuongTru.Rows.Count.ToString());
-                    for (int i = 0; i <= ListLuongTru.Rows.Count; i++)
+                    for (int i = 1; i <= ListLuongTru.Rows.Count; i++)
                         if (dtgTinhLuongCacKhoanPhaiTru.Rows[i].Selected == true)
                         {
                             System.Console.WriteLine("delete from luongtru where ngay='" + ListLuongTru.Rows[i].ItemArray[3].ToString() + "' and manv='" + ListLuongTru.Rows[i].ItemArray[4].ToString() + "' and makhoan='" + ListLuongTru.Rows[i].ItemArray[0].ToString() + "'");
