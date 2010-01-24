@@ -12,7 +12,7 @@ namespace DentalLabo.BanHangVaCongNo
         {
             if (field == "")
             {
-                //Database.Warning(message);
+                Database.Warning(message);
                 return true;
             }
             else

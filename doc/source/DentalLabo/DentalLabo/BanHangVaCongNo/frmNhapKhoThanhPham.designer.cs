@@ -44,7 +44,7 @@
             this.clnGioNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSPDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.boPhanNhapKho = new System.Windows.Forms.GroupBox();
             this.cmbMaKho = new System.Windows.Forms.ComboBox();
@@ -70,15 +70,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoPhieu = new System.Windows.Forms.TextBox();
-            this.btnPhieuNhapMoi = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.btnMauMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThemSanPham = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnThemPhieu = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.btnPhieuNhapMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungNhapKho)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
@@ -134,14 +134,15 @@
             this.SoLuong_VLp,
             this.clnGioNhap,
             this.clnNgayNhap,
-            this.MaSPDH});
+            this.MaSPDH,
+            this.TrangThai});
             this.dtgNoiDungNhapKho.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dtgNoiDungNhapKho.Location = new System.Drawing.Point(15, 296);
+            this.dtgNoiDungNhapKho.MultiSelect = false;
             this.dtgNoiDungNhapKho.Name = "dtgNoiDungNhapKho";
             this.dtgNoiDungNhapKho.Size = new System.Drawing.Size(715, 170);
             this.dtgNoiDungNhapKho.TabIndex = 23;
             this.dtgNoiDungNhapKho.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNoiDungNhapKho_CellValueChanged);
-            this.dtgNoiDungNhapKho.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dtgNoiDungNhapKho_RowStateChanged);
             // 
             // clnTT
             // 
@@ -227,18 +228,12 @@
             this.MaSPDH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.MaSPDH.Visible = false;
             // 
-            // btnTimKiem
+            // TrangThai
             // 
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(143, 3);
-            this.btnTimKiem.MaximumSize = new System.Drawing.Size(94, 30);
-            this.btnTimKiem.MinimumSize = new System.Drawing.Size(94, 30);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(94, 30);
-            this.btnTimKiem.TabIndex = 22;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TrangThai.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -457,6 +452,7 @@
             // 
             this.dateGioNhap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateGioNhap.Enabled = false;
             this.dateGioNhap.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateGioNhap.Location = new System.Drawing.Point(100, 61);
             this.dateGioNhap.Name = "dateGioNhap";
@@ -467,6 +463,7 @@
             // 
             this.dateNgayNhap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateNgayNhap.Enabled = false;
             this.dateNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNgayNhap.Location = new System.Drawing.Point(100, 32);
             this.dateNgayNhap.Name = "dateNgayNhap";
@@ -526,48 +523,18 @@
             // 
             this.txtSoPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoPhieu.Enabled = false;
             this.txtSoPhieu.Location = new System.Drawing.Point(100, 91);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.Size = new System.Drawing.Size(111, 23);
             this.txtSoPhieu.TabIndex = 1;
-            // 
-            // btnPhieuNhapMoi
-            // 
-            this.btnPhieuNhapMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPhieuNhapMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhieuNhapMoi.Location = new System.Drawing.Point(343, 3);
-            this.btnPhieuNhapMoi.MaximumSize = new System.Drawing.Size(130, 30);
-            this.btnPhieuNhapMoi.MinimumSize = new System.Drawing.Size(130, 30);
-            this.btnPhieuNhapMoi.Name = "btnPhieuNhapMoi";
-            this.btnPhieuNhapMoi.Size = new System.Drawing.Size(130, 30);
-            this.btnPhieuNhapMoi.TabIndex = 32;
-            this.btnPhieuNhapMoi.Text = "Phiếu Nhập Mới";
-            this.btnPhieuNhapMoi.UseVisualStyleBackColor = true;
-            this.btnPhieuNhapMoi.Click += new System.EventHandler(this.btnPhieuNhapMoi_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(446, 3);
-            this.btnLuu.MaximumSize = new System.Drawing.Size(125, 30);
-            this.btnLuu.MinimumSize = new System.Drawing.Size(120, 30);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(124, 30);
-            this.btnLuu.TabIndex = 33;
-            this.btnLuu.Text = "Lưu và nhập kho";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnMauMoi
             // 
             this.btnMauMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMauMoi.Location = new System.Drawing.Point(479, 3);
+            this.btnMauMoi.Location = new System.Drawing.Point(95, 3);
             this.btnMauMoi.MaximumSize = new System.Drawing.Size(99, 30);
             this.btnMauMoi.MinimumSize = new System.Drawing.Size(75, 30);
             this.btnMauMoi.Name = "btnMauMoi";
@@ -582,7 +549,7 @@
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(147, 3);
+            this.btnXoa.Location = new System.Drawing.Point(200, 3);
             this.btnXoa.MaximumSize = new System.Drawing.Size(79, 30);
             this.btnXoa.MinimumSize = new System.Drawing.Size(79, 30);
             this.btnXoa.Name = "btnXoa";
@@ -597,7 +564,7 @@
             this.btnThemSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSanPham.Location = new System.Drawing.Point(318, 3);
+            this.btnThemSanPham.Location = new System.Drawing.Point(371, 3);
             this.btnThemSanPham.MaximumSize = new System.Drawing.Size(122, 30);
             this.btnThemSanPham.MinimumSize = new System.Drawing.Size(122, 30);
             this.btnThemSanPham.Name = "btnThemSanPham";
@@ -612,7 +579,7 @@
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(232, 3);
+            this.btnSua.Location = new System.Drawing.Point(285, 3);
             this.btnSua.MaximumSize = new System.Drawing.Size(80, 30);
             this.btnSua.MinimumSize = new System.Drawing.Size(80, 30);
             this.btnSua.Name = "btnSua";
@@ -637,6 +604,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnLuu, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnThemSanPham, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMauMoi, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSua, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnXoa, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 472);
@@ -646,21 +614,33 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(718, 35);
             this.tableLayoutPanel2.TabIndex = 35;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(499, 3);
+            this.btnLuu.MaximumSize = new System.Drawing.Size(125, 30);
+            this.btnLuu.MinimumSize = new System.Drawing.Size(120, 30);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(124, 30);
+            this.btnLuu.TabIndex = 33;
+            this.btnLuu.Text = "Lưu và nhập kho";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 6;
+            this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnTimKiem, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnThemPhieu, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnMauMoi, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnPhieuNhapMoi, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnPhieuNhapMoi, 2, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 213);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -668,18 +648,33 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 35);
             this.tableLayoutPanel3.TabIndex = 36;
             // 
-            // btnThemPhieu
+            // btnTimKiem
             // 
-            this.btnThemPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemPhieu.Location = new System.Drawing.Point(243, 3);
-            this.btnThemPhieu.MaximumSize = new System.Drawing.Size(94, 30);
-            this.btnThemPhieu.MinimumSize = new System.Drawing.Size(94, 30);
-            this.btnThemPhieu.Name = "btnThemPhieu";
-            this.btnThemPhieu.Size = new System.Drawing.Size(94, 30);
-            this.btnThemPhieu.TabIndex = 23;
-            this.btnThemPhieu.Text = "Thêm Phiếu";
-            this.btnThemPhieu.UseVisualStyleBackColor = true;
-            this.btnThemPhieu.Click += new System.EventHandler(this.btnThemPhieu_Click);
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Location = new System.Drawing.Point(202, 3);
+            this.btnTimKiem.MaximumSize = new System.Drawing.Size(180, 30);
+            this.btnTimKiem.MinimumSize = new System.Drawing.Size(94, 30);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(180, 30);
+            this.btnTimKiem.TabIndex = 22;
+            this.btnTimKiem.Text = "Mở chức năng Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnPhieuNhapMoi
+            // 
+            this.btnPhieuNhapMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPhieuNhapMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhieuNhapMoi.Location = new System.Drawing.Point(388, 3);
+            this.btnPhieuNhapMoi.MaximumSize = new System.Drawing.Size(130, 30);
+            this.btnPhieuNhapMoi.MinimumSize = new System.Drawing.Size(130, 30);
+            this.btnPhieuNhapMoi.Name = "btnPhieuNhapMoi";
+            this.btnPhieuNhapMoi.Size = new System.Drawing.Size(130, 30);
+            this.btnPhieuNhapMoi.TabIndex = 32;
+            this.btnPhieuNhapMoi.Text = "Phiếu Nhập Mới";
+            this.btnPhieuNhapMoi.UseVisualStyleBackColor = true;
+            this.btnPhieuNhapMoi.Click += new System.EventHandler(this.btnPhieuNhapMoi_Click);
             // 
             // frmNhapKhoThanhPham
             // 
@@ -713,7 +708,6 @@
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.Label lblNoiDungNhapKho;
         public System.Windows.Forms.DataGridView dtgNoiDungNhapKho;
-        public System.Windows.Forms.Button btnTimKiem;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.GroupBox boPhanNhapKho;
         public System.Windows.Forms.TextBox txtDienGiai;
@@ -732,8 +726,6 @@
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtSoPhieu;
-        public System.Windows.Forms.Button btnPhieuNhapMoi;
-        public System.Windows.Forms.Button btnLuu;
         public System.Windows.Forms.Button btnMauMoi;
         public System.Windows.Forms.Button btnXoa;
         public System.Windows.Forms.Button btnThemSanPham;
@@ -744,10 +736,12 @@
         public System.Windows.Forms.ComboBox cmbTenKho;
         public System.Windows.Forms.ComboBox cmbTenNhanVien;
         public System.Windows.Forms.ComboBox cmbTenBoPhan;
-        public System.Windows.Forms.Button btnThemPhieu;
         public System.Windows.Forms.ComboBox cmbMasoBP;
         public System.Windows.Forms.ComboBox cmbMaKho;
         public System.Windows.Forms.ComboBox cmbMasoNV;
+        public System.Windows.Forms.Button btnLuu;
+        public System.Windows.Forms.Button btnTimKiem;
+        public System.Windows.Forms.Button btnPhieuNhapMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnMaSoMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnLoaiPhucHinh;
@@ -761,6 +755,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnGioNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNgayNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSPDH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
 
 
 

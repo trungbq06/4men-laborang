@@ -24,6 +24,7 @@ namespace DentalLabo.BanHangVaCongNo
         public int gioNhapIndex = 10;
         public int ngayNhapIndex = 11;
         public int maSPDatHangIndex = 12;
+        public int trangThaiIndex = 13;
 
 
 
@@ -112,71 +113,47 @@ namespace DentalLabo.BanHangVaCongNo
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaKho, query, "MaKho");
         }
         #endregion
-
-        #region Them Phieu Nhap Kho
-        public void ThemPhieuNhapKho() {                        
-            {
-                String query = "INSERT PhieuNhapKhoSP VALUES(" +
-                                "'" + form.txtSoPhieu.Text + "', " +
-                                "'" + form.dateNgayNhap.Text + "', " +
-                                "'" + form.dateGioNhap.Text + "', " +
-                                "'" + form.cmbMaKho.Text + "', " +
-                                "'" + form.cmbMasoNV.Text + "', " +
-                                "N'" + form.txtDienGiai.Text + "'" +
-                                ")";
-                try
-                {
-                    Database.query(query);
-                    MessageBox.Show(null, "Thêm phiếu thành công", "Them phieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(null, "Mã số phiếu bị trùng, hãy tăng mã số phiếu lên một", "Loi trung ma so phieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-        }
-        #endregion
+        
 
 
         #region Them Mau Vao Phieu
+        public bool KiemTraMauTrongPhieu()
+        {
+            foreach (DataGridViewRow row in form.dtgNoiDungNhapKho.Rows)
+            {
+                if (row.Cells[msMauIndex] != null && row.Cells[msMauIndex].Value != null)
+                    if (row.Cells[msMauIndex].Value.ToString().ToLower() == form.txtMaSoMau.Text.ToLower())
+                        return true;
+            }
+            return false;
+        }
         public void ThemMauVaoPhieu()
         {
-            if (BHCNModel.KiemTraPhieuNhapHang(form.txtSoPhieu.Text))
+            // kiem tra xem mau co trong CSDL khong
+            if (BHCNModel.KiemTraMaMauTrongCSDL(form.txtMaSoMau.Text))
             {
-                if (BHCNModel.KiemTraMaMauTrongCSDL(form.txtMaSoMau.Text))
+                // kiem tra xem mau da nhap kho chua
+                if (!BHCNModel.KiemTraMauDaNhapKho(form.txtMaSoMau.Text))
                 {
-
-                    if (!BHCNModel.KiemTraMaMauTrongPhieu(form.txtMaSoMau.Text, form.txtSoPhieu.Text))
+                    if (!KiemTraMauTrongPhieu())
                     {
-                        // Cap nhat trang thai mau la da hoan thanh
-                        String query = "UPDATE MauHang SET TrangThai = 1 WHERE MaMau = '" + form.txtMaSoMau.Text + "'";
-                        Database.query(query);
-
-                        // Them Mau vao Phieu
-                        query = "INSERT PhieuNhapKhoSP_MauHang VALUES(" +
-                                        "'" + form.txtSoPhieu.Text + "', " +
-                                        "'" + form.txtMaSoMau.Text + "', " +
-                                        "'" + form.dateNgayNhap.Text + "', " +
-                                        "'" + form.dateGioNhap.Text + "' " +
-                                        ")";
-                        Database.query(query);
-                        LayThongTinMau(form.txtMaSoMau.Text, true, "", "");
+                        LayThongTinMau(form.txtMaSoMau.Text, true, "", "", false);
                     }
                     else
                     {
-                        Database.Warning("Mẫu đã được thêm vào kho rồi. Hãy chọn mẫu khác");
+                        Database.Warning("Mẫu đã được thêm vào phiếu rồi");
                     }
                 }
                 else
                 {
-                    Database.Warning("Mẫu hàng không tồn tại");
+                    Database.Warning("Mẫu đã nhập kho rồi");
                 }
             }
             else
             {
-                Database.Warning("Chưa có phiếu nhập hàng mã " + form.txtSoPhieu.Text + " trong CSDL");
+                Database.Warning("Mẫu hàng không tồn tại");
             }
-        }        
+        }                            
         #endregion
 
         #region Load thong tin ve phieu nhap kho thanh pham
@@ -186,6 +163,9 @@ namespace DentalLabo.BanHangVaCongNo
                 // kiem tra xem da co Phieu trong CSDL chua?                
                 if (BHCNModel.KiemTraPhieuNhapHang(form.txtSoPhieu.Text))
                 {
+                    //
+                    //Lay thong tin ve phieu nhap kho san pham
+                    //
                     String query = "SELECT * FROM PhieuNhapKhoSP WHERE MaPhieu = '" + form.txtSoPhieu.Text + "'";
                     DataTable result = Database.query(query);
 
@@ -226,12 +206,12 @@ namespace DentalLabo.BanHangVaCongNo
                             string maMau = row["MaMau"].ToString();
                             string ngayNhap = row["NgayNhap"].ToString();
                             string gioNhap = row["GioNhap"].ToString();
-                            LayThongTinMau(maMau, false, ngayNhap, gioNhap);
+                            LayThongTinMau(maMau, false, ngayNhap, gioNhap, true);
                         }
                     }
                     else if (isSearch)
                     {
-                        MessageBox.Show(null, "Phiếu chưa có bất cứ mẫu nào", "Thong Tin Phieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Database.Warning("Phiếu chưa có bất cứ mẫu nào");
                     }
                 }
                 else
@@ -243,12 +223,12 @@ namespace DentalLabo.BanHangVaCongNo
         #endregion
 
         #region LayThongTin mot mau
-        public void LayThongTinMau(String maMau, bool isUpdate, string NgayNhap, string GioNhap) {            
+        public void LayThongTinMau(String maMau, bool isUpdate, string NgayNhap, string GioNhap, bool isSearch) {            
             String query = "SELECT LoaiPhucHinh FROM MauHang WHERE MaMau = '" + maMau + "'";
             DataTable result = Database.query(query);
             if (result.Rows.Count == 0)
             {
-                MessageBox.Show(null, "Không có mẫu " + maMau + " trong cơ sở dữ liệu", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Database.Warning("Không có mẫu " + maMau + " trong cơ sở dữ liệu");
             }
             else
             {
@@ -257,7 +237,8 @@ namespace DentalLabo.BanHangVaCongNo
                 result = Database.query(query);
                 if (result.Rows.Count > 0)
                 {
-                    object[] a = new object[13];
+                    object[] a = new object[14];
+                    a[trangThaiIndex] = "0";
                     a[thutuIndex] = form.dtgNoiDungNhapKho.Rows.Count;
 
                     // Nhung text co dinh
@@ -273,9 +254,7 @@ namespace DentalLabo.BanHangVaCongNo
 
                         if (countRows > 0)
                         {
-                            a[thutuIndex] = form.dtgNoiDungNhapKho.Rows.Count;
-                            //a[1] = maMau;
-                            //a[2] = loaiPhucHinh;
+                            a[thutuIndex] = form.dtgNoiDungNhapKho.Rows.Count;                            
                         }
                         else
                             countRows += 1;
@@ -288,8 +267,12 @@ namespace DentalLabo.BanHangVaCongNo
                         string maSP = spDatHang.Rows[0]["MaSP"].ToString();
                         query = "SELECT TenSP, DVT FROM SanPham WHERE MaSP = '" + maSP + "'";
                         DataTable sanpham = Database.query(query);
-                        string tenSP = sanpham.Rows[0]["TenSP"].ToString();
-                        string dvt = sanpham.Rows[0]["DVT"].ToString();
+                        string tenSP = "", dvt = "";
+                        if (sanpham.Rows.Count > 0)
+                        {
+                            tenSP = sanpham.Rows[0]["TenSP"].ToString();
+                            dvt = sanpham.Rows[0]["DVT"].ToString();
+                        }
 
                         // Lay so luong
                         string soLuongVLC = spDatHang.Rows[0]["SoLuongVLC"].ToString();
@@ -298,15 +281,19 @@ namespace DentalLabo.BanHangVaCongNo
 
                         // Lay vat lieu chinh                        
                         string maVLC = spDatHang.Rows[0]["MaVLC"].ToString();
+                        string tenVLC = "none";
                         query = "SELECT TenVL FROM VatLieuChinh WHERE MaVL = '" + maVLC + "'";
                         DataTable vlc = Database.query(query);
-                        string tenVLC = vlc.Rows[0]["TenVL"].ToString();
+                        if (vlc.Rows.Count > 0)
+                        {
+                            tenVLC = vlc.Rows[0]["TenVL"].ToString();
+                        }
 
                         // Lay vat lieu phu
                         string maVLP = spDatHang.Rows[0]["MaVLP"].ToString();
                         query = "SELECT TenVL, DVT FROM VatLieuPhu WHERE MaVL = '" + maVLP + "'";
                         DataTable vlp = Database.query(query);
-                        string tenVLP = "";
+                        string tenVLP = "none";
                         string dvtVLP = "";
                         if (vlp.Rows.Count > 0)
                         {
@@ -349,7 +336,8 @@ namespace DentalLabo.BanHangVaCongNo
                 }
                 else 
                 {
-                    MessageBox.Show(null, "Mẫu " + maMau + " không bao gồm bất cứ sản phẩm nào", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (!isSearch)
+                        Database.Warning("Mẫu " + maMau + " không bao gồm bất cứ sản phẩm nào");
                 }
             }
         }
@@ -396,6 +384,7 @@ namespace DentalLabo.BanHangVaCongNo
             row.Cells[tenSPIndex].ReadOnly = false;
         }
 
+        
         public void LoadTenVLC(DataGridViewRow row, bool isUpdate)
         {
             
@@ -411,6 +400,8 @@ namespace DentalLabo.BanHangVaCongNo
                 cell.Value = row.Cells[tenVLCIndex].Value;
             else
                 cell.Value = cell.Items[0];
+
+            cell.Items.Add("none");
 
             row.Cells[tenVLCIndex] = cell;
             row.Cells[tenVLCIndex].ReadOnly = false;
@@ -446,7 +437,7 @@ namespace DentalLabo.BanHangVaCongNo
 
         public void UpdateVLC(DataGridViewRow row, bool isUpdate)
         {
-            Database.debug = true;
+            //Database.debug = true;
             // Lay cac ma san pham
             String query = "SELECT MaSP FROM SanPham WHERE TenSP = '" + row.Cells[tenSPIndex].Value + "'";
             DataTable table = Database.query(query);
@@ -465,7 +456,7 @@ namespace DentalLabo.BanHangVaCongNo
                     "WHERE MaVL in (" +
                     "   SELECT MaVL FROM BangGia WHERE MaSP in " + filter + 
                     ")";
-            table = Database.query(query);
+            //table = Database.query(query);
 
 
             DataGridViewComboBoxCell cell = new DataGridViewComboBoxCell();
@@ -481,7 +472,7 @@ namespace DentalLabo.BanHangVaCongNo
 
             row.Cells[tenSPIndex] = cell;
 
-            Database.debug = false;
+            //Database.debug = false;
         }
 
 
@@ -515,92 +506,96 @@ namespace DentalLabo.BanHangVaCongNo
             return prefix + MaSPDatHang.ToString();           
         }
 
+        
 
-        public void SaveSeletedRow(DataGridViewRow row, bool isUpdate)         
-        {   
-            if (!Validation.ChuaNhap(row.Cells[msMauIndex].Value.ToString(), "Chưa nhập mã số mẫu"))
-                if (!Validation.ChuaNhap(row.Cells[tenSPIndex].Value.ToString(), "Chưa nhập tên sản phẩm"))    
-                    if (!Validation.ChuaNhap(row.Cells[soluongIndex].Value.ToString(), "Chưa nhập số lượng sản phẩm"))
-                        if (row.Cells[soluongVLPIndex].Value.ToString() == "" && row.Cells[tenVLPIndex].Value.ToString() != "none")
-                        {
-                            Database.Warning("Chưa nhập số lượng vật liệu phụ");
-                        }                        
-                        else
-                        {
-                            // Lay ma san pham
-                            string maSP = BHCNModel.LayMaSP(row.Cells[tenSPIndex].Value.ToString());
+        public void QueryCapNhatTrangThaiMauNhapKho(string maMau)
+        {
+            // Cap nhat trang thai mau la da hoan thanh
+            String query = "UPDATE MauHang SET TrangThai = '1' WHERE MaMau = '" + maMau + "'";
+            Database.query(query);
+        }
 
-                            // Lay ma VLC                                                        
-                            string maVLC = BHCNModel.LayMaVLC(row.Cells[tenVLCIndex].Value.ToString());
+        public void QueryThemVaoBangPhieNK_Mau(string maPhieu, string maMau, string ngayNhap, string gioNhap)
+        {
+            // Them Mau vao Phieu
+            string query = "INSERT PhieuNhapKhoSP_MauHang VALUES(" +
+                            "'" + maPhieu + "', " +
+                            "'" + maMau + "', " +
+                            "'" + ngayNhap + "', " +
+                            "'" + gioNhap + "' " +
+                            ")";
+            Database.query(query);
+        }
+
+        public void QueryThemPhieuNhapKho()
+        {
+            SinhMaSoPhieu();
+
+            string query = "INSERT PhieuNhapKhoSP VALUES(" +
+                            "'" + form.txtSoPhieu.Text + "', " +
+                            "'" + form.dateNgayNhap.Text + "', " +
+                            "'" + form.dateGioNhap.Text + "', " +
+                            "'" + form.cmbMaKho.Text + "', " +
+                            "'" + form.cmbMasoNV.Text + "', " +
+                            "N'" + form.txtDienGiai.Text + "'" +
+                            ")";            
+            Database.query(query);            
+        }
+
+        public void ThemSPVaoMau(DataGridViewRow Row) 
+        {
+            string maMau = Row.Cells[msMauIndex].Value.ToString();
+            string maSPDatHang = BHCNModel.SinhMaSPDatHang();
+            string maSP = BHCNModel.LayMaSP(Row.Cells[tenSPIndex].Value.ToString());
+            string maVLC = BHCNModel.LayMaVLC(Row.Cells[tenVLCIndex].Value.ToString());
+            string maVLP = BHCNModel.LayMaVLP(Row.Cells[tenVLPIndex].Value.ToString());
+            string soLuongVLC = Row.Cells[soluongIndex].Value.ToString();
+            string soLuongVLP = Row.Cells[soluongVLPIndex].Value.ToString();
+
+            string query = "INSERT SanPhamDatHang VALUES(" +
+                           "'" + maSPDatHang + "', " +
+                           "'" + maSP + "', " +
+                           "'" + "" + "', " +
+                           "'" + maVLC  + "', " +
+                           "'" + maVLP + "', " +
+                           "'" + soLuongVLC + "', " +
+                           "'" + soLuongVLP + "', " +
+                           "'" + "" + "', " +
+                           "'" + "" + "', " +
+                           "'" + "" + "', " +
+                           "'" + "" + "', " +
+                           "'" + "" + "', " +
+                           "'" + "" + "', " +
+                           "'" + "" + "' " + 
+                           ")";
+            //Database.debug = true;
+            Database.query(query);
 
 
-                            // Lay Ma VLP
-                            string maVLP = "";
-                            //Database.Debug(row.Cells[tenVLPIndex].Value.ToString());
-                            if (row.Cells[tenVLPIndex].Value.ToString() != "")
-                            {
-                                maVLP = BHCNModel.LayMaVLP(row.Cells[tenVLPIndex].Value.ToString());
-                            }
-                            // Neu la insert them san pham
-                            if (!isUpdate)
-                            {
+            query = "INSERT MauHang_SanPhamDatHang VALUES( '" + maMau + "', '" + maSPDatHang + "')";
+            Database.query(query);
+            //Database.debug = false;
 
-                                int soluongVLP = 0;
-                                if (row.Cells[soluongVLPIndex].Value.ToString() != "" && 
-                                    row.Cells[tenVLPIndex].Value.ToString() != "")
-                                    soluongVLP = Int32.Parse(row.Cells[soluongVLPIndex].Value.ToString());
 
-                                Database.debug = true;
-                                // Them SanPhamDatHang
-                                row.Cells[maSPDatHangIndex].Value = FindMaSPDatHang();
-                                string query = "INSERT SanPhamDatHang VALUES(" +
-                                                "'" + row.Cells[maSPDatHangIndex].Value.ToString() + "'," +
-                                                "'" + maSP + "'," +
-                                                "''," +
-                                                "'" + maVLC + "'," +
-                                                "'" + maVLP + "'," +
-                                                "'" + row.Cells[soluongIndex].Value.ToString() + "'," +
-                                                "'" + soluongVLP.ToString() + "'," +
-                                                "'', " +
-                                                "'', " +
-                                                "'', " +
-                                                "'', " +
-                                                "'', " +
-                                                "'', " +
-                                                "''" + 
-                                                ")";                                
-                                Database.query(query);
+        }
 
-                                // Them MauHang_SanPhamDatHang
-                                query = "INSERT MauHang_SanPhamDatHang VALUES(" +
-                                                " '" + row.Cells[msMauIndex].Value.ToString() + "'," +
-                                                " '" + row.Cells[maSPDatHangIndex].Value.ToString() + "'" +
-                                        ")";
-                                Database.query(query);
+        public void UpdateSPTrongMau(DataGridViewRow Row)
+        {
+            string maSPDatHang = Row.Cells[maSPDatHangIndex].Value.ToString();
+            string maSP = BHCNModel.LayMaSP(Row.Cells[tenSPIndex].Value.ToString());
+            string maVLC = BHCNModel.LayMaVLC(Row.Cells[tenVLCIndex].Value.ToString());
+            string maVLP = BHCNModel.LayMaVLP(Row.Cells[tenVLPIndex].Value.ToString());
+            string soLuongVLC = Row.Cells[soluongIndex].Value.ToString();
+            string soLuongVLP = Row.Cells[soluongVLPIndex].Value.ToString();
 
-                                Database.debug = false;
-                                Database.Warning("Thêm sản phẩm thành công");
-                            }
-                            // Neu la update dong 
-                            else
-                            {
-                                // Them SanPhamDatHang
-                                //row.Cells[10].Value = FindMaSPDatHang();
-                                string query = "UPDATE SanPhamDatHang SET " +
-                                                " MaSP = '" + maSP + "'," +
-                                                " MaVLC = '" + maVLC + "'," +
-                                                " MaVLP = '" + maVLP + "'," +
-                                                " SoLuongVLC = " + row.Cells[soluongIndex].Value.ToString() + ", " +
-                                                " SoLuongVLP = " + row.Cells[soluongVLPIndex].Value.ToString() +
-                                                " WHERE MaSPDatHang = '" + row.Cells[maSPDatHangIndex].Value + "'";
-                                //Database.Debug(query);
-                                Database.query(query);
-
-                                Database.Warning("Sửa sản phẩm thành công");
-                            }
-                            form.FinishUpdateRow();
-                            form.isUpdate = false;
-                        }
+            string query = "UPDATE SanPhamDatHang SET " + 
+                           "MaSP = '" +  maSP + "', " +
+                           "MaVLC = '" + maVLC + "', " +
+                           "MaVLP = '" + maVLP + "', " +
+                           "SoLuongVLC = '" + soLuongVLC + "', " +
+                           "SoLuongVLP = '" + soLuongVLP + "' " + 
+                           "WHERE MaSPDatHang = '" + maSPDatHang + "'";            
+            Database.query(query);            
         }
         #endregion
     }

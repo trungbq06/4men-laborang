@@ -170,8 +170,21 @@ namespace DentalLabo.BanHangVaCongNo
                     cells[maSPDatHangIndex] = maSPDatHang;
                     
                     // Lay MaSP, MaVLC, MaVLP, SoLuongVLC, SoLuongVLP
-                    query = "SELECT MaSP, MaVLC, MaVLP, SoLuongVLC, SoLuongVLP FROM SanPhamDatHang WHERE MaSPDatHang = '" + maSPDatHang + "'";
+                    query = "SELECT ThaoTac, MaSP, MaVLC, MaVLP, SoLuongVLC, SoLuongVLP FROM SanPhamDatHang WHERE MaSPDatHang = '" + maSPDatHang + "'";
                     DataRow spDatHang = Database.query(query).Rows[0];                                        
+                    
+                    // Lay thao tac SP
+                    string thaoTac = spDatHang["ThaoTac"].ToString();
+                    
+                    bool isTinhTien = false;
+                    if (thaoTac != null && thaoTac != "")
+                    {
+                        string loaiThaoTac = thaoTac.Substring(0, 1);
+                        if (loaiThaoTac == "1")
+                            isTinhTien = true;
+                        else
+                            isTinhTien = false;
+                    }
 
                     // Lay Ten San Pham va DVT VLC
                     query = "SELECT TenSP, DVT FROM SanPham WHERE MaSP = '" + spDatHang["MaSP"] + "'";
@@ -182,14 +195,29 @@ namespace DentalLabo.BanHangVaCongNo
                     // Thong so VLC
                     cells[vlcIndex] = BHCNModel.LayTenVLC(spDatHang["MaVLC"].ToString());   
                     cells[soLuongIndex] = spDatHang["SoLuongVLC"];
-                    cells[tienVLCIndex] = BHCNModel.TinhTienVLC(spDatHang["MaSP"].ToString(), spDatHang["MaVLC"].ToString(), cells[soLuongIndex].ToString());
+                    cells[tienVLCIndex] = "";
+                    if (isTinhTien && cells[vlcIndex] != "")
+                    {
+                        cells[tienVLCIndex] = BHCNModel.TinhTienVLC(spDatHang["MaSP"].ToString(), spDatHang["MaVLC"].ToString(), cells[soLuongIndex].ToString());
+                    }
+                    
 
-                    // Thong so VLP
-                    DataRow vlp = BHCNModel.LayThongTinVLP(spDatHang["MaVLP"].ToString());
-                    cells[vlpIndex] = vlp["TenVL"];
-                    cells[dvtVLPIndex] = vlp["DVT"];
+                    // Thong so VLP                    
+                    DataTable vlp = BHCNModel.LayThongTinVLP(spDatHang["MaVLP"].ToString());
+                    cells[vlpIndex] = "";
+                    cells[dvtVLPIndex] = "";
+                    if (vlp.Rows.Count > 0)
+                    {
+                        cells[vlpIndex] = vlp.Rows[0]["TenVL"];
+                        cells[dvtVLPIndex] = vlp.Rows[0]["DVT"];
+                    }
                     cells[soLuongVLPIndex] = spDatHang["SoLuongVLP"];
-                    cells[tienVLPIndex] = BHCNModel.TinhTienVLP(spDatHang["MaVLP"].ToString(), cells[soLuongVLPIndex].ToString());
+                    cells[tienVLPIndex] = "";
+                    if (isTinhTien && cells[vlpIndex] != "")
+                    {
+                        cells[tienVLPIndex] = BHCNModel.TinhTienVLP(spDatHang["MaVLP"].ToString(), cells[soLuongVLPIndex].ToString());
+                    }
+
 
                     // Them cot vao data grid view
                     dtg.Rows.Add(cells);

@@ -28,21 +28,10 @@
         /// </summary>
         public void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.dtgNoiDungXuatKho = new System.Windows.Forms.DataGridView();
-            this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnMaSoMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNoiDungPhucHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVT_VLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong_VLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnThanhTienVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSPDatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.grpPhieuNhapKho = new System.Windows.Forms.GroupBox();
             this.dateNgayXuat = new System.Windows.Forms.DateTimePicker();
@@ -70,6 +59,19 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.clnThuTu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnMaSoMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNoiDungPhucHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnLoaiVatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVT_VLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong_VLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnThanhTienVLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSPDatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNoiDungXuatKho)).BeginInit();
             this.grpPhieuNhapKho.SuspendLayout();
             this.boPhanNhapKho.SuspendLayout();
@@ -120,108 +122,16 @@
             this.dtgNoiDungXuatKho.TabIndex = 8;
             this.dtgNoiDungXuatKho.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dtgNoiDungXuatKho_RowStateChanged);
             // 
-            // clnThuTu
-            // 
-            this.clnThuTu.HeaderText = "TT";
-            this.clnThuTu.Name = "clnThuTu";
-            this.clnThuTu.ReadOnly = true;
-            this.clnThuTu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnMaSoMau
-            // 
-            this.clnMaSoMau.HeaderText = "Mã số mẫu";
-            this.clnMaSoMau.Name = "clnMaSoMau";
-            this.clnMaSoMau.ReadOnly = true;
-            this.clnMaSoMau.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnNoiDungPhucHinh
-            // 
-            this.clnNoiDungPhucHinh.HeaderText = "Nội dung phục hình";
-            this.clnNoiDungPhucHinh.Name = "clnNoiDungPhucHinh";
-            this.clnNoiDungPhucHinh.ReadOnly = true;
-            this.clnNoiDungPhucHinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnTenSanPham
-            // 
-            this.clnTenSanPham.HeaderText = "Tên sản phẩm";
-            this.clnTenSanPham.Name = "clnTenSanPham";
-            this.clnTenSanPham.ReadOnly = true;
-            this.clnTenSanPham.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnLoaiVatLieu
-            // 
-            this.clnLoaiVatLieu.HeaderText = "Vật liệu chính";
-            this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
-            this.clnLoaiVatLieu.ReadOnly = true;
-            this.clnLoaiVatLieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnDVT
-            // 
-            this.clnDVT.HeaderText = "ĐVT";
-            this.clnDVT.Name = "clnDVT";
-            this.clnDVT.ReadOnly = true;
-            this.clnDVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnSoLuong
-            // 
-            this.clnSoLuong.HeaderText = "Số Lượng";
-            this.clnSoLuong.Name = "clnSoLuong";
-            this.clnSoLuong.ReadOnly = true;
-            this.clnSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnThanhTien
-            // 
-            this.clnThanhTien.HeaderText = "Thành tiền";
-            this.clnThanhTien.Name = "clnThanhTien";
-            this.clnThanhTien.ReadOnly = true;
-            this.clnThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnVLP
-            // 
-            this.clnVLP.HeaderText = "Vật liệu phụ";
-            this.clnVLP.Name = "clnVLP";
-            this.clnVLP.ReadOnly = true;
-            this.clnVLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DVT_VLP
-            // 
-            this.DVT_VLP.HeaderText = "DVT";
-            this.DVT_VLP.Name = "DVT_VLP";
-            this.DVT_VLP.ReadOnly = true;
-            this.DVT_VLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // SoLuong_VLP
-            // 
-            this.SoLuong_VLP.HeaderText = "Số Lượng";
-            this.SoLuong_VLP.Name = "SoLuong_VLP";
-            this.SoLuong_VLP.ReadOnly = true;
-            this.SoLuong_VLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clnThanhTienVLP
-            // 
-            this.clnThanhTienVLP.HeaderText = "Thành tiền";
-            this.clnThanhTienVLP.Name = "clnThanhTienVLP";
-            this.clnThanhTienVLP.ReadOnly = true;
-            this.clnThanhTienVLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // MaSPDatHang
-            // 
-            this.MaSPDatHang.HeaderText = "Mã Sản Phẩm Đặt Hàng";
-            this.MaSPDatHang.Name = "MaSPDatHang";
-            this.MaSPDatHang.ReadOnly = true;
-            this.MaSPDatHang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.MaSPDatHang.Visible = false;
-            // 
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(246, 3);
-            this.btnTimKiem.MaximumSize = new System.Drawing.Size(75, 30);
-            this.btnTimKiem.MinimumSize = new System.Drawing.Size(75, 30);
+            this.btnTimKiem.Location = new System.Drawing.Point(348, 3);
+            this.btnTimKiem.MaximumSize = new System.Drawing.Size(175, 30);
+            this.btnTimKiem.MinimumSize = new System.Drawing.Size(175, 30);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(175, 30);
             this.btnTimKiem.TabIndex = 7;
-            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Text = "Mở chức năng Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -296,6 +206,7 @@
             // 
             this.txtSoPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoPhieu.Enabled = false;
             this.txtSoPhieu.Location = new System.Drawing.Point(88, 59);
             this.txtSoPhieu.Name = "txtSoPhieu";
             this.txtSoPhieu.Size = new System.Drawing.Size(127, 23);
@@ -524,9 +435,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.btnTimKiem, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnTimKiem, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(17, 190);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -537,7 +447,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(327, 3);
+            this.button1.Location = new System.Drawing.Point(196, 3);
             this.button1.MaximumSize = new System.Drawing.Size(146, 30);
             this.button1.MinimumSize = new System.Drawing.Size(75, 30);
             this.button1.Name = "button1";
@@ -546,6 +456,104 @@
             this.button1.Text = "Xem mẫu của khách";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // clnThuTu
+            // 
+            this.clnThuTu.HeaderText = "TT";
+            this.clnThuTu.Name = "clnThuTu";
+            this.clnThuTu.ReadOnly = true;
+            this.clnThuTu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnMaSoMau
+            // 
+            this.clnMaSoMau.HeaderText = "Mã số mẫu";
+            this.clnMaSoMau.Name = "clnMaSoMau";
+            this.clnMaSoMau.ReadOnly = true;
+            this.clnMaSoMau.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnNoiDungPhucHinh
+            // 
+            this.clnNoiDungPhucHinh.HeaderText = "Nội dung phục hình";
+            this.clnNoiDungPhucHinh.Name = "clnNoiDungPhucHinh";
+            this.clnNoiDungPhucHinh.ReadOnly = true;
+            this.clnNoiDungPhucHinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnTenSanPham
+            // 
+            this.clnTenSanPham.HeaderText = "Tên sản phẩm";
+            this.clnTenSanPham.Name = "clnTenSanPham";
+            this.clnTenSanPham.ReadOnly = true;
+            this.clnTenSanPham.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnLoaiVatLieu
+            // 
+            this.clnLoaiVatLieu.HeaderText = "Vật liệu chính";
+            this.clnLoaiVatLieu.Name = "clnLoaiVatLieu";
+            this.clnLoaiVatLieu.ReadOnly = true;
+            this.clnLoaiVatLieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnDVT
+            // 
+            this.clnDVT.HeaderText = "ĐVT";
+            this.clnDVT.Name = "clnDVT";
+            this.clnDVT.ReadOnly = true;
+            this.clnDVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnSoLuong
+            // 
+            this.clnSoLuong.HeaderText = "Số Lượng";
+            this.clnSoLuong.Name = "clnSoLuong";
+            this.clnSoLuong.ReadOnly = true;
+            this.clnSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnThanhTien
+            // 
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.clnThanhTien.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clnThanhTien.HeaderText = "Thành tiền";
+            this.clnThanhTien.Name = "clnThanhTien";
+            this.clnThanhTien.ReadOnly = true;
+            this.clnThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnVLP
+            // 
+            this.clnVLP.HeaderText = "Vật liệu phụ";
+            this.clnVLP.Name = "clnVLP";
+            this.clnVLP.ReadOnly = true;
+            this.clnVLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DVT_VLP
+            // 
+            this.DVT_VLP.HeaderText = "DVT";
+            this.DVT_VLP.Name = "DVT_VLP";
+            this.DVT_VLP.ReadOnly = true;
+            this.DVT_VLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // SoLuong_VLP
+            // 
+            this.SoLuong_VLP.HeaderText = "Số Lượng";
+            this.SoLuong_VLP.Name = "SoLuong_VLP";
+            this.SoLuong_VLP.ReadOnly = true;
+            this.SoLuong_VLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clnThanhTienVLP
+            // 
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.clnThanhTienVLP.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clnThanhTienVLP.HeaderText = "Thành tiền";
+            this.clnThanhTienVLP.Name = "clnThanhTienVLP";
+            this.clnThanhTienVLP.ReadOnly = true;
+            this.clnThanhTienVLP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // MaSPDatHang
+            // 
+            this.MaSPDatHang.HeaderText = "Mã Sản Phẩm Đặt Hàng";
+            this.MaSPDatHang.Name = "MaSPDatHang";
+            this.MaSPDatHang.ReadOnly = true;
+            this.MaSPDatHang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MaSPDatHang.Visible = false;
             // 
             // frmXuatKhoBanHang
             // 
