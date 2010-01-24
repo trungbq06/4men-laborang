@@ -11,7 +11,6 @@ namespace DentalLabo.MauDatHang
 {
     class MauDatHang_Model
     {
-        public string viTriRangString;
         private DentalLabo.Mau_dat_hang.frmMauDatHang form;
         public MauDatHang_Model(DentalLabo.Mau_dat_hang.frmMauDatHang form)
         {
@@ -24,15 +23,24 @@ namespace DentalLabo.MauDatHang
          */
         public void SinhMaSoMau()
         {
-            String query = "SELECT TOP 1 MaMau FROM MauHang ORDER BY len(MaMau) desc, MaMau desc";
+            DateTime current = DateTime.Now;
+            string dateString = current.ToString();
+            string[] arrDate = new string[5];
+            arrDate = dateString.Split(' ');
+            arrDate = arrDate[0].Split('/');
+            dateString = arrDate[0];
+            //MessageBox.Show(dateString);
+            if (dateString.Length == 1) dateString = "0" + dateString;
+            String query = "SELECT TOP 1 MaMau FROM MauHang WHERE MaMau like 'MH_" + dateString + "%' ORDER BY len(MaMau) desc, MaMau desc";
+            //MessageBox.Show(query);
             DataTable result = Database.query(query);
             long maMau = 0;
             if (result.Rows.Count == 0)
                 maMau = 1;
             else
-                maMau = Int64.Parse(result.Rows[0]["MaMau"].ToString().Substring(2)) + 1;
+                maMau = Int64.Parse(result.Rows[0]["MaMau"].ToString().Substring(6)) + 1;
 
-            String maMauStr = "MH" + maMau.ToString();
+            String maMauStr = "MH_" + dateString + "_" + maMau.ToString();
 
             form.txtSoMau.Text = maMauStr;
         }
@@ -455,9 +463,9 @@ namespace DentalLabo.MauDatHang
                             loaiPhucHinh + "," +
                             "'" + ngayNhan + "'," +
                             "'" + ngayTra + "'," +
-                            gioTraInt + "," +
+                            "'" + gioTraInt + "'," +
                             " '', 0, N'" + tenBN + "'," +
-                            tuoiBNInt + "," +
+                            "'" + tuoiBNInt + "'," +
                             "N'" + gioitinhBN + "'" +
                             ")";
 
@@ -520,11 +528,23 @@ namespace DentalLabo.MauDatHang
                 string yeuCau2 = form.txtYeuCauChiTiet2.Text;
                 string viTriRang1 = form.txtViTriRang.Text;
                 string viTriRang2 = form.txtViTriRang2.Text;
+                string slRang1 = form.txtSoLuongRang.Text;
+                string slRang2 = form.txtSoLuongRang2.Text;
 
                 string[] array = new string[32];
                 array = viTriRang1.Split(',');
-                int sorang = array.Count();
-                string soLuongVLC = sorang.ToString();
+                int sorang1 = 0;
+                if (slRang1 != "")
+                {
+                    sorang1 = Int16.Parse(slRang1);
+                }
+                int sorang2 = 0;
+                if (slRang2 != "")
+                {
+                    sorang2 = Int16.Parse(slRang2);
+                }
+                string soLuongVLC1 = sorang1.ToString();
+                string soLuongVLC2 = sorang2.ToString();
 
                 // sinh ma san pham dat hang tu dong
                 query = "SELECT TOP 1 MaSPDatHang FROM SanPhamDatHang ORDER BY len(MaSPDatHang) desc, MaSPDatHang desc";
@@ -543,13 +563,14 @@ namespace DentalLabo.MauDatHang
                         "'" + viTriRang1 + "'," +
                         "'" + maVL + "'," +
                         " null," +
-                        "'" + soLuongVLC + "'," +
+                        "'" + soLuongVLC1 + "'," +
                         "0," +
                         "'" + mauSP1 + "'," +
                         "'" + luuY + "'," +
                         " null,N'" + yeuCau1 + "'," +
                         "N'" + thaoTac1 + "'," +
-                        "N'" + lyDo1 + "'" + 
+                        "N'" + lyDo1 + "'," +
+                        sorang1 +
                         ")";
 
                 // query trong truong hop phuc hinh thao lap
@@ -559,14 +580,15 @@ namespace DentalLabo.MauDatHang
                         "'" + viTriRang2 + "'," +
                         "'" + maVLC + "'," +
                         "'" + maVLP + "'," +
-                        "'" + soLuongVLC + "'," +
+                        "'" + soLuongVLC2 + "'," +
                         "1," +
                         "'" + mauSP2 + "'," +
                         " null," +
                         "N'" + tayMoc + "'," +
                         "N'" + yeuCau2 + "'," +
                         "N'" + thaoTac2 + "'," +
-                        "N'" + lyDo2 + "'" + 
+                        "N'" + lyDo2 + "'," +
+                        sorang2 +
                         ")";
 
                 if (loaiPhucHinh == "1")
@@ -877,14 +899,7 @@ namespace DentalLabo.MauDatHang
                 else
                 {
                     maMau = form.txtSoMau.Text;
-                    if (MessageBox.Show(null, "Có phải bạn muốn xóa mẫu có mã = '" + maMau + "' không?", "Delete Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        string queryDelRef = "DELETE FROM MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "'";
-                        string queryDelMau = "DELETE FROM MauHang WHERE MaMau = '" + maMau + "'";
-                        Database.query(queryDelRef); 
-                        Database.query(queryDelMau);
-                        MessageBox.Show(null, "Đã xóa mẫu '" + maMau + "' khỏi cơ sở dũ liệu!", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show(null, "Bạn phải chọn một sản phẩm để xóa!", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     maSPDH = "";
                 }
             }
@@ -898,14 +913,7 @@ namespace DentalLabo.MauDatHang
                 else
                 {
                     maMau = form.txtSoMau.Text;
-                    if (MessageBox.Show(null, "Có phải bạn muốn xóa mẫu có mã = '" + maMau + "' không?", "Delete Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        string queryDelRef = "DELETE FROM MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "'";
-                        string queryDelMau = "DELETE FROM MauHang WHERE MaMau = '" + maMau + "'";
-                        Database.query(queryDelRef);
-                        Database.query(queryDelMau);
-                        MessageBox.Show(null, "Đã xóa mẫu '" + maMau + "' khỏi cơ sở dũ liệu!", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show(null, "Bạn phải chọn một sản phẩm để xóa!", "Delete Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     maSPDH = "";
                 }
             }
