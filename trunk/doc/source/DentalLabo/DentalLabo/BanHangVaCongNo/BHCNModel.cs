@@ -27,24 +27,30 @@ namespace DentalLabo.BanHangVaCongNo
 
         public static string LayMaSP(string tenSP)
         {
-            String query = "SELECT top 1 MaSP FROM SanPham WHERE TenSP = '" + tenSP + "'";
+            String query = "SELECT top 1 MaSP FROM SanPham WHERE TenSP = N'" + tenSP + "'";
             DataTable result = Database.query(query);
             return result.Rows[0]["MaSP"].ToString();            
         }
         
         public static string LayMaVLC(string tenVLC)
         {
-            String query = "SELECT top 1 MaVL FROM VatLieuChinh WHERE TenVL = '" + tenVLC + "'";
+            String query = "SELECT top 1 MaVL FROM VatLieuChinh WHERE TenVL = N'" + tenVLC + "'";
             DataTable result = Database.query(query);
-            return result.Rows[0]["MaVL"].ToString();            
+            if (result.Rows.Count > 0)
+                return result.Rows[0]["MaVL"].ToString();
+            else
+                return "";
         }
 
 
         public static string LayMaVLP(string tenVLP)
         {
-            String query = "SELECT top 1 MaVL FROM VatLieuPhu WHERE TenVL = '" + tenVLP + "'";
+            String query = "SELECT top 1 MaVL FROM VatLieuPhu WHERE TenVL = N'" + tenVLP + "'";
             DataTable result = Database.query(query);
-            return result.Rows[0]["MaVL"].ToString();
+            if (result.Rows.Count > 0)
+                return result.Rows[0]["MaVL"].ToString();
+            else
+                return "";
         }
 
         public static bool KiemTraPhieuNhapHang(string maPhieu)
@@ -68,9 +74,8 @@ namespace DentalLabo.BanHangVaCongNo
             return KiemTraQuery(query);
         }
 
-        public static bool KiemTraMaMauTrongPhieu(string maMau, string maPhieu)
-        {
-            //string query = "SELECT * FROM PhieuNhapKhoSP_MauHang WHERE MaPhieu = '" + maPhieu + "' AND MaMau = '" + maMau + "'";
+        public static bool KiemTraMauDaNhapKho(string maMau)
+        {            
             string query = "SELECT * FROM MauHang WHERE MaMau = '" + maMau + "' AND TrangThai = '" + 1 + "'";
             return KiemTraQuery(query);
         }
@@ -81,16 +86,20 @@ namespace DentalLabo.BanHangVaCongNo
         public static string LayTenVLC(String maVLC)
         {
             String query = "SELECT TenVL FROM VatLieuChinh WHERE MaVL = '" + maVLC + "'";
-            return Database.query(query).Rows[0]["TenVL"].ToString();
+            DataTable result = Database.query(query);
+            if (result.Rows.Count > 0)
+                return result.Rows[0]["TenVL"].ToString();
+            else
+                return "";
         }
 
         /*
          * Lay Ten VLP tu maVLP
          */
-        public static DataRow LayThongTinVLP(String maVLP)
+        public static DataTable LayThongTinVLP(String maVLP)
         {
             String query = "SELECT TenVL, DVT FROM VatLieuPhu WHERE MaVL = '" + maVLP + "'";
-            return Database.query(query).Rows[0];
+            return Database.query(query);
         }
 
 
@@ -112,7 +121,6 @@ namespace DentalLabo.BanHangVaCongNo
             }
 
             //Database.debug = false;
-
             return retval;
         }
 
@@ -180,7 +188,7 @@ namespace DentalLabo.BanHangVaCongNo
                         "WHERE MaSP in (" +
                         "   SELECT MaSP FROM SanPhamDatHang " +
                         "   WHERE MaSPDatHang in (" +
-                        "       SELECT MaSPDatHang FROM MauHang_SanPhamDatHang WHERE maMau = '" + maMau + "'" +
+                        "       SELECT MaSPDatHang FROM MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "'" +
                         "   )" +
                         ")";
             DataTable result = Database.query(query);
@@ -209,17 +217,31 @@ namespace DentalLabo.BanHangVaCongNo
             long TongTien = 0;
             foreach (DataRow row in spDatHangs.Rows)
             {
-                query = "SELECT MaSP, MaVLC, MaVLP, SoLuongVLC, SoLuongVLP FROM SanPhamDatHang WHERE MaSPDatHang = '" + row["MaSPDatHang"] + "'";
+                query = "SELECT ThaoTac, MaSP, MaVLC, MaVLP, SoLuongVLC, SoLuongVLP FROM SanPhamDatHang WHERE MaSPDatHang = '" + row["MaSPDatHang"] + "'";
                 DataRow spDatHang = Database.query(query).Rows[0];
-                string TienVLC = BHCNModel.TinhTienVLC(spDatHang["MaSP"].ToString(), spDatHang["MaVLC"].ToString(), spDatHang["SoLuongVLC"].ToString());
-                string TienVLP = BHCNModel.TinhTienVLP(spDatHang["MaVLP"].ToString(), spDatHang["SoLuongVLP"].ToString());
+                string thaoTac = spDatHang["ThaoTac"].ToString();
 
-                if (TienVLP == "")
-                    TienVLP = "0";
-                if (TienVLC == "")
-                    TienVLC = "0";
+                bool isTinhTien = false;
 
-                TongTien += Int64.Parse(TienVLC) + Int64.Parse(TienVLP);
+                if (thaoTac != null && thaoTac != "") {
+                    string layKieuTrangThai = thaoTac.Substring(0, 1);
+                    if (layKieuTrangThai == "1")
+                        isTinhTien = true;
+                }
+
+                if (isTinhTien)
+                {
+
+                    string TienVLC = BHCNModel.TinhTienVLC(spDatHang["MaSP"].ToString(), spDatHang["MaVLC"].ToString(), spDatHang["SoLuongVLC"].ToString());
+                    string TienVLP = BHCNModel.TinhTienVLP(spDatHang["MaVLP"].ToString(), spDatHang["SoLuongVLP"].ToString());
+
+                    if (TienVLP == "")
+                        TienVLP = "0";
+                    if (TienVLC == "")
+                        TienVLC = "0";
+
+                    TongTien += Int64.Parse(TienVLC) + Int64.Parse(TienVLP);
+                }
             }
 
             return TongTien.ToString();
@@ -264,6 +286,9 @@ namespace DentalLabo.BanHangVaCongNo
             if (result.Rows.Count > 0)
                 return result.Rows[0]["SoTienNo"].ToString();
             else
+                return "0";
+            /**
+            else
             {
                 int thangTruoc = Int32.Parse(thang) - 1;
                 int namTruoc = Int32.Parse(nam);
@@ -293,7 +318,8 @@ namespace DentalLabo.BanHangVaCongNo
                 Database.query(query);
 
                 return duNo.ToString();
-            }            
+            }     
+            /**/
         }
 
         public static string DuNoDenNgay(string maKH, string beginDate)
@@ -426,6 +452,46 @@ namespace DentalLabo.BanHangVaCongNo
             }
 
             return TongTien.ToString();
+        }
+
+        /*
+         * Xoa SanPham khoi mau hang
+         */
+        public static void XoaSPDHKhoiMauHang(String maSPDH, String maMau)
+        {
+            String query = "DELETE MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "' AND MaSPDatHang = '" + maSPDH + "'";
+            Database.query(query);
+        }
+
+        public static string SinhMaSPDatHang()
+        {
+            string prefix = "SPDH";
+            String query = "SELECT top 1 MaSPDatHang FROM SanPhamDatHang ORDER BY len(MaSPDatHang) desc, MaSPDatHang desc";            
+            DataTable result = Database.query(query);
+            if (result.Rows.Count > 0)
+            {
+                string maSPDH = result.Rows[0]["MaSPDatHang"].ToString();
+                return prefix + (Int64.Parse(maSPDH.Substring(prefix.Length)) + 1).ToString();
+            }
+            else
+                return prefix + "0";
+        }
+
+        /*
+         * Them Noi dung giam tru
+         */
+        public static void ThemNoiDungGiamTru(string maHDBH, string NoiDung, string soTien)
+        {             
+
+            String query = "INSERT NoiDungGiamTru VALUES(" + 
+                    "'" +  maHDBH + "', " +
+                    "N'" + NoiDung + "', " +
+                    "'" +  soTien + "', " +
+                    "''" +
+                    ")";
+
+            Database.query(query);            
+
         }
     }
 }

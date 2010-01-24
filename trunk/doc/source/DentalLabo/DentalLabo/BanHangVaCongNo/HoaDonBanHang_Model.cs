@@ -11,6 +11,8 @@ namespace DentalLabo.BanHangVaCongNo
     public class HoaDonBanHang_Model
     {
         frmHoaDonBanHang form;
+        public long TongTien = 0;
+
         public static int ttIndex = 0;
         public static int msMauIndex = 1;
         public static int ngayNhanMauIndex = 2;
@@ -106,7 +108,7 @@ namespace DentalLabo.BanHangVaCongNo
             cells[thanhTienIndex] = TienThanhToan.ToString();
             form.dtgHoaDonBanHang.Rows.Add(cells);
 
-            form.txtSoTienTT.Text = TienThanhToan.ToString();
+            this.TongTien = TienThanhToan;
         }
 
         /*
@@ -182,7 +184,7 @@ namespace DentalLabo.BanHangVaCongNo
          */
         public void ThemCacGiamTru(string MaHD)
         {
-            string query = "SELECT MaGiamTru, ThanhTien FROM HoaDonBanHang_NoiDungGiamTru WHERE MaHD = '" + MaHD + "'";
+            string query = "SELECT NoiDung, ThanhTien FROM NoiDungGiamTru WHERE MaHD = '" + MaHD + "'";
             DataTable result = Database.query(query);
             if (result.Rows.Count > 0)
             {
@@ -194,12 +196,8 @@ namespace DentalLabo.BanHangVaCongNo
 
                     cells[loaiIndex] = "1";
 
-                    cells[thanhTienIndex] = row["ThanhTien"].ToString();
-                    cells[msMauIndex] = row["MaGiamTru"].ToString();
-
-                    query = "SELECT NoiDung FROM NoiDungGiamTru WHERE MaGiamTru = '" + row["MaGiamTru"].ToString() + "'";
-                    DataTable noidungGiamTru = Database.query(query);
-                    cells[noiDungCongViecIndex] = noidungGiamTru.Rows[0]["NoiDung"].ToString();
+                    cells[thanhTienIndex] = row["ThanhTien"].ToString();                    
+                    cells[noiDungCongViecIndex] = row["NoiDung"].ToString();
 
                     form.dtgHoaDonBanHang.Rows.Add(cells);
                 }
@@ -277,8 +275,7 @@ namespace DentalLabo.BanHangVaCongNo
                            "'" + maKH + "', " +
                            "'" + form.dateNgayXuat.Text + "', " +
                            soTien +
-                           ")";
-            Database.debug = true;
+                           ")";            
             Database.query(query);
             Database.Warning("Khách hàng " + maKH + " đã thanh toán " + soTien + " vao ngay " + form.dateNgayXuat.Text);                        
         } 

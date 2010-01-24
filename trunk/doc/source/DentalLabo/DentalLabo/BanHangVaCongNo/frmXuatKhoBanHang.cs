@@ -33,10 +33,18 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (!Validation.ChuaNhap(txtSoPhieu.Text, "Chưa nhập số phiếu"))
+            if (btnTimKiem.Text == "Tìm kiếm")
             {
-                dtgNoiDungXuatKho.Rows.Clear();
-                model.TimTheoSoPhieu();                
+                if (!Validation.ChuaNhap(txtSoPhieu.Text, "Chưa nhập số phiếu"))
+                {
+                    dtgNoiDungXuatKho.Rows.Clear();
+                    model.TimTheoSoPhieu();
+                }
+            }
+            else {
+                btnTimKiem.Text = "Tìm kiếm";
+                txtSoPhieu.Enabled = true;
+                btnXuat.Enabled = false;
             }
         }
 
@@ -47,6 +55,9 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                 dtgNoiDungXuatKho.Rows.Clear();
                 model.TimTheoMaKH(cmbMaKH.Text);
             }
+            txtSoPhieu.Enabled = false;
+            btnXuat.Enabled = true;
+            btnTimKiem.Text = "Mở chức năng tìm kiếm";
         }
 
         private void dtgNoiDungXuatKho_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
@@ -60,10 +71,13 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
             model.SinhMaHoaDonBH();
             model.InitLoadTenKH();            
             dtgNoiDungXuatKho.Rows.Clear();
+            txtSoPhieu.Enabled = false;
+            btnXuat.Enabled = true;
+            btnTimKiem.Text = "Mở chức năng tìm kiếm";
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
-        {
+        {            
             if (!Validation.ChuaNhap(txtSoPhieu.Text, "Chưa nhập số phiếu"))
                 if (!Validation.ChuaNhap(cmbMaKH.Text, "Chưa nhập mã khách hàng"))
                     if (!Validation.ChuaNhap(txtMaNhanVien.Text, "Chưa nhập mã nhân viên"))
@@ -80,8 +94,9 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
                         }
                         else
                         {
+                            model.SinhMaHoaDonBH();
                             model.XuatHoaDon(txtSoPhieu.Text);
-                            Database.Warning("Xuất hóa đơn thành công. Ấn vào 'Xem Phiếu Xuất - hóa đơn' để xem hóa đơn.");
+                            Database.Warning("Xuất hóa đơn thành công. Ấn vào 'Xem Phiếu Xuất - hóa đơn' để xem hóa đơn.");                            
                         }
                     }
             

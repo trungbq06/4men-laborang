@@ -39,21 +39,39 @@ namespace DentalLabo.Nhap_kho_va_ban_hang
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             if (!Validation.ChuaNhap(cmbMaKH.Text, "Chưa nhập mã KH"))
-                if (!Validation.ChuaNhap(txtSoTienTT.Text, "Chưa nhập số Tiền TT")) {                    
-                    long soTien = Int64.Parse(txtSoTienTT.Text);
-                    model.ThanhToanTien(cmbMaKH.Text, txtSoTienTT.Text);
+                if (!Validation.ChuaNhap(txtNoiDungGT.Text, "Chưa nhập số Tiền TT")) {
+                    model.ThanhToanTien(cmbMaKH.Text, model.TongTien.ToString());
                 }
                     
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmGiamTru form = new frmGiamTru();
-            form.MdiParent = this.MdiParent;
-            form.Show();
+            if (!Validation.ChuaNhap(txtNoiDungGT.Text, "Chưa nhập tên nội dung giảm trừ"))
+            {
+                if (!Validation.ChuaNhap(txtSoTienGT.Text, "Chưa nhập số tiền giảm trừ"))
+                {                    
+                    try
+                    {
+                        long soTien = Int64.Parse(txtSoTienGT.Text);
 
-            form.txtSoHoaDon.Text = txtSoPhieu.Text;
-            form.model.LietKeTatCaGiamTru(txtSoPhieu.Text);            
+                        if (soTien > model.TongTien)
+                        {
+                            Database.Warning("Bạn không thể cho thêm giảm trừ có số tiền lớn hơn hóa đơn");
+                        }
+                        else
+                        {
+                            BHCNModel.ThemNoiDungGiamTru(txtSoPhieu.Text, txtNoiDungGT.Text, txtSoTienGT.Text);
+                            dtgHoaDonBanHang.Rows.Clear();
+                            model.UpdateDataGridView(txtSoPhieu.Text);
+                        }
+                    }
+                    catch (FormatException fe)
+                    {
+                        Database.Warning("Số tiền giảm trừ không đúng định dạng");
+                    }
+                }
+            }
         }
 
         private void cmbTenKH_SelectedIndexChanged(object sender, EventArgs e)

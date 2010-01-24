@@ -210,7 +210,7 @@ namespace DentalLabo.BanHangVaCongNo
             }
         }
 
-        private void ThemGiamTru(string maHD, string ngayXuat)
+        private void ThemGiamTru1(string maHD, string ngayXuat)
         {
             object[] cells = new object[8];
             for (int i = 0; i < 8; i++)
@@ -233,6 +233,34 @@ namespace DentalLabo.BanHangVaCongNo
                 cells[soHDIndex] = maHD;
                 cells[ngayXuatIndex] = ngayXuatIndex;
                 cells[thanhTienIndex] = GiamTrus.Rows[i]["ThanhTien"];
+
+                form.dtgChiTietCongNoKH.Rows.Add(cells);
+
+                countGT++;
+            }
+        }
+
+        private void ThemGiamTru(string maHD, string ngayXuat)
+        {
+            object[] cells = new object[8];
+            for (int i = 0; i < 8; i++)
+                cells[i] = "";
+            cells[loaiIndex] = loaiGiamTru;
+
+            // Lay cac noi dung giam tru trong Hoa don
+            string query = "SELECT NoiDung, ThanhTien FROM NoiDungGiamTru WHERE MaHD = '" + maHD + "'";
+            DataTable GiamTrus = Database.query(query);
+
+            for (int i = 0; i < GiamTrus.Rows.Count; i++)
+            {
+                string noiDung = GiamTrus.Rows[i]["NoiDung"].ToString();
+
+                cells[ttIndex] = countGT.ToString();
+                cells[noiDungIndex] = noiDung;
+                cells[msMauIndex] = "";
+                cells[soHDIndex] = maHD;
+                cells[ngayXuatIndex] = ngayXuat;
+                cells[thanhTienIndex] = GiamTrus.Rows[i]["ThanhTien"].ToString();
 
                 form.dtgChiTietCongNoKH.Rows.Add(cells);
 
