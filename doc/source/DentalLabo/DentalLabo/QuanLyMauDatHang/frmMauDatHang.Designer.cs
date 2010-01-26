@@ -567,7 +567,7 @@ namespace DentalLabo.Mau_dat_hang
             this.tabControl1.Location = new System.Drawing.Point(21, 163);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(713, 541);
+            this.tabControl1.Size = new System.Drawing.Size(713, 495);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -577,7 +577,7 @@ namespace DentalLabo.Mau_dat_hang
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(705, 515);
+            this.tabPage1.Size = new System.Drawing.Size(705, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Phục hình cố định";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -587,9 +587,9 @@ namespace DentalLabo.Mau_dat_hang
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.dtgNoiDungMau);
-            this.groupBox5.Location = new System.Drawing.Point(7, 345);
+            this.groupBox5.Location = new System.Drawing.Point(7, 343);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(692, 164);
+            this.groupBox5.Size = new System.Drawing.Size(692, 128);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Nội dung phục hình của mẫu răng";
@@ -619,7 +619,7 @@ namespace DentalLabo.Mau_dat_hang
             this.Column21});
             this.dtgNoiDungMau.Location = new System.Drawing.Point(6, 14);
             this.dtgNoiDungMau.Name = "dtgNoiDungMau";
-            this.dtgNoiDungMau.Size = new System.Drawing.Size(680, 144);
+            this.dtgNoiDungMau.Size = new System.Drawing.Size(680, 104);
             this.dtgNoiDungMau.TabIndex = 48;
             // 
             // Column1
@@ -706,6 +706,7 @@ namespace DentalLabo.Mau_dat_hang
             // 
             this.Column21.HeaderText = "Mã SPDH";
             this.Column21.Name = "Column21";
+            this.Column21.Visible = false;
             // 
             // groupBox3
             // 
@@ -824,7 +825,7 @@ namespace DentalLabo.Mau_dat_hang
             this.tableLayoutPanel5.Controls.Add(this.btRang16_1, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.btRang17_1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btRang18_1, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(34, 14);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(31, 17);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1525,9 +1526,9 @@ namespace DentalLabo.Mau_dat_hang
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(6, 85);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 16);
+            this.label8.Size = new System.Drawing.Size(94, 16);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Tên sảm phẩm";
+            this.label8.Text = "Tên sản phẩm";
             // 
             // cmbThaoTac
             // 
@@ -1543,7 +1544,7 @@ namespace DentalLabo.Mau_dat_hang
             this.cmbThaoTac.Name = "cmbThaoTac";
             this.cmbThaoTac.Size = new System.Drawing.Size(159, 24);
             this.cmbThaoTac.TabIndex = 20;
-            this.cmbThaoTac.Text = "1 - San pham lam moi";
+            this.cmbThaoTac.Text = "1 - Sản phẩm làm mới";
             // 
             // label7
             // 
@@ -1636,7 +1637,7 @@ namespace DentalLabo.Mau_dat_hang
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(705, 515);
+            this.tabPage2.Size = new System.Drawing.Size(705, 469);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Phục hình tháo lắp";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1646,9 +1647,9 @@ namespace DentalLabo.Mau_dat_hang
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.dtgNoiDungMau2);
-            this.groupBox8.Location = new System.Drawing.Point(6, 356);
+            this.groupBox8.Location = new System.Drawing.Point(6, 345);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(692, 153);
+            this.groupBox8.Size = new System.Drawing.Size(692, 121);
             this.groupBox8.TabIndex = 10;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Nội dung phục hình của mẫu răng";
@@ -1678,9 +1679,9 @@ namespace DentalLabo.Mau_dat_hang
             this.dataGridViewTextBoxColumn31,
             this.dataGridViewTextBoxColumn32,
             this.Column20});
-            this.dtgNoiDungMau2.Location = new System.Drawing.Point(6, 14);
+            this.dtgNoiDungMau2.Location = new System.Drawing.Point(6, 15);
             this.dtgNoiDungMau2.Name = "dtgNoiDungMau2";
-            this.dtgNoiDungMau2.Size = new System.Drawing.Size(680, 133);
+            this.dtgNoiDungMau2.Size = new System.Drawing.Size(680, 102);
             this.dtgNoiDungMau2.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn17
@@ -1777,6 +1778,7 @@ namespace DentalLabo.Mau_dat_hang
             // 
             this.Column20.HeaderText = "Mã SPDH";
             this.Column20.Name = "Column20";
+            this.Column20.Visible = false;
             // 
             // groupBox6
             // 
@@ -1821,10 +1823,11 @@ namespace DentalLabo.Mau_dat_hang
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(692, 344);
+            this.groupBox6.Size = new System.Drawing.Size(692, 333);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // txtSoLuongRang2
             // 
@@ -2276,7 +2279,7 @@ namespace DentalLabo.Mau_dat_hang
             this.tableLayoutPanel4.Controls.Add(this.button12, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.button13, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.button9, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(16, 299);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(16, 296);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2717,9 +2720,9 @@ namespace DentalLabo.Mau_dat_hang
             this.label29.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label29.Location = new System.Drawing.Point(6, 81);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(98, 16);
+            this.label29.Size = new System.Drawing.Size(94, 16);
             this.label29.TabIndex = 10;
-            this.label29.Text = "Tên sảm phẩm";
+            this.label29.Text = "Tên sản phẩm";
             // 
             // cmbThaoTac2
             // 
@@ -2732,14 +2735,14 @@ namespace DentalLabo.Mau_dat_hang
             this.cmbThaoTac2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbThaoTac2.FormattingEnabled = true;
             this.cmbThaoTac2.Items.AddRange(new object[] {
-            "1 - San pham lam moi",
-            "2 - San pham lam lai",
-            "3 - San pham bi hong can lam lai"});
+            "1 - Sản phẩm làm mới",
+            "2 - Sản phẩm làm lại",
+            "3 - Sản phẩm sửa chữa"});
             this.cmbThaoTac2.Location = new System.Drawing.Point(109, 48);
             this.cmbThaoTac2.Name = "cmbThaoTac2";
             this.cmbThaoTac2.Size = new System.Drawing.Size(151, 24);
             this.cmbThaoTac2.TabIndex = 9;
-            this.cmbThaoTac2.Text = "1 - San pham lam moi";
+            this.cmbThaoTac2.Text = "1 - Sản phẩm làm mới";
             // 
             // label30
             // 
@@ -2885,7 +2888,7 @@ namespace DentalLabo.Mau_dat_hang
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(719, 527);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(719, 488);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // button46
@@ -3181,7 +3184,7 @@ namespace DentalLabo.Mau_dat_hang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 703);
+            this.ClientSize = new System.Drawing.Size(752, 659);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -3337,42 +3340,6 @@ namespace DentalLabo.Mau_dat_hang
         public System.Windows.Forms.TextBox txtSoMau;
         public System.Windows.Forms.ComboBox cmbMaSP;
         public System.Windows.Forms.ComboBox cmbMaSP2;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         public System.Windows.Forms.TextBox txtViTriRang;
         public System.Windows.Forms.TextBox txtViTriRang2;
         private System.Windows.Forms.Label label39;
@@ -3479,5 +3446,41 @@ namespace DentalLabo.Mau_dat_hang
         private System.Windows.Forms.Button btRang18_2;
         public System.Windows.Forms.TextBox txtSoLuongRang;
         public System.Windows.Forms.TextBox txtSoLuongRang2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
     }
 }

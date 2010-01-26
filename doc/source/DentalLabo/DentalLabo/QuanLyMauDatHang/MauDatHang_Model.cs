@@ -59,7 +59,7 @@ namespace DentalLabo.MauDatHang
          */
         public void UpdateMaNhom(string tenNhomKH)
         {
-            String query = "SELECT MaNhom FROM NhomKH WHERE TenNhom = '" + tenNhomKH + "'";
+            String query = "SELECT MaNhom FROM NhomKH WHERE TenNhom = N'" + tenNhomKH + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaNhomKH, query, "MaNhom");
         }
         /*
@@ -82,7 +82,7 @@ namespace DentalLabo.MauDatHang
          */
         public void UpdateMaSoKH(String tenKH)
         {
-            String query = "SELECT MaKH FROM KhachHang WHERE TenKH = '" + tenKH + "'";
+            String query = "SELECT MaKH FROM KhachHang WHERE TenKH = N'" + tenKH + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaKH, query, "MaKH");
         }
         #endregion
@@ -112,19 +112,21 @@ namespace DentalLabo.MauDatHang
          */
         public void LoadTenSanPham()
         {
-            BHCNModel.UpdateComboBoxByQuery(form.cmbTenSP, "SELECT TenSP FROM SanPham", "TenSP");
-            BHCNModel.UpdateComboBoxByQuery(form.cmbTenSP2, "SELECT TenSP FROM SanPham", "TenSP");
+            string filter1 = "( 'Nhóm 1', 'Nhóm 2', 'Nhóm 3') ";
+            string filter2 = "( 'Nhóm 4' )";
+            BHCNModel.UpdateComboBoxByQuery(form.cmbTenSP, "SELECT TenSP FROM SanPham WHERE NhomHangHoa in " + filter1, "TenSP");
+            BHCNModel.UpdateComboBoxByQuery(form.cmbTenSP2, "SELECT TenSP FROM SanPham WHERE NhomHangHoa in " + filter2, "TenSP");
         }
 
         public void UpdateMaSanPham(String TenSP)
         {
-            String query = "SELECT MaSP FROM SanPham WHERE TenSP = '" + TenSP + "'";
+            String query = "SELECT MaSP FROM SanPham WHERE TenSP = N'" + TenSP + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaSP, query, "MaSP");
         }
 
         public void UpdateMaSanPham2(String TenSP)
         {
-            String query = "SELECT MaSP FROM SanPham WHERE TenSP = '" + TenSP + "'";
+            String query = "SELECT MaSP FROM SanPham WHERE TenSP = N'" + TenSP + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaSP2, query, "MaSP");
         }
 
@@ -136,24 +138,37 @@ namespace DentalLabo.MauDatHang
 
         public void UpdateMaVatLieu(String TenVLC)
         {
-            String query = "SELECT MaVL FROM VatLieuChinh WHERE TenVL = '" + TenVLC + "'";
+            String query = "SELECT MaVL FROM VatLieuChinh WHERE TenVL = N'" + TenVLC + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaVatLieu, query, "MaVL");
         }
 
         public void UpdateMaVLC(String TenVLC)
         {
-            String query = "SELECT MaVL FROM VatLieuChinh WHERE TenVL = '" + TenVLC + "'";
+            String query = "SELECT MaVL FROM VatLieuChinh WHERE TenVL = N'" + TenVLC + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaVLChinh, query, "MaVL");
         }
 
         public void LoadTenVLP()
         {
-            BHCNModel.UpdateComboBoxByQuery(form.cmbVLPhu, "SELECT TenVL FROM VatLieuPhu", "TenVL");
+            string query = "SELECT TenVL FROM VatLieuPhu";
+            DataTable result = Database.query(query);
+            form.cmbVLPhu.Items.Clear();
+            foreach (DataRow row in result.Rows)
+            {
+                form.cmbVLPhu.Items.Add(row["TenVL"]);
+            }
+            form.cmbVLPhu.Items.Add("");
+            if (result.Rows.Count > 0)
+                form.cmbVLPhu.SelectedIndex = 0;
+            else
+            {
+                form.cmbVLPhu.Text = "";
+            }
         }
 
         public void UpdateMaVLP(String TenVLP)
         {
-            String query = "SELECT MaVL FROM VatLieuPhu WHERE TenVL = '" + TenVLP + "'";
+            String query = "SELECT MaVL FROM VatLieuPhu WHERE TenVL = N'" + TenVLP + "'";
             BHCNModel.UpdateComboBoxByQuery(form.cmbMaVLPhu, query, "MaVL");
         }
         #endregion
@@ -187,7 +202,7 @@ namespace DentalLabo.MauDatHang
                 String tuoiBN = result.Rows[0]["TuoiBN"].ToString();
                 String gioiTinhBN = result.Rows[0]["GioiTinhBN"].ToString();
                 String maKH = result.Rows[0]["MaKH"].ToString();
-                String loaiPH = result.Rows[0]["LoaiPhucHinh"].ToString();
+                //String loaiPH = result.Rows[0]["LoaiPhucHinh"].ToString();
                 String ngayNhan = result.Rows[0]["NgayNhan"].ToString();
                 String ngayTra = result.Rows[0]["NgayTra"].ToString();
                 String gioTra = result.Rows[0]["gioTra"].ToString() + "h";
@@ -211,8 +226,9 @@ namespace DentalLabo.MauDatHang
                 
 
                 // kiem tra xem la loai phuc hinh nao
-                if (loaiPH == "1")
-                {
+                //if (loaiPH == "1")
+                //{
+                //loai phuc hinh 1
                     form.tabControl1.SelectedTab = form.tabControl1.TabPages[0]; // loai phuc hinh co dinh
                     form.txtTenBN.Text = tenBN;
                     form.txtTuoiBN.Text = tuoiBN;
@@ -220,17 +236,18 @@ namespace DentalLabo.MauDatHang
                     form.dateGioTra.Text = gioTra;
                     form.dateNgayTra.Text = ngayTra;
                     LayThongTinMau(maMau, "1", ngayTra, gioTra, tuoiBN, gioiTinhBN);
-                }
-                else
-                {
-                    form.tabControl1.SelectedTab = form.tabControl1.TabPages[1];
+                //}
+                //else
+                //{
+                    //form.tabControl1.SelectedTab = form.tabControl1.TabPages[1];
+                // loai phuc hinh 2
                     form.txtTenBN2.Text = tenBN;
                     form.txtTuoiBN2.Text = tuoiBN;
                     form.cmbGioiTinhBN2.Text = gioiTinhBN;
                     form.dateGioTra2.Text = gioTra;
                     form.dateNgayTra2.Text = ngayTra;
                     LayThongTinMau(maMau, "2", ngayTra, gioTra, tuoiBN, gioiTinhBN);
-                }
+                //}
             } // of else
         }
 
@@ -239,8 +256,10 @@ namespace DentalLabo.MauDatHang
         {
             if (loaiPhucHinh == "1") form.dtgNoiDungMau.Rows.Clear();
             else form.dtgNoiDungMau2.Rows.Clear();
+
             String query = "SELECT MaSPDatHang FROM MauHang_SanPhamDatHang WHERE MaMau = '" + maMau + "'";
             DataTable result = Database.query(query);
+            
             if (result.Rows.Count > 0)
             {
                 
@@ -263,89 +282,93 @@ namespace DentalLabo.MauDatHang
                         countRows += 1;
 
 
-                    query = "SELECT * FROM SanPhamDatHang WHERE MaSPDatHang = '" + maSPDatHang + " '";
+                    query = "SELECT * FROM SanPhamDatHang WHERE MaSPDatHang = '" + maSPDatHang + "' and LoaiPhucHinh = '" + loaiPhucHinh + "'";
                     DataTable spDatHang = Database.query(query);
-
+                    //MessageBox.Show("trang day" + loaiPhucHinh);
                     // Lay ten san pham
-                    string maSP = spDatHang.Rows[0]["MaSP"].ToString();
-                    query = "SELECT TenSP, DVT FROM SanPham WHERE MaSP = '" + maSP + "'";
-                    DataTable sanpham = Database.query(query);
-                    string tenSP = sanpham.Rows[0]["TenSP"].ToString();
-                    string dvt = sanpham.Rows[0]["DVT"].ToString();
-
-                    // Vi tri rang
-                    string viTriRang = spDatHang.Rows[0]["ViTriRang"].ToString();
-
-                    // Lay vat lieu chinh                        
-                    string maVLC = spDatHang.Rows[0]["MaVLC"].ToString();
-                    query = "SELECT TenVL FROM VatLieuChinh WHERE MaVL = '" + maVLC + "'";
-                    DataTable vlc = Database.query(query);
-                    string tenVLC = vlc.Rows[0]["TenVL"].ToString();
-
-                    // Lay vat lieu phu
-                    string maVLP = spDatHang.Rows[0]["MaVLP"].ToString();
-                    query = "SELECT TenVL FROM VatLieuPhu WHERE MaVL = '" + maVLP + "'";
-                    DataTable vlp = Database.query(query);
-                    string tenVLP = "";
-                    if (vlp.Rows.Count > 0)
-                        tenVLP = vlp.Rows[0]["TenVL"].ToString();
-
-                    //mau rang, ly do, trang thai thao tac, luu y, yeu cau chi tiet
-                    string mauSP = spDatHang.Rows[0]["MauSP"].ToString();
-                    string luuY = spDatHang.Rows[0]["LuuY"].ToString();
-                    string thaoTac = spDatHang.Rows[0]["ThaoTac"].ToString();
-                    string lyDo = spDatHang.Rows[0]["LyDo"].ToString();
-                    string yeuCauChiTiet = spDatHang.Rows[0]["YeuCauChiTiet"].ToString();
-                    string tayMoc = spDatHang.Rows[0]["ViTriTayMoc"].ToString();
-                    string soLuong = spDatHang.Rows[0]["SoLuongVLC"].ToString();
-                    // Gan cac truong tenSP, dvt, soluong, vlc, vlp
-                    a[1] = tenSP;
-                    a[2] = viTriRang;
-                    a[3] = tenVLC;
-                    a[4] = maVLC;
-                    a[5] = mauSP;
-                    
-                    if (loaiPhucHinh == "1")
+                    if (spDatHang.Rows.Count > 0)
                     {
-                        a[6] = ""; // loai gam
-                        a[7] = dvt;
-                        a[8] = luuY;
-                        a[9] = ngayTra;
-                        a[10] = gioTra;
-                        a[11] = tuoiBN;
-                        a[12] = gioiTinhBN;
-                        a[13] = thaoTac;
-                        a[14] = lyDo;
-                        a[15] = yeuCauChiTiet;
-                        a[16] = maSPDatHang;
+                        string maSP = spDatHang.Rows[0]["MaSP"].ToString();
+                        query = "SELECT TenSP, DVT FROM SanPham WHERE MaSP = '" + maSP + "'";
+                        DataTable sanpham = Database.query(query);
+                        string tenSP = sanpham.Rows[0]["TenSP"].ToString();
+                        string dvt = sanpham.Rows[0]["DVT"].ToString();
 
-                        form.dtgNoiDungMau.Rows.Add(a);
-                        int currentIndex = form.dtgNoiDungMau.Rows.Count - 1;
-                        DataGridViewRow currentRow = form.dtgNoiDungMau.Rows[currentIndex];
-                        for (int i = 0; i < 16; i++)
-                            currentRow.Cells[i].ReadOnly = true;
-                    }
-                    else
-                    {
-                        a[6] = tenVLP;
-                        a[7] = maVLP;
-                        a[8] = tayMoc;
-                        a[9] = dvt;
-                        a[10] = soLuong;//soluong
-                        a[11] = ngayTra;
-                        a[12] = gioTra;
-                        a[13] = tuoiBN;
-                        a[14] = gioiTinhBN;
-                        a[15] = thaoTac;
-                        a[16] = lyDo;
-                        a[17] = yeuCauChiTiet;
-                        a[18] = maSPDatHang;
+                        // Vi tri rang
+                        string viTriRang = spDatHang.Rows[0]["ViTriRang"].ToString();
 
-                        form.dtgNoiDungMau2.Rows.Add(a);
-                        int currentIndex = form.dtgNoiDungMau2.Rows.Count - 1;
-                        DataGridViewRow currentRow = form.dtgNoiDungMau2.Rows[currentIndex];
-                        for (int i = 0; i < 16; i++)
-                            currentRow.Cells[i].ReadOnly = true;
+                        // Lay vat lieu chinh                        
+                        string maVLC = spDatHang.Rows[0]["MaVLC"].ToString();
+                        query = "SELECT TenVL FROM VatLieuChinh WHERE MaVL = '" + maVLC + "'";
+                        DataTable vlc = Database.query(query);
+                        string tenVLC = vlc.Rows[0]["TenVL"].ToString();
+
+                        // Lay vat lieu phu
+                        string maVLP = spDatHang.Rows[0]["MaVLP"].ToString();
+                        query = "SELECT TenVL FROM VatLieuPhu WHERE MaVL = '" + maVLP + "'";
+                        DataTable vlp = Database.query(query);
+                        string tenVLP = "";
+                        if (vlp.Rows.Count > 0)
+                            tenVLP = vlp.Rows[0]["TenVL"].ToString();
+
+                        //mau rang, ly do, trang thai thao tac, luu y, yeu cau chi tiet
+                        string mauSP = spDatHang.Rows[0]["MauSP"].ToString();
+                        string luuY = spDatHang.Rows[0]["LuuY"].ToString();
+                        string thaoTac = spDatHang.Rows[0]["ThaoTac"].ToString();
+                        string lyDo = spDatHang.Rows[0]["LyDo"].ToString();
+                        string yeuCauChiTiet = spDatHang.Rows[0]["YeuCauChiTiet"].ToString();
+                        string tayMoc = spDatHang.Rows[0]["ViTriTayMoc"].ToString();
+                        string soluong = spDatHang.Rows[0]["SoLuong"].ToString();
+                        //string soLuong = spDatHang.Rows[0]["SoLuongVLC"].ToString();
+                        // Gan cac truong tenSP, dvt, soluong, vlc, vlp
+                        a[1] = tenSP;
+                        a[2] = viTriRang;
+                        a[3] = tenVLC;
+                        a[4] = maVLC;
+                        a[5] = mauSP;
+
+                        if (loaiPhucHinh == "1")
+                        {
+                            a[6] = luuY;
+                            a[7] = dvt;
+                            a[8] = soluong;
+                            a[9] = ngayTra;
+                            a[10] = gioTra;
+                            a[11] = tuoiBN;
+                            a[12] = gioiTinhBN;
+                            a[13] = thaoTac;
+                            a[14] = lyDo;
+                            a[15] = yeuCauChiTiet;
+                            a[16] = maSPDatHang;
+
+                            form.dtgNoiDungMau.Rows.Add(a);
+                            int currentIndex = form.dtgNoiDungMau.Rows.Count - 1;
+                            DataGridViewRow currentRow = form.dtgNoiDungMau.Rows[currentIndex];
+                            for (int i = 0; i < 16; i++)
+                                currentRow.Cells[i].ReadOnly = true;
+                        }
+                        else
+                        {
+                            a[6] = tenVLP;
+                            a[7] = maVLP;
+                            a[8] = tayMoc;
+                            a[9] = dvt;
+                            a[10] = soluong;//soluong
+                            a[11] = ngayTra;
+                            a[12] = gioTra;
+                            a[13] = tuoiBN;
+                            a[14] = gioiTinhBN;
+                            a[15] = thaoTac;
+                            a[16] = lyDo;
+                            a[17] = yeuCauChiTiet;
+                            a[18] = maSPDatHang;
+
+                            form.dtgNoiDungMau2.Rows.Add(a);
+                            int currentIndex = form.dtgNoiDungMau2.Rows.Count - 1;
+                            DataGridViewRow currentRow = form.dtgNoiDungMau2.Rows[currentIndex];
+                            for (int i = 0; i < 16; i++)
+                                currentRow.Cells[i].ReadOnly = true;
+                        }
                     }
                 } // of foreach
             } // of if
@@ -389,7 +412,11 @@ namespace DentalLabo.MauDatHang
                 }
 
                 int gioTraInt = Int16.Parse(gioTra.Substring(0, 2));
-                int tuoiBNInt = Int16.Parse(tuoiBN);
+                int tuoiBNInt = 0;
+                if (tenBN != "")
+                {
+                    tuoiBNInt = Int16.Parse(tuoiBN);
+                }
 
                 if (maMau == "") MessageBox.Show(null, "Mã mẫu không được để trống!", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (maKH == "") MessageBox.Show(null, "Mã khách hàng không được để trống!", "Loi nhap du lieu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -397,20 +424,20 @@ namespace DentalLabo.MauDatHang
                 query = "INSERT MauHang VALUES(" +
                                             "'" + maMau + "'," +
                                             "'" + maKH + "'," +
-                                            "'" + loaiPhucHinh + "'," +
+                          //                  "'" + loaiPhucHinh + "'," +
                                             "'" + ngayNhan + "'," +
                                             "'" + ngayTra + "'," +
                                             "'" + gioTraInt + "'," +
-                                            " '', 0, N'" + tenBN + "'," +
+                                            " '', '0', N'" + tenBN + "'," +
                                             "'" + tuoiBNInt + "'," +
                                             "N'" + gioitinhBN + "'" +
                                             ")";
                 //Database.Debug(query);
-                if (MessageBox.Show(null, "Bạn có chắc muốn thêm mẫu với mã '" + maMau + "' không?", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                //if (MessageBox.Show(null, "Bạn có chắc muốn thêm mẫu với mã '" + maMau + "' không?", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+               // {
                     Database.query(query);
-                    MessageBox.Show(null, "Đã thêm mẫu vào cơ sở dữ liêu", "Insert Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                   // MessageBox.Show(null, "Đã thêm mẫu vào cơ sở dữ liêu", "Insert Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // }
             }
             #endregion
 
@@ -456,24 +483,24 @@ namespace DentalLabo.MauDatHang
                     int tuoiBNInt;
                     if (tuoiBN != "") tuoiBNInt = Int16.Parse(tuoiBN);
                     else tuoiBNInt = 0;
-
+                    //MessageBox.Show(loaiPhucHinh);
                     query = "INSERT MauHang VALUES(" +
                             "'" + maMau + "'," +
-                            "'" + maKH + "'," +
-                            loaiPhucHinh + "," +
+                            "'" + maKH + "', " +
+          //                  "'" + loaiPhucHinh + "'," +
                             "'" + ngayNhan + "'," +
                             "'" + ngayTra + "'," +
                             "'" + gioTraInt + "'," +
-                            " '', 0, N'" + tenBN + "'," +
+                            " '', '0', N'" + tenBN + "'," +
                             "'" + tuoiBNInt + "'," +
                             "N'" + gioitinhBN + "'" +
                             ")";
-
-                    if (MessageBox.Show(null, "Mẫu chưa tồn tại! Bạn có muốn thêm với mã số '" + maMau + "' vào hay không", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
+                    //MessageBox.Show(query);
+                    //if (MessageBox.Show(null, "Mẫu chưa tồn tại! Bạn có muốn thêm với mã số '" + maMau + "' vào hay không", "Insert data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                   // {
                         Database.query(query);
-                        MessageBox.Show(null, "Đã thêm mẫu vào cơ sở dữ liêu", "Insert Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        //MessageBox.Show(null, "Đã thêm mẫu vào cơ sở dữ liêu", "Insert Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    }
                 }
                 else
                 {
@@ -531,6 +558,8 @@ namespace DentalLabo.MauDatHang
                 string slRang1 = form.txtSoLuongRang.Text;
                 string slRang2 = form.txtSoLuongRang2.Text;
 
+                //MessageBox.Show(slRang1 + " " + slRang2);
+
                 string[] array = new string[32];
                 array = viTriRang1.Split(',');
                 int sorang1 = 0;
@@ -549,8 +578,14 @@ namespace DentalLabo.MauDatHang
                 // sinh ma san pham dat hang tu dong
                 query = "SELECT TOP 1 MaSPDatHang FROM SanPhamDatHang ORDER BY len(MaSPDatHang) desc, MaSPDatHang desc";
                 result = Database.query(query);
-                string maSPDHStr = result.Rows[0]["MaSPDatHang"].ToString().Substring(4);
-                int maSpdh = Int16.Parse(maSPDHStr);
+                int maSpdh;
+                string maSPDHStr;
+                if (result.Rows.Count == 0) maSpdh = 0;
+                else
+                {
+                    maSPDHStr = result.Rows[0]["MaSPDatHang"].ToString().Substring(4);
+                    maSpdh = Int16.Parse(maSPDHStr);
+                }
                 maSpdh = maSpdh + 1;
                 maSPDHStr = "SPDH" + maSpdh.ToString();
 
@@ -570,7 +605,8 @@ namespace DentalLabo.MauDatHang
                         " null,N'" + yeuCau1 + "'," +
                         "N'" + thaoTac1 + "'," +
                         "N'" + lyDo1 + "'," +
-                        sorang1 +
+                        sorang1 + ", " +
+                        "'" + loaiPhucHinh + "'" + 
                         ")";
 
                 // query trong truong hop phuc hinh thao lap
@@ -588,9 +624,10 @@ namespace DentalLabo.MauDatHang
                         "N'" + yeuCau2 + "'," +
                         "N'" + thaoTac2 + "'," +
                         "N'" + lyDo2 + "'," +
-                        sorang2 +
+                        sorang2 + ", " +
+                        "'" + loaiPhucHinh + "'" + 
                         ")";
-
+                
                 if (loaiPhucHinh == "1")
                 {
                     Database.query(query1);
@@ -636,7 +673,18 @@ namespace DentalLabo.MauDatHang
                 string yeuCau2 = form.txtYeuCauChiTiet2.Text;
                 string viTriRang1 = form.txtViTriRang.Text;
                 string viTriRang2 = form.txtViTriRang2.Text;
-
+                string slRang1 = form.txtSoLuongRang.Text;
+                string slRang2 = form.txtSoLuongRang2.Text;
+                int sorang1 = 0;
+                if (slRang1 != "")
+                {
+                    sorang1 = Int16.Parse(slRang1);
+                }
+                int sorang2 = 0;
+                if (slRang2 != "")
+                {
+                    sorang2 = Int16.Parse(slRang2);
+                }
                 // query trong truong hop phuc hinh co dinh
                 string query1 = "UPDATE SanPhamDatHang SET " +
                         "MaSP = '" + maSP1 + "'," +
@@ -646,6 +694,7 @@ namespace DentalLabo.MauDatHang
                         "LuuY = '" + luuY + "'," +
                         "YeuCauChiTiet = N'" + yeuCau1 + "'," +
                         "ThaoTac = N'" + thaoTac1 + "'," +
+                        "SoLuong = N'" + sorang1 + "'," +
                         "LyDo = N'" + lyDo1 + "' where MaSPDatHang = '" + maSPDH + "'";
 
                 // query trong truong hop phuc hinh thao lap
@@ -658,6 +707,7 @@ namespace DentalLabo.MauDatHang
                         "ViTriTayMoc = N'" + tayMoc + "'," +
                         "YeuCauChiTiet = N'" + yeuCau2 + "'," +
                         "ThaoTac = N'" + thaoTac2 + "'," +
+                        "SoLuong = N'" + sorang2 + "'," +
                         "LyDo = N'" + lyDo2 + "' where MaSPDatHang = '" + maSPDH + "'";
                 string maMau = form.txtSoMau.Text;
                 if (loaiPhucHinh == "1")
@@ -717,7 +767,7 @@ namespace DentalLabo.MauDatHang
 
                 query = "UPDATE MauHang SET " +
                     "MaKH = '" + maKH + "'," +
-                    "LoaiPhucHinh = '" + loaiPhucHinh + "'," +
+        //                    "LoaiPhucHinh = '" + loaiPhucHinh + "'," +
                     "NgayNhan = '" + ngayNhan + "'," +
                     "NgayTra = '" + ngayTra + "'," +
                     "GioTra = '" + gioTraInt + "'," +
@@ -757,7 +807,8 @@ namespace DentalLabo.MauDatHang
             string yeuCau;
             string thaoTac;
             string lyDo;
-            
+            string soluong;
+
             DataGridViewRow selectedRow = new DataGridViewRow();
             string action = "";
             if (loaiPhucHinh == "1")
@@ -834,7 +885,7 @@ namespace DentalLabo.MauDatHang
                 tenVLC = selectedRow.Cells[3].Value.ToString();
                 maVLC = selectedRow.Cells[4].Value.ToString();
                 mauSP = selectedRow.Cells[5].Value.ToString();
-
+                
                 if (loaiPhucHinh == "1")
                 {
                     maSPDH = selectedRow.Cells[16].Value.ToString();
@@ -842,6 +893,7 @@ namespace DentalLabo.MauDatHang
                     thaoTac = selectedRow.Cells[13].Value.ToString();
                     lyDo = selectedRow.Cells[14].Value.ToString();
                     yeuCau = selectedRow.Cells[15].Value.ToString();
+                    soluong = selectedRow.Cells[8].Value.ToString();
 
                     form.cmbThaoTac.Text = thaoTac;
                     form.txtLyDo.Text = lyDo;
@@ -853,6 +905,7 @@ namespace DentalLabo.MauDatHang
                     form.txtLuuY.Text = luuY;
                     form.txtYeuCauChiTiet.Text = yeuCau;
                     form.txtViTriRang.Text = viTriRang;
+                    form.txtSoLuongRang.Text = soluong;
                 }
                 else
                 {
@@ -863,6 +916,7 @@ namespace DentalLabo.MauDatHang
                     thaoTac = selectedRow.Cells[15].Value.ToString();
                     lyDo = selectedRow.Cells[16].Value.ToString();
                     yeuCau = selectedRow.Cells[17].Value.ToString();
+                    soluong = selectedRow.Cells[10].Value.ToString();
 
                     form.cmbThaoTac2.Text = thaoTac;
                     form.txtLyDo2.Text = lyDo;
@@ -876,6 +930,7 @@ namespace DentalLabo.MauDatHang
                     form.txtTayMoc.Text = tayMoc;
                     form.txtYeuCauChiTiet2.Text = yeuCau;
                     form.txtViTriRang2.Text = viTriRang;
+                    form.txtSoLuongRang2.Text = soluong;
                 }
                 return maSPDH;
             }

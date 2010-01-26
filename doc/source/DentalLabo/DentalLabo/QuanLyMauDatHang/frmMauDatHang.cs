@@ -17,7 +17,7 @@ namespace DentalLabo.Mau_dat_hang
         bool[] rangChoosed2 = new bool[32];
         MauDatHang_Model model;
         String acctionString = "San Pham Moi";
-        String loaiPH;
+        String loaiPH = "1";
         String maSPDH;
         CheckBox[] arrRangCB1 = new CheckBox[32];
         CheckBox[] arrRangCB2 = new CheckBox[32];
@@ -31,6 +31,12 @@ namespace DentalLabo.Mau_dat_hang
             model.LoadTenSanPham();
             model.LoadTenVLC();
             model.LoadTenVLP();
+            resetMangRangChon();
+
+        }
+
+        public void resetMangRangChon()
+        {
             for (int i = 0; i < 32; i++)
             {
                 rangChoosed1[i] = false;
@@ -39,21 +45,49 @@ namespace DentalLabo.Mau_dat_hang
         }
 
         #region ChuyenRangVeText
+        public string ChuanVTRangString(string str)
+        {
+            string[] arrayString = new string[32];
+            string newString = "";
+            arrayString = str.Split(',');
+
+            for (int i = 0; i < arrayString.Count(); i++)
+            {
+                if (i > 0) arrayString[i] = arrayString[i].Substring(1, arrayString[i].Length - 1);
+                if (arrayString[i].Length == 5)
+                {
+                    string[] arr = new string[2];
+                    arr = arrayString[i].Split('-');
+                    if (arr[0].CompareTo(arr[1]) > 0)
+                    {
+                        arrayString[i] = arr[1] + "-" + arr[0];
+                    }
+                }
+            }
+
+            for (int i = 0; i < arrayString.Count(); i++)
+            {
+                newString = newString + arrayString[i] + ", ";
+            }
+            
+            return newString;
+        }
+
         public string VTRangToXau(int giatri)
-        {   
+        {
             int nhomRang = giatri / 8 + 1;
             int vtTrongNhom = -1;
-            
+
             if (nhomRang == 3) nhomRang = 4;
             else if (nhomRang == 4) nhomRang = 3;
 
             if (nhomRang == 1 || nhomRang == 4) vtTrongNhom = 8 - giatri % 8;
-            else if(nhomRang == 2 || nhomRang == 3) vtTrongNhom = giatri % 8 + 1;
+            else if (nhomRang == 2 || nhomRang == 3) vtTrongNhom = giatri % 8 + 1;
 
             string xauthem = nhomRang.ToString() + vtTrongNhom.ToString();
             return xauthem;
         }
-        
+
         private void StringViTri(bool[] array, String ph)
         {
             string vitrirang = "";
@@ -65,9 +99,13 @@ namespace DentalLabo.Mau_dat_hang
             int[] luu1 = new int[16];
             int[] luu2 = new int[16];
             int[] daycon = new int[16];
-            for (i = 0; i < 16; i++) 
+            
+            for (i = 0; i < 16; i++)
             {
-                if (array[i] == true) luu1[j++] = i;
+                if (array[i] == true)
+                {
+                    luu1[j++] = i;
+                }
             }
 
             soluong1 = j;
@@ -75,15 +113,19 @@ namespace DentalLabo.Mau_dat_hang
 
             for (i = 16; i < 32; i++)
             {
-                if (array[i] == true) luu2[j++] = i;
+                if (array[i] == true)
+                {
+                    luu2[j++] = i;
+                }
             }
             soluong2 = j;
             soluong = soluong1 + soluong2;
-            
+
             j = 0;
             i = 0;
             int start = i;
             int k = start + 1;
+
 
             #region hamrangtren
             if (soluong1 == 1)
@@ -102,13 +144,14 @@ namespace DentalLabo.Mau_dat_hang
                             vitrirang = vitrirang + VTRangToXau(luu1[start]) + ", ";
                             start = k;
                             k++;
+                            i = 0;
                         }
                         else
                         {
                             if (k != start + 2)
                             {
                                 vitrirang = vitrirang + VTRangToXau(luu1[start]) + "-";
-                                vitrirang = vitrirang + VTRangToXau(luu1[k-1]) + ", ";
+                                vitrirang = vitrirang + VTRangToXau(luu1[k - 1]) + ", ";
                             }
                             else
                             {
@@ -124,6 +167,7 @@ namespace DentalLabo.Mau_dat_hang
                     {
                         k++;
                     }
+
                     if (k == soluong1)
                     {
                         if (k != start + 1)
@@ -170,6 +214,7 @@ namespace DentalLabo.Mau_dat_hang
                             vitrirang = vitrirang + VTRangToXau(luu2[start]) + ", ";
                             start = k;
                             k++;
+                            i = 0;
                         }
                         else
                         {
@@ -216,7 +261,10 @@ namespace DentalLabo.Mau_dat_hang
             }
             #endregion
 
-            if (vitrirang.Length > 2) vitrirang = vitrirang.Substring(0, vitrirang.Length - 2).ToString();
+            if (vitrirang.Length >= 2) vitrirang = vitrirang.Substring(0, vitrirang.Length - 2).ToString();
+            vitrirang = ChuanVTRangString(vitrirang);
+            if (vitrirang.Length >= 2) vitrirang = vitrirang.Substring(0, vitrirang.Length - 2).ToString();
+            
             if (ph == "1")
             {
                 txtViTriRang.Text = vitrirang;
@@ -227,13 +275,14 @@ namespace DentalLabo.Mau_dat_hang
                 txtViTriRang2.Text = vitrirang;
                 txtSoLuongRang2.Text = soluong.ToString();
             }
-            
+
         }
         #endregion
 
         #region resetChonRang
         public void resetRangBut(String LoaiPhucHinh)
         {
+            resetMangRangChon();
             if (LoaiPhucHinh == "1")
             {
                 #region
@@ -329,7 +378,9 @@ namespace DentalLabo.Mau_dat_hang
         // Luu button
         private void button7_Click(object sender, EventArgs e)
         {
+            loaiPH = "1";
             model.LuuAction(acctionString, loaiPH, maSPDH);
+            resetRangBut("1");
         }
 
         // khach hang moi form 1
@@ -353,7 +404,7 @@ namespace DentalLabo.Mau_dat_hang
             cmbGioiTinhBN.Text = "Nam";
 
             // luu action va loai phuc hinh dang thao tac
-            acctionString = "Mau moi";
+            acctionString = "San Pham Moi";
             loaiPH = "1";
 
             // reset thong tin lien quan den san pham
@@ -381,7 +432,7 @@ namespace DentalLabo.Mau_dat_hang
             txtTenBN.ResetText();
             txtTuoiBN.ResetText();
             cmbGioiTinhBN.Text = "Nam";
-            acctionString = "Mau moi";
+            acctionString = "San Pham Moi";
             loaiPH = "1";
 
             // reset thong tin lien quan den san pham
@@ -434,7 +485,7 @@ namespace DentalLabo.Mau_dat_hang
             txtTenBN2.ResetText();
             txtTuoiBN2.ResetText();
             cmbGioiTinhBN2.Text = "Nam";
-            acctionString = "Mau moi";
+            acctionString = "San Pham Moi";
             loaiPH = "2";
 
             // reset thong tin san pham
@@ -464,7 +515,7 @@ namespace DentalLabo.Mau_dat_hang
             txtTenBN2.ResetText();
             txtTuoiBN2.ResetText();
             cmbGioiTinhBN2.Text = "Nam";
-            acctionString = "Mau moi";
+            acctionString = "San Pham Moi";
             loaiPH = "2";
 
             // reset thong tin san pham
@@ -497,7 +548,7 @@ namespace DentalLabo.Mau_dat_hang
             cmbVLPhu.SelectedIndex = 0;
             resetRangBut("2");
             model.UpdateMaVLC(cmbVLChinh.Items[cmbVLChinh.SelectedIndex].ToString());
-            model.UpdateMaSanPham2(cmbTenSP.Items[cmbTenSP.SelectedIndex].ToString());
+            model.UpdateMaSanPham2(cmbTenSP2.Items[cmbTenSP2.SelectedIndex].ToString());
             model.UpdateMaVLP(cmbVLPhu.Items[cmbVLPhu.SelectedIndex].ToString());
             acctionString = "San Pham Moi";
             loaiPH = "2";
@@ -531,7 +582,9 @@ namespace DentalLabo.Mau_dat_hang
 
         private void button10_Click(object sender, EventArgs e)
         {
+            loaiPH = "2";
             model.LuuAction(acctionString, loaiPH, maSPDH);
+            resetRangBut("2");
         }
 
         private void cmbTenKH_SelectedIndexChanged(object sender, EventArgs e)
@@ -548,6 +601,7 @@ namespace DentalLabo.Mau_dat_hang
             model.UpdateMaNhom(cmbNhomKH.Items[cmbNhomKH.SelectedIndex].ToString());
             String maNhom = cmbMaNhomKH.Text;
             model.LoadTenKH(maNhom);
+            if (cmbTenKH.Text != "") model.UpdateMaSoKH(cmbTenKH.Items[cmbTenKH.SelectedIndex].ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -608,7 +662,7 @@ namespace DentalLabo.Mau_dat_hang
             }
             else
             {
-                acctionString = "Sua Mau";   
+                acctionString = "Sua Mau";
             }
             loaiPH = "1";
         }
@@ -1603,5 +1657,10 @@ namespace DentalLabo.Mau_dat_hang
             StringViTri(rangChoosed2, "2");
         }
         #endregion
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
