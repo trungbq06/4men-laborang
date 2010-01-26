@@ -375,6 +375,45 @@ namespace DentalLabo.MauDatHang
         } // of function
         #endregion
 
+        #region
+        public void LoadThongTinMau(string loaiPhucHinh)
+        {
+            string maMau = form.txtSoMau.Text;
+            string query = "SELECT TOP 1 *  FROM MauHang WHERE MaMau = '" + maMau + "'";
+            DataTable result = Database.query(query);
+            if (result.Rows.Count > 0)
+            {
+                string maKH = result.Rows[0]["MaKH"].ToString();
+                string tenBN = result.Rows[0]["TenBN"].ToString();
+                string tuoiBN = result.Rows[0]["TuoiBN"].ToString();
+                string gioitinhBN = result.Rows[0]["GioiTinhBN"].ToString();
+                string ngayNhan = result.Rows[0]["NgayNhan"].ToString();
+                string ngayTra = result.Rows[0]["NgayTra"].ToString();
+                string gioTra = result.Rows[0]["GioTra"].ToString() + "h";
+
+                // cap nhat lai cho chinh xac cac gia tri trong form
+                form.dateNgayNhan.Text = ngayNhan;
+                if (loaiPhucHinh == "1")
+                {
+                    form.txtTenBN.Text = tenBN;
+                    form.txtTuoiBN.Text = tuoiBN;
+                    form.cmbGioiTinhBN.Text = gioitinhBN;
+                    form.dateNgayTra.Text = ngayTra;
+                    form.dateGioTra.Text = gioTra;
+                }
+                else
+                {
+                    form.txtTenBN2.Text = tenBN;
+                    form.txtTuoiBN2.Text = tuoiBN;
+                    form.cmbGioiTinhBN2.Text = gioitinhBN;
+                    form.dateNgayTra2.Text = ngayTra;
+                    form.dateGioTra2.Text = gioTra;
+                }
+            }
+
+        }
+        #endregion 
+
         #region LuuAction
         /*
          * Them mot mau moi
@@ -889,7 +928,7 @@ namespace DentalLabo.MauDatHang
                 if (loaiPhucHinh == "1")
                 {
                     maSPDH = selectedRow.Cells[16].Value.ToString();
-                    luuY = selectedRow.Cells[8].Value.ToString();
+                    luuY = selectedRow.Cells[6].Value.ToString();
                     thaoTac = selectedRow.Cells[13].Value.ToString();
                     lyDo = selectedRow.Cells[14].Value.ToString();
                     yeuCau = selectedRow.Cells[15].Value.ToString();

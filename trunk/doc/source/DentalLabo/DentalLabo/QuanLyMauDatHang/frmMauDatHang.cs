@@ -1662,5 +1662,12 @@ namespace DentalLabo.Mau_dat_hang
         {
 
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //model.LayThongTinMau();
+            int ph = tabControl1.SelectedIndex + 1;
+            model.LoadThongTinMau(ph.ToString());
+        }
     }
 }
