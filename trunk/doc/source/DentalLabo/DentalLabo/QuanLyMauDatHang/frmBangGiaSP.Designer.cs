@@ -37,12 +37,17 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDonGia10 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDonGia29 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.cbMaVLC = new System.Windows.Forms.ComboBox();
             this.cbTenVLC = new System.Windows.Forms.ComboBox();
             this.cbMaSP = new System.Windows.Forms.ComboBox();
             this.cbTenSP = new System.Windows.Forms.ComboBox();
-            this.txtGiaTinhThem = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,7 +90,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(194, 248);
+            this.label1.Location = new System.Drawing.Point(195, 313);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 25);
             this.label1.TabIndex = 7;
@@ -97,9 +102,9 @@
             this.dtgBangGiaSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtgBangGiaSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgBangGiaSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBangGiaSP.Location = new System.Drawing.Point(9, 276);
+            this.dtgBangGiaSP.Location = new System.Drawing.Point(9, 352);
             this.dtgBangGiaSP.Name = "dtgBangGiaSP";
-            this.dtgBangGiaSP.Size = new System.Drawing.Size(572, 293);
+            this.dtgBangGiaSP.Size = new System.Drawing.Size(572, 315);
             this.dtgBangGiaSP.TabIndex = 8;
             this.dtgBangGiaSP.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgBangGiaSP_CellMouseEnter);
             this.dtgBangGiaSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgBangGiaSP_CellClick_1);
@@ -122,7 +127,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 170);
+            this.groupBox1.Location = new System.Drawing.Point(12, 237);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(569, 61);
             this.groupBox1.TabIndex = 13;
@@ -162,12 +167,17 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtDonGia10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtDonGia29);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbMaVLC);
             this.groupBox2.Controls.Add(this.cbTenVLC);
             this.groupBox2.Controls.Add(this.cbMaSP);
             this.groupBox2.Controls.Add(this.cbTenSP);
-            this.groupBox2.Controls.Add(this.txtGiaTinhThem);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtDonGia);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -177,10 +187,71 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(569, 152);
+            this.groupBox2.Size = new System.Drawing.Size(569, 219);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin giá sản phẩm";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(244, 186);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 16);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "VNĐ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 150);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 16);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "VNĐ";
+            // 
+            // txtDonGia10
+            // 
+            this.txtDonGia10.Location = new System.Drawing.Point(132, 186);
+            this.txtDonGia10.Name = "txtDonGia10";
+            this.txtDonGia10.Size = new System.Drawing.Size(106, 22);
+            this.txtDonGia10.TabIndex = 13;
+            this.txtDonGia10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 186);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 16);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Đơn giá răng >=10";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(244, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 16);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "VNĐ";
+            // 
+            // txtDonGia29
+            // 
+            this.txtDonGia29.Location = new System.Drawing.Point(132, 149);
+            this.txtDonGia29.Name = "txtDonGia29";
+            this.txtDonGia29.Size = new System.Drawing.Size(106, 22);
+            this.txtDonGia29.TabIndex = 10;
+            this.txtDonGia29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 16);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Đơn giá răng 2-9";
             // 
             // cbMaVLC
             // 
@@ -195,7 +266,7 @@
             // 
             this.cbTenVLC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbTenVLC.FormattingEnabled = true;
-            this.cbTenVLC.Location = new System.Drawing.Point(90, 68);
+            this.cbTenVLC.Location = new System.Drawing.Point(132, 68);
             this.cbTenVLC.Name = "cbTenVLC";
             this.cbTenVLC.Size = new System.Drawing.Size(169, 24);
             this.cbTenVLC.TabIndex = 3;
@@ -215,36 +286,19 @@
             this.cbTenSP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbTenSP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbTenSP.FormattingEnabled = true;
-            this.cbTenSP.Location = new System.Drawing.Point(90, 23);
+            this.cbTenSP.Location = new System.Drawing.Point(132, 23);
             this.cbTenSP.Name = "cbTenSP";
             this.cbTenSP.Size = new System.Drawing.Size(169, 24);
             this.cbTenSP.TabIndex = 1;
             // 
-            // txtGiaTinhThem
-            // 
-            this.txtGiaTinhThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtGiaTinhThem.Location = new System.Drawing.Point(459, 109);
-            this.txtGiaTinhThem.Name = "txtGiaTinhThem";
-            this.txtGiaTinhThem.Size = new System.Drawing.Size(100, 22);
-            this.txtGiaTinhThem.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(362, 112);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 16);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Giá Tính thêm";
-            // 
             // txtDonGia
             // 
             this.txtDonGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDonGia.Location = new System.Drawing.Point(90, 112);
+            this.txtDonGia.Location = new System.Drawing.Point(132, 112);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(169, 22);
+            this.txtDonGia.Size = new System.Drawing.Size(106, 22);
             this.txtDonGia.TabIndex = 5;
+            this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -300,12 +354,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 581);
+            this.ClientSize = new System.Drawing.Size(590, 679);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgBangGiaSP);
             this.Name = "frmBangGiaSP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Bang Gia San Pham";
             this.Load += new System.EventHandler(this.frmBangGiaSP_Load);
             this.Shown += new System.EventHandler(this.frmBangGiaSP_Shown);
@@ -331,8 +386,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtGiaTinhThem;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -342,5 +395,12 @@
         private System.Windows.Forms.ComboBox cbTenVLC;
         private System.Windows.Forms.ComboBox cbMaSP;
         private System.Windows.Forms.ComboBox cbTenSP;
+        private System.Windows.Forms.TextBox txtDonGia29;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDonGia10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

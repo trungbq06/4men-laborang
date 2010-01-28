@@ -154,6 +154,7 @@
             this.Controls.Add(this.dtgDanhMucNCC);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmDanhMucNhaCC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Danh Muc Nha Cung Cap";
             this.Load += new System.EventHandler(this.frmDanhMucNhaCC_Load);
             this.Shown += new System.EventHandler(this.frmDanhMucNhaCC_Shown);

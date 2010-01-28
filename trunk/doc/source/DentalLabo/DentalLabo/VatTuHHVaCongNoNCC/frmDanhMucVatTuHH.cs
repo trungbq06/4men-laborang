@@ -17,6 +17,7 @@ namespace DentalLabo
     public partial class frmDanhMucVatTuHH : Form
     {
         private bool add;
+        private bool edit;
         private bool mouse;
         private int count = 0;
 
@@ -30,55 +31,72 @@ namespace DentalLabo
         public frmDanhMucVatTuHH()
         {
             InitializeComponent();
-            add = false;
+            add = true;
             mouse = false;
+            DataTable dtBoPhan = new DataTable();
+            dtBoPhan = DataConnection.Query("Select * from NhaCungCap");
+            cbTenNCC.DataSource = dtBoPhan;
+            cbTenNCC.DisplayMember = "TenNCC";
+            cbTenNCC.ValueMember = "TenNCC";
+            cbTenNCC1.DataSource = dtBoPhan;
+            cbTenNCC1.DisplayMember = "TenNCC";
+            cbTenNCC1.ValueMember = "TenNCC";
+
+            cbMaNCC.DataSource = dtBoPhan;
+            cbMaNCC.DisplayMember = "MaNCC";
+            cbMaNCC.ValueMember = "MaNCC";
+            cbMaNCC1.DataSource = dtBoPhan;
+            cbMaNCC1.DisplayMember = "MaNCC";
+            cbMaNCC1.ValueMember = "MaNCC";
+
+            edit = false;
         }
 
         private void frmDanhMucVatTuHH_Load(object sender, EventArgs e)
         {
             BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();
             dt = bsDanhMuc.GetDanhMuc("VatTu");
-
-            con = DataConnection.Connect();
-            sqlCom = new SqlCommand("Select * from VatTu", con);
-
-            // Create a SqlDataAdapter object 
-            adapter = new SqlDataAdapter();
-            adapter.SelectCommand = sqlCom;
-
-            // Create a SqlCommandBuilder object 
-            builder = new SqlCommandBuilder(adapter);
-
-            // Fill DataSet with data from Employees table
-            //adapter.Fill(dataSet, "VatLieuPhu");
-
-            // Bind the DataGrid at run time
-            //adapter.TableMappings.Add("Table", dt.TableName);
-            //dtgDanhMucVatTuHH.SetDataBinding(dataSet, "VatLieuPhu");
+                        
             LoadDataToGrid(dt);
             btnXoa.Enabled = false;
+            txtMaVT.Text = DataConnection.GetMa("VatTu", "MaVatTu", "VT");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             add = true;
             btnLuu.Enabled = true;
+            Reset();            
+        }
 
-            dtgDanhMucVatTuHH.AllowUserToAddRows = true;
-            dtgDanhMucVatTuHH.ReadOnly = false;
-            dtgDanhMucVatTuHH.Columns[6].ReadOnly = true;
+        private void Reset()
+        {
+            txtTenVT.Text = "";
+            txtMaVT.Text = "";
+            txtNhomHH.Text = "";
+            txtQuyCach.Text = "";
+            txtDonGia.Text = "";
+            txtDVT.Text = "";
+            txtMaVT.Text = DataConnection.GetMa("VatTu", "MaVatTu", "VT");
         }
 
         private void LoadDataToGrid(DataTable dt)
         {
             dt.Columns[0].ColumnName = "Mã VT";
-            dt.Columns[1].ColumnName = "Tên Vật Tư";
-            dt.Columns[2].ColumnName = "ĐVT";
-            dt.Columns[3].ColumnName = "Nhóm Hàng Hóa";
-            dt.Columns[4].ColumnName = "Quy Cách";
-            dt.Columns[5].ColumnName = "Đơn Giá";
+            dt.Columns[1].ColumnName = "Mã NCC";
+            dt.Columns[2].ColumnName = "Tên Vật Tư";
+            dt.Columns[3].ColumnName = "ĐVT";
+            dt.Columns[4].ColumnName = "Nhóm Hàng Hóa";
+            dt.Columns[5].ColumnName = "Quy Cách";
+            dt.Columns[6].ColumnName = "Đơn Giá";
             dt.Columns[0].Unique = true;
-            dt.Columns[1].Unique = true;
+            if (dt.Columns.Count < 8)
+            {
+                DataColumn dtColumn = new DataColumn();
+                dtColumn.ColumnName = "Xác nhận";
+                dtColumn.DataType = typeof(bool);
+                dt.Columns.Add(dtColumn);
+            }
             dtgDanhMucVatTuHH.DataSource = dt;
             StyleDatagrid();
         }
@@ -88,27 +106,45 @@ namespace DentalLabo
             try
             {
                 bool ok = true;
-                dt.Columns[0].ColumnName = "MaVatTu";
-                dt.Columns[1].ColumnName = "TenVatTu";
-                dt.Columns[2].ColumnName = "DVT";
-                dt.Columns[3].ColumnName = "NhomHangHoa";
-                dt.Columns[4].ColumnName = "QuyCach";
-                dt.Columns[5].ColumnName = "DonGia";
-                adapter.Update(dt);
-                dt.Columns[0].ColumnName = "Mã VT";
-                dt.Columns[1].ColumnName = "Tên Vật Tư";
-                dt.Columns[2].ColumnName = "ĐVT";
-                dt.Columns[3].ColumnName = "Nhóm Hàng Hóa";
-                dt.Columns[4].ColumnName = "Quy Cách";
-                dt.Columns[5].ColumnName = "Đơn Giá";
-                //dt.Columns[0].Unique = true;
-                //dt.Columns[1].Unique = true;
+                con = DataConnection.Connect();
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+                com.CommandType = CommandType.Text;
+                BussinessDanhMucNV bsNhanvien = new BussinessDanhMucNV();
+                if (add)
+                {                    
+                    com.CommandText = "Insert into VatTu values(@MaVatTu, @MaNCC, @TenVatTu, @DVT, @NhomHangHoa, @QuyCach, @DonGia)";
+                    com.Parameters.Add("@MaVatTu", txtMaVT.Text);
+                    com.Parameters.Add("@MaNCC", cbMaNCC.Text);
+                    com.Parameters.Add("@TenVatTu", txtTenVT.Text);
+                    com.Parameters.Add("@DVT", txtDVT.Text);
+                    com.Parameters.Add("@NhomHangHoa", txtNhomHH.Text);
+                    com.Parameters.Add("@QuyCach", txtQuyCach.Text);
+                    com.Parameters.Add("@DonGia", txtDonGia.Text);
+                    com.ExecuteNonQuery();
+                }
+                else if (edit) 
+                {
+                    string str;
+                    str = "Update VatTu set MaNCC='" + cbMaNCC.Text + "', ";
+                    str += "TenVatTu=N'" + txtTenVT.Text + "', ";
+                    str += "DVT=N'" + txtDVT.Text + "', ";
+                    str += "NhomHangHoa=N'" + txtNhomHH.Text + "', ";
+                    str += "QuyCach=N'" + txtQuyCach.Text + "', ";
+                    str += "DonGia=N'" + cbMaNCC.Text + "'";
+                    str += " where MaVatTu='" + txtMaVT.Text + "'";
+                    MessageBox.Show(str);
+                    com.CommandText = str;
+                    com.ExecuteNonQuery();
+                }
 
-                BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();
-                add = false;
+                add = true;
+                edit = false;
                 if (ok) MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                dtgDanhMucVatTuHH.AllowUserToAddRows = false;
-                dtgDanhMucVatTuHH.ReadOnly = true;
+                BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();
+                dt = bsDanhMuc.GetDanhMuc("VatTu");
+                LoadDataToGrid(dt);
+                Reset();
             }
             catch (Exception ex)
             {
@@ -127,7 +163,7 @@ namespace DentalLabo
             {
                 for (int i = 0; i < dtgDanhMucVatTuHH.Rows.Count; ++i)
                 {
-                    if (dtgDanhMucVatTuHH.Rows[i].Cells[6].Value.ToString() != "True")
+                    if (dtgDanhMucVatTuHH.Rows[i].Cells[7].Value.ToString() != "True")
                     {
                         if (i % 2 == 0) dtgDanhMucVatTuHH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                         else dtgDanhMucVatTuHH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -141,14 +177,14 @@ namespace DentalLabo
 
         private void dtgDanhMucVatTuHH_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (!add)
+            if (!add || !edit)
             {
                 try
                 {
                     int row = e.RowIndex;
                     for (int i = 0; i < dtgDanhMucVatTuHH.Rows.Count; ++i)
                     {
-                        if (dtgDanhMucVatTuHH.Rows[i].Cells[6].Value.ToString() != "True")
+                        if (dtgDanhMucVatTuHH.Rows[i].Cells[7].Value.ToString() != "True")
                         {
                             if (i % 2 == 0) dtgDanhMucVatTuHH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                             else dtgDanhMucVatTuHH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -158,40 +194,11 @@ namespace DentalLabo
                             dtgDanhMucVatTuHH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgDanhMucVatTuHH.Rows[row].Cells[6].Value.ToString() != "True")
+                    if (dtgDanhMucVatTuHH.Rows[row].Cells[7].Value.ToString() != "True")
                         dtgDanhMucVatTuHH.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
             }
-        }
-
-        private void dtgDanhMucVatTuHH_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                if (!add)
-                {
-                    string ok = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[6].Value.ToString();
-                    bool check = (ok == "True") ? true : false;
-                    int j = e.RowIndex;
-                    //MessageBox.Show(i.ToString());
-                    if (ok == "True")
-                    {
-                        count--;
-                        if (j % 2 == 0) dtgDanhMucVatTuHH.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
-                        else dtgDanhMucVatTuHH.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(196, 195, 193);
-                    }
-                    else
-                    {
-                        count++;
-                        dtgDanhMucVatTuHH.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
-                    }
-                    dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[6].Value = !check;
-                    if (count > 0) btnXoa.Enabled = true;
-                    else btnXoa.Enabled = false;
-                }
-            }
-            catch (Exception ex) { }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -205,7 +212,7 @@ namespace DentalLabo
                     {
                         for (int i = 0; i < dtgDanhMucVatTuHH.Rows.Count; ++i)
                         {
-                            if (dtgDanhMucVatTuHH.Rows[i].Cells[6].Value.ToString() == "True")
+                            if (dtgDanhMucVatTuHH.Rows[i].Cells[7].Value.ToString() == "True")
                             {
                                 array.Add(dtgDanhMucVatTuHH.Rows[i].Cells[0].Value.ToString());
                             }
@@ -213,7 +220,7 @@ namespace DentalLabo
                         bsDanhMuc.DeleteFromDanhMuc(array, "VatTu", "MaVatTu");
                         dt = bsDanhMuc.GetDanhMuc("VatTu");
                         LoadDataToGrid(dt);
-                        dtgDanhMucVatTuHH.ReadOnly = true;
+                        Reset();
                     }
             }
             catch (Exception ex) { }
@@ -238,6 +245,58 @@ namespace DentalLabo
         private void btnPrint_Click(object sender, EventArgs e)
         {
             PrintDGV.Print_DataGridView(dtgDanhMucVatTuHH);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string str = "Select * from VatTu where MaNCC = '" + cbMaNCC1.Text + "'";
+            if (cbMaNCC1.Text == "") str = "Select * from VatTu";
+            DataTable dt = DataConnection.Query(str);
+            LoadDataToGrid(dt);
+        }
+
+        private void dtgDanhMucVatTuHH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            add = false;
+            edit = true;
+            try
+            {
+                if (!add)
+                {
+                    string ok = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    bool check = (ok == "True") ? true : false;
+                    int j = e.RowIndex;
+                    //MessageBox.Show(i.ToString());
+                    if (ok == "True")
+                    {
+                        count--;
+                        if (j % 2 == 0) dtgDanhMucVatTuHH.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
+                        else dtgDanhMucVatTuHH.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(196, 195, 193);
+                    }
+                    else
+                    {
+                        count++;
+                        dtgDanhMucVatTuHH.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
+                    }
+                    dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[7].Value = !check;
+                    if (count > 0) btnXoa.Enabled = true;
+                    else btnXoa.Enabled = false;
+                }
+            }
+            catch (Exception ex) { }
+
+            btnXoa.Enabled = true;
+            try
+            {
+                txtMaVT.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[0].Value.ToString();                
+                cbMaNCC.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtTenVT.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtDVT.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtNhomHH.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtQuyCach.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtDonGia.Text = dtgDanhMucVatTuHH.Rows[e.RowIndex].Cells[6].Value.ToString();
+            }
+            catch (Exception ex) { }
         }
 
     }

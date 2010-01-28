@@ -11,7 +11,8 @@ namespace DentalLabo.Data
         private string _maSP;
         private string _maVL;
         private double _donGia;
-        private double _tinhThem;
+        private double _donGia2_9;
+        private double _donGia10;
         #endregion Attribute
 
         #region Properties
@@ -33,10 +34,16 @@ namespace DentalLabo.Data
             set { _donGia = value; }
         }
 
-        public double TinhThem
+        public double DonGia10
         {
-            get { return _tinhThem; }
-            set { _tinhThem = value; }
+            get { return _donGia10; }
+            set { _donGia10 = value; }
+        }
+
+        public double DonGia2_9
+        {
+            get { return _donGia2_9; }
+            set { _donGia2_9 = value; }
         }
 
         #endregion Properties
@@ -46,7 +53,8 @@ namespace DentalLabo.Data
             _maSP = "";
             _maVL = "";
             _donGia = 0;
-            _tinhThem = 0;
+            _donGia2_9 = 0;
+            _donGia10 = 0;
         }
     }
 }

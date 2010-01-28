@@ -21,7 +21,7 @@ namespace DentalLabo.DataAccess
                 con = DataConnection.Connect();
                 com.Connection = con;
                 com.CommandType = CommandType.Text;
-                com.CommandText = "Insert into NhanVien values(@MaNV, @MaBP, @TenNV, @GioiTinh, @NamSinh, @SoCMT, @DiaChi, @DienThoai)";
+                com.CommandText = "Insert into NhanVien values(@MaNV, @MaBP, @TenNV, @GioiTinh, @NamSinh, @SoCMT, @DiaChi, @DienThoai, @LuongCoBan, @LuongYThuc, @LuongPhuCapTrachNhiem)";
                 com.Parameters.Add("@MaNV", danhmuc.MaNV);
                 com.Parameters.Add("@MaBP", danhmuc.MaBP);
                 com.Parameters.Add("@TenNV", danhmuc.TenNV);
@@ -30,6 +30,9 @@ namespace DentalLabo.DataAccess
                 com.Parameters.Add("@SoCMT", danhmuc.SoCMT);
                 com.Parameters.Add("@DiaChi", danhmuc.DiaChi);
                 com.Parameters.Add("@DienThoai", danhmuc.DienThoai);
+                com.Parameters.Add("@LuongCoBan", danhmuc.LuongCoBan);
+                com.Parameters.Add("@LuongYThuc", danhmuc.LuongYThuc);
+                com.Parameters.Add("@LuongPhuCapTrachNhiem", danhmuc.LuongPhuCapTrachNhiem);
 
                 com.ExecuteNonQuery();
             }
@@ -71,6 +74,9 @@ namespace DentalLabo.DataAccess
                 str += "NamSinh='" + nhanvien.NamSinh + "',";
                 str += "SoCMT='" + nhanvien.SoCMT + "',";
                 str += "DiaChi=N'" + nhanvien.DiaChi + "',";
+                str += "LuongCoBan=N'" + nhanvien.LuongCoBan + "',";
+                str += "LuongYThuc=N'" + nhanvien.LuongYThuc + "',";
+                str += "LuongPhuCapTrachNhiem=N'" + nhanvien.LuongPhuCapTrachNhiem + "',";
                 str += "DienThoai='" + nhanvien.DienThoai + "' where ";
                 str += id + "='" + idUpdate + "'";
                 com.CommandText = str;                

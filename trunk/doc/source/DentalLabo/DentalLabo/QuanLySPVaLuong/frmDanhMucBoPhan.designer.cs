@@ -175,6 +175,7 @@
             this.Controls.Add(this.dtgDanhMucBoPhan);
             this.Controls.Add(this.lblDanhMucBoPhan);
             this.Name = "frmDanhMucBoPhan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Danh Muc Bo Phan";
             this.Load += new System.EventHandler(this.frmDanhMucBoPhan_Load);
             this.Shown += new System.EventHandler(this.frmDanhMucBoPhan_Shown);

@@ -68,6 +68,8 @@ namespace DentalLabo
             //dtgDanhMucKH.SetDataBinding(dataSet, "VatLieuPhu");
             LoadDataToGrid(dt);
             btnXoa.Enabled = false;
+            //MessageBox.Show(cbNhomKH.SelectedValue.ToString());
+            txtMaKH.Text = DataConnection.GetMa("KhachHang", "MaKH", cbNhomKH.SelectedValue.ToString());
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -75,23 +77,33 @@ namespace DentalLabo
             add = true;
             btnLuu.Enabled = true;
             dtgDanhMucKH.ReadOnly = false;
-            dtgDanhMucKH.Columns[7].ReadOnly = true;
+            dtgDanhMucKH.Columns[9].ReadOnly = true;
             Reset();
+            txtMaKH.Text = DataConnection.GetMa("KhachHang", "MaKH", cbNhomKH.SelectedValue.ToString());
         }
 
         private void LoadDataToGrid(DataTable dt)
         {
             dt.Columns[0].ColumnName = "Mã KH";
             dt.Columns[1].ColumnName = "Tên Khách Hàng";
-            dt.Columns[2].ColumnName = "Giới tính";
-            dt.Columns[3].ColumnName = "Số ĐT";
-            dt.Columns[4].ColumnName = "Mã Số Thuế";
-            dt.Columns[5].ColumnName = "Người đại diện";
-            dt.Columns[6].ColumnName = "Nhóm KH";
-            dt.Columns[7].ColumnName = "Địa chỉ";
+            dt.Columns[3].ColumnName = "Giới tính";
+            dt.Columns[2].ColumnName = "Số ĐT";
+            dt.Columns[4].ColumnName = "Email";
+            dt.Columns[5].ColumnName = "Mã Số Thuế";
+            dt.Columns[6].ColumnName = "Người đại diện";
+            dt.Columns[7].ColumnName = "Nhóm KH";
+            dt.Columns[8].ColumnName = "Địa chỉ";
             dt.Columns[0].Unique = true;
+            if (dt.Columns.Count < 10)
+            {
+                DataColumn dtColumn = new DataColumn();
+                dtColumn.ColumnName = "Xác nhận";
+                dtColumn.DataType = typeof(bool);
+                dt.Columns.Add(dtColumn);
+            }
             dtgDanhMucKH.DataSource = dt;
             StyleDatagrid();
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -115,6 +127,7 @@ namespace DentalLabo
                     khachhang.NguoiDaiDien = txtNguoiDaiDien.Text;
                     khachhang.DienThoai = txtDienThoai.Text;
                     khachhang.DiaChi = txtDiaChi.Text;
+                    khachhang.Email = txtEmail.Text;
                     if (rdbNam.Checked) khachhang.GioiTinh = "Nam";
                     else khachhang.GioiTinh = "Nữ";
 
@@ -146,6 +159,8 @@ namespace DentalLabo
             txtDienThoai.Text = "";
             txtMaSoThue.Text = "";
             txtNguoiDaiDien.Text = "";
+            txtEmail.Text = "";
+            txtMaKH.Text = DataConnection.GetMa("KhachHang", "MaKH", cbNhomKH.SelectedValue.ToString());
         }
 
         private void dtgDanhMucKH_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -159,7 +174,7 @@ namespace DentalLabo
             {
                 for (int i = 0; i < dtgDanhMucKH.Rows.Count; ++i)
                 {
-                    if (dtgDanhMucKH.Rows[i].Cells[8].Value.ToString() != "True")
+                    if (dtgDanhMucKH.Rows[i].Cells[9].Value.ToString() != "True")
                     {
                         if (i % 2 == 0) dtgDanhMucKH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                         else dtgDanhMucKH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -180,7 +195,7 @@ namespace DentalLabo
                     int row = e.RowIndex;
                     for (int i = 0; i < dtgDanhMucKH.Rows.Count; ++i)
                     {
-                        if (dtgDanhMucKH.Rows[i].Cells[8].Value.ToString() != "True")
+                        if (dtgDanhMucKH.Rows[i].Cells[9].Value.ToString() != "True")
                         {
                             if (i % 2 == 0) dtgDanhMucKH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                             else dtgDanhMucKH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -190,7 +205,7 @@ namespace DentalLabo
                             dtgDanhMucKH.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgDanhMucKH.Rows[row].Cells[8].Value.ToString() != "True")
+                    if (dtgDanhMucKH.Rows[row].Cells[9].Value.ToString() != "True")
                         dtgDanhMucKH.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
@@ -208,7 +223,7 @@ namespace DentalLabo
                     {
                         for (int i = 0; i < dtgDanhMucKH.Rows.Count; ++i)
                         {
-                            if (dtgDanhMucKH.Rows[i].Cells[8].Value.ToString() == "True")
+                            if (dtgDanhMucKH.Rows[i].Cells[9].Value.ToString() == "True")
                             {
                                 array.Add(dtgDanhMucKH.Rows[i].Cells[0].Value.ToString());
                             }
@@ -252,7 +267,7 @@ namespace DentalLabo
             {
                 if (!add)
                 {
-                    string ok = dtgDanhMucKH.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    string ok = dtgDanhMucKH.Rows[e.RowIndex].Cells[9].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
@@ -267,7 +282,7 @@ namespace DentalLabo
                         count++;
                         dtgDanhMucKH.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgDanhMucKH.Rows[e.RowIndex].Cells[8].Value = !check;
+                    dtgDanhMucKH.Rows[e.RowIndex].Cells[9].Value = !check;
                     if (count > 0) btnXoa.Enabled = true;
                     else btnXoa.Enabled = false;
                 }
@@ -282,15 +297,16 @@ namespace DentalLabo
                 txtTenKH.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[1].Value.ToString();                
                 //txtTenBP.Text = DateTime.Parse(dtgDanhMucKH.Rows[e.RowIndex].Cells[3].Value.ToString());
                 //txtGioiTinh = dtgDanhMucKH.Rows[e.RowIndex].Cells[4].Value.ToString();
-                if (dtgDanhMucKH.Rows[e.RowIndex].Cells[2].Value.ToString() == "Nam")
+                if (dtgDanhMucKH.Rows[e.RowIndex].Cells[3].Value.ToString() == "Nam")
                     rdbNam.Checked = true;
                 else rdbNu.Checked = true;
-                txtDienThoai.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtMaSoThue.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtNguoiDaiDien.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cbNhomKH1.SelectedValue = dtgDanhMucKH.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cbNhomKH.SelectedValue = dtgDanhMucKH.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtDiaChi.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtDienThoai.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtMaSoThue.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtNguoiDaiDien.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cbNhomKH1.SelectedValue = dtgDanhMucKH.Rows[e.RowIndex].Cells[7].Value.ToString();
+                cbNhomKH.SelectedValue = dtgDanhMucKH.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtDiaChi.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[8].Value.ToString();
+                txtEmail.Text = dtgDanhMucKH.Rows[e.RowIndex].Cells[4].Value.ToString(); ;
             }
             catch (Exception ex) { }
         }
@@ -303,6 +319,11 @@ namespace DentalLabo
             else str = "Select * from KhachHang";
             dtTimkiem = DataConnection.Query(str);
             LoadDataToGrid(dtTimkiem);
+        }
+
+        private void cbNhomKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtMaKH.Text = DataConnection.GetMa("KhachHang", "MaKH", cbNhomKH.SelectedValue.ToString());
         }
 
     }

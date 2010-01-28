@@ -66,7 +66,7 @@ namespace DentalLabo
 
             dtgDanhMucSP.AllowUserToAddRows = true;
             dtgDanhMucSP.ReadOnly = false;
-            dtgDanhMucSP.Columns[6].ReadOnly = true;
+            dtgDanhMucSP.Columns[7].ReadOnly = true;
         }        
 
         private void LoadDataToGrid(DataTable dt)
@@ -77,8 +77,9 @@ namespace DentalLabo
             dt.Columns[3].ColumnName = "ĐVT";
             dt.Columns[4].ColumnName = "Nhóm hàng hóa";
             dt.Columns[5].ColumnName = "Ghi chú";
+            dt.Columns[6].ColumnName = "Số lượng quy chuẩn";
             dt.Columns[0].Unique = true;
-            dt.Columns[1].Unique = true;
+            
             dtgDanhMucSP.DataSource = dt;
             StyleDatagrid();
         }
@@ -94,6 +95,7 @@ namespace DentalLabo
                 dt.Columns[3].ColumnName = "DVT";
                 dt.Columns[4].ColumnName = "NhomHangHoa";
                 dt.Columns[5].ColumnName = "GhiChu";
+                dt.Columns[6].ColumnName = "SoLuongQuyChuan";
                 adapter.Update(dt);
                 dt.Columns[0].ColumnName = "Mã SP";
                 dt.Columns[1].ColumnName = "Tên Sản Phẩm";
@@ -101,8 +103,9 @@ namespace DentalLabo
                 dt.Columns[3].ColumnName = "ĐVT";
                 dt.Columns[4].ColumnName = "Nhóm hàng hóa";
                 dt.Columns[5].ColumnName = "Ghi chú";
+                dt.Columns[6].ColumnName = "Số lượng quy chuẩn";
                 dt.Columns[0].Unique = true;
-                dt.Columns[1].Unique = true;
+                
 
                 BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();                
                 add = false;
@@ -127,7 +130,7 @@ namespace DentalLabo
             {
                 for (int i = 0; i < dtgDanhMucSP.Rows.Count; ++i)
                 {
-                    if (dtgDanhMucSP.Rows[i].Cells[6].Value.ToString() != "True")
+                    if (dtgDanhMucSP.Rows[i].Cells[7].Value.ToString() != "True")
                     {
                         if (i % 2 == 0) dtgDanhMucSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                         else dtgDanhMucSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -148,7 +151,7 @@ namespace DentalLabo
                     int row = e.RowIndex;
                     for (int i = 0; i < dtgDanhMucSP.Rows.Count; ++i)
                     {
-                        if (dtgDanhMucSP.Rows[i].Cells[6].Value.ToString() != "True")
+                        if (dtgDanhMucSP.Rows[i].Cells[7].Value.ToString() != "True")
                         {
                             if (i % 2 == 0) dtgDanhMucSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                             else dtgDanhMucSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -158,7 +161,7 @@ namespace DentalLabo
                             dtgDanhMucSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgDanhMucSP.Rows[row].Cells[6].Value.ToString() != "True")
+                    if (dtgDanhMucSP.Rows[row].Cells[7].Value.ToString() != "True")
                         dtgDanhMucSP.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
@@ -171,7 +174,7 @@ namespace DentalLabo
             {
                 if (!add)
                 {
-                    string ok = dtgDanhMucSP.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string ok = dtgDanhMucSP.Rows[e.RowIndex].Cells[7].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
@@ -186,7 +189,7 @@ namespace DentalLabo
                         count++;
                         dtgDanhMucSP.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgDanhMucSP.Rows[e.RowIndex].Cells[6].Value = !check;
+                    dtgDanhMucSP.Rows[e.RowIndex].Cells[7].Value = !check;
                     if (count > 0) button3.Enabled = true;
                     else button3.Enabled = false;
                 }
@@ -205,7 +208,7 @@ namespace DentalLabo
                     {                        
                         for (int i = 0; i < dtgDanhMucSP.Rows.Count; ++i)
                         {                     
-                            if (dtgDanhMucSP.Rows[i].Cells[6].Value.ToString() == "True")
+                            if (dtgDanhMucSP.Rows[i].Cells[7].Value.ToString() == "True")
                             {
                                 array.Add(dtgDanhMucSP.Rows[i].Cells[0].Value.ToString());
                             }

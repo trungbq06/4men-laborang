@@ -12,9 +12,9 @@ using DentalLabo.Bussiness;
 using System.Data.SqlClient;
 using PrintDataGrid;
 
-namespace DentalLabo
+namespace DentalLabo.QuanLySPVaLuong
 {
-    public partial class frmDanhMucNhaCC : Form
+    public partial class frmDMKhoanLuong : Form
     {
         private bool add;
         private bool mouse;
@@ -27,20 +27,20 @@ namespace DentalLabo
         private SqlDataAdapter adapter;
         private SqlConnection con;
 
-        public frmDanhMucNhaCC()
+        public frmDMKhoanLuong()
         {
             InitializeComponent();
             add = false;
             mouse = false;
         }
 
-        private void frmDanhMucNhaCC_Load(object sender, EventArgs e)
+        private void frmDMKhoanLuong_Load(object sender, EventArgs e)
         {
             BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();
-            dt = bsDanhMuc.GetDanhMuc("NhaCungCap");
+            dt = bsDanhMuc.GetDanhMuc("KhoanLuong");
 
             con = DataConnection.Connect();
-            sqlCom = new SqlCommand("Select * from NhaCungCap", con);
+            sqlCom = new SqlCommand("Select * from KhoanLuong", con);
 
             // Create a SqlDataAdapter object 
             adapter = new SqlDataAdapter();
@@ -54,7 +54,7 @@ namespace DentalLabo
 
             // Bind the DataGrid at run time
             //adapter.TableMappings.Add("Table", dt.TableName);
-            //dtgDanhMucNCC.SetDataBinding(dataSet, "VatLieuPhu");
+            //dtgDMKhoanLuong.SetDataBinding(dataSet, "VatLieuPhu");
             LoadDataToGrid(dt);
             btnXoa.Enabled = false;
         }
@@ -64,26 +64,20 @@ namespace DentalLabo
             add = true;
             btnLuu.Enabled = true;
 
-            dtgDanhMucNCC.AllowUserToAddRows = true;
-            dtgDanhMucNCC.ReadOnly = false;
-            dtgDanhMucNCC.Columns[8].ReadOnly = true;
+            dtgDMKhoanLuong.AllowUserToAddRows = true;
+            dtgDMKhoanLuong.ReadOnly = false;
+            dtgDMKhoanLuong.Columns[3].ReadOnly = true;
         }
 
         private void LoadDataToGrid(DataTable dt)
         {
-            dt.Columns[0].ColumnName = "Mã NCC";
-            dt.Columns[1].ColumnName = "Tên NCC";
-            dt.Columns[2].ColumnName = "Mã Số Thuế";
-            dt.Columns[3].ColumnName = "Fax";
-            dt.Columns[4].ColumnName = "Email";
-            dt.Columns[5].ColumnName = "Người đại diện";
-            dt.Columns[6].ColumnName = "Địa chỉ";
-            dt.Columns[7].ColumnName = "Điện thoại";
+            dt.Columns[0].ColumnName = "Mã Khoản";
+            dt.Columns[1].ColumnName = "Tên Khoản";
+            dt.Columns[2].ColumnName = "ĐVT";
             dt.Columns[0].Unique = true;
             dt.Columns[1].Unique = true;
-            dtgDanhMucNCC.DataSource = dt;
+            dtgDMKhoanLuong.DataSource = dt;
             StyleDatagrid();
-            dtgDanhMucNCC.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -91,31 +85,21 @@ namespace DentalLabo
             try
             {
                 bool ok = true;
-                dt.Columns[0].ColumnName = "MaNCC";
-                dt.Columns[1].ColumnName = "TenNCC";
-                dt.Columns[2].ColumnName = "MaSoThue";
-                dt.Columns[3].ColumnName = "Fax";
-                dt.Columns[4].ColumnName = "Email";
-                dt.Columns[5].ColumnName = "NguoiDaiDien";
-                dt.Columns[6].ColumnName = "DiaChi";
-                dt.Columns[7].ColumnName = "DienThoai";
+                dt.Columns[0].ColumnName = "MaKhoan";
+                dt.Columns[1].ColumnName = "TenKhoan";
+                dt.Columns[2].ColumnName = "DonViTinh";
                 adapter.Update(dt);
-                dt.Columns[0].ColumnName = "Mã NCC";
-                dt.Columns[1].ColumnName = "Tên NCC";
-                dt.Columns[2].ColumnName = "Mã Số Thuế";
-                dt.Columns[3].ColumnName = "Fax";
-                dt.Columns[4].ColumnName = "Email";
-                dt.Columns[5].ColumnName = "Người đại diện";
-                dt.Columns[6].ColumnName = "Địa chỉ";
-                dt.Columns[7].ColumnName = "Điện thoại";
+                dt.Columns[0].ColumnName = "Mã Khoản";
+                dt.Columns[1].ColumnName = "Tên Khoản";
+                dt.Columns[2].ColumnName = "ĐVT";
                 //dt.Columns[0].Unique = true;
                 //dt.Columns[1].Unique = true;
 
                 BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();
                 add = false;
                 if (ok) MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                dtgDanhMucNCC.AllowUserToAddRows = false;
-                dtgDanhMucNCC.ReadOnly = true;
+                dtgDMKhoanLuong.AllowUserToAddRows = false;
+                dtgDMKhoanLuong.ReadOnly = true;
             }
             catch (Exception ex)
             {
@@ -123,7 +107,7 @@ namespace DentalLabo
             }
         }
 
-        private void dtgDanhMucNCC_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        private void dtgDMKhoanLuong_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("Dữ liệu nhập chưa đúng! Có thể đã trùng mã SP hoặc tên SP hoặc dữ liệu chưa đúng định dạng!", "Lỗi");
         }
@@ -132,68 +116,68 @@ namespace DentalLabo
         {
             try
             {
-                for (int i = 0; i < dtgDanhMucNCC.Rows.Count; ++i)
+                for (int i = 0; i < dtgDMKhoanLuong.Rows.Count; ++i)
                 {
-                    if (dtgDanhMucNCC.Rows[i].Cells[8].Value.ToString() != "True")
+                    if (dtgDMKhoanLuong.Rows[i].Cells[3].Value.ToString() != "True")
                     {
-                        if (i % 2 == 0) dtgDanhMucNCC.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
-                        else dtgDanhMucNCC.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
+                        if (i % 2 == 0) dtgDMKhoanLuong.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
+                        else dtgDMKhoanLuong.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
                     }
                     else
-                        dtgDanhMucNCC.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
+                        dtgDMKhoanLuong.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                 }
             }
             catch (Exception ex) { }
         }
 
-        private void dtgDanhMucNCC_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void dtgDMKhoanLuong_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (!add)
             {
                 try
                 {
                     int row = e.RowIndex;
-                    for (int i = 0; i < dtgDanhMucNCC.Rows.Count; ++i)
+                    for (int i = 0; i < dtgDMKhoanLuong.Rows.Count; ++i)
                     {
-                        if (dtgDanhMucNCC.Rows[i].Cells[8].Value.ToString() != "True")
+                        if (dtgDMKhoanLuong.Rows[i].Cells[3].Value.ToString() != "True")
                         {
-                            if (i % 2 == 0) dtgDanhMucNCC.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
-                            else dtgDanhMucNCC.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
+                            if (i % 2 == 0) dtgDMKhoanLuong.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
+                            else dtgDMKhoanLuong.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
                         }
                         //Màu cho hàng được chọn
                         else
-                            dtgDanhMucNCC.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
+                            dtgDMKhoanLuong.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgDanhMucNCC.Rows[row].Cells[8].Value.ToString() != "True")
-                        dtgDanhMucNCC.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
+                    if (dtgDMKhoanLuong.Rows[row].Cells[3].Value.ToString() != "True")
+                        dtgDMKhoanLuong.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
             }
         }
 
-        private void dtgDanhMucNCC_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dtgDMKhoanLuong_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
                 if (!add)
                 {
-                    string ok = dtgDanhMucNCC.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    string ok = dtgDMKhoanLuong.Rows[e.RowIndex].Cells[3].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
                     if (ok == "True")
                     {
                         count--;
-                        if (j % 2 == 0) dtgDanhMucNCC.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
-                        else dtgDanhMucNCC.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(196, 195, 193);
+                        if (j % 2 == 0) dtgDMKhoanLuong.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
+                        else dtgDMKhoanLuong.Rows[j].DefaultCellStyle.BackColor = Color.FromArgb(196, 195, 193);
                     }
                     else
                     {
                         count++;
-                        dtgDanhMucNCC.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
+                        dtgDMKhoanLuong.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgDanhMucNCC.Rows[e.RowIndex].Cells[8].Value = !check;
+                    dtgDMKhoanLuong.Rows[e.RowIndex].Cells[3].Value = !check;
                     if (count > 0) btnXoa.Enabled = true;
                     else btnXoa.Enabled = false;
                 }
@@ -210,42 +194,41 @@ namespace DentalLabo
                 if (count > 0)
                     if (MessageBox.Show("Bạn có chắc muốn xóa dữ liệu không?", "Cảnh báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        for (int i = 0; i < dtgDanhMucNCC.Rows.Count; ++i)
+                        for (int i = 0; i < dtgDMKhoanLuong.Rows.Count; ++i)
                         {
-                            if (dtgDanhMucNCC.Rows[i].Cells[8].Value.ToString() == "True")
+                            if (dtgDMKhoanLuong.Rows[i].Cells[3].Value.ToString() == "True")
                             {
-                                array.Add(dtgDanhMucNCC.Rows[i].Cells[0].Value.ToString());
+                                array.Add(dtgDMKhoanLuong.Rows[i].Cells[0].Value.ToString());
                             }
                         }
-                        bsDanhMuc.DeleteFromDanhMuc(array, "NhaCungCap", "MaNCC");
-                        dt = bsDanhMuc.GetDanhMuc("NhaCungCap");
+                        bsDanhMuc.DeleteFromDanhMuc(array, "KhoanLuong", "MaKhoan");
+                        dt = bsDanhMuc.GetDanhMuc("KhoanLuong");
                         LoadDataToGrid(dt);
-                        dtgDanhMucNCC.ReadOnly = true;
+                        dtgDMKhoanLuong.ReadOnly = true;
                     }
             }
             catch (Exception ex) { }
         }
 
-        private void dtgDanhMucNCC_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dtgDMKhoanLuong_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             btnLuu.Enabled = true;
         }
 
         //Sự kiện khi form đã load xong
-        private void frmDanhMucNhaCC_Shown(object sender, EventArgs e)
+        private void frmDMKhoanLuong_Shown(object sender, EventArgs e)
         {
             StyleDatagrid();
         }
 
-        private void dtgDanhMucNCC_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dtgDMKhoanLuong_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             StyleDatagrid();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            PrintDGV.Print_DataGridView(dtgDanhMucNCC);
+            PrintDGV.Print_DataGridView(dtgDMKhoanLuong);
         }
-
     }
 }

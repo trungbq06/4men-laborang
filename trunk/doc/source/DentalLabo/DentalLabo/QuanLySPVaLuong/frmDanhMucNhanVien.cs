@@ -53,7 +53,7 @@ namespace DentalLabo
             {
                 if (!add)
                 {
-                    string ok = dtgDanhMucNV.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    string ok = dtgDanhMucNV.Rows[e.RowIndex].Cells[11].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
@@ -68,7 +68,7 @@ namespace DentalLabo
                         count++;
                         dtgDanhMucNV.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgDanhMucNV.Rows[e.RowIndex].Cells[8].Value = !check;
+                    dtgDanhMucNV.Rows[e.RowIndex].Cells[11].Value = !check;
                     if (count > 0) btnXoa.Enabled = true;
                     else btnXoa.Enabled = false;
                 }
@@ -91,6 +91,9 @@ namespace DentalLabo
                 txtSoCMT.Text = dtgDanhMucNV.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtDiaChi.Text = dtgDanhMucNV.Rows[e.RowIndex].Cells[6].Value.ToString();
                 txtDienThoai.Text = dtgDanhMucNV.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtLuongCB.Text = dtgDanhMucNV.Rows[e.RowIndex].Cells[8].Value.ToString();
+                txtLuongYT.Text = dtgDanhMucNV.Rows[e.RowIndex].Cells[9].Value.ToString();
+                txtLuongPCTN.Text = dtgDanhMucNV.Rows[e.RowIndex].Cells[10].Value.ToString();
             }
             catch (Exception ex) {}
         }
@@ -106,7 +109,7 @@ namespace DentalLabo
                     {
                         for (int i = 0; i < dtgDanhMucNV.Rows.Count; ++i)
                         {
-                            if (dtgDanhMucNV.Rows[i].Cells[8].Value.ToString() == "True")
+                            if (dtgDanhMucNV.Rows[i].Cells[11].Value.ToString() == "True")
                             {
                                 array.Add(dtgDanhMucNV.Rows[i].Cells[0].Value.ToString());
                             }
@@ -143,6 +146,9 @@ namespace DentalLabo
                     nhanvien.SoCMT = txtSoCMT.Text;
                     nhanvien.DiaChi = txtDiaChi.Text;
                     nhanvien.DienThoai = txtDienThoai.Text;
+                    nhanvien.LuongCoBan = txtLuongCB.Text;
+                    nhanvien.LuongYThuc = txtLuongYT.Text;
+                    nhanvien.LuongPhuCapTrachNhiem = txtLuongPCTN.Text;
 
                     if (add)
                     {
@@ -169,6 +175,7 @@ namespace DentalLabo
             BusinessDanhMucSP bsDanhMuc = new BusinessDanhMucSP();
             dt = bsDanhMuc.GetDanhMuc("NhanVien");
             LoadDataToGrid(dt);
+            txtMaNV.Text = DataConnection.GetMa("NhanVien", "MaNV", "NV");            
         }
 
         private void LoadDataToGrid(DataTable dt)
@@ -180,14 +187,23 @@ namespace DentalLabo
             dt.Columns[0].ColumnName = "Mã NV";
             dt.Columns[1].ColumnName = "Mã BP";
             dt.Columns[2].ColumnName = "Tên Nhân Viên";
-            dt.Columns[3].ColumnName = "Giới Tính";            
+            dt.Columns[3].ColumnName = "Giới Tính";
             dt.Columns[4].ColumnName = "Năm Sinh";
             dt.Columns[5].ColumnName = "Số CMT";
             dt.Columns[6].ColumnName = "Địa Chỉ";
             dt.Columns[7].ColumnName = "Điện Thoại";
+            dt.Columns[8].ColumnName = "Lương CB";
+            dt.Columns[9].ColumnName = "Lương Ý Thức";
+            dt.Columns[10].ColumnName = "Lương PCTN";
             dt.Columns[0].Unique = true;
+            if (dt.Columns.Count < 12)
+            {
+                DataColumn dtColumn = new DataColumn();
+                dtColumn.ColumnName = "Xác nhận";
+                dtColumn.DataType = typeof(bool);
+                dt.Columns.Add(dtColumn);
+            }
             dtgDanhMucNV.DataSource = dt;
-            dtgDanhMucNV.Columns[3].ValueType = typeof(bool);
             //DataGridViewCell cell = new DataGridViewComboBoxCell();
             //dtgDanhMucNV.Columns[4].CellTemplate = cell;
             //StyleDatagrid();
@@ -199,7 +215,7 @@ namespace DentalLabo
             {
                 for (int i = 0; i < dtgDanhMucNV.Rows.Count; ++i)
                 {
-                    if (dtgDanhMucNV.Rows[i].Cells[8].Value.ToString() != "True")
+                    if (dtgDanhMucNV.Rows[i].Cells[11].Value.ToString() != "True")
                     {
                         if (i % 2 == 0) dtgDanhMucNV.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                         else dtgDanhMucNV.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -230,7 +246,7 @@ namespace DentalLabo
                     int row = e.RowIndex;
                     for (int i = 0; i < dtgDanhMucNV.Rows.Count; ++i)
                     {
-                        if (dtgDanhMucNV.Rows[i].Cells[8].Value.ToString() != "True")
+                        if (dtgDanhMucNV.Rows[i].Cells[11].Value.ToString() != "True")
                         {
                             if (i % 2 == 0) dtgDanhMucNV.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                             else dtgDanhMucNV.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -240,7 +256,7 @@ namespace DentalLabo
                             dtgDanhMucNV.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgDanhMucNV.Rows[row].Cells[8].Value.ToString() != "True")
+                    if (dtgDanhMucNV.Rows[row].Cells[11].Value.ToString() != "True")
                         dtgDanhMucNV.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
@@ -248,12 +264,7 @@ namespace DentalLabo
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
-        {            
-            //ArrayList header = new ArrayList();            
-            //header.Add("Tên: trung");
-            //header.Add("Họ tên: Bui Quang Trung");
-            //header.Add("Tuổi: 23");
-            //header.Add("Tên bộ phận ABCDEF: Bộ phận A");
+        {
             PrintDataGrid.PrintDGV.Print_DataGridView(dtgDanhMucNV);
         }
 
@@ -274,6 +285,10 @@ namespace DentalLabo
             txtSoCMT.Text = "";
             cbMaBP.Text = "";
             txtMaNV.Text = "";
+            txtLuongCB.Text = "";
+            txtLuongYT.Text = "";
+            txtLuongPCTN.Text = "";
+            txtMaNV.Text = DataConnection.GetMa("NhanVien", "MaNV", "NV");
         }
 
         private void cbMaBP_TextChanged(object sender, EventArgs e)
@@ -286,8 +301,9 @@ namespace DentalLabo
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string str = "Select * from NhanVien where MaBP = '" + cbMaBoPhan.Text + "'";
+            if (cbMaBoPhan.Text == "") str = "Select * from NhanVien";
             DataTable dt = DataConnection.Query(str);
-            dtgDanhMucNV.DataSource = dt;
+            LoadDataToGrid(dt);
         }
 
     }

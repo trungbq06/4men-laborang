@@ -154,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgDanhMucVLPhu);
             this.Name = "frmDanhMucVLPhu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Danh Muc Vat Lieu Phu";
             this.Load += new System.EventHandler(this.frmDanhMucVLPhu_Load);
             this.Shown += new System.EventHandler(this.frmDanhMucVLPhu_Shown);
