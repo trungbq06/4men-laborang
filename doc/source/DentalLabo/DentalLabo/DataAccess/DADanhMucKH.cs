@@ -21,16 +21,17 @@ namespace DentalLabo.Data
                 con = DataConnection.Connect();
                 com.Connection = con;
                 com.CommandType = CommandType.Text;
-                com.CommandText = "Insert into KhachHang values(@MaKH, @TenKH, @SDT, @GioiTinh, @MaSoThue, @NguoiDaiDien, @MaNhomKH, @DiaChi)";
+                com.CommandText = "Insert into KhachHang values(@MaKH, @TenKH, @SDT, @GioiTinh, @Email, @MaSoThue, @NguoiDaiDien, @MaNhomKH, @DiaChi)";
                 com.Parameters.Add("@MaKH", khachhang.MaKH);
                 com.Parameters.Add("@TenKH", khachhang.TenKH);
                 com.Parameters.Add("@SDT", khachhang.DienThoai);
+                com.Parameters.Add("@Email", khachhang.Email);
                 com.Parameters.Add("@GioiTinh", khachhang.GioiTinh);
                 com.Parameters.Add("@MaSoThue", khachhang.MaSoThue);
                 com.Parameters.Add("@NguoiDaiDien", khachhang.NguoiDaiDien);
                 com.Parameters.Add("@MaNhomKH", khachhang.MaNhomKH);
                 com.Parameters.Add("@DiaChi", khachhang.DiaChi);
-
+                //MessageBox.Show(com.CommandText.ToString());
                 com.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -68,6 +69,7 @@ namespace DentalLabo.Data
                 str += "MaKH='" + khachhang.MaKH + "',";
                 str += "TenKH=N'" + khachhang.TenKH + "',";
                 str += "SDT=N'" + khachhang.DienThoai + "',";
+                str += "Email=N'" + khachhang.Email + "',";
                 str += "GioiTinh=N'" + khachhang.GioiTinh + "',";
                 str += "MaSoThue=N'" + khachhang.MaSoThue + "',";
                 str += "NguoiDaiDien=N'" + khachhang.NguoiDaiDien + "',";

@@ -56,7 +56,7 @@ namespace DentalLabo
             {
                 if (!add)
                 {
-                    string ok = dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string ok = dtgBangGiaSP.Rows[e.RowIndex].Cells[7].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
@@ -71,7 +71,7 @@ namespace DentalLabo
                         count++;
                         dtgBangGiaSP.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value = !check;
+                    dtgBangGiaSP.Rows[e.RowIndex].Cells[7].Value = !check;
                     if (count > 0) btnXoa.Enabled = true;
                     else btnXoa.Enabled = false;
                 }
@@ -86,7 +86,8 @@ namespace DentalLabo
                 cbMaVLC.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[2].Value.ToString();
                 cbTenVLC.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtDonGia.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[5].Value.ToString();
-                txtGiaTinhThem.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtDonGia29.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtDonGia10.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
             catch (Exception ex) {}
         }
@@ -103,7 +104,7 @@ namespace DentalLabo
                     {
                         for (int i = 0; i < dtgBangGiaSP.Rows.Count; ++i)
                         {
-                            if (dtgBangGiaSP.Rows[i].Cells[6].Value.ToString() == "True")
+                            if (dtgBangGiaSP.Rows[i].Cells[7].Value.ToString() == "True")
                             {
                                 array.Add(dtgBangGiaSP.Rows[i].Cells[0].Value.ToString());
                                 array1.Add(dtgBangGiaSP.Rows[i].Cells[2].Value.ToString());
@@ -135,7 +136,8 @@ namespace DentalLabo
                     banggia.MaSP = cbMaSP.SelectedValue.ToString();
                     banggia.MaVL = cbMaVLC.SelectedValue.ToString();
                     banggia.DonGia = Double.Parse(txtDonGia.Text.ToString());
-                    banggia.TinhThem = Double.Parse(txtGiaTinhThem.Text.ToString());
+                    banggia.DonGia2_9 = Double.Parse(txtDonGia29.Text.ToString());
+                    banggia.DonGia10 = Double.Parse(txtDonGia10.Text.ToString());
 
                     if (add)
                     {
@@ -172,7 +174,8 @@ namespace DentalLabo
             dtNew.Columns.Add(new DataColumn("Mã VLC"));
             dtNew.Columns.Add(new DataColumn("Tên VLC"));
             dtNew.Columns.Add(new DataColumn("Đơn giá"));
-            dtNew.Columns.Add(new DataColumn("Giá tính thêm"));            
+            dtNew.Columns.Add(new DataColumn("Đơn giá 2-9"));
+            dtNew.Columns.Add(new DataColumn("Đơn giá 10"));
             DataTable dtTmp = new DataTable();
             foreach (DataRow row in dt.Rows)
             {
@@ -185,6 +188,7 @@ namespace DentalLabo
                 newRow[3] = dtTmp.Rows[0][0];
                 newRow[4] = row[2];
                 newRow[5] = row[3];
+                newRow[6] = row[4];
                 dtNew.Rows.Add(newRow);
             }
             DataColumn dtColumn = new DataColumn();
@@ -192,7 +196,10 @@ namespace DentalLabo
             dtColumn.DataType = typeof(bool);
             dtNew.Columns.Add(dtColumn);
             dtgBangGiaSP.DataSource = dtNew;
-            dtgBangGiaSP.Columns[6].ValueType = typeof(bool);
+            dtgBangGiaSP.Columns[4].DefaultCellStyle.Format = "N0";
+            dtgBangGiaSP.Columns[5].DefaultCellStyle.Format = "N0";
+            dtgBangGiaSP.Columns[6].DefaultCellStyle.Format = "N0";
+            dtgBangGiaSP.Columns[7].ValueType = typeof(bool);
         }
 
         private void StyleDatagrid()
@@ -201,7 +208,7 @@ namespace DentalLabo
             {
                 for (int i = 0; i < dtgBangGiaSP.Rows.Count; ++i)
                 {
-                    if (dtgBangGiaSP.Rows[i].Cells[6].Value.ToString() != "True")
+                    if (dtgBangGiaSP.Rows[i].Cells[7].Value.ToString() != "True")
                     {
                         if (i % 2 == 0) dtgBangGiaSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                         else dtgBangGiaSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -232,7 +239,7 @@ namespace DentalLabo
                     int row = e.RowIndex;
                     for (int i = 0; i < dtgBangGiaSP.Rows.Count; ++i)
                     {
-                        if (dtgBangGiaSP.Rows[i].Cells[6].Value.ToString() != "True")
+                        if (dtgBangGiaSP.Rows[i].Cells[7].Value.ToString() != "True")
                         {
                             if (i % 2 == 0) dtgBangGiaSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 239);
                             else dtgBangGiaSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(212, 211, 209);
@@ -242,7 +249,7 @@ namespace DentalLabo
                             dtgBangGiaSP.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
                     //Màu cho Mouse Hover
-                    if (dtgBangGiaSP.Rows[row].Cells[6].Value.ToString() != "True")
+                    if (dtgBangGiaSP.Rows[row].Cells[7].Value.ToString() != "True")
                         dtgBangGiaSP.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(181, 218, 174);
                 }
                 catch (Exception ex) { }
@@ -264,7 +271,8 @@ namespace DentalLabo
         private void Reset()
         {
             txtDonGia.Text = "";
-            txtGiaTinhThem.Text = "";
+            txtDonGia29.Text = "";
+            txtDonGia10.Text = "";
         }
 
         private void dtgBangGiaSP_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -287,7 +295,7 @@ namespace DentalLabo
             {
                 if (!add)
                 {
-                    string ok = dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string ok = dtgBangGiaSP.Rows[e.RowIndex].Cells[7].Value.ToString();
                     bool check = (ok == "True") ? true : false;
                     int j = e.RowIndex;
                     //MessageBox.Show(i.ToString());
@@ -302,7 +310,7 @@ namespace DentalLabo
                         count++;
                         dtgBangGiaSP.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(235, 195, 133);
                     }
-                    dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value = !check;
+                    dtgBangGiaSP.Rows[e.RowIndex].Cells[7].Value = !check;
                     if (count > 0) btnXoa.Enabled = true;
                     else btnXoa.Enabled = false;
                 }
@@ -317,7 +325,8 @@ namespace DentalLabo
                 cbMaVLC.SelectedValue = dtgBangGiaSP.Rows[e.RowIndex].Cells[2].Value.ToString();
                 cbTenVLC.SelectedValue = dtgBangGiaSP.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtDonGia.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtGiaTinhThem.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtDonGia29.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtDonGia10.Text = dtgBangGiaSP.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
             catch (Exception ex) { }
         }

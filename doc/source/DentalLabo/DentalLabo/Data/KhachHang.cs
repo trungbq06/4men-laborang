@@ -16,6 +16,7 @@ namespace DentalLabo.Data
         private string _nguoiDaiDien;
         private string _maNhomKH;
         private string _diaChi;
+        private string _email;
         #endregion Attribute
 
         #region Properties
@@ -67,6 +68,12 @@ namespace DentalLabo.Data
             set { _maNhomKH = value; }
         }
 
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+
         #endregion Properties
 
         public KhachHang()
@@ -78,6 +85,7 @@ namespace DentalLabo.Data
             _maSoThue = "";
             _nguoiDaiDien = "";
             _maNhomKH = "";
+            _email = "";
         }
     }
 }

@@ -163,9 +163,10 @@
             this.Controls.Add(this.dtgDanhMucCongDoanSX);
             this.Controls.Add(this.lblDanhMucCongDoanSX);
             this.Name = "frmDMCongDoanSX";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Danh Muc Cong Doan San Xuat";
-            this.Shown += new System.EventHandler(this.frmDMCongDoanSX_Shown);
             this.Load += new System.EventHandler(this.frmDMCongDoanSX_Load);
+            this.Shown += new System.EventHandler(this.frmDMCongDoanSX_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhMucCongDoanSX)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

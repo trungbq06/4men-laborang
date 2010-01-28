@@ -21,11 +21,12 @@ namespace DentalLabo.DataAccess
                 con = DataConnection.Connect();
                 com.Connection = con;
                 com.CommandType = CommandType.Text;
-                com.CommandText = "Insert into BangGia values(@MaSP, @MaVL, @DonGia, @TinhThem)";
+                com.CommandText = "Insert into BangGia values(@MaSP, @MaVL, @DonGia, @DonGia2_9, @DonGia10)";
                 com.Parameters.Add("@MaSP", danhmuc.MaSP);
                 com.Parameters.Add("@MaVL", danhmuc.MaVL);
                 com.Parameters.Add("@DonGia", danhmuc.DonGia);
-                com.Parameters.Add("@TinhThem", danhmuc.TinhThem);
+                com.Parameters.Add("@DonGia2_9", danhmuc.DonGia2_9);
+                com.Parameters.Add("@DonGia10", danhmuc.DonGia10);
 
                 com.ExecuteNonQuery();
             }
@@ -45,12 +46,13 @@ namespace DentalLabo.DataAccess
                 com.Connection = con;
                 com.CommandType = CommandType.Text;
                 string str = "Update BangGia Set ";
-                str += "DonGia=N'" + banggia.DonGia + "',";
-                str += "GiaTinhThem='" + banggia.TinhThem + "' where ";
+                str += "DonGia2_9='" + banggia.DonGia2_9 + "', ";
+                str += "DonGia10='" + banggia.DonGia10 + "', ";
+                str += "DonGia=N'" + banggia.DonGia + "' where ";
                 str += id + "='" + idUpdate + "' and ";
                 str += id1 + "='" + idUpdate1 + "'";
                 com.CommandText = str;
-                MessageBox.Show(str);
+                //MessageBox.Show(str);
 
                 com.ExecuteNonQuery();
             }

@@ -15,6 +15,9 @@ namespace DentalLabo.Data
         private string _soCMT;
         private string _diaChi;
         private string _dienThoai;
+        private string _luongCoBan;
+        private string _luongYThuc;
+        private string _luongPhuCapTrachNhiem;
         private int _namSinh;
         #endregion Attribute
 
@@ -67,6 +70,24 @@ namespace DentalLabo.Data
             set { _dienThoai = value; }
         }
 
+        public string LuongCoBan
+        {
+            get { return _luongCoBan; }
+            set { _luongCoBan = value; }
+        }
+
+        public string LuongYThuc
+        {
+            get { return _luongYThuc; }
+            set { _luongYThuc = value; }
+        }
+
+        public string LuongPhuCapTrachNhiem
+        {
+            get { return _luongPhuCapTrachNhiem; }
+            set { _luongPhuCapTrachNhiem = value; }
+        }
+
         #endregion Properties
 
         public DanhMucNV()
@@ -78,6 +99,9 @@ namespace DentalLabo.Data
             _soCMT = "";
             _diaChi = "";
             _dienThoai = "";
+            _luongCoBan = "";
+            _luongYThuc = "";
+            _luongPhuCapTrachNhiem = "";
         }
     }
 }

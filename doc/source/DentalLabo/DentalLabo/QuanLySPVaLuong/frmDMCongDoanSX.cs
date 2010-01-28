@@ -74,7 +74,7 @@ namespace DentalLabo
             dt.Columns[0].ColumnName = "Mã CĐ";
             dt.Columns[1].ColumnName = "Tên Công Đoạn";
             dt.Columns[2].ColumnName = "ĐVT";
-            dt.Columns[3].ColumnName = "Số lượng quy chiếu";
+            dt.Columns[3].ColumnName = "Hệ số";
             dt.Columns[0].Unique = true;
             dt.Columns[1].Unique = true;
             dtgDanhMucCongDoanSX.DataSource = dt;
@@ -94,7 +94,7 @@ namespace DentalLabo
                 dt.Columns[0].ColumnName = "Mã CĐ";
                 dt.Columns[1].ColumnName = "Tên Công Đoạn";
                 dt.Columns[2].ColumnName = "ĐVT";
-                dt.Columns[3].ColumnName = "Số lượng quy chiếu";
+                dt.Columns[3].ColumnName = "Hệ số";
                 //dt.Columns[0].Unique = true;
                 //dt.Columns[1].Unique = true;
 
